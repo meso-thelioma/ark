@@ -5174,7 +5174,7 @@
                                         "density": 0.01,
                                         "radius": 0.006,
                                         "speed": 0.85,
-                                        "maxTicks": 11,
+                                        "maxTicks": 8,
                                         "damage": 0,
                                         "collideWith": 1,
                                         "lifeSteal": 0,
@@ -7501,8 +7501,9 @@
             "icon": "atomicSlashes",
             "name": "Lady Luck",
             "maxAngleDiffInRevs": 0.01,
-            "cooldown": 450,
+            "cooldown": 600,
             "throttle": true,
+            "chargeTicks": 20,
             "effects": [
                 {
                     "icon": "fas fa-address-card",
@@ -7514,7 +7515,7 @@
                 "density": 0.01,
                 "radius": 0.003,
                 "speed": 2,
-                "maxTicks": 10,
+                "maxTicks": 50,
                 "sound": "fireball",
                 "collideWith": 1,
                 "damage": 0,
