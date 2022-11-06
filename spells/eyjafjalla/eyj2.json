@@ -1,6 +1,6 @@
 {
 	"id": "eyj2",
-	"description": "Group targets and drag them inward.",
+	"description": "Apply corrosion. Corrosion will deal 2 Arts damage per second.",
 	"action": "projectile",
 	"color": "#fff2",
 	"name": "Salmon's Blessing",
@@ -9,5 +9,12 @@
 	"cooldown": 800,
 	"throttle": true,
 	"chargeTicks": 10,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
 	"projectile": "eyj2"
 }
