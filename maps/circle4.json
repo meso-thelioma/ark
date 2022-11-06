@@ -1,0 +1,104 @@
+{
+	"id": "circle4",
+	"color": "#555",
+	"background": "#222",
+	"obstacles": [
+		{
+			"type": "inward",
+			"numObstacles": 4,
+			"layoutRadius": 0.82,
+			"layoutAngleOffsetInRevs": 0.125,
+			"numPoints": 4,
+			"extent": 0.12,
+			"orientationAngleOffsetInRevs": 0,
+			"angularWidthInRevs": 0.25
+		},
+		{
+			"type": "inward",
+			"numObstacles": 4,
+			"layoutRadius": 0.42,
+			"layoutAngleOffsetInRevs": 0.125,
+			"numPoints": 4,
+			"extent": 0.12,
+			"orientationAngleOffsetInRevs": 0,
+			"angularWidthInRevs": 0.25
+		},
+		{
+			"type": "slow",
+			"layoutRadius": 0.34,
+			"numObstacles": 1,
+			"layoutAngleOffsetInRevs": 0.5,
+			"numPoints": 4,
+			"extent": 0.08
+		},
+		{
+			"type": "fast",
+			"layoutRadius": 0.34,
+			"numObstacles": 1,
+			"layoutAngleOffsetInRevs": 0,
+			"numPoints": 4,
+			"extent": 0.08
+		},
+		{
+			"type": "vanish2",
+			"layoutRadius": 0.34,
+			"numObstacles": 4,
+			"numPoints": 4,
+			"extent": 0.08
+		},
+		{
+			"type": "left",
+			"layoutRadius": 0.12,
+			"numObstacles": 4,
+			"layoutAngleOffsetInRevs": 0.25,
+			"numPoints": 4,
+			"extent": 0.003,
+			"angularWidthInRevs": 0.08
+		},
+		{
+			"type": "vanish2",
+			"layoutRadius": 0.24,
+			"numObstacles": 4,
+			"orientationAngleOffsetInRevs": 0.125,
+			"layoutAngleOffsetInRevs": 0.125,
+			"numPoints": 4,
+			"extent": 0.08
+		},
+		{
+			"type": "a",
+			"numObstacles": 4,
+			"layoutRadius": 0.3,
+			"layoutAngleOffsetInRevs": 0.125,
+			"numPoints": 4,
+			"extent": 0.0025,
+			"orientationAngleOffsetInRevs": 0,
+			"angularWidthInRevs": 0.25
+		},
+		{
+			"type": "forcefield",
+			"numObstacles": 4,
+			"layoutRadius": 0.2,
+			"layoutAngleOffsetInRevs": 0.5,
+			"numPoints": 4,
+			"extent": 0.05,
+			"angularWidthInRevs": 0.005
+		},
+		{
+			"type": "forcefield1",
+			"numObstacles": 1,
+			"layoutRadius": 0,
+			"layoutAngleOffsetInRevs": 0.5,
+			"numPoints": 4,
+			"extent": 0.05
+		},
+		{
+			"type": "cosmic",
+			"numObstacles": 1,
+			"layoutRadius": 0,
+			"layoutAngleOffsetInRevs": 0.5,
+			"numPoints": 4,
+			"extent": 0.035
+		}
+	],
+	"numPoints": 4
+}

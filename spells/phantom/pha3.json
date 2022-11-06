@@ -1,0 +1,20 @@
+{
+	"id": "pha3",
+	"description": "Dash. Deal 5 physical damage which will shred 3 defense per hit.",
+	"action": "projectile",
+	"color": "#469990",
+	"icon": "deadlyStrike",
+	"name": "Late Spring",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 900,	
+	"recoil": -0.7,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"projectile": "pha3"
+}

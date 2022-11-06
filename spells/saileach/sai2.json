@@ -1,0 +1,31 @@
+{
+	"id": "sai2",
+	"description": "Grant 30 defense and true heal allies by 3 health per second. Group targets. Opponents will have 10% reduced damage in the radius. Picking up the flag will lower cooldowns.",
+	"action": "projectile",
+	"color": "#000",
+	"name": "Glass Soul",
+	"icon": "fireDash",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 12000,
+	"throttle": true,
+	"buffs": [
+		{
+			"type": "cooldown",
+			"spellId": "sai3",
+			"minCooldown": 120000
+		}
+	],
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		},
+		{
+			"icon": "fas fa-address-card",
+			"title": "True Damage",
+			"text": "Damage * Buffs"
+		}
+	],
+	"projectile": "sai2"
+}

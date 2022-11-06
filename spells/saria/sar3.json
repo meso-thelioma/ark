@@ -1,0 +1,24 @@
+{
+	"id": "sar3",
+	"description": "Over five seconds, the caster will heal 15 health. Enemies in the radius will have 90% movement speed and take 40% more Arts damage. Allies will heal 3 health over the duration.",
+	"action": "projectile",
+	"color": "#4363d8",
+	"name": "Selfish Gene",
+	"icon": "sonicLightning",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 900,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Healing",
+			"text": "Heal * Buffs"
+		},		
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
+	"projectile": "sar3"
+}

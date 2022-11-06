@@ -1,0 +1,19 @@
+{
+	"id": "pha2",
+	"description": "Deal 5 physical damage which will shred 3 defense per hit.",
+	"action": "projectile",
+	"color": "#469990",
+	"icon": "deadlyStrike",
+	"name": "First Love",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 900,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"projectile": "pha2"
+}

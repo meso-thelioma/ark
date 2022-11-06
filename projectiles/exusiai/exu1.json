@@ -1,0 +1,125 @@
+{
+	"density": 0.01,
+	"radius": 0.003,
+	"speed": 0.9,
+	"maxTicks": 90,
+	"damage": 0,
+	"collideWith": 8192,
+	"lifeSteal": 0,
+	"categories": 2,
+	"sound": "fireball",
+	"soundHit": "standard",
+	"color": "#aaa",
+	"buffs": [
+		{
+			"type": "burn",
+			"hitInterval": 1,
+			"maxTicks": 1,
+			"packet": {
+				"source": "phys",
+				"lifeSteal": 0,
+				"damage": 8
+			}
+		}
+	],
+	"behaviours": [
+		{
+			"type": "updateCollideWith",
+			"trigger": {
+				"afterTicks": 1
+			},
+			"collideWith": 65535
+		},
+		{
+			"type": "spawn",
+			"expire": true,
+			"trigger": {
+				"collideWith": 8192,
+				"against": 1
+			},
+			"numProjectiles": 2,
+			"spread": 0.01,
+			"projectile": {
+				"density": 0.01,
+				"radius": 0.003,
+				"speed": 0.9,
+				"maxTicks": 90,
+				"damage": 0,
+				"lifeSteal": 0,
+				"categories": 2,
+				"sound": "fireball",
+				"soundHit": "standard",
+				"color": "#aaa",
+				"buffs": [
+					{
+						"type": "burn",
+						"hitInterval": 1,
+						"maxTicks": 1,
+						"packet": {
+							"source": "phys",
+							"lifeSteal": 0,
+							"damage": 2
+						}
+					},
+					{
+						"type": "burn",
+						"hitInterval": 1,
+						"maxTicks": 1,
+						"packet": {
+							"source": "phys",
+							"minHealth": 25,
+							"lifeSteal": 0,
+							"damage": 2
+						}
+					},							
+					{
+						"type": "burn",
+						"hitInterval": 1,
+						"maxTicks": 1,
+						"packet": {
+							"source": "phys",
+							"minHealth": 50,
+							"lifeSteal": 0,
+							"damage": 2
+						}
+					},						
+					{
+						"type": "burn",
+						"hitInterval": 1,
+						"maxTicks": 1,
+						"packet": {
+							"source": "phys",
+							"minHealth": 75,
+							"lifeSteal": 0,
+							"damage": 2
+						}
+					}
+				],
+				"renderers": [
+					{
+						"type": "ray",
+						"ticks": 4
+					},
+					{
+						"type": "strike",
+						"ticks": 30,
+						"flash": true,
+						"numParticles": 5
+					}
+				]
+			}
+		}
+	],
+	"renderers": [
+		{
+			"type": "ray",
+			"ticks": 10
+		},
+		{
+			"type": "strike",
+			"ticks": 30,
+			"flash": true,
+			"numParticles": 5
+		}
+	]
+}

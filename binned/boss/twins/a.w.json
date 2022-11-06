@@ -1,0 +1,284 @@
+{
+	"id": "a.w",
+	"description": "Deal Arts damage.",
+	"action": "spray",
+	"color": "#063970",
+	"icon": "hidden",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 1200,
+	"throttle": true,
+	"name": "Night",
+	"sound": "triplet",
+	"movementProportionWhileChannelling": 1,
+	"numProjectilesPerTick": 1,
+	"intervalTicks": 1,
+	"lengthTicks": 1,
+	"effects": [],
+	"jitterRatio": 2,
+	"projectile": {
+		"density": 0.0001,
+		"ccd": true,
+		"attractable": false,
+		"linkable": false,
+		"swappable": false,
+		"radius": 0.0015,
+		"spawnAtCursor": true,
+		"speed": 0,
+		"speedDecayPerTick": 0,
+		"restitution": 0,
+		"minTicks": 60,
+		"maxTicks": 60,
+		"hitInterval": 250,
+		"damage": 0,
+		"shieldTakesOwnership": false,
+		"categories": 2,
+		"selfPassthrough": true,
+		"collideWith": 0,
+		"expireOn": 0,
+		"sound": "triplet",
+		"color": "#063970",
+		"renderers": [
+			{
+				"type": "projectile",
+				"ticks": 25,
+				"intermediateInterpolations": 3,
+				"vanish": 1,
+				"light": 1
+			},
+			{
+				"type": "reticule",
+				"color": "#063970",
+				"radius": 0.04,
+				"startingTicks": 60,
+				"shrinkTicks": 60,
+				"minRadius": 0.0375
+			}
+		],
+		"lifeSteal": 0,
+		"behaviours": [
+			{
+				"type": "accelerate",
+				"maxSpeed": 40,
+				"accelerationPerSecond": -2
+			},
+			{
+				"type": "spawn",
+				"expire": true,
+				"numProjectiles": 4,
+				"trigger": {
+					"expire": true
+				},
+				"spread": 0.75,
+				"projectile": {
+					"density": 0.0001,
+					"ccd": true,
+					"attractable": false,
+					"linkable": false,
+					"swappable": false,
+					"radius": 0.0025,
+					"speed": 0.5,
+					"speedDecayPerTick": 0,
+					"restitution": 0,
+					"minTicks": 60,
+					"maxTicks": 60,
+					"hitInterval": 250,
+					"damage": 0,
+					"shieldTakesOwnership": false,
+					"categories": 2,
+					"sense": 1,
+					"selfPassthrough": true,
+					"collideWith": 0,
+					"sensor": true,
+					"expireOn": 0,
+					"sound": "triplet",
+					"color": "#063970",
+					"renderers": [
+						{
+							"type": "projectile",
+							"ticks": 25,
+							"intermediateInterpolations": 3,
+							"vanish": 1,
+							"light": 1
+						},
+						{
+							"type": "reticule",
+							"color": "#063970",
+							"radius": 0.04,
+							"startingTicks": 60,
+							"shrinkTicks": 60,
+							"minRadius": 0.0375
+						}
+					],
+					"lifeSteal": 0,
+					"behaviours": [
+						{
+							"type": "accelerate",
+							"maxSpeed": 40,
+							"accelerationPerSecond": -1
+						},
+						{
+							"type": "spawn",
+							"expire": true,
+							"numProjectiles": 4,
+							"trigger": {
+								"expire": true
+							},
+							"spread": 0.75,
+							"projectile": {
+								"density": 0.0001,
+								"ccd": true,
+								"attractable": false,
+								"linkable": false,
+								"swappable": false,
+								"radius": 0.0025,
+								"speed": 0.5,
+								"speedDecayPerTick": 0,
+								"restitution": 0,
+								"minTicks": 60,
+								"maxTicks": 60,
+								"hitInterval": 250,
+								"damage": 0,
+								"shieldTakesOwnership": false,
+								"categories": 2,
+								"sense": 1,
+								"selfPassthrough": true,
+								"collideWith": 0,
+								"sensor": true,
+								"expireOn": 0,
+								"sound": "triplet",
+								"color": "#063970",
+								"renderers": [
+									{
+										"type": "projectile",
+										"ticks": 25,
+										"intermediateInterpolations": 3,
+										"vanish": 1,
+										"light": 1
+									},
+									{
+										"type": "reticule",
+										"color": "#063970",
+										"radius": 0.04,
+										"startingTicks": 60,
+										"shrinkTicks": 60,
+										"minRadius": 0.0375
+									}
+								],
+								"lifeSteal": 0,
+								"behaviours": [
+									{
+										"type": "accelerate",
+										"maxSpeed": 40,
+										"accelerationPerSecond": -1
+									},
+									{
+										"type": "spawn",
+										"expire": true,
+										"numProjectiles": 4,
+										"trigger": {
+											"expire": true
+										},
+										"spread": 0.75,
+										"projectile": {
+											"density": 0.0001,
+											"ccd": true,
+											"attractable": false,
+											"linkable": false,
+											"swappable": false,
+											"radius": 0.0025,
+											"speed": 0.5,
+											"speedDecayPerTick": 0,
+											"restitution": 0,
+											"minTicks": 60,
+											"maxTicks": 60,
+											"hitInterval": 250,
+											"damage": 0,
+											"shieldTakesOwnership": false,
+											"categories": 2,
+											"sense": 1,
+											"selfPassthrough": true,
+											"collideWith": 0,
+											"sensor": true,
+											"expireOn": 0,
+											"sound": "triplet",
+											"color": "#063970",
+											"renderers": [
+												{
+													"type": "projectile",
+													"ticks": 25,
+													"intermediateInterpolations": 3,
+													"vanish": 1,
+													"light": 1
+												},
+												{
+													"type": "reticule",
+													"color": "#063970",
+													"radius": 0.04,
+													"startingTicks": 60,
+													"shrinkTicks": 60,
+													"minRadius": 0.0375
+												}
+											],
+											"lifeSteal": 0,
+											"behaviours": [
+												{
+													"type": "accelerate",
+													"maxSpeed": 40,
+													"accelerationPerSecond": -1
+												}
+											],
+											"soundHit": "standard",
+											"buffs": [
+												{
+													"type": "burn",
+													"hitInterval": 1,
+													"maxTicks": 1,
+													"packet": {
+														"source": "arts",
+														"lifeSteal": 0,
+														"damage": 4,
+														"noHit": true
+													}
+												}
+											]
+										}
+									}
+								],
+								"soundHit": "standard",
+								"buffs": [
+									{
+										"type": "burn",
+										"hitInterval": 1,
+										"maxTicks": 1,
+										"packet": {
+											"source": "arts",
+											"lifeSteal": 0,
+											"damage": 4,
+											"noHit": true
+										}
+									}
+								]
+							}
+						}
+					],
+					"soundHit": "standard",
+					"buffs": [
+						{
+							"type": "burn",
+							"hitInterval": 1,
+							"maxTicks": 1,
+							"packet": {
+								"source": "arts",
+								"lifeSteal": 0,
+								"damage": 4,
+								"noHit": true
+							}
+						}
+					]
+				}
+			}
+		],
+		"soundHit": "standard",
+		"buffs": []
+	}
+}

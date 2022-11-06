@@ -1,0 +1,121 @@
+{
+	"density": 0.01,
+	"radius": 0.003,
+	"speed": 0.8,
+	"maxTicks": 60,
+	"damage": 0,
+	"collideWith": 0,
+	"lifeSteal": 0,
+	"expireOn": 65534,
+	"categories": 2,
+	"sound": "fireball",
+	"soundHit": "standard",
+	"restitution": 0,
+	"color": "#911eb4",
+	"buffs": [],
+	"behaviours": [
+		{
+			"type": "updateCollideWith",
+			"trigger": {
+				"afterTicks": 1
+			},
+			"collideWith": 65534
+		},
+		{
+			"type": "accelerate",
+			"maxSpeed": 0.9,
+			"accelerationPerSecond": -2.8
+		},
+		{
+			"type": "spawn",
+			"trigger": {
+				"expire": true
+			},
+			"projectile": {
+				"density": 0.01,
+				"radius": 0.04,
+				"sensor": true,
+				"speed": 0,
+				"expireOn": 65526,
+				"maxTicks": 40,
+				"damage": 0,
+				"lifeSteal": 0,
+				"categories": 8194,
+				"collideWith": 8195,
+				"sound": "fireball",
+				"soundHit": "standard",
+				"color": "#911eb422",
+				"detonate": {
+					"radius": 0.04,
+					"minImpulse": 0,
+					"maxImpulse": 0,
+					"renderTicks": 10,
+					"damage": 0,
+					"buffs": [
+						{
+							"type": "burn",
+							"hitInterval": 1,
+							"maxTicks": 1,
+							"packet": {
+								"source": "phys",
+								"lifeSteal": 0,
+								"damage": 20
+							}
+						},
+						{
+							"type": "mass",
+							"maxTicks": 120,
+							"radius": 0.0125,
+							"sense": 128
+						},
+						{
+							"type": "movement",
+							"movementProportion": 0,
+							"maxTicks": 120,
+							"render": {
+								"color": "#911eb4",
+								"particleRadius": 0.0025,
+								"emissionRadiusFactor": 1,
+								"ticks": 10,
+								"light": 1,
+								"invisible": true
+							}
+						}
+					]
+				},
+				"renderers": [
+					{
+						"type": "swirl",
+						"color": "#911eb422",
+						"ticks": 30,
+						"loopTicks": 60,
+						"numParticles": 5,
+						"radius": 0.004,
+						"particleRadius": 0.004
+					},
+					{
+						"type": "swirl",
+						"color": "#911eb422",
+						"ticks": 30,
+						"loopTicks": 60,
+						"numParticles": 5,
+						"radius": 0.04,
+						"particleRadius": 0.002
+					}
+				]
+			}
+		}
+	],
+	"renderers": [
+		{
+			"type": "projectile",
+			"ticks": 10
+		},
+		{
+			"type": "strike",
+			"ticks": 30,
+			"flash": true,
+			"numParticles": 5
+		}
+	]
+}

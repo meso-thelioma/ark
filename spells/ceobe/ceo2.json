@@ -1,0 +1,12 @@
+{
+	"id": "ceo2",
+	"description": "Repel targets away from the caster and gain 20% cooldown reduction. The buff will expire if a target enters the radius.",
+	"action": "projectile",
+	"color": "#e6194B",
+	"icon": "burningDot",
+	"name": "Sunny Day",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 900,
+	"throttle": true,
+	"projectile": "ceo2"
+}

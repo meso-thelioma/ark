@@ -1,0 +1,22 @@
+{
+	"id": "dor1",
+	"name": "Main Course",
+	"description": "Deal 5 Arts damage.",
+	"action": "projectile",
+	"maxChannellingTicks": 121,
+	"release": {},
+	"color": "#52f",
+	"movementProportionWhileChannelling": 1,
+	"icon": "glowingHands",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 120,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
+	"projectile": "dor1"
+}

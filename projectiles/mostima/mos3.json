@@ -1,0 +1,16 @@
+{
+	"basedOn": "mos1",
+	"maxTicks": 600,
+	"expireOn": 0,
+	"speed":2,
+	"maxTicks": 10,
+	"hitInterval": 3,
+	"renderers": [
+		{
+			"type": "projectile",
+			"ticks": 20,
+			"intermediateInterpolations": 1,
+			"shine": 0.4
+		}
+	]
+}

@@ -1,0 +1,13 @@
+{
+	"id": "che2",
+	"description": "Slow targets by 99%.",
+	"action": "projectile",
+	"color": "#CEFFFF",
+	"icon": "che",
+	"name": "Demon Core",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 240,
+	"throttle": true,
+	"effects": [],
+	"projectile": "che2"
+}

@@ -1,0 +1,13 @@
+{
+	"id": "sag2",
+	"description": "Gain 50% dodge for 5 seconds.",
+	"action": "projectile",
+	"color": "#66002f",
+	"icon": "crossedSlashes",
+	"name": "Cloud-parting Light",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 780,
+	"throttle": true,
+	"effects": [],
+	"projectile": "sag2"
+}

@@ -1,0 +1,24 @@
+{
+	"id": "mud3",
+	"description": "If below half health, the caster will bind opponents and heal 30 true health. Otherwise, the caster will reset all cooldowns.",
+	"action": "projectile",
+	"color": "#ffe119",
+	"name": "Ancestor of Broken Sun",
+	"icon": "crownedExplosion",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 1500,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		},
+		{
+			"icon": "fas fa-address-card",
+			"title": "True Damage",
+			"text": "Damage * Buffs"
+		}
+	],
+	"projectile": "mud3-charge"
+}

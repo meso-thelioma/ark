@@ -1,0 +1,28 @@
+{
+	"id": "kal3",
+	"description": "For ten seconds, Cataract will deal true damage, orbit closer, and have a reduced attack interval; At the end of the duration, 20 true damage will be taken per enemy left alive. Gain a 100% damage buff which will decay over the skill duration.",
+	"action": "projectile",
+	"color": "#f032e6",
+	"name": "Blurred Vision",
+	"icon": "burningEye",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 1800,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "True Damage",
+			"text": "Damage * Buffs"
+		}
+	],
+	"projectile": "kal3",	
+	"buffs": [
+		{
+			"type": "lifeSteal",
+			"cleansable": false,
+			"maxTicks": 600,
+			"damageMultiplier": 2,
+			"decay": true
+		}
+	]
+}

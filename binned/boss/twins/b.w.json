@@ -1,0 +1,202 @@
+{
+	"id": "b.w",
+	"description": "Slash and deal Tier V damage before dealing Tier V damage circularly. The damage will fall off at the edges.",
+	"action": "spray",
+	"color": "#f80",
+	"icon": "hidden",
+	"cooldown": 240,
+	"throttle": true,
+	"recoil": 0.2,
+	"name": "Day",
+	"sound": "triplet",
+	"movementProportionWhileChannelling": 0,
+	"numProjectilesPerTick": 30,
+	"intervalTicks": 1,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "Each tier of defense reduces physical damage taken by 10. A maximum of 95% damage can be negated."
+		}
+	],
+	"lengthTicks": 1,
+	"jitterRatio": 2,
+	"maxAngleDiffInRevs": 0.01,
+	"projectile": {
+		"density": 0.0001,
+		"radius": 0.0025,
+		"speed": 0.4,
+		"maxTicks": 30,
+		"damage": 0,
+		"lifeSteal": 0,
+		"expireOn": 0,
+		"behaviours": [
+			{
+				"type": "strafe"
+			},
+			{
+				"type": "homing",
+				"targetType": "self",
+				"revolutionsPerSecond": 0.019
+			},
+			{
+				"type": "spawn",
+				"numProjectiles": 4,
+				"spread": 0.75,
+				"projectile": {
+					"density": 0.0001,
+					"radius": 0.0025,
+					"collideWith": 0,
+					"speed": 0.9,
+					"maxTicks": 30,
+					"damage": 0,
+					"expireAgainstObjects": 65534,
+					"lifeSteal": 0,
+					"expireOn": 0,
+					"behaviours": [
+						{
+							"type": "strafe"
+						},
+						{
+							"type": "homing",
+							"targetType": "self",
+							"revolutionsPerSecond": 0.019
+						},
+						{
+							"type": "spawn",
+							"triggers": [
+								{
+									"type": "interval",
+									"triggerInterval": 15
+								}
+							],
+							"requireParent": true,
+							"projectile": {
+								"density": 0.0001,
+								"attractable": false,
+								"radius": 0.0015,
+								"speed": 0,
+								"speedDecayPerTick": 0,
+								"restitution": 0,
+								"minTicks": 1,
+								"maxTicks": 50,
+								"hitInterval": 250,
+								"damage": 0,
+								"shieldTakesOwnership": false,
+								"categories": 2,
+								"collideWith": 65535,
+								"expireOn": 65534,
+								"sound": "triplet",
+								"color": "#f80",
+								"renderers": [
+									{
+										"type": "projectile",
+										"ticks": 45,
+										"light": 0.5
+									}
+								],
+								"lifeSteal": 0,
+								"sense": 1,
+								"behaviours": [],
+								"soundHit": "standard",
+								"buffs": [
+									{
+										"type": "burn",
+										"hitInterval": 1,
+										"stack": "pain",
+										"maxTicks": 10,
+										"packet": {
+											"source": "tier5",
+											"lifeSteal": 0,
+											"damage": 0.3,
+											"noHit": true
+										}
+									},
+									{
+										"type": "mass",
+										"cleansable": false,
+										"maxTicks": 10,
+										"radius": 0.0125,
+										"density": 1000000,
+										"restrictCollideWith": 0
+									},
+									{
+										"type": "movement",
+										"cleansable": false,
+										"maxTicks": 10,
+										"movementProportion": 0
+									},
+									{
+										"type": "glide",
+										"cleansable": false,
+										"maxTicks": 10,
+										"linearDampingMultiplier": 1000
+									},
+									{
+										"type": "vanish",
+										"noBuffs": true,
+										"cleansable": false,
+										"maxTicks": 10,
+										"sound": "phaseOut",
+										"renderStart": {
+											"numParticles": 10,
+											"color": "#00a",
+											"ticks": 15,
+											"particleRadius": 0.014,
+											"glow": 0.3,
+											"shine": 1,
+											"bloom": 0,
+											"vanish": 1,
+											"light": 1
+										},
+										"renderFinish": {
+											"numParticles": 10,
+											"color": "#00a",
+											"ticks": 15,
+											"particleRadius": 0.014,
+											"glow": 0.3,
+											"shine": 1,
+											"bloom": 0,
+											"vanish": 1,
+											"light": 1
+										}
+									}
+								]
+							}
+						}
+					],
+					"sound": "triplet",
+					"soundHit": "standard",
+					"color": "#f802",
+					"renderers": [
+						{
+							"type": "projectile",
+							"ticks": 45,
+							"light": 0.5
+						}
+					],
+					"sensor": true,
+					"ccd": true,
+					"categories": 2,
+					"buffs": []
+				}
+			}
+		],
+		"sound": "triplet",
+		"soundHit": "standard",
+		"color": "#f802",
+		"renderers": [],
+		"expireAgainstObjects": 65534,
+		"sensor": true,
+		"collideWith": 0,
+		"ccd": true,
+		"categories": 2,
+		"buffs": [
+			{
+				"type": "projectile",
+				"ticks": 45,
+				"light": 0.5
+			}
+		]
+	}
+}

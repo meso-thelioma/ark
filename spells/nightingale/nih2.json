@@ -1,0 +1,19 @@
+{
+	"id": "nih2",
+	"description": "Summon a bird which will taunt projectiles and deal 10 Arts damage on collision.",
+	"action": "projectile",
+	"color": "#bfef45",
+	"icon": "wingedShield",
+	"name": "Triage",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 420,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
+	"throttle": true,
+	"projectile": "nih2"
+}

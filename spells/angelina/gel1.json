@@ -1,0 +1,21 @@
+{
+	"id": "gel1",
+	"description": "Deal 8 slowing Arts damage.",
+	"action": "projectile",
+	"color": "#42d4f4",
+	"icon": "gel",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 180,
+	"throttle": true,
+	"chargeTicks": 20,
+	"recoil": 0.1,
+	"name": "Ohm's Law",
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
+	"projectile": "gel1"
+}

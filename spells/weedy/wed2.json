@@ -1,0 +1,12 @@
+{
+	"id": "wed2",
+	"description": "Summon a turret which will repel opponents and break on hit.",
+	"action": "projectile",
+	"color": "#f58231",
+	"icon": "teleport",
+	"name": "Electrospin",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 210,
+	"throttle": true,
+	"projectile": "wed2"
+}

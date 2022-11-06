@@ -1,0 +1,19 @@
+{
+	"MaxPlayers": 10,
+	"MinBots": 2,
+	"MaxBots": 2,
+	"NumGamesToMaxBotDifficulty": 1,
+	"EnableSingles": false,
+	"EnableSplitting": false,
+	"EnableTeams": true,
+	"PvE": true,
+	"AllowBotTeams": true,
+	"AllowUnevenTeams": true,
+	"TeamsMinGames": 5,
+	"BotRating": 1500,
+	"RatingPower": 2,
+	"OddPenalty": 0.75,
+	"SmallPenalty": 0.5,
+	"SamePenalty": 0,
+	"TeamPenaltyPower": 0
+}

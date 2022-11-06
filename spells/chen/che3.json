@@ -1,0 +1,19 @@
+{
+	"id": "che3",
+	"description": "Deal 30 Arts damage per second to targets in the radius. Targets will be shifted away.",
+	"action": "projectile",
+	"color": "#CEFFFF",
+	"icon": "che",
+	"name": "Manhattan Module",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 1080,	
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
+	"projectile": "che3"
+}

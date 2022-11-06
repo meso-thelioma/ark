@@ -1,0 +1,24 @@
+{
+	"id": "mud2",
+	"description": "Gain 50 defense which will last one hit. Heal 3 true health if the shield is broken.",
+	"action": "projectile",
+	"color": "#ffe119",
+	"name": "Dawn Goes Down To Day",
+	"icon": "crownedExplosion",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 600,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		},
+		{
+			"icon": "fas fa-address-card",
+			"title": "True Damage",
+			"text": "Damage * Buffs"
+		}
+	],
+	"projectile": "mud2"
+}

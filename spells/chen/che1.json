@@ -1,0 +1,26 @@
+{
+	"id": "che1",
+	"description": "Deal 10 physical damage.",
+	"action": "projectile",
+	"color": "#CEFFFF",
+	"icon": "che",
+	"name": "Cooling System",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 180,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"buffs": [
+		{
+			"type": "movement",
+			"maxTicks": 10,
+			"movementProportion": 2
+		}
+	],
+	"projectile": "che1"
+}

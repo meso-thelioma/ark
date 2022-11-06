@@ -1,0 +1,44 @@
+{
+	"id": "vanish2",
+	"health": 80,
+	"collideWith": 1,
+	"sensor": true,
+	"static": true,
+	"undamageable": true,
+	"decayPerSecond": 2,
+	"selfDamage": 2,
+	"render": [
+		{
+			"type": "solid",
+			"color": "#000a",
+			"deadColor": "#0000"
+		},
+		{
+			"type": "smoke",
+			"color": "rgba(0, 0, 0, 0.2)",
+			"particleRadius": 0.01,
+			"fade": "rgba(0, 0, 0, 0)",
+			"bloom": 0.01,
+			"glow": 0.05,
+			"ticks": 30,
+			"interval": 8,
+			"speed": 0.1
+		}
+	],
+	"hitInterval": 15,
+	"buffs": [
+		{
+			"type": "vanish",
+			"render": {
+				"color": "#0cfa",
+				"particleRadius": 0.0125,
+				"emissionRadiusFactor": 0,
+				"ticks": 10,
+				"light": 1,
+				"invisible": true
+			},
+			"against": 15,
+			"maxTicks": 15
+		}
+	]
+}

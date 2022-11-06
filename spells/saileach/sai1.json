@@ -1,0 +1,23 @@
+{
+	"id": "sai1",
+	"description": "Deal 5 physical damage.",
+	"action": "spray",
+	"intervalTicks": 3,
+	"lengthTicks": 15,
+	"numProjectilesPerTick": 1,
+	"jitterRatio": 0.04,
+	"color": "#000",
+	"icon": "fireDash",
+	"name": "Windowed Strike",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 120,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"projectile": "sai1"
+}

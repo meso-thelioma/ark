@@ -1,0 +1,35 @@
+{
+	"id": "sur3",
+	"description": "Heal. For 12 seconds, 60% less Arts and physical damage will be taken. Antibody will bounce, pierce, and decrease cooldown on hit. Over time, life drain will increase.",
+	"action": "projectile",
+	"color": "#800",
+	"name": "Cyst Formation",
+	"icon": "cometSpark",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 1800,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		},
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"buffs": [
+		{
+			"type": "burn",
+			"packet": {
+				"damage": -20,
+				"noHit": true
+			},
+			"hitInterval": 1,
+			"maxTicks": 1
+		}
+	],
+	"projectile": "sur3"
+}

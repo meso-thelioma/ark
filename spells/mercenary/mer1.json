@@ -1,0 +1,85 @@
+{
+	"id": "mer1",
+	"description": "Deal 12 true damage. The Lingering Dream will increase ally movement speed by 300%.",
+	"action": "projectile",
+	"color": "#4df",
+	"name": "Bullet Lucidity",
+	"icon": "aura",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 300,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "True Damage",
+			"text": "Damage * Buffs"
+		}
+	],
+	"projectile": {
+		"density": 0.01,
+		"radius": 0.003,
+		"speed": 0.9,
+		"maxTicks": 10,
+		"damage": 0,
+		"collideWith": 8192,
+		"lifeSteal": 0,
+		"categories": 2,
+		"sound": "fireball",
+		"soundHit": "standard",
+		"color": "#aaa",
+		"buffs": [
+			{
+				"type": "burn",
+				"hitInterval": 1,
+				"maxTicks": 1,
+				"packet": {
+					"lifeSteal": 0,
+					"damage": 12
+				}
+			}
+		],
+		"behaviours": [
+			{
+				"type": "updateCollideWith",
+				"trigger": {
+					"afterTicks": 1
+				},
+				"collideWith": 65535
+			},
+			{
+				"type": "spawn",
+				"projectile": {
+					"density": 0.001,
+					"attractable": false,
+					"radius": 2,
+					"speed": 0,
+					"maxTicks": 2,
+					"damage": 0,
+					"collideWith": 0,
+					"expireOn": 0,
+					"sense": 18,
+					"categories": 8192,
+					"lifeSteal": 0,
+					"buffs": [],
+					"projectileBuffs": [],
+					"behaviours": [],
+					"color": "#aaa1",
+					"renderers": []
+				}
+			}
+		],
+		"renderers": [
+			{
+				"type": "ray",
+						"colorize": 0.4,
+				"ticks": 10
+			},
+			{
+				"type": "strike",
+				"ticks": 30,
+				"flash": true,
+				"numParticles": 5
+			}
+		]
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"id": "ska3",
+	"description": "Heal and refire the taunt. For five seconds, healing fields will deal 2x true damage and grant allies +40% damage.",
+	"action": "projectile",
+	"color": "#dcbeff",
+	"icon": "fireWave",
+	"name": "Drunken Stupor",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 300,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "True Damage",
+			"text": "Damage * Buffs"
+		}
+	],
+	"buffs": [
+		{
+			"type": "burn",
+			"packet": {
+				"damage": -10
+			},
+			"hitInterval": 1,
+			"maxTicks": 1
+		}
+	],
+	"projectile": "ska3"
+}

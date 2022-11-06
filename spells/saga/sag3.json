@@ -1,0 +1,19 @@
+{
+	"id": "sag3",
+	"description": "Deal 10 physical damage. Nearby targets will be marked. Gain 90% damage per target.",
+	"action": "projectile",
+	"color": "#66002f",
+	"icon": "crossedSlashes",
+	"name": "Radiance",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 1800,
+	"throttle": true,
+	"buffs": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"projectile": "sag3"
+}

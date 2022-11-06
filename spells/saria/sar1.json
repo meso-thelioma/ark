@@ -1,0 +1,29 @@
+{
+	"id": "sar1",
+	"description": "Deal 2 Arts and 6 physical damage over two strikes.",
+	"action": "spray",
+	"color": "#4363d8",
+	"icon": "sonicLightning",
+	"name": "Cognition",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 180,
+	"intervalTicks": 1,
+	"jitterRatio": 0.1,
+	"numProjectilesPerTick": 2,
+	"movementProportionWhileChannelling": 1,
+	"lengthTicks": 1,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		},		
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
+	"projectile": "sar1"
+}

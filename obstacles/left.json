@@ -1,0 +1,87 @@
+{
+	"id": "left",
+	"health": 40,
+	"collideWith": 1,
+	"sensor": true,
+	"static": true,
+	"undamageable": true,
+	"render": [
+		{
+			"type": "solid",
+			"color": "#3334",
+			"deadColor": "#3331",
+			"glow": 0.2,
+			"tint": 1
+		}
+	],
+	"conveyor": {
+		"lateralSpeed": 0,
+		"radialSpeed": -6
+	},
+	"selfDamage": 10,
+	"hitInterval": 20,
+	"buffs": [
+		{
+			"type": "movement",
+			"maxTicks": 5,
+			"cleansable": false,
+			"movementProportion": 0
+		},
+		{
+			"type": "cooldown",
+			"cleansable": false,
+			"maxTicks": 5,
+			"minCooldown": 10
+		},
+		{
+			"type": "mass",
+			"maxTicks": 5,
+			"cleansable": false,
+			"radius": 0.0125,
+			"restrictCollideWith": 0
+		},
+		{
+			"type": "armor",
+			"maxTicks": 5,
+			"cleansable": false,
+			"proportion": -1
+		},
+		{
+			"type": "glide",
+			"cleansable": false,
+			"maxTicks": 5,
+			"linearDampingMultiplier": 10000000
+		},
+		{
+			"type": "vanish",
+			"noBuffs": true,
+			"cleansable": false,
+			"maxTicks": 5,
+			"sound": "phaseOut",
+			"renderStart": {
+				"numParticles": 10,
+				"color": "#111",
+				"colorize": 1,
+				"ticks": 15,
+				"particleRadius": 0.0135,
+				"glow": 0.3,
+				"shine": 1,
+				"bloom": 0,
+				"vanish": 1,
+				"light": 1
+			},
+			"renderFinish": {
+				"numParticles": 10,
+				"color": "#111",
+				"colorize": 1,
+				"ticks": 15,
+				"particleRadius": 0.0135,
+				"glow": 0.3,
+				"shine": 1,
+				"bloom": 0,
+				"vanish": 1,
+				"light": 1
+			}
+		}
+	]
+}

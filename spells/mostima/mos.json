@@ -1,0 +1,91 @@
+{
+	"id": "mos",
+	"name": "Gambler",
+	"description": "Support Healer with stall and Arts resistance reduction.",
+	"passive": true,
+	"untargeted": true,
+	"cooldown": 1,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Passive",
+			"text": "Passively gain 10% Arts resistance."
+		}
+	],
+	"buffs": [
+		{
+			"type": "armor",
+			"passive": true,
+			"source": "arts",
+			"proportion": -0.1
+		},
+		{
+			"type": "armor",
+			"passive": true,
+			"source": "ceobe",
+			"proportion": -0.1
+		},
+		{
+			"type": "mass",
+			"passive": true,
+			"radius": 0.0125,
+			"restrictCollideWith": 65343
+		},
+		{
+			"type": "cooldown",
+			"passive": true,
+			"cooldownRateModifier": -2,
+			"notSpellIds": [
+				"mos1",
+				"mos2",
+				"mos3"
+			]
+		}
+	],
+	"loadout": {
+		"q": "mos1",
+		"w": "mos2",
+		"e": "mos3"
+	},
+	"color": "#446",
+	"icon": "atomicSlashes",
+	"action": "buff",	
+	"behaviours": [
+		{
+			"type": "spawn",
+			"projectile": {
+				"density": 0.001,
+				"attractable": false,
+				"radius": 0.02,
+				"speed": 0,
+				"maxTicks": 40,
+				"damage": 0,
+				"collideWith": 0,
+				"expireOn": 0,
+				"lifeSteal": 0,
+				"sound": "fireball",
+				"categories": 2,
+				"behaviours": [
+					{
+						"type": "strafe"
+					}
+				],
+				"color": "#446",
+				"renderers": [
+					{
+						"type": "projectile",
+						"ticks": 20
+					},
+					{
+						"type": "reticule",
+						"minRadius": 0.029,
+						"radius": 0.09,
+						"shrinkTicks": 40,
+						"grow": true,
+						"fade": true
+					}
+				]
+			}
+		}
+	]
+}

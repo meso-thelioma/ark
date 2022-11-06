@@ -1,0 +1,20 @@
+{
+	"id": "ceo1",
+	"description": "Deal 8 Arts damage which will increase at a distance. An additional 3 Arts bleed damage will be dealt over 5 seconds.",
+	"action": "projectile",
+	"icon": "burningDot",
+	"color": "#e6194B",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 60,
+	"name": "Forecasted Pain",
+	"recoil":-0.1,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
+	"projectile": "ceo1"
+}

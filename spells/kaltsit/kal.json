@@ -1,0 +1,88 @@
+{
+	"id": "kal",
+	"name": "Visionary",
+	"description": "True DPS with healing and AoE.",
+	"passive": true,
+	"untargeted": true,
+	"cooldown": 1,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Passive",
+			"text": "Passively gain 1 health per second."
+		}
+	],
+	"buffs": [
+		{
+			"type": "burn",
+			"passive": true,
+			"hitInterval": 60,
+			"packet": {
+				"damage": -1,
+				"noHit": true
+			}
+		},
+		{
+			"type": "mass",
+			"passive": true,
+			"radius": 0.0125,
+			"restrictCollideWith": 65343
+		},
+		{
+			"type": "cooldown",
+			"passive": true,
+			"cooldownRateModifier": -2,
+			"notSpellIds": [
+				"kal1",
+				"kal2",
+				"kal3"
+			]
+		}
+	],
+	"loadout": {
+		"q": "kal1",
+		"w": "kal2",
+		"e": "kal3"
+	},
+	"icon": "burningEye",
+	"color": "#f032e6",
+	"action": "buff",	
+	"behaviours": [
+		{
+			"type": "spawn",
+			"projectile": {
+				"density": 0.001,
+				"attractable": false,
+				"radius": 0.02,
+				"speed": 0,
+				"maxTicks": 40,
+				"damage": 0,
+				"collideWith": 0,
+				"expireOn": 0,
+				"lifeSteal": 0,
+				"sound": "fireball",
+				"categories": 2,
+				"behaviours": [
+					{
+						"type": "strafe"
+					}
+				],
+				"color": "#f032e6",
+				"renderers": [
+					{
+						"type": "projectile",
+						"ticks": 20
+					},
+					{
+						"type": "reticule",
+						"minRadius": 0.029,
+						"radius": 0.09,
+						"shrinkTicks": 40,
+						"grow": true,
+						"fade": true
+					}
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,13 @@
+{
+	"id": "sur2",
+	"description": "On death, the caster will gain 100% lifesteal, double damage, and immortality for 5 seconds.",
+	"action": "projectile",
+	"color": "#800",
+	"icon": "cometSpark",
+	"name": "Necrosis",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 12000,
+	"throttle": true,
+	"buffs": [],
+	"projectile": "sur2"
+}

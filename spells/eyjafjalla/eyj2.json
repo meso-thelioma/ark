@@ -1,0 +1,12 @@
+{
+	"id": "eyj2",
+	"description": "Group targets and drag them inward.",
+	"action": "projectile",
+	"color": "#fff2",
+	"name": "Salmon's Blessing",
+	"icon": "frostfire",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 800,
+	"throttle": true,
+	"projectile": "eyj2"
+}

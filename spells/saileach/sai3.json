@@ -1,0 +1,26 @@
+{
+	"id": "sai3",
+	"description": "Bind, slow, and deal 10 physical damage. Opponents will have 10% reduced damage in the radius. Picking up the flag will lower cooldowns.",
+	"action": "projectile",
+	"color": "#000",
+	"name": "Bird in the Light",
+	"icon": "fireDash",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 12000,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"buffs": [
+		{
+			"type": "cooldown",
+			"spellId": "sai2",
+			"minCooldown": 120000
+		}
+	],
+	"projectile": "sai3"
+}

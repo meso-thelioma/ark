@@ -1,0 +1,20 @@
+{
+	"id": "eyj1",
+	"description": "Deal 8 Arts damage.",
+	"action": "projectile",
+	"name": "Trout Cannon",
+	"color": "#fff2",
+	"icon": "frostfire",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 150,
+	"throttle": true,
+	"recoil": -0.1,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
+	"projectile": "eyj1"
+}

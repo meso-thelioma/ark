@@ -1,0 +1,23 @@
+{
+	"id": "ire1",
+	"description": "Deal 1.5 physical damage per strike.",
+	"action": "spray",
+	"color": "#ffd8b1",
+	"name": "White Button Down",
+	"icon": "mineExplosion",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 180,
+	"intervalTicks": 20,
+	"jitterRatio": 0,
+	"movementProportionWhileChannelling": 1,
+	"lengthTicks": 80,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"projectile": "ire1"
+}

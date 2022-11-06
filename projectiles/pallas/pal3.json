@@ -1,0 +1,115 @@
+{
+	"density": 0.01,
+	"radius": 0.1,
+	"speed": 0,
+	"maxTicks": 360,
+	"collideWith": 0,
+	"damage": 0,
+	"lifeSteal": 0,
+	"categories": 2,
+	"sound": "fireball",
+	"soundHit": "standard",
+	"color": "#bfef45",
+	"behaviours": [
+		{
+			"type": "aura",
+			"against": 3,
+			"radius": 0.09,
+			"tickInterval": 1,
+			"packet": {
+				"damage": 0,
+				"noHit": true,
+				"lifeSteal": 0
+			},	
+			"buffs": [				
+				{
+						"type": "cooldown",
+						"against": 1,
+						"maxTicks": 1,
+						"cleansable": false,
+						"cooldownRateModifier": 1.5,
+						"spellIds": [
+							"pal1"
+						],
+						"render": {
+							"color": "#afc1",
+							"particleRadius": 0.015,
+							"emissionRadiusFactor": 1,
+							"ticks": 10,
+							"light": 1,
+							"invisible": true
+						}
+				},
+				{
+						"type": "cooldown",
+						"against": 2,
+						"maxTicks": 1,
+						"cleansable": false,
+						"cooldownRateModifier": 0.5,
+						"spellIds": [
+							"bag1",
+							"ceo1",
+							"dou1",
+							"exu1",
+							"eyj1",
+							"gel1",
+							"kal1",
+							"mud1",
+							"nih1",
+							"pha1",
+							"sai1",
+							"sar1",
+							"ska1",
+							"sur1",
+							"wed1",
+							"gol1",
+							"ire1",
+							"lum1",
+							"lin1",
+							"pal1",
+							"dor1",
+							"che1",
+							"mos1",
+							"sag1",
+							"tho1",
+							"mer1",
+							"fin1"
+						],
+						"render": {
+							"color": "#afc1",
+							"particleRadius": 0.015,
+							"emissionRadiusFactor": 1,
+							"ticks": 10,
+							"light": 1,
+							"invisible": true
+						}
+				},
+				{
+					"type": "armor",
+					"maxTicks": 3,
+					"stack": "ceobe",
+					"source": "ceobe",
+					"proportion": 0.25
+				},
+				{
+					"type": "armor",
+					"maxTicks": 3,
+					"source": "phys",
+					"flat": 10,
+					"maxReduction": 0
+				}
+			]
+		}
+	],
+	"renderers": [		
+		{
+			"type": "swirl",
+			"ticks": 30,
+			"color": "#afc2",
+			"radius": 0.09,
+			"particleRadius": 0.003,
+			"loopTicks": -120,
+			"numParticles": 8
+		}
+	]
+}

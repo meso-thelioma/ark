@@ -1,0 +1,19 @@
+{
+	"id": "pal3",
+	"name": "Fly Me to the Moon",
+	"description": "For six seconds, grant allies reduced Q cooldown and 10 defense.",
+	"action": "projectile",
+	"icon": "bodySwapping",
+	"color": "#afc",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 1500,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"projectile": "pal3"
+}

@@ -1,0 +1,131 @@
+{
+	"density": 0.01,
+	"radius": 0.002,
+	"collideWith": 0,
+	"expireOn": 0,
+	"speed": 0.025,
+	"maxTicks": 125,
+	"damage": 0,
+	"attractable": false,
+	"collideWith": 16384,
+	"lifeSteal": 0,
+	"categories": 8192,
+	"sound": "fireball",
+	"soundHit": "standard",
+	"color": "#aaa",
+	"behaviours": [
+		{
+			"type": "homing",
+			"maxTurnProportion": 0.1,
+			"targetType": "follow"
+		},
+		{
+			"type": "spawn",
+			"note": "payoff.",
+			"triggers": [
+				{
+					"type": "and",
+					"triggers": [
+						{
+							"type": "collideWith",
+							"collideWith": 16384,
+							"against": 1
+						},
+						{
+							"type": "afterTicks",
+							"afterTicks": 0
+						},
+						{
+							"type": "not",
+							"trigger": {
+								"type": "afterTicks",
+								"afterTicks": 60
+							}
+						}
+					]
+				}
+			],
+			"expire": true,
+			"projectile": "gol1"
+		},
+		{
+			"type": "spawn",
+			"note": "payoff.",
+			"triggers": [
+				{
+					"type": "and",
+					"triggers": [
+						{
+							"type": "collideWith",
+							"collideWith": 16384,
+							"against": 1
+						},
+						{
+							"type": "afterTicks",
+							"afterTicks": 60
+						},
+						{
+							"type": "not",
+							"trigger": {
+								"type": "afterTicks",
+								"afterTicks": 120
+							}
+						}
+					]
+				}
+			],
+			"expire": true,
+			"projectile": "gol1-2"
+		},
+		{
+			"type": "spawn",
+			"note": "payoff.",
+			"maxTriggers": 1,
+			"triggers": [
+				{
+					"type": "and",
+					"triggers": [
+						{
+							"type": "afterTicks",
+							"afterTicks": 120
+						}
+					]
+				}
+			],
+			"requireParent": true,
+			"projectile": "gol1-3"
+		}
+	],
+	"buffs": [],
+	"renderers": [
+		{
+			"type": "reticule",
+			"radius": 0.05,
+			"minRadius": 0.05,
+			"color": "#fabed444",
+			"arc": {
+				"type": "dynamic",
+				"ticks": 120
+			}
+		},
+		{
+			"type": "projectile",
+			"ticks": 1,
+			"color": "#fabed4",
+			"offsetRadius": 0.05,
+			"offsetAngleInRevs": 0
+		},
+		{
+			"type": "projectile",
+			"ticks": 1,
+			"color": "#fabed4",
+			"offsetRadius": 0.05,
+			"offsetAngleInRevs": 0.5
+		},
+		{
+			"type": "projectile",
+			"ticks": 10,
+			"color": "#fabed4"
+		}
+	]
+}

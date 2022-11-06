@@ -1,0 +1,19 @@
+{
+	"id": "wed1",
+	"description": "Deal 5 physical damage.",
+	"action": "projectile",
+	"color": "#f58231",
+	"icon": "teleport",
+	"name": "Precise Strike",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 120,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"projectile": "wed1"
+}

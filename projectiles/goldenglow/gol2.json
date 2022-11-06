@@ -1,0 +1,144 @@
+{
+	"density": 1,
+	"radius": 0.003,
+	"speed": 0.04,
+	"maxTicks": 480,
+	"damage": 0,
+	"lifeSteal": 0,
+	"categories": 2,
+	"sound": "fireball",
+	"expireOn": 3,
+	"soundHit": "standard",
+	"expireAgainstObjects": 12,
+	"color": "#fabed4",
+	"buffs": [],
+	"projectileBuffs": [],
+	"behaviours": [
+		{
+			"type": "homing",
+			"maxTurnProportion": 0.01
+		},
+		{
+			"type": "spawn",
+			"trigger": {
+				"expire": true
+			},
+			"expire": true,			
+			"projectile": {
+				"density": 30,
+				"radius": 0.05,
+				"selfPassthrough": true,
+				"speed": 0,
+				"maxTicks": 10,
+				"sense": 1,
+				"minTicks": 10,					
+				"collideWith": 0,
+				"damage": 0,
+				"expireOn": 0,
+				"lifeSteal": 0,
+				"categories": 2,
+				"sound": "fireball",
+				"soundHit": "standard",
+				"color": "#fabed4",
+				"buffs": [
+					{
+						"type": "burn",
+						"hitInterval": 1,
+						"maxTicks": 1,
+						"packet": {
+							"source": "arts",
+							"lifeSteal": 0,
+							"damage": 10
+						}
+					}
+				],
+				"behaviours": [],
+				"renderers": [
+					{
+						"type": "projectile",
+						"color": "#fabed411",
+						"ticks": 40
+					}
+				]
+			}
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "interval",
+					"triggerInterval": 60
+				}
+			],
+			"requireParent": true,		
+			"projectile": {
+				"density": 0.01,
+				"radius": 0.003,
+				"speed": 0.6,
+				"maxTicks": 12,
+				"damage": 0,
+				"lifeSteal": 0,
+				"categories": 2,
+				"sound": "fireball",
+				"expireAgainstObjects": 14,
+				"soundHit": "standard",
+				"color": "#fabed4",
+				"buffs": [
+					{
+						"type": "burn",
+						"hitInterval": 1,
+						"maxTicks": 1,
+						"packet": {
+							"source": "arts",
+							"lifeSteal": 0,
+							"damage": 2
+						}
+					}
+				],
+				"collideWith": 1,
+				"behaviours": [
+					{
+						"type": "updateCollideWith",
+						"trigger": {
+							"afterTicks": 2
+						},
+						"collideWith": 65535
+					},
+					{
+						"type": "homing", 
+						"targetType": "follow", 
+						"redirect": true
+					}
+				],
+				"renderers": [
+					{
+						"type": "projectile",
+						"ticks": 10
+					},
+					{
+						"type": "strike",
+						"ticks": 30,
+						"flash": true,
+						"numParticles": 5
+					}
+				]
+			}
+		}
+	],
+	"renderers": [
+		{
+			"type": "projectile",
+			"ticks": 10
+		},
+		{
+			"type": "swirl",
+			"color": "#fabed422",
+			"ticks": 10,
+			"loopTicks": 120,
+			"numParticles": 12,
+			"radius": 0.04,
+			"particleRadius": 0.002
+		}
+	]
+
+}

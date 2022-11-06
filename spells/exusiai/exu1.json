@@ -1,0 +1,19 @@
+{
+	"id": "exu1",
+	"description": "Deal 8 physical damage.",
+	"action": "projectile",
+	"color": "#aaa",
+	"name": "Face Repentance",
+	"icon": "halo",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 90,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"projectile": "exu1"
+}

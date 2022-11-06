@@ -1,0 +1,28 @@
+{
+	"id": "mud1",
+	"description": "Deal 10 physical damage. Charging will increase damage/healing dealt by 60% per second.",
+	"action": "focus",
+	"focusDelaysCooldown": true,
+	"movementProportionWhileChannelling": 0.5,	
+	"color": "#ffe119",
+	"release": {},
+	"releaseBehaviours": [
+		{
+			"type": "expire"
+		}
+	],
+	"releaseAfterTicks": 0,
+	"icon": "crownedExplosion",
+	"name": "Light Heart",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 360,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"projectile": "mud1-base"
+}

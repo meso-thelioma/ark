@@ -1,0 +1,19 @@
+{
+	"id": "ire3",
+	"description": "Deal 30 Arts damage over two seconds. Hit targets will be bound, phase through obstacles & take increased knockback.",
+	"action": "projectile",
+	"color": "#ffd8b1",
+	"name": "A Burning Hill",
+	"icon": "mineExplosion",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 900,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
+	"projectile": "ire3"
+}

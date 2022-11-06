@@ -1,0 +1,29 @@
+{
+	"id": "sar2",
+	"description": "Gain a 8% damage buff and a 16% healing buff.",
+	"action": "buff",
+	"color": "#4363d8",
+	"name": "Altruism",
+	"icon": "sonicLightning",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 600,
+	"throttle": true,
+	"buffs": [
+		{
+			"type": "lifeSteal",
+			"cleansable": false,
+			"maxTicks": 120000,
+			"damageMultiplier": 1.08
+		},
+		{
+			"type": "lifeSteal",
+			"cleansable": false,
+			"maxTicks": 120000,
+			"source": "heal",
+			"damageMultiplier": 1.08
+		}
+	],
+	"maxChannellingTicks": 1,
+	"projectileInterval": 1,
+	"projectile": "sar2"
+}

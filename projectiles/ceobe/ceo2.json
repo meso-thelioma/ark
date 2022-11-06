@@ -1,0 +1,53 @@
+{
+	"density": 0.01,
+	"radius": 0.05,
+	"speed": 0.02,
+	"maxTicks": 12000,
+	"damage": 0,
+	"lifeSteal": 0,
+	"sense": 1,
+	"minTicks": 18,
+	"collideWith": 0,
+	"sensor": true,
+	"categories": 2,
+	"sound": "fireball",
+	"selfPassthrough": true,
+	"expireOn": 1,
+	"soundHit": "standard",
+	"color": "#e6194B",
+	"buffs": [],
+	"projectileBuffs": [
+		{
+			"type": "cooldown",
+			"maxTicks": 12000,
+			"render": {
+				"color": "#e6194Baa",
+				"particleRadius": 0.005,
+				"emissionRadiusFactor": 4,
+				"ticks": 10,
+				"light": 1,
+				"invisible": true
+			},
+			"cleansable": false,
+			"cooldownRateModifier": 0.2
+		}
+	],
+	"behaviours": [
+		{
+			"type": "attract",
+			"attractLike": 2,
+			"against": 14,
+			"categories": 1,
+			"radius": 0.05,
+			"accelerationPerTick": -0.05
+		},
+		{
+			"type": "strafe"
+		},
+		{
+			"type": "homing",
+			"targetType": "self"
+		}
+	],
+	"renderers": []
+}

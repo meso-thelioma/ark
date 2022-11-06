@@ -1,0 +1,67 @@
+{
+	"density": 1,
+	"radius": 0.0125,
+	"speed": 0,
+	"maxTicks": 1800,
+	"damage": 0,
+	"lifeSteal": 0,
+	"categories": 2,
+	"sound": "fireball",
+	"expireOn": 0,
+	"soundHit": "standard",
+	"expireAgainstObjects": 12,
+	"color": "#007",
+	"spawnAtCursor": true,
+	"buffs": [],
+	"projectileBuffs": [],
+	"behaviours": [
+		{
+			"type": "strafe"
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "collideWith",
+					"collideWith": 8192,
+					"against": 1,
+					"maxHits": 20000
+				}
+			],
+			"requireParent": true,		
+			"projectile": "lin1-weak"
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "collideWith",
+					"collideWith": 16384,
+					"against": 1,
+					"maxHits": 20000,
+					"triggerInterval": 60
+				}
+			],
+			"requireParent": true,		
+			"projectile": "lin1-empower"
+		}
+	],
+	"renderers": [
+		{
+			"type": "hero",
+			"renderBuffs": true,
+			"renderCharge": true,
+			"invisible": true
+		},
+		{
+			"type": "swirl",
+			"color": "#007",
+			"particleRadius": 0.0005,
+			"numParticles": 4,
+			"invisible": true,
+			"radius": 0.0126,
+			"loopTicks": 60,
+			"ticks": 20
+		}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"id": "bag1",
+	"description": "Deal 10 physical damage. On hit, deals 2 AoE physical damage.",
+	"action": "projectile",
+	"color": "#3cb44b",
+	"icon": "ballGlow",
+	"name": "Viral Load",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 90,
+	"throttle": true,
+	"sound": "fireball",
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"projectile": "bag1"
+}

@@ -1,0 +1,146 @@
+{
+	"id": "test",
+	"name": "Target",
+	"description": "On death, you will leave behind a corpse.",
+	"passive": true,
+	"untargeted": true,
+	"cooldown": 1,
+	"effects": [],
+	"buffs": [],
+	"icon": "",
+	"color": "#0000",
+	"action": "buff",
+	"behaviours": [
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "collideWith",
+					"triggerInterval": 1,
+					"maxHits": 1000000000000,
+					"collideWith": 1024,
+					"collideTypes": [
+						"bag1"
+					]
+				}
+			],
+			"projectile": {
+				"density": 0.01,
+				"radius": 0.05,
+				"sensor": true,
+				"speed": 0,
+				"expireOn": 0,
+				"maxTicks": 10,
+				"damage": 0,
+				"lifeSteal": 0,
+				"categories": 1024,
+				"sound": "fireball",
+				"soundHit": "standard",
+				"color": "#3cb44b22",
+				"buffs": [],
+				"behaviours": [
+					{
+						"type": "aura",
+						"against": 15,
+						"radius": 0.08,
+						"tickInterval": 10,
+						"packet": {
+							"damage": 0,
+							"noHit": true,
+							"lifeSteal": 0
+						},
+						"buffs": [
+							{
+								"source": "phys",
+								"maxTicks": 120,
+								"flat": -1,
+								"maxReduction": 0,
+								"render": {
+									"color": "#3cb44b22",
+									"particleRadius": 0.0125,
+									"emissionRadiusFactor": 0,
+									"ticks": 10,
+									"light": 1,
+									"invisible": true
+								}
+							}
+						]
+					}
+				],
+				"renderers": [
+					{
+						"type": "swirl",
+						"ticks": 30,
+						"color": "#3cb44b22",
+						"radius": 0.08,
+						"particleRadius": 0.001,
+						"loopTicks": 10,
+						"numParticles": 8
+					},
+					{
+						"type": "reticule",
+						"color": "#3cb44b",
+						"shrinkTicks": 30,
+						"grow": true,
+						"fade": true,
+						"radius": 0.08
+					}
+				]
+			}
+		},
+		{
+			"type": "spawn",
+			"projectile": {
+				"density": 0.01,
+				"radius": 0.003,
+				"collideWith": 0,
+				"expireOn": 0,
+				"speed": 0,
+				"maxTicks": 120000000,
+				"damage": 0,
+				"lifeSteal": 0,
+				"categories": 2,
+				"sound": "fireball",
+				"soundHit": "standard",
+				"color": "#aaa",
+				"behaviours": [
+					{
+						"type": "expireOnOwnerDeath"
+					},
+					{
+						"type": "spawn",
+						"triggers": [
+							{
+								"type": "expire"
+							}
+						],
+						"projectile": {
+							"density": 0.01,
+							"radius": 0.0125,
+							"expireOn": 0,
+							"speed": 0,
+							"maxTicks": 120000000,
+							"damage": 0,
+							"lifeSteal": 0,
+							"categories": 3,
+							"sound": "fireball",
+							"soundHit": "standard",
+							"color": "#a00",
+							"behaviours": [],
+							"projectileBuffs": [],
+							"renderers": [
+								{
+									"type": "projectile",
+									"ticks": 20,
+									"light": null
+								}
+							]
+						}
+					}
+				],
+				"projectileBuffs": [],
+				"renderers": []
+			}
+		}
+	]
+}

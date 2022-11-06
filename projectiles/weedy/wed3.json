@@ -1,0 +1,143 @@
+{
+	"density": 0.001,
+	"radius": 0.003,
+	"selfPassthrough": true,
+	"speed": 1.9,
+	"maxTicks": 30,
+	"damage": 0,
+	"lifeSteal": 0,
+	"categories": 2,
+	"sound": "fireball",
+	"soundHit": "standard",
+	"color": "#f58231",
+	"buffs": [
+		{
+			"type": "burn",
+			"hitInterval": 1,
+			"maxTicks": 1,
+			"packet": {
+				"source": "arts",
+				"lifeSteal": 0,
+				"damage": 10
+			}
+		},
+		{
+			"type": "mass",
+			"radius": 0.0125,
+			"cleansable": false,
+			"maxTicks": 60,
+			"sense": 64,	
+			"render": {
+				"color": "#f5823122",
+				"particleRadius": 0.0125,
+				"emissionRadiusFactor": 2,
+				"ticks": 10,
+				"light": 1,
+				"invisible": true
+			}
+		}
+	],
+	"collideWith": 1,
+	"behaviours": [
+		{
+			"type": "updateCollideWith",
+			"trigger": {
+				"afterTicks": 1
+			},
+			"collideWith": 65535
+		},
+		{
+			"type": "homing",
+			"redirect": true,
+			"targetType": "follow"
+		},
+		{
+			"type": "spawn",
+			"projectile": {
+				"density": 0.001,
+				"attractable": false,
+				"radius": 2,
+				"speed": 0.1,
+				"maxTicks": 30,
+				"damage": 0,
+				"collideWith": 0,
+				"sense": 2,
+				"expireOn": 0,
+				"lifeSteal": 0,
+				"categories": 8192,
+				"projectileBuffs": [],
+				"behaviours": [
+					{
+						"type": "strafe"
+					},
+					{
+						"type": "homing",
+						"targetType": "self"
+					},
+					{
+						"type": "spawn",
+						"trigger": {
+							"afterTicks": 30
+						},
+						"projectile": {
+							"density": 0.001,
+							"attractable": false,
+							"radius": 2,
+							"speed": 0,
+							"maxTicks": 10,
+							"damage": 0,
+							"sense": 65535,
+							"collideWith": 0,
+							"sound": "fireball",
+							"expireOn": 0,
+							"lifeSteal": 0,
+							"categories": 64,
+							"buffs": [
+								{
+									"type": "burn",
+									"hitInterval": 1,
+									"maxTicks": 1,
+									"packet": {
+										"source": "arts",
+										"lifeSteal": 0,
+										"damage": 30
+									}
+								}
+							],
+							"behaviours": [],
+							"color": "#ff88000a",
+							"renderers": [
+								{
+									"type": "swirl",
+									"color": "#f58231aa",
+									"ticks": 30,
+									"light": 0.1,
+									"loopTicks": 60,
+									"numParticles": 5,
+									"radius": 0.04,
+									"particleRadius": 0.07
+								}
+							]
+						}
+					}
+				],
+				"color": "#aaa1",
+				"renderers": []
+			}
+		}
+	],
+	"renderers": [
+		{
+			"type": "projectile",
+			"color": "#f58231",
+			"intermediateInterpolations": 4,
+			"ticks": 40
+		},
+		{
+			"type": "strike",
+			"ticks": 30,
+			"flash": true,
+			"numParticles": 5
+		}
+	]
+}

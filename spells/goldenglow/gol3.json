@@ -1,0 +1,47 @@
+{
+	"id": "gol3",
+	"description": "Summon 3 drones. Pause Eluding Sun cooldown and increase damage.",
+	"action": "spray",
+	"color": "#fabed4",
+	"icon": "andromedaChain",
+	"name": "Shaded Regrets",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 2400,	
+	"jitterRatio": 0,
+	"throttle": true,
+	"intervalTicks": 1,
+	"lengthTicks": 3,
+	"jitterRatio": 2,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
+	"buffs": [
+		{
+			"type": "cooldown",
+			"spellId": "gol1",
+			"cooldownRateModifier": -1,
+			"cleansable": false,
+			"maxTicks": 480
+		},
+		{
+			"type": "lifeSteal",
+			"stack": "golden2",
+			"cleansable": false,
+			"damageMultiplier": 1.4,
+			"render": {
+				"color": "#fabed4",
+				"particleRadius": 0.01,
+				"emissionRadiusFactor": 0,
+				"ticks": 10,
+				"light": 1,
+				"invisible": true
+			},
+			"maxTicks": 480
+		}
+	],
+	"projectile": "gol2"
+}

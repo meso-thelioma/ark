@@ -1,0 +1,19 @@
+{
+	"id": "tho3",
+	"description": "For five seconds, the caster will gain 45% cooldown reduction for Frostbite. After the second casting, the buff will become permanent.",
+	"action": "projectile",
+	"color": "#030",
+	"name": "Winter's Elegy",
+	"icon": "waveStrike",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 1200,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"projectile": "tho3"
+}

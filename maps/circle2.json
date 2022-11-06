@@ -1,0 +1,106 @@
+{
+	"id": "circle2",
+	"color": "#555",
+	"background": "#222",
+	"obstacles": [
+		{
+			"type": "inward",
+			"numObstacles": 4,
+			"layoutRadius": 0.82,
+			"layoutAngleOffsetInRevs": 0.125,
+			"numPoints": 4,
+			"extent": 0.12,
+			"orientationAngleOffsetInRevs": 0,
+			"angularWidthInRevs": 0.25
+		},
+		{
+			"type": "inward",
+			"numObstacles": 4,
+			"layoutRadius": 0.42,
+			"layoutAngleOffsetInRevs": 0.125,
+			"numPoints": 4,
+			"extent": 0.12,
+			"orientationAngleOffsetInRevs": 0,
+			"angularWidthInRevs": 0.25
+		},
+		{
+			"type": "fast",
+			"layoutRadius": 0.34,
+			"numObstacles": 1,
+			"layoutAngleOffsetInRevs": 0.5,
+			"numPoints": 4,
+			"extent": 0.08
+		},
+		{
+			"type": "slow",
+			"layoutRadius": 0.34,
+			"numObstacles": 1,
+			"layoutAngleOffsetInRevs": 0,
+			"numPoints": 4,
+			"extent": 0.08
+		},
+		{
+			"type": "vanish2",
+			"layoutRadius": 0.1,
+			"numObstacles": 2,
+			"numPoints": 4,
+			"extent": 0.07
+		},
+		{
+			"type": "left",
+			"layoutRadius": 0.12,
+			"numObstacles": 2,
+			"layoutAngleOffsetInRevs": 0.25,
+			"numPoints": 4,
+			"extent": 0.003,
+			"angularWidthInRevs": 0.08
+		},
+		{
+			"type": "a",
+			"numObstacles": 4,
+			"layoutRadius": 0.3,
+			"layoutAngleOffsetInRevs": 0.125,
+			"numPoints": 4,
+			"extent": 0.0025,
+			"orientationAngleOffsetInRevs": 0,
+			"angularWidthInRevs": 0.25
+		},
+		{
+			"type": "forcefield",
+			"numObstacles": 2,
+			"layoutRadius": 0.18,
+			"layoutAngleOffsetInRevs": 0.375,
+			"numPoints": 4,
+			"extent": 0.0015,
+			"orientationAngleOffsetInRevs": 0.25,
+			"angularWidthInRevs": 0.08
+		},
+		{
+			"type": "forcefield",
+			"numObstacles": 2,
+			"layoutRadius": 0.13,
+			"layoutAngleOffsetInRevs": 0.06,
+			"numPoints": 4,
+			"extent": 0.0015,
+			"orientationAngleOffsetInRevs": 0.5655,
+			"angularWidthInRevs": 0.12
+		},
+		{
+			"type": "forcefield1",
+			"numObstacles": 1,
+			"layoutRadius": 0,
+			"layoutAngleOffsetInRevs": 0.5,
+			"numPoints": 4,
+			"extent": 0.05
+		},
+		{
+			"type": "cosmic",
+			"numObstacles": 1,
+			"layoutRadius": 0,
+			"layoutAngleOffsetInRevs": 0.5,
+			"numPoints": 4,
+			"extent": 0.035
+		}
+	],
+	"numPoints": 4
+}

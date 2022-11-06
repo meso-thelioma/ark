@@ -1,0 +1,19 @@
+{
+	"id": "mos2",
+	"description": "Targets in the radius will be slowed by 15% and randomly take 5% more Arts damage for 5 seconds.",
+	"action": "projectile",
+	"color": "#446",
+	"icon": "atomicSlashes",
+	"name": "Weighted Dice",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 12000,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
+	"throttle": true,
+	"projectile": "mos2"
+}

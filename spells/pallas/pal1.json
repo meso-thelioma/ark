@@ -1,0 +1,19 @@
+{
+	"id": "pal1",
+	"name": "Mania of Night",	
+	"description": "Deal 10 physical damage. Damage will be doubled after the first hit.",
+	"action": "projectile",
+	"icon": "bodySwapping",
+	"color": "#afc",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 150,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"projectile": "pal1"
+}

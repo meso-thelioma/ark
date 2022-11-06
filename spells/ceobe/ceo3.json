@@ -1,0 +1,24 @@
+{
+	"id": "ceo3",
+	"description": "For 4 seconds, the caster will be bound and Forecasted Pain will deal 110% damage with an additional +25% damage per 10 defense. Bleed damage will not be in effect. Once damaging an opponent, cooldowns will be lowered based on distance.",
+	"action": "projectile",
+	"color": "#e6194B",
+	"name": "Hurricane Warning",
+	"icon": "burningDot",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 900,
+	"throttle": true,
+	"effects": [
+			{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		},
+		{
+			"icon": "fas fa-address-card",
+			"title": "True Damage",
+			"text": "Damage * Buffs"
+		}
+	],
+	"projectile": "ceo3"
+}

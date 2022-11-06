@@ -1,0 +1,24 @@
+{
+	"id": "nih1",
+	"description": "Deal 6 Arts damage and heal 2 health. Store two charges.",
+	"action": "projectile",
+	"color": "#bfef45",
+	"icon": "wingedShield",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 30,
+	"name": "Prescription",
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Healing",
+			"text": "Heal * Buffs"
+		},		
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
+	"projectile": "nih1"
+}

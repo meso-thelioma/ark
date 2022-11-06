@@ -1,0 +1,157 @@
+{
+	"density": 0.01,
+	"radius": 0.003,
+	"speed": 0.8,
+	"maxTicks": 60,
+	"sound": "fireball",
+	"collideWith": 1,
+	"damage": 0,
+	"lifeSteal": 0,
+	"hitInterval": 10,
+	"categories": 2,
+	"expireOn": 65534,
+	"soundHit": "standard",
+	"color": "#446",
+	"buffs": [
+		{
+			"type": "burn",
+			"hitInterval": 1,
+			"maxTicks": 1,
+			"packet": {
+				"source": "arts",
+				"lifeSteal": 0,
+				"damage": 3
+			}
+		},
+		{
+			"type": "burn",
+			"hitInterval": 1,
+			"against": 3,
+			"maxTicks": 1,
+			"packet": {
+				"source": "arts",
+				"lifeSteal": 0,
+				"damage": -6
+			}
+		},
+		{
+			"type": "burn",
+			"hitInterval": 1,
+			"owner": true,
+			"against": 14,
+			"maxTicks": 1,
+			"packet": {
+				"source": "arts",
+				"lifeSteal": 0,
+				"noHit": true,
+				"damage": -1
+			}
+		},
+		{
+			"type": "cooldown",
+			"owner": true,
+			"against": 14,
+			"maxTicks": 1,
+			"color": "#44a"
+		}
+	],
+	"behaviours": [
+		{
+			"type": "updateCollideWith",
+			"trigger": {
+				"afterTicks": 1
+			},
+			"collideWith": 65535
+		},
+		{
+			"type": "homing",
+			"triggers": [
+				{
+					"type": "collideWith",
+					"collideWith": 1,
+					"triggerInterval": 20,
+					"maxHits": 1000
+				}
+			],
+			"maxTicks": 10,
+			"targetType": "close"
+		},
+		{
+			"type": "homing",
+			"triggers": [
+				{
+					"type": "collideWith",
+					"collideWith": 1,
+					"triggerInterval": 5,
+					"maxHits": 1000
+				}
+			],
+			"maxTicks": 5,
+			"targetType": "close"
+		},
+		{
+			"type": "homing",
+			"triggers": [
+				{
+					"type": "collideWith",
+					"collideWith": 1
+				}
+			],
+			"revolutionsPerSecond": 0.05,
+			"targetType": "close"
+		},
+		{
+			"type": "aura",
+			"triggers": [
+				{
+					"type": "collideWith",
+					"collideWith": 1,
+					"against": 1,
+					"triggerInterval": 5,
+					"maxHits": 1000
+				}
+			],
+			"against": 1,
+			"radius": 1,
+			"maxHits": 1,
+			"packet": {
+				"damage": 0,
+				"noHit": true
+			},
+			"tickInterval": 1,
+			"buffs": [
+				{
+					"type": "burn",
+					"hitInterval": 1,
+					"against": 1,
+					"maxTicks": 1,
+					"packet": {
+						"source": "arts",
+						"lifeSteal": 0,
+						"noHit": true,
+						"damage": -3
+					}
+				},
+				{
+					"type": "cooldown",
+					"against": 1,
+					"maxTicks": 1,
+					"color": "#44a"
+				}
+			]
+		}
+	],
+	"renderers": [
+		{
+			"type": "projectile",
+			"ticks": 20,
+			"shine": 0.4
+		},
+		{
+			"type": "strike",
+			"ticks": 30,
+			"flash": true,
+			"numParticles": 1
+		}
+	]
+}

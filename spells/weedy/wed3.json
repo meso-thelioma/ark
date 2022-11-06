@@ -1,0 +1,24 @@
+{
+	"id": "wed3",
+	"description": "Deal Arts damage and mark opponents. Turrets will also activate the blast. Marked opponents will take 30 Arts damage.",
+	"action": "projectile",
+	"color": "#f58231",
+	"icon": "teleport",
+	"name": "Compressed Materials",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 900,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		},
+		{
+			"icon": "fas fa-address-card",
+			"title": "True Damage",
+			"text": "Damage * Buffs"
+		}
+	],
+	"projectile": "wed3"
+}

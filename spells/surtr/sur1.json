@@ -1,0 +1,19 @@
+{
+	"id": "sur1",
+	"description": "Deal 12 Arts damage.",
+	"action": "projectile",
+	"color": "#800",
+	"icon": "cometSpark",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 120,
+	"throttle": true,
+	"name": "Antibody",
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
+	"projectile": "sur1"
+}

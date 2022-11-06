@@ -1,0 +1,56 @@
+{
+	"density": 1,
+	"radius": 0.009,
+	"speed": 0.18,
+	"maxTicks": 600,
+	"damage": 0,
+	"lifeSteal": 0,
+	"categories": 512,
+	"sound": "fireball",
+	"expireOn": 0,
+	"soundHit": "standard",
+	"color": "#f032e6",
+	"buffs": [],
+	"behaviours": [
+		{
+			"type":"strafe"
+		},
+		{
+			"type": "homing",
+			"targetType": "self",
+			"maxTurnProportion": 0.018
+		},		
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "interval",
+					"triggerInterval": 45
+				}
+			],
+			"requireParent": true,
+			"projectile": "kal2-true-proj"
+		}
+	],
+	"renderers": [
+		{
+			"type": "projectile",
+			"ticks": 10
+		},
+		{
+			"type": "reticule",
+			"radius": 0.105,
+			"color": "#f032e622",
+			"minRadius": 0.104
+		},
+		{
+			"type": "reticule",
+			"radius": 0.105,
+			"shrinkTicks": 30,
+			"repeat": true,
+			"fade": true,
+			"color": "#f032e622",
+			"minRadius": 0.104
+		}
+	]
+}

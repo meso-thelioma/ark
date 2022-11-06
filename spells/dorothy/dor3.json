@@ -1,0 +1,23 @@
+{
+	"id": "dor3",
+	"name": "Dessert",
+	"description": "Deal 5 slowing Arts damage. Holds 4 charges. Each mine will grant a permanent 30% attack buff.",
+	"action": "projectile",
+	"maxChannellingTicks": 121,
+	"release": {},
+	"color": "#52f",
+	"movementProportionWhileChannelling": 1,
+	"icon": "glowingHands",
+	"maxAngleDiffInRevs": 0.01,
+	"chargeTicks": 20,
+	"cooldown": 20,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
+	"projectile": "dor3"
+}

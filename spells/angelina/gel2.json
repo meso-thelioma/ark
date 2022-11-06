@@ -1,0 +1,31 @@
+{
+	"id": "gel2",
+	"description": "True heal allies by 1.2 health per second and reveal invisible opponents. Releasing will cast Ohm's Law.",
+	"action": "focus",
+	"color": "#42d4f4",
+	"name": "Potential Difference",
+	"icon": "gel",
+	"releaseAfterTicks": 0,
+	"maxAngleDiffInRevs": 0.01,
+	"untargeted": true,
+	"maxChannellingTicks": 12000,
+	"releaseAfterTicks": 80,
+	"revsPerTickWhileChannelling": 1,
+	"cooldown": 60,
+	"release": {},
+	"releaseBehaviours": [
+		{
+			"type": "spawn",
+			"projectile": "gel1"
+		}
+	],
+	"movementProportionWhileChannelling": 1.5,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "True Damage",
+			"text": "Damage * Buffs"
+		}
+	],
+	"projectile": "gel2"
+}

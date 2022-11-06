@@ -1,0 +1,31 @@
+{
+	"id": "dor2",
+	"description": "Gain 150% damage for 1 second.",
+	"action": "buff",
+	"color": "#52f",
+	"icon": "glowingHands",
+	"name": "Appetizer",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 1200,
+	"throttle": true,
+	"buffs": [
+		{
+			"type": "lifeSteal",
+			"source": "arts",
+			"lifeSteal": 0,
+			"damageMultiplier": 1.5,
+			"render": {
+				"color": "#52f",
+				"particleRadius": 0.01,
+				"emissionRadiusFactor": 0,
+				"ticks": 10,
+				"light": 1,
+				"invisible": true
+			},
+			"maxTicks": 300
+		}
+	],
+	"maxChannellingTicks": 60,
+	"projectileInterval": 1,
+	"projectile": "dor2"
+}

@@ -1,0 +1,199 @@
+{
+	"Keys": [
+		{
+			"btn": "a",
+			"barSize": 1,
+			"wheelSize": 0.75
+		},
+		{
+			"btn": "q",
+			"barSize": 1,
+			"wheelSize": 1,
+			"locked": true
+		},
+		{
+			"btn": "w",
+			"barSize": 1,
+			"wheelSize": 0.75,
+			"locked": true
+		},
+		{
+			"btn": "e",
+			"barSize": 1,
+			"wheelSize": 0.75,
+			"locked": true
+		}
+	],
+	"Options": {
+		"a": [
+			[
+				"exu",
+				"ceo",
+				"kal",
+				"ire",
+				"tho"
+			],
+			[
+				"wed",
+				"sur",
+				"eyj",
+				"gol",
+				"dor"
+			],
+			[
+				"bag",
+				"dou",
+				"pha",
+				"lin",
+				"sag"
+			],
+			[
+				"nih",
+				"sar",
+				"sai",
+				"lum",
+				"mos"
+			],
+			[
+				"gel",
+				"mud",
+				"ska",
+				"pal",
+				"che"
+			],
+			[
+				"mer",
+				"fin"
+			]
+		],
+		"q": [
+			[
+				"exu1",
+				"ceo1",
+				"kal1",
+				"ire1",
+				"tho1"
+			],
+			[
+				"wed1",
+				"sur1",
+				"eyj1",
+				"gol1",
+				"dor1"
+			],
+			[
+				"bag1",
+				"dou1",
+				"pha1",
+				"lin1",
+				"sag1"
+			],
+			[
+				"nih1",
+				"sar1",
+				"sai1",
+				"lum1",
+				"mos1"
+			],
+			[
+				"gel1",
+				"mud1",
+				"ska1",
+				"pal1",
+				"che1"
+			],
+			[
+				"mer1",
+				"fin1"
+			]
+		],
+		"w": [
+			[
+				"exu2",
+				"ceo2",
+				"kal2",
+				"ire2",
+				"tho2"
+			],
+			[
+				"wed2",
+				"sur2",
+				"eyj2",
+				"gol2",
+				"dor2"
+			],
+			[
+				"bag2",
+				"dou2",
+				"pha2",
+				"lin2",
+				"sag2"
+			],
+			[
+				"nih2",
+				"sar2",
+				"sai2",
+				"lum2",
+				"mos2"
+			],
+			[
+				"gel2",
+				"mud2",
+				"ska2",
+				"pal2",
+				"che2"
+			],
+			[
+				"mer2",
+				"fin2"
+			]
+		],
+		"e": [
+			[
+				"exu3",
+				"ceo3",
+				"kal3",
+				"ire3",
+				"tho3"
+			],
+			[
+				"wed3",
+				"sur3",
+				"eyj3",
+				"gol3",
+				"dor3"
+			],
+			[
+				"bag3",
+				"dou3",
+				"pha3",
+				"lin3",
+				"sag3"
+			],
+			[
+				"nih3",
+				"sar3",
+				"sai3",
+				"lum3",
+				"mos3"
+			],
+			[
+				"gel3",
+				"mud3",
+				"ska3",
+				"pal3",
+				"che3"
+			],
+			[
+				"mer3",
+				"fin3"
+			]
+		],
+		"f": []
+	},
+	"Special": {
+		"move": "move",
+		"retarget": "retarget",
+		"s": "stop"
+	}
+}

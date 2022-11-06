@@ -1,0 +1,22 @@
+{
+	"id": "eyj3",
+	"description": "Deal 20 Arts damage that will reduce Arts resistance by 20% per hit.",
+	"action": "spray",
+	"color": "#fff2",
+	"name": "Fish Storm",
+	"icon": "frostfire",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 1800,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
+	"projectile": "eyj3",
+	"intervalTicks": 2,
+	"lengthTicks": 20,
+	"jitterRatio": 0.3
+}

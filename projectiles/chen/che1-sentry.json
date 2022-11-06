@@ -1,0 +1,42 @@
+{
+	"basedOn": "che1",
+	"behaviours": [
+		{
+			"type": "updateCollideWith",
+			"trigger": {
+				"afterTicks": 1
+			},
+			"collideWith": 65535
+		},
+		{
+			"type": "homing", 
+			"targetType": "follow",
+			"redirect": true
+		}
+	],
+	"selfPassthrough": true,
+	"buffs": [
+		{
+			"type": "burn",
+			"hitInterval": 1,
+			"maxTicks": 1,
+			"packet": {
+				"source": "phys",
+				"lifeSteal": 0,
+				"damage": 3
+			}
+		}
+	],
+	"renderers": [
+		{
+			"type": "projectile",
+			"ticks": 10
+		},
+		{
+			"type": "strike",
+			"ticks": 30,
+			"flash": true,
+			"numParticles": 5
+		}
+	]
+}

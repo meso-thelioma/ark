@@ -1,0 +1,19 @@
+{
+	"id": "ska1",
+	"description": "True heal 1.5 health per second and taunt allied projectiles to a hit target.",
+	"action": "projectile",
+	"color": "#dcbeff",
+	"icon": "fireWave",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 12000,
+	"name": "Grapes..?",
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "True Damage",
+			"text": "True damage and healing is unaffected by defense or resistance."
+		}
+	],
+	"projectile": "ska1"
+}

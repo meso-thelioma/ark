@@ -1,0 +1,46 @@
+{
+	"density": 0.01,
+	"radius": 0.003,
+	"speed": 0.9,
+	"maxTicks": 12,
+	"damage": 0,
+	"collideWith": 8193,
+	"lifeSteal": 0,
+	"categories": 2,
+	"sound": "fireball",
+	"soundHit": "standard",
+	"color": "#CEFFFFAA",
+	"buffs": [
+		{
+			"type": "burn",
+			"hitInterval": 1,
+			"maxTicks": 1,
+			"packet": {
+				"source": "phys",
+				"lifeSteal": 0,
+				"damage": 10
+			}
+		}
+	],
+	"behaviours": [
+		{
+			"type": "updateCollideWith",
+			"trigger": {
+				"afterTicks": 1
+			},
+			"collideWith": 65535
+		}
+	],
+	"renderers": [
+		{
+			"type": "projectile",
+			"ticks": 10
+		},
+		{
+			"type": "strike",
+			"ticks": 30,
+			"flash": true,
+			"numParticles": 5
+		}
+	]
+}

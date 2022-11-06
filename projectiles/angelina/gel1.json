@@ -1,0 +1,70 @@
+{
+	"density": 0.01,
+	"radius": 0.003,
+	"speed": 0.4,
+	"maxTicks": 90,
+	"damage": 0,
+	"lifeSteal": 0,
+	"categories": 2,
+	"sound": "fireball",
+	"soundHit": "standard",
+	"color": "#42d4f4",
+	"collideWith": 8193,
+	"behaviours": [
+		{
+			"type": "updateCollideWith",
+			"trigger": {
+				"afterTicks": 3
+			},
+			"collideWith": 65535
+		},
+		{
+			"type": "homing",
+			"targetType": "follow",
+			"maxTurnProportion": 0.01
+		},
+		{
+			"type": "homing",
+			"targetType": "follow",
+			"redirect": true
+		}
+	],
+	"buffs": [
+		{
+			"type": "burn",
+			"hitInterval": 1,
+			"maxTicks": 1,
+			"packet": {
+				"source": "arts",
+				"lifeSteal": 0,
+				"damage": 8
+			}
+		},
+		{
+			"type": "movement",
+			"stack": "slow",
+			"maxTicks": 50,
+			"movementProportion": 0.2,
+			"render": {
+				"color": "#42d4f4",
+				"particleRadius": 0.002,
+				"emissionRadiusFactor": 1,
+				"ticks": 10,
+				"light": 1,
+				"invisible": true
+			}
+		}
+	],
+	"renderers": [
+		{
+			"type": "projectile",
+			"ticks": 30
+		},
+		{
+			"type": "strike",
+			"ticks": 30,
+			"flash": true,
+			"numParticles": 5
+		}
+	]
+}

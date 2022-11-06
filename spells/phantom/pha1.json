@@ -1,0 +1,19 @@
+{
+	"id": "pha1",
+	"description": "Deal 10 physical damage.",
+	"action": "projectile",
+	"color": "#469990",
+	"icon": "deadlyStrike",
+	"name": "Square Circle",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 120,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"projectile": "pha1"
+}

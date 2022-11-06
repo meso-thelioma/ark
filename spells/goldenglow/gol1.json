@@ -1,0 +1,59 @@
+{
+	"id": "gol1",
+	"description": "Hold to deal 8 Arts damage. Each stage will increase projectile speed and damage. At full charge, it will taunt drones to the target.",
+	"action": "focus",
+	"color": "#fabed4",
+	"icon": "andromedaChain",
+	"name": "Eluding Sun",
+	"maxAngleDiffInRevs": 0.01,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
+	"projectile": "gol1-charge",
+	"releaseAfterTicks": 10,
+	"recoil": 0.2,
+	"maxAngleDiffInRevs": 0.01,
+	"untargeted": true,
+	"maxChannellingTicks": 120,
+	"movementProportionWhileChannelling": 1,
+	"cooldown": 300,
+	"focusDelaysCooldown": true,
+	"release": {},
+	"releaseBehaviours": [
+		{
+			"type": "spawn",
+			"projectile": {
+				"density": 0.001,
+				"attractable": false,
+				"radius": 2,
+				"speed": 0,
+				"maxTicks": 1,
+				"damage": 0,
+				"collideWith": 0,
+				"expireOn": 0,
+				"sense": 8192,
+				"categories": 16384,
+				"lifeSteal": 0,
+				"buffs": [],
+				"projectileBuffs": [],
+				"behaviours": [],
+				"color": "#aaa1",
+				"renderers": []
+			}
+		},
+		{
+			"type": "expire",
+			"triggers": [
+				{
+					"type": "afterTicks",
+					"afterTicks": 2
+				}
+			]
+		}
+	]
+}

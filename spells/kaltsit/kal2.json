@@ -1,0 +1,19 @@
+{
+	"id": "kal2",
+	"description": "Summon Cataract. The summon will deal 10 physical damage every second.",
+	"action": "projectile",
+	"color": "#f032e6",
+	"icon": "burningEye",
+	"name": "Cataract",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 12000,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"projectile": "kal2"
+}

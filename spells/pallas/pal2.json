@@ -1,0 +1,19 @@
+{
+	"id": "pal2",
+	"name": "Lunar Hysterics",
+	"description": "Heal nearby allies 9 health. Cooldown will be lowered on hit.",
+	"action": "projectile",
+	"icon": "bodySwapping",
+	"color": "#afc",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 18000,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Healing",
+			"text": "Heal * Buffs"
+		}
+	],
+	"projectile": "pal2"
+}

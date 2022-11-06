@@ -1,0 +1,19 @@
+{
+	"id": "dou1",
+	"description": "Deal 20 physical damage in a wide area.",
+	"action": "projectile",
+	"color": "#911eb4",
+	"name": "Shellshock",
+	"icon": "fragmentedMeteor",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 120,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"projectile": "dou1"
+}

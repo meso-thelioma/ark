@@ -1,0 +1,19 @@
+{
+	"id": "exu2",
+	"description": "Cause nearby targets to take 10% more physical damage.",
+	"action": "projectile",
+	"color": "#aaa",
+	"name": "Face Redemption",
+	"icon": "halo",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 12000,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"projectile": "exu2"
+}

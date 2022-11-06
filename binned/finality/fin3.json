@@ -1,0 +1,24 @@
+{
+	"id": "fin3",
+	"description": "Ephemeral Echoes will strike twice. Each hit will cause 6.5 Arts splash damage.",
+	"action": "projectile",
+	"color": "#f4d",
+	"name": "Standing Ovation",
+	"icon": "resonance",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 1800,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		},
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
+	"projectile": "lin3"
+}

@@ -1,0 +1,23 @@
+{
+	"id": "dou3",
+	"description": "Deal 5 instances of 20 physical damage and bind.",
+	"action": "spray",
+	"jitterRatio": 0.7,
+	"numProjectilesPerTick": 5,
+	"lengthTicks": 1,
+	"intervalTicks": 1,
+	"color": "#911eb4",
+	"name": "Jokes on You",
+	"icon": "fragmentedMeteor",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 840,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"projectile": "dou3"
+}

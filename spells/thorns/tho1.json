@@ -1,0 +1,32 @@
+{
+	"id": "tho1",
+	"description": "Deal 10 Arts damage.",
+	"action": "focus",
+	"color": "#030",
+	"name": "Frostbite",
+	"icon": "waveStrike",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 300,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
+	"focusDelaysCooldown": true,
+	"maxChannellingTicks": 29,
+	"movementProportionWhileChannelling": 0.5,
+	"release": {},
+	"releaseAfterTicks": 0,
+	"releaseBehaviours": [
+		{
+			"type": "homing",
+			"targetType": "follow",
+			"revolutionsPerSecond": 1,
+			"redirect": true
+		}
+	],
+	"projectile": "tho1"
+}

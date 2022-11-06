@@ -1,0 +1,49 @@
+{
+	"id": "a",
+	"health": 120,
+	"density": 500000,
+	"decayPerSecond": 4,
+	"collideWith": 65527,
+	"static": true,
+	"undamageable": true,
+	"strike": {
+		"ticks": 6,
+		"flash": true
+	},
+	"render": [
+		{
+			"type": "solid",
+			"color": "#0008",
+			"flash": false,
+			"shadow": true,
+			"expand": 0.003
+		},
+		{
+			"type": "bloom",
+			"color": "#fff8",
+			"strikeOnly": true,
+			"bloom": 0.05
+		},
+		{
+			"type": "solid",
+			"color": "#0008",
+			"flash": false,
+			"expand": 0.003
+		},
+		{
+			"type": "solid",
+			"color": "#ccc",
+			"deadColor": "#c33",
+			"gradient": 0.2,
+			"tint": 1
+		},
+		{
+			"type": "solid",
+			"color": "#999",
+			"deadColor": "#822",
+			"gradient": 0.3,
+			"expand": -0.003,
+			"tint": 1
+		}
+	]
+}

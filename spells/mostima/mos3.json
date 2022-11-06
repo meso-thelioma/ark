@@ -1,0 +1,19 @@
+{
+	"id": "mos3",
+	"description": "Fire a more volatile Rolled Odds.",
+	"action": "projectile",
+	"color": "#446",
+	"icon": "atomicSlashes",	
+	"name": "Lady Luck",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 450,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
+	"projectile": "mos3"
+}

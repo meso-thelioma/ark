@@ -1,0 +1,24 @@
+{
+	"id": "nih3",
+	"description": "For ten seconds, Prescription will emit a large AoE which will heal 6 health and grant 40% Arts resistance.",
+	"action": "projectile",
+	"color": "#bfef45",
+	"name": "Medical Service",
+	"icon": "wingedShield",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 1200,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Healing",
+			"text": "Heal * Buffs"
+		},
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
+	"projectile": "nih3"
+}

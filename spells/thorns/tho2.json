@@ -1,0 +1,19 @@
+{
+	"id": "tho2",
+	"description": "Deal 20 physical damage. On hit, vision will be obscured.",
+	"action": "projectile",
+	"color": "#030",
+	"icon": "waveStrike",
+	"name": "Prevading Snow",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 600,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"projectile": "tho2"
+}

@@ -1,0 +1,270 @@
+{
+	"density": 0.01,
+	"radius": 0.002,
+	"speed": 0.2,
+	"categories": 2,
+	"maxTicks": 3600,
+	"damage": 0,
+	"expireOn": 65527,
+	"source": "cryo",
+	"color": "#52f",
+	"renderers": [
+		{
+			"type": "projectile",
+			"ticks": 10
+		},
+		{
+			"type": "reticule",
+			"color": "#52f1",
+			"minRadius": 0.089,
+			"radius": 0.09
+		}
+	],
+	"buffs": [],
+	"behaviours": [
+		{
+			"type": "homing",
+			"targetType": "cursor",
+			"trigger": {
+				"atCursor": true
+			},
+			"newSpeed": 0,
+			"redirect": true
+		},
+		{
+			"type": "homing",
+			"targetType": "cursor",
+			"trigger": {
+				"afterTicks": 45
+			},
+			"newSpeed": 0,
+			"redirect": true
+		},
+		{
+			"type": "spawn",
+			"trigger": {
+				"expire": true
+			},
+			"projectile": {
+				"density": 0.01,
+				"radius": 0.09,
+				"selfPassthrough": true,
+				"speed": 0,
+				"maxTicks": 10,
+				"sensor": true,
+				"damage": 0,
+				"lifeSteal": 0,
+				"expireOn": 0,
+				"categories": 2,
+				"sound": "fireball",
+				"soundHit": "standard",
+				"color": "#52f",
+				"buffs": [],
+				"behaviours": [
+					{
+						"type": "aura",
+						"radius": 0.09,
+						"tickInterval": 1,
+						"against": 15,
+						"packet": {
+							"source": "arts",
+							"lifeSteal": 0,
+							"damage": 1
+						},
+						"buffs": [								
+							{
+								"type": "movement",
+								"stack": "slow",
+								"maxTicks": 30,
+								"movementProportion": 0.9,
+								"render": {
+									"color": "#52f",
+									"particleRadius": 0.002,
+									"emissionRadiusFactor": 1,
+									"ticks": 10,
+									"light": 1,
+									"invisible": true
+								}
+							},
+							{
+								"type": "burn",
+								"hitInterval": 1,
+								"against": 14,
+								"cleansable": false,
+								"maxTicks": 1,
+								"packet": {
+									"source": "arts",
+									"lifeSteal": 0,
+									"damage": 0.5
+								}
+							}
+						]
+					}	
+				],
+				"renderers": [
+					{
+						"type": "projectile",
+						"color": "#52f1",
+						"ticks": 40
+					}
+				]
+			}
+		},
+		{
+			"type": "spawn",
+			"projectile": {
+				"density": 0.00001,
+				"attractable": false,
+				"radius": 0.05,
+				"speed": 2,
+				"maxTicks": 12000000,
+				"damage": 0,
+				"collideWith": 14336,
+				"expireOn": 14336,
+				"expireAgainstObjects": 1,
+				"lifeSteal": 0,
+				"categories": 8192,
+				"behaviours": [
+					{
+						"type": "strafe"
+					},
+					{
+						"type": "homing",
+						"targetType": "self",
+						"trigger": {
+							"afterTicks": 5
+						}
+					},
+					{
+						"type": "expireOnOwnerDeath"
+					},
+					{
+						"type": "spawn",
+						"trigger": {
+							"collideWith": 8192,
+							"against": 1
+						},
+						"projectile": {
+							"density": 0.00001,
+							"attractable": false,
+							"radius": 0.05,
+							"speed": 2,
+							"maxTicks": 12000000,
+							"damage": 0,
+							"collideWith": 14336,
+							"expireOn": 12288,
+							"expireAgainstObjects": 1,
+							"lifeSteal": 0,
+							"categories": 2048,
+							"behaviours": [
+								{
+									"type": "strafe"
+								},
+								{
+									"type": "homing",
+									"targetType": "self",
+									"trigger": {
+										"afterTicks": 5
+									}
+								},
+								{
+									"type": "expireOnOwnerDeath"
+								},
+								{
+									"type": "spawn",
+									"trigger": {
+										"collideWith": 8192,
+										"against": 1
+									},
+									"projectile": {
+										"density": 0.00001,
+										"attractable": false,
+										"radius": 0.05,
+										"speed": 2,
+										"maxTicks": 12000000,
+										"damage": 0,
+										"collideWith": 14336,
+										"expireOn": 8192,
+										"expireAgainstObjects": 1,
+										"lifeSteal": 0,
+										"categories": 4096,
+										"behaviours": [
+											{
+												"type": "strafe"
+											},
+											{
+												"type": "homing",
+												"targetType": "self",
+												"trigger": {
+													"afterTicks": 5
+												}
+											},
+											{
+												"type": "expireOnOwnerDeath",
+												"note": "final"
+											},
+											{
+												"type": "spawn",
+												"trigger": {
+													"expire": true
+												},
+												"projectile": {
+													"density": 25,
+													"attractable": false,
+													"radius": 0.083,
+													"sensor": true,
+													"speed": 0,
+													"maxTicks": 1,
+													"damage": 0,
+													"collideWith": 0,
+													"lifeSteal": 0,
+													"categories": 2,
+													"behaviours": [
+														{
+															"type": "aura",
+															"radius": 2,
+															"packet": {
+																"damage": 0,
+																"noHit": true,
+																"lifeSteal": 0
+															},	
+															"tickInterval": 1,
+															"against": 1,
+															"buffs": [
+																{
+																	"type": "cooldown",
+																	"against": 1,
+																	"spellId": "dor3",
+																	"minCooldown": 1800,
+																	"color": "#52f"
+																},					
+																{
+																	"type": "lifeSteal",
+																	"cleansable": false,
+																	"maxTicks": 120000,
+																	"damageMultiplier": 1.3
+																}
+															]
+														}
+													],
+													"color": "#b332",
+													"renderers": []
+												}
+											}
+										],
+										"color": "#aaf1",
+										"renderers": []
+									}
+								}
+							],
+							"color": "#afa1",
+							"renderers": []
+						}
+					}
+				],
+				"color": "#aaa1",
+				"renderers": []
+			}
+		}
+	]
+}

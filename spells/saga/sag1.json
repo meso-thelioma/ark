@@ -1,0 +1,19 @@
+{
+	"id": "sag1",
+	"description": "Deal 5 non-lethal physical damage.",
+	"action": "projectile",
+	"color": "#66002f",
+	"icon": "crossedSlashes",
+	"name": "Eternal Afterglow",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 90,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"projectile": "sag1"
+}

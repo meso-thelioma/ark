@@ -1,0 +1,48 @@
+{
+	"id": "forcefield",
+	"health": 40,
+	"density": 1000,
+	"decayPerSecond": 1,
+	"static": true,
+	"strike": {
+		"ticks": 6,
+		"flash": true,
+		"growth": 0.005
+	},
+	"render": [
+		{
+			"type": "solid",
+			"color": "#0008",
+			"shadow": true,
+			"flash": false,
+			"expand": 0.003
+		},
+		{
+			"type": "bloom",
+			"color": "#fff8",
+			"strikeOnly": true,
+			"bloom": 0.05
+		},
+		{
+			"type": "solid",
+			"color": "#0008",
+			"flash": false,
+			"expand": 0.003
+		},
+		{
+			"type": "solid",
+			"color": "#bbb",
+			"deadColor": "#c33",
+			"gradient": 0.2,
+			"tint": 1
+		},
+		{
+			"type": "solid",
+			"color": "#777",
+			"deadColor": "#822",
+			"gradient": 0.3,
+			"expand": -0.003,
+			"tint": 1
+		}
+	]
+}

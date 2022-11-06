@@ -1,0 +1,10 @@
+{
+	"name": "lightpeeler",
+	"author": "meso",
+	"description": "classes and dmg based on arknights. first 3 letters of each class id indicate who they are.",
+	"titleLeft": "light",
+	"titleRight": "peeler",
+	"subtitleLeft": "ergonomic",
+	"subtitleRight": "design",
+	"private": false
+}

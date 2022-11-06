@@ -1,0 +1,46 @@
+{
+	"id": "cosmic",
+	"health": 600,
+	"collideWith": 1,
+	"sensor": true,
+	"static": true,
+	"strike": {
+		"ticks": 15,
+		"flash": true
+	},
+	"hitInterval": 10,
+	"selfDamage": 10,
+	"render": [
+		{
+			"type": "solid",
+			"color": "#fff2"
+		},
+		{
+			"type": "smoke",
+			"color": "rgba(255,255,255,1)",
+			"particleRadius": 0.005,
+			"fade": "#0000",
+			"bloom": 0.01,
+			"glow": 0.05,
+			"ticks": 30,
+			"interval": 8,
+			"speed": 0.1
+		}
+	],
+	"buffs": [
+		{
+			"type": "cooldown",
+			"maxTicks": 12000,
+			"collideWith": 1,
+			"cleansable": false,
+			"cooldownRateModifier": 0.05,
+			"render": {
+				"color": "rgba(255,255,255,1)",
+				"alpha": 0.01,
+				"ticks": 10,
+				"emissionRadiusFactor": 0,
+				"particleRadius": 0.0125
+			}
+		}
+	]
+}

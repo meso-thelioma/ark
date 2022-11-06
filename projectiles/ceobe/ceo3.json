@@ -1,0 +1,76 @@
+{
+	"density": 0.001,
+	"attractable": false,
+	"radius": 0.02,
+	"speed": 1,
+	"sound": "fireball",
+	"maxTicks": 120,
+	"damage": 0,
+	"collideWith": 0,
+	"sense": 2,
+	"expireOn": 0,
+	"lifeSteal": 0,
+	"categories": 8192,
+	"projectileBuffs": [],
+	"behaviours": [
+		{
+			"type": "strafe"
+		},
+		{
+			"type": "homing",
+			"targetType": "self",
+			"trigger": {
+				"afterTicks": 10
+			}
+		},
+		{
+			"type": "aura",
+			"radius": 1,
+			"against": 1,
+			"tickInterval": 1,
+			
+			"packet": {
+				"damage": 0,
+				"noHit": true,
+				"lifeSteal": 0
+			},	
+			"buffs": [
+				{
+					"type": "lifeSteal",
+					"damageMultiplier": 1.1,
+					"maxTicks": 1,
+					"render": {
+						"color": "#e6194B22",
+						"particleRadius": 0.0125,
+						"emissionRadiusFactor": 0,
+						"ticks": 10,
+						"light": 1,
+						"invisible": true
+					},
+					"against": 3
+				},
+				{
+					"type": "mass",
+					"maxTicks": 120,
+					"radius": 0.0125,
+					"sense": 128
+				},
+				{
+					"type": "movement",
+					"movementProportion": 0,
+					"maxTicks": 120,
+					"render": {
+						"color": "#e6194B22",
+						"particleRadius": 0.0025,
+						"emissionRadiusFactor": 1,
+						"ticks": 10,
+						"light": 1,
+						"invisible": true
+					}
+				}
+			]
+		}
+	],
+	"color": "#aaa1",
+	"renderers": []
+}

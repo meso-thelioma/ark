@@ -1,0 +1,19 @@
+{
+	"id": "gel3",
+	"description": "Cast an overclock which will push and deal 4 Arts damage per hit. For ten seconds, targets will be more susceptible to knockback during the duration.",
+	"action": "projectile",
+	"color": "#42d4f4",
+	"name": "Short Circuit",
+	"icon": "gel",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 1800,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
+	"projectile": "gel3"
+}

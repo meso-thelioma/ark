@@ -1,0 +1,66 @@
+{
+	"density": 0.001,
+	"attractable": false,
+	"radius": 0.4,
+	"speed": 0,
+	"sound": "fireball",
+	"maxTicks": 30,
+	"damage": 10,
+	"sense": 65535,
+	"collideWith": 0,
+	"expireOn": 0,
+	"lifeSteal": 0,
+	"categories": 128,
+	"buffs": [
+		{
+			"type": "armor",
+			"proportion": 0.2,
+			"maxTicks": 180,
+			"render": {
+				"color": "#911eb4",
+				"particleRadius": 0.0025,
+				"emissionRadiusFactor": 1,
+				"ticks": 10,
+				"light": 1,
+				"invisible": true
+			}
+		},										
+		{
+			"type": "armor",
+			"maxTicks": 120,
+			"source": "phys",
+			"flat": -3,
+			"render": {
+				"particleRadius": 0.0125,
+				"emissionRadiusFactor": 0,
+				"ticks": 10,
+				"light": 1,
+				"invisible": true
+			}
+		}
+	],
+	"projectileBuffs": [],
+	"behaviours": [
+		{
+			"type": "attract",
+			"collideLike": 8192,
+			"categories": 8192,
+			"against": 1,
+			"radius": 0.4,
+			"accelerationPerTick": 0.3,
+			"clampSpeed": 0.15
+		}
+	],
+	"color": "#911eb4",
+	"renderers": [
+		{
+			"type": "swirl",
+			"color": "#911eb4",
+			"ticks": 30,
+			"loopTicks": 60,
+			"numParticles": 12,
+			"radius": 0.4,
+			"particleRadius": 0.002
+		}
+	]
+}

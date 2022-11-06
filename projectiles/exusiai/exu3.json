@@ -1,0 +1,65 @@
+{
+	"density": 0.001,
+	"attractable": false,
+	"radius": 0.02,
+	"speed": 1,
+	"maxTicks": 300,
+	"damage": 0,
+	"collideWith": 0,
+	"sense": 2,
+	"expireOn": 0,
+	"lifeSteal": 0,
+	"sound": "fireball",
+	"categories": 8192,
+	"projectileBuffs": [],
+	"behaviours": [
+		{
+			"type": "strafe"
+		},
+		{
+			"type": "homing",
+			"targetType": "self",
+			"trigger": {
+				"afterTicks": 10
+			}
+		},
+		{
+			"type": "aura",
+			"radius": 1,
+			"against": 1,
+			"tickInterval": 1,
+			"packet": {
+				"damage": 0,
+				"noHit": true,
+				"lifeSteal": 0
+			},	
+			"buffs": [
+				{
+					"type": "cooldown",
+					"maxTicks": 1,
+					"cleansable": false,
+					"spellId": "exu1",
+					"maxCooldown": 45
+				},
+				{
+					"type": "lifeSteal",
+					"cleansable": false,
+					"damageMultiplier": 1,
+					"maxTicks": 1,
+					"render": {
+						"color": "#aaa2",
+						"particleRadius": 0.0125,
+						"emissionRadiusFactor": 0,
+						"ticks": 10,
+						"light": 1,
+						"invisible": true
+					},
+					"against": 1
+				}
+			]
+		}
+	],
+	"color": "#aaa1",
+	"renderers": []
+
+}

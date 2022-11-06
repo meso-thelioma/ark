@@ -1,0 +1,20 @@
+{
+	"id": "gol2",	
+	"description": "Backstep. If a projectile would have collided, cast a drone.",
+	"action": "projectile",
+	"color": "#fabed4",
+	"icon": "andromedaChain",
+	"name": "Forget Me Not",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 450,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
+	"throttle": true,
+	"recoil": 0.2,
+	"projectile": "gol3"
+}

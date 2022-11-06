@@ -1,0 +1,55 @@
+{
+	"id": "fast",
+	"health": 500,
+	"collideWith": 1,
+	"sensor": true,	
+	"selfDamage": 20,
+	"static": true,
+	"undamageable": true,
+	"strike": {
+		"ticks": 15,
+		"flash": true
+	},
+	"render": [
+		{
+			"type": "solid",
+			"color": "rgba(255, 255, 64, 0.15)",
+			"deadColor": "rgba(255, 255, 64, 0)",
+			"glow": 0.2,
+			"light": 0.9
+		},
+		{
+			"type": "smoke",
+			"color": "rgba(255, 255, 64, 1)",
+			"particleRadius": 0.002,
+			"bloom": 0.01,
+			"glow": 0.025,
+			"vanish": 1,
+			"ticks": 15,
+			"interval": 4,
+			"speed": 0.05,
+			"light": 1
+		}
+	],
+	"hitInterval": 15,
+	"buffs": [
+		{
+			"type": "armor",
+			"maxTicks": 15,
+			"source": "phys",
+			"render": {
+				"color": "#ff0",
+				"alpha": 0.3,
+				"light": 1,
+				"ticks": 30,
+				"invisible": true,
+				"emissionRadiusFactor": 1,
+				"particleRadius": 0.005,
+				"shine": 0.2,
+				"glow": 1,
+				"vanish": 1
+			},
+			"proportion": -0.3
+		}
+	]
+}

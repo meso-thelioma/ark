@@ -1,0 +1,14 @@
+{
+	"id": "ire2",
+	"description": "Bind opponents. Silence previously bound targets.",
+	"action": "projectile",
+	"color": "#ffd8b1",
+	"name": "Forest Fire",
+	"icon": "mineExplosion",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 240,
+	"throttle": true,
+	"effects": [],
+	"projectile": "ire2",
+	"recoil": -0.1
+}

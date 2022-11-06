@@ -1,0 +1,24 @@
+{
+	"id": "lum1",
+	"name": "Starless Wonder",	
+	"description": "Heal 15 health and deal 3 physical damage. At increased distances, the healing will be reduced. Healed targets will not take lethal physical damage.",
+	"action": "projectile",
+	"icon": "bubblingBeam",
+	"color": "#880",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 90,
+	"throttle": true,
+	"effects": [		
+		{
+			"icon": "fas fa-address-card",
+			"title": "Healing",
+			"text": "Heal * Buffs"
+		},
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"projectile": "lum1"
+}

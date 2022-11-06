@@ -1,0 +1,109 @@
+{
+	"basedOn": "lin1",
+	"sense": 1,
+	"expireOn": 65534,
+	"buffs": [
+		{
+			"type": "burn",
+			"hitInterval": 1,
+			"maxTicks": 1,
+			"packet": {
+				"source": "phys",
+				"lifeSteal": 0,
+				"damage": 10
+			}
+		}
+	],
+	"behaviours": [
+		{
+			"type": "homing",
+			"targetType": "follow",
+			"redirect": true
+		},
+		{
+			"type": "accelerate",
+			"maxSpeed": 1,
+			"accelerationPerSecond": 1
+		},
+		{
+			"type": "updateCollideWith",
+			"trigger": {
+				"afterTicks": 1
+			},
+			"collideWith": 65535
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "collideWith",
+					"collideWith": 1,
+					"maxHits": 20000,
+					"triggerInterval": 1
+				}
+			],
+			"projectile": {
+				"density": 30,
+				"radius": 0.065,
+				"selfPassthrough": true,
+				"speed": 0,
+				"maxTicks": 10,
+				"sense": 1,
+				"collideWith": 0,
+				"expireOn": 0,
+				"damage": 0,
+				"lifeSteal": 0,
+				"categories": 2,
+				"sound": "fireball",
+				"soundHit": "standard",
+				"color": "#007",
+				"buffs": [
+					{
+						"type": "burn",
+						"hitInterval": 1,
+						"maxTicks": 1,
+						"packet": {
+							"source": "arts",
+							"lifeSteal": 0,
+							"damage": 7
+						}
+					}
+				],
+				"behaviours": [],
+				"renderers": [
+					{
+						"type": "projectile",
+						"color": "#0072",
+						"ticks": 40
+					}
+				]
+			}
+		}
+	],
+	"renderers": [	
+		{
+			"type": "ray",
+			"ticks": 40, 
+			"offsetRadius": 0.013,
+			"offsetAngleInRevs": 0.25,
+			"offsetAddRotation": true
+		},				
+		{
+			"type": "ray",
+			"ticks": 40, 
+			"offsetRadius": 0.013,
+			"offsetAngleInRevs": 0.75,
+			"offsetAddRotation": true
+		},		
+		{
+			"type": "ray",
+			"ticks": 20
+		},
+		{
+			"type": "strike",
+			"ticks": 30,
+			"flash": true,
+			"numParticles": 5
+		}
+	]
+}

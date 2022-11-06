@@ -1,0 +1,73 @@
+{
+	"id": "normaldps",
+	"name": "Memory of Sight",
+	"description": "Gain 10% damage and lose 1 health per second.",
+	"passive": true,
+	"untargeted": true,
+	"cooldown": 1,
+	"effects": [],
+	"buffs": [],
+	"icon": "woodenFence",
+	"color": "#aaa",
+	"action": "buff",
+	"behaviours": [
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "interval",
+					"triggerInterval": 10
+				}
+			],
+			"projectile": {
+				"density": 0.01,
+				"radius": 0.003,
+				"speed": 0,
+				"maxTicks": 10,
+				"collideWith": 0,
+				"damage": 0,
+				"lifeSteal": 0,
+				"categories": 2,
+				"sound": "fireball",
+				"soundHit": "standard",
+				"color": "#0000",
+				"renderers": [],
+				"behaviours": [
+					{
+						"type": "aura",
+						"against": 1,
+						"tickInterval": 10,
+						"radius": 2,
+						"packet": {
+							"damage": 0,
+							"noHit": true,
+							"lifeSteal": 0
+						},	
+						"buffs": [
+							{
+								"type": "burn",
+								"hitInterval": 1,
+								"maxTicks": 10,
+								"against": 1,
+								"cleansable": false,
+								"packet": {
+									"lifeSteal": 0,
+									"noHit": true,
+									"damage": 0.1
+								}
+							},
+							{
+								"type": "lifeSteal",
+								"maxTicks": 10,
+								"against": 1,
+								"cleansable": false,
+								"damageMultiplier": 1.1
+							}
+						]
+					}
+				],
+				"projectileBuffs": []
+			} 
+		}
+	]
+}

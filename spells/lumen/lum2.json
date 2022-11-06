@@ -1,0 +1,12 @@
+{
+	"id": "lum2",
+	"name": "Somewhere In My Dreams",
+	"description": "Vanish and cleanse nearby allies. Levitate targets.",
+	"action": "projectile",
+	"icon": "bubblingBeam",
+	"color": "#880",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 240,
+	"throttle": true,
+	"projectile": "lum2"
+}

@@ -1,0 +1,19 @@
+{
+	"id": "dou2",
+	"description": "Attract all planted bombs and deal 10 true damage to bound targets. Bound targets will take 20% more damage and 3 more physical damage for 6 seconds.",
+	"action": "projectile",
+	"color": "#911eb4",
+	"name": "Oopsies!",
+	"icon": "fragmentedMeteor",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 420,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "True Damage",
+			"text": "Damage * Buffs"
+		}
+	],
+	"projectile": "dou2"
+}

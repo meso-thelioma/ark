@@ -1,0 +1,88 @@
+{
+	"density": 0.001,
+	"attractable": false,
+	"radius": 0.02,
+	"speed": 1,
+	"maxTicks": 6000000000,
+	"damage": 0,
+	"collideWith": 192,
+	"expireOn": 192,
+	"expireAgainstObjects": 1,
+	"lifeSteal": 0,
+	"sound": "fireball",
+	"categories": 64,
+	"projectileBuffs": [
+		{
+			"type": "cooldown",
+			"maxTicks": 300,
+			"color": "#030",
+			"cleansable": false,
+			"spellId": "tho1",
+			"cooldownRateModifier": 0.45
+		}
+	],
+	"behaviours": [
+		{
+			"type": "strafe"
+		},
+		{
+			"type": "homing",
+			"targetType": "self",
+			"trigger": {
+				"afterTicks": 10
+			}
+		},
+		{
+			"type": "spawn",
+			"trigger": {
+				"collideWith": 192,
+				"against": 1
+			},
+			"expire": true,
+			"projectile": {
+				"density": 0.001,
+				"attractable": false,
+				"radius": 0.02,
+				"speed": 1,
+				"maxTicks": 1,
+				"damage": 0,
+				"collideWith": 0,
+				"sense": 66,
+				"expireOn": 0,
+				"expireAgainstObjects": 1,
+				"lifeSteal": 0,
+				"sound": "fireball",
+				"categories": 128,
+				"buffs": [],
+				"behaviours": [
+					{
+						"type": "aura",
+						"radius": 1,
+						"against": 1,
+						"tickInterval": 1,
+						"packet": {
+							"damage": 0,
+							"noHit": true,
+							"lifeSteal": 0
+						},	
+						"buffs": [
+							{
+								"type": "cooldown",
+								"owner": true,
+								"maxTicks": 600000,
+								"cleansable": false,
+								"color": "#030",
+								"spellId": "tho1",
+								"cooldownRateModifier": 0.45
+							}
+						]
+					}
+				],
+				"color": "#030",
+				"renderers": []
+			}
+		}
+	],
+	"color": "#afa1",
+	"renderers": []
+}

@@ -1,0 +1,19 @@
+{
+	"id": "bag2",
+	"description": "Reduce E cooldowns by 4 seconds. If a projectile collides, heal and cause targets to take 10 more physical damage.",
+	"action": "projectile",
+	"color": "#3cb44b",
+	"icon": "ballGlow",
+	"name": "Infectious Smile",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 480,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"projectile": "bag2"
+}

@@ -1,0 +1,19 @@
+{
+	"id": "lum3",
+	"name": "Soliloquy of Astral Thought",
+	"description": "Decrease Starless Wonder cooldown. Healing will decrease while damage will increase over time. Recasting early will cancel the stance and heal 5 health.",
+	"action": "projectile",
+	"icon": "bubblingBeam",
+	"color": "#880",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 600,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Healing",
+			"text": "Heal * Buffs"
+		}
+	],
+	"projectile": "lum3"
+}

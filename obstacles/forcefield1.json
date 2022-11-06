@@ -1,0 +1,30 @@
+{
+	"id": "forcefield1",
+	"health": 40,
+	"density": 1000,
+	"collideWith": 1,
+	"decayPerSecond": 1,
+	"static": true,
+	"strike": {
+		"ticks": 6,
+		"flash": true,
+		"growth": 0.005
+	},
+	"render": [
+		{
+			"type": "solid",
+			"deadColor": "rgba(64, 255, 255, 0.05)",
+			"color": "rgba(255, 64, 64, 0.05)",
+			"shadow": true,
+			"flash": false,
+			"expand": 0.003
+		},
+		{
+			"type": "solid",
+			"color": "rgba(64, 255, 255, 0.15)",
+			"deadColor": "rgba(255, 64, 64, 0.15)",
+			"glow": 0.2,
+			"light": 0.9
+		}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"id": "lin1",
+	"description": "Deal 5 physical damage.",
+	"action": "projectile",
+	"color": "#007",
+	"name": "Reflection, The Clouds",
+	"icon": "dna1",
+	"chargeTicks": 6,
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 180,
+	"throttle": true,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "(Damage - Defense) * Buffs"
+		}
+	],
+	"projectile": "lin1"
+}

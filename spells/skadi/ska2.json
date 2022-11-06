@@ -1,0 +1,19 @@
+{
+	"id": "ska2",
+	"description": "Create a Wineglass at cursor which will true heal 1.5 health per second. The Wineglass will shatter and deal 12 true damage after an opponent or projectile collision.",
+	"action": "projectile",
+	"color": "#dcbeff",
+	"icon": "fireWave",
+	"name": "Intoxicating",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 600,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "True Damage",
+			"text": "Damage * Buffs"
+		}
+	],
+	"throttle": true,
+	"projectile": "ska2"
+}
