@@ -2,7 +2,7 @@
 	"basedOn": "mos1",
 	"expireOn": 0,
 	"speed": 2,
-	"maxTicks": 120,
+	"maxTicks": 50,
 	"hitInterval": 3,
 	"renderers": [
 		{
