@@ -6,8 +6,9 @@
 	"icon": "atomicSlashes",	
 	"name": "Lady Luck",
 	"maxAngleDiffInRevs": 0.01,
-	"cooldown": 450,
+	"cooldown": 600,
 	"throttle": true,
+	"chargeTicks": 20,
 	"effects": [
 		{
 			"icon": "fas fa-address-card",

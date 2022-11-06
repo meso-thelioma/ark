@@ -1,9 +1,8 @@
 {
 	"basedOn": "mos1",
-	"maxTicks": 600,
 	"expireOn": 0,
-	"speed":2,
-	"maxTicks": 10,
+	"speed": 2,
+	"maxTicks": 120,
 	"hitInterval": 3,
 	"renderers": [
 		{
