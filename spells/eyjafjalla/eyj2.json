@@ -1,6 +1,6 @@
 {
 	"id": "eyj2",
-	"description": "Apply corrosion. Corrosion will deal 2 Arts damage per second.",
+	"description": "Deal 10 Arts damage. Targets above half health will take 3x damage.",
 	"action": "projectile",
 	"color": "#fff2",
 	"name": "Salmon's Blessing",

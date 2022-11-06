@@ -22,6 +22,12 @@
 			"barSize": 1,
 			"wheelSize": 0.75,
 			"locked": true
+		},
+		{
+			"btn": "r",
+			"barSize": 0,
+			"wheelSize": 0,
+			"locked": true
 		}
 	],
 	"Options": {
@@ -187,6 +193,11 @@
 			[
 				"mer3",
 				"fin3"
+			]
+		],
+		"r": [
+			[
+				"test"
 			]
 		],
 		"f": []
