@@ -8,5 +8,6 @@
 	"maxAngleDiffInRevs": 0.01,
 	"cooldown": 800,
 	"throttle": true,
+	"chargeTicks": 10,
 	"projectile": "eyj2"
 }

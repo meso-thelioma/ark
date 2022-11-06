@@ -190,17 +190,7 @@
 						]
 					}
 				],
-				"renderers": [
-					{
-						"type": "swirl",
-						"ticks": 30,
-						"color": "#880",
-						"radius": 0.1,
-						"particleRadius": 0.003,
-						"loopTicks": 10,
-						"numParticles": 8
-					}
-				]
+				"renderers": []
 			}
 		}
 	],
