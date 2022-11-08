@@ -10,6 +10,11 @@
 			"icon": "fas fa-address-card",
 			"title": "Passive",
 			"text": "Passively gain 10% speed."
+		},
+		{
+			"icon": "far fa-sad-tear",
+			"title": "Memory",
+			"text": "The day begins, the wanderer wills; one is nevermore."
 		}
 	],
 	"buffs": [

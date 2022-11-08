@@ -10,6 +10,11 @@
 			"icon": "fas fa-address-card",
 			"title": "Passive",
 			"text": "Passively gain 10% Arts resistance."
+		},
+		{
+			"icon": "far fa-sad-tear",
+			"title": "Memory",
+			"text": "Is it fury or silence which is truth among falsehood?"
 		}
 	],
 	"buffs": [

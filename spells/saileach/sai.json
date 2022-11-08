@@ -10,6 +10,11 @@
 			"icon": "fas fa-address-card",
 			"title": "Passive",
 			"text": "Passively gain 10% Arts resistance."
+		},
+		{
+			"icon": "far fa-sad-tear",
+			"title": "Memory",
+			"text": "Although the sun is down, the clouds do not weep, its spirits high."
 		}
 	],
 	"buffs": [

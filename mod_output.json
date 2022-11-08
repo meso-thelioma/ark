@@ -400,6 +400,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gain 10% mass."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "They wander in wait, fission in heart."
                 }
             ],
             "buffs": [
@@ -1025,6 +1030,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gain 10% physical resistance."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "Soft dreams in night, believing in an end."
                 }
             ],
             "buffs": [
@@ -1630,6 +1640,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gain 1 health per second."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "Sunny forecast, yet no future in wait."
                 }
             ],
             "buffs": [
@@ -2050,6 +2065,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gain 10% mass."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "Peer out and call to the endless expanse."
                 }
             ],
             "buffs": [
@@ -2390,6 +2410,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gain 10% speed."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "The day begins, the wanderer wills; one is nevermore."
                 }
             ],
             "buffs": [
@@ -2887,6 +2912,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gains 1 health per second."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "Schematics of one's own creation."
                 }
             ],
             "buffs": [
@@ -3289,6 +3319,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gain 10% speed."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "The dream of falsehood is a fallacy itself."
                 }
             ],
             "buffs": [
@@ -3609,6 +3644,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gain 10% speed."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "Encased in its walls is a signal untold."
                 }
             ],
             "buffs": [
@@ -4477,6 +4517,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gain 1 health per second."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "At the center of light is the core of separation."
                 }
             ],
             "buffs": [
@@ -4848,6 +4893,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gain 1 health per second."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "For the wanderer turns towards the silent sky."
                 }
             ],
             "buffs": [
@@ -5408,6 +5458,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gain 10% physical resistance."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "Staring until its shadow's form is perceptible."
                 }
             ],
             "buffs": [
@@ -5872,6 +5927,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gain 10% Arts resistance."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "And then they remember, the source of the dawn."
                 }
             ],
             "buffs": [
@@ -6482,6 +6542,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Trail Lingering Dreams."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "It is no longer gone, moreover on and on."
                 }
             ],
             "buffs": [
@@ -7050,6 +7115,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gain 10% Arts resistance."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "Stand west in the dusk; out towards the east light."
                 }
             ],
             "buffs": [
@@ -7675,6 +7745,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gain 10% mass."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "The swan song of something more sings again."
                 }
             ],
             "buffs": [
@@ -8351,6 +8426,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gain 10% Arts resistance."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "On the window, the wanderer perches, perturbed."
                 }
             ],
             "buffs": [
@@ -8917,6 +8997,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gain 10% mass."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "False light peers through windows of passerby below."
                 }
             ],
             "buffs": [
@@ -9294,6 +9379,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gain 10% physical resistance."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "And yet the music starts once more, a different timbre from the last."
                 }
             ],
             "buffs": [
@@ -9675,6 +9765,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gain 10% physical resistance."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "One final waltz in the camaraderie of life."
                 }
             ],
             "buffs": [
@@ -10122,6 +10217,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gain 10% Arts resistance."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "Although the sun is down, the clouds do not weep, its spirits high."
                 }
             ],
             "buffs": [
@@ -10823,6 +10923,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gain 10% Arts resistance."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "Is it fury or silence which is truth among falsehood?"
                 }
             ],
             "buffs": [
@@ -11204,6 +11309,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gain 10% mass."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "The stupor is not, for the wanderer is sober."
                 }
             ],
             "buffs": [
@@ -12077,6 +12187,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gain 10% speed."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "The wanderer turns as does the earth."
                 }
             ],
             "buffs": [
@@ -12819,6 +12934,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gain 1 health per second."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "Glimmering as gold in the sea of silver stars."
                 }
             ],
             "buffs": [
@@ -13202,6 +13322,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gain 10% physical resistance."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "For itself, the wanderer, is a refugee of its accord."
                 }
             ],
             "buffs": [
@@ -13627,6 +13752,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Passive",
                     "text": "Passively gains 10% speed."
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Memory",
+                    "text": "To dream itself into conscientiousness."
                 }
             ],
             "buffs": [

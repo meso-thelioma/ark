@@ -10,6 +10,11 @@
 			"icon": "fas fa-address-card",
 			"title": "Passive",
 			"text": "Passively gain 10% physical resistance."
+		},
+		{
+			"icon": "far fa-sad-tear",
+			"title": "Memory",
+			"text": "Staring until its shadow's form is perceptible."
 		}
 	],
 	"buffs": [

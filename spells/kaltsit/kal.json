@@ -10,6 +10,11 @@
 			"icon": "fas fa-address-card",
 			"title": "Passive",
 			"text": "Passively gain 1 health per second."
+		},
+		{
+			"icon": "far fa-sad-tear",
+			"title": "Memory",
+			"text": "For the wanderer turns towards the silent sky."
 		}
 	],
 	"buffs": [

@@ -10,6 +10,11 @@
 			"icon": "fas fa-address-card",
 			"title": "Passive",
 			"text": "Trail Lingering Dreams."
+		},
+		{
+			"icon": "far fa-sad-tear",
+			"title": "Memory",
+			"text": "It is no longer gone, moreover on and on."
 		}
 	],
 	"buffs": [
