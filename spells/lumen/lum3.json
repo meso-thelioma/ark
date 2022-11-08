@@ -6,7 +6,7 @@
 	"icon": "bubblingBeam",
 	"color": "#880",
 	"maxAngleDiffInRevs": 0.01,
-	"cooldown": 600,
+	"cooldown": 300,
 	"throttle": true,
 	"effects": [
 		{
