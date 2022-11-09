@@ -5,7 +5,7 @@
 	"color": "#42d4f4",
 	"icon": "gel",
 	"maxAngleDiffInRevs": 0.01,
-	"cooldown": 180,
+	"cooldown": 90,
 	"throttle": true,
 	"chargeTicks": 20,
 	"recoil": 0.1,

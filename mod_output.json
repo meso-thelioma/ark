@@ -480,7 +480,7 @@
             "color": "#42d4f4",
             "icon": "gel",
             "maxAngleDiffInRevs": 0.01,
-            "cooldown": 180,
+            "cooldown": 90,
             "throttle": true,
             "chargeTicks": 20,
             "recoil": 0.1,
@@ -575,7 +575,7 @@
             "untargeted": true,
             "maxChannellingTicks": 12000,
             "revsPerTickWhileChannelling": 1,
-            "cooldown": 60,
+            "cooldown": 300,
             "release": {},
             "releaseBehaviours": [
                 {
@@ -1110,7 +1110,7 @@
         },
         "bag1": {
             "id": "bag1",
-            "description": "Deal 10 physical damage. On hit, deals 2 AoE physical damage.",
+            "description": "Deal 10 physical damage. On hit, will deal 2 physical damage.",
             "action": "projectile",
             "color": "#3cb44b",
             "icon": "ballGlow",

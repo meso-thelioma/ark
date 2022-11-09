@@ -11,7 +11,7 @@
 	"maxChannellingTicks": 12000,
 	"releaseAfterTicks": 80,
 	"revsPerTickWhileChannelling": 1,
-	"cooldown": 60,
+	"cooldown": 300,
 	"release": {},
 	"releaseBehaviours": [
 		{
