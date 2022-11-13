@@ -44,7 +44,7 @@
 			"categories": 1,
 			"against": 15,
 			"radius": 0.07,
-			"accelerationPerTick": -0.02,
+			"accelerationPerTick": -0.005,
 			"attractToFacing": true
 		}
 	],
