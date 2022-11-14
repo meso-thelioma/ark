@@ -7,10 +7,10 @@
 	"icon": "mineExplosion",
 	"maxAngleDiffInRevs": 0.01,
 	"cooldown": 180,
-	"intervalTicks": 20,
+	"intervalTicks": 10,
 	"jitterRatio": 0,
 	"movementProportionWhileChannelling": 1,
-	"lengthTicks": 80,
+	"lengthTicks": 40,
 	"throttle": true,
 	"effects": [
 		{
