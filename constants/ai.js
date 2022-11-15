@@ -21,13 +21,12 @@ var ReactionMillisecondsLookup = { // Change the reaction time on certain spells
 var alreadyChosenSpells = false;
 var nextSpell = 0;
 
-var isBoss = false;
 // See ai.contracts.ts:
 // input is InputContract - contains information about the current state of the world
 // output is OutputContract - an action you want to take in response to the world 
 function act(input) {
     // Want the bot to do nothing? Uncomment the line below (remove the //):
-    
+    //return null;
     var state = input.state;
     var heroId = input.heroId;
     var hero = state.heroes[heroId];
@@ -43,7 +42,12 @@ function act(input) {
 
     var action = null;
     if (state.started) {
-        return null; 
+        action =
+            castSpell(state, hero, opponent, cooldowns, settings) ||
+            focus(hero, opponent) ||
+            move(state, hero) ||
+            face(state, hero, opponent)  
+         
     } else {
         action =
             chooseSpells(settings, heroId) ||
@@ -66,7 +70,6 @@ function defaultReactionMilliseconds(difficulty) {
 }
 
 function chooseSpells(settings, heroId) {
-    isBoss = true;
 
     if (alreadyChosenSpells) {
         return null;
@@ -82,14 +85,12 @@ function chooseSpells(settings, heroId) {
         spells["q"] = "a.q";
         spells["w"] = "a.w";
         spells["e"] = "a.e";
-        spells["r"] = "supportdps";
     }
     else {
         spells["a"] = "b.a";
         spells["q"] = "b.q";
         spells["w"] = "b.w";
         spells["e"] = "b.e";
-        spells["r"] = "supportdps";
     }
 
     return {
@@ -135,7 +136,7 @@ function findOpponent(heroes, myHeroId) {
         }
 
         // Uncomment the line below to only target humans
-        // if (hero.isBot) { continue; }
+       if (hero.isBot) { continue; }
 
         if (hero.health > mostHealth) {
             // Target the enemy with the most health
