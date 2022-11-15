@@ -23,7 +23,7 @@
 			"passive": true,
 			"source": "tier1",
 			"proportion": -0.35
-		},		
+		},
 		{
 			"type": "armor",
 			"passive": true,
@@ -243,7 +243,7 @@
 					"triggers": [
 						{
 							"type": "interval",
-							"triggerInterval": 60
+							"triggerInterval": 30
 						},
 						{
 							"type": "health",
@@ -271,8 +271,8 @@
 							"density": 0.0001,
 							"selfPassthrough": true,
 							"radius": 0.002,
-							"speed": 0.6,
-							"maxTicks": 30,
+							"speed": 3,
+							"maxTicks": 10,
 							"collideWith": 1,
 							"damage": 0,
 							"lifeSteal": 0,
@@ -302,7 +302,7 @@
 									"packet": {
 										"source": "arts",
 										"lifeSteal": 0,
-										"damage": 0.6,
+										"damage": 2,
 										"noHit": true
 									}
 								}
