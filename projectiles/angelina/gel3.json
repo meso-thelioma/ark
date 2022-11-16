@@ -75,7 +75,7 @@
 			"projectile": {
 				"density": 0.01,
 				"radius": 0.003,
-				"speed": 0.8,
+				"speed": 2,
 				"maxTicks": 100,
 				"damage": 0,
 				"lifeSteal": 0,
@@ -94,7 +94,8 @@
 						"triggers": [
 							{
 								"type": "collideWith",
-								"collideWith": 1
+								"collideWith": 1,
+								"against": 12
 							}
 						],
 						"projectile": {
@@ -217,9 +218,9 @@
 					},
 					{
 						"type": "strike",
-						"ticks": 30,
+						"ticks": 10,
 						"flash": true,
-						"numParticles": 5
+						"numParticles": 2
 					}
 				]
 			}

@@ -1,7 +1,7 @@
 {
 	"density": 0.001,
 	"attractable": false,
-	"radius": 0.4,
+	"radius": 0.8,
 	"speed": 0,
 	"sound": "fireball",
 	"maxTicks": 30,
@@ -46,7 +46,7 @@
 			"collideLike": 8192,
 			"categories": 8192,
 			"against": 1,
-			"radius": 0.4,
+			"radius": 0.8,
 			"accelerationPerTick": 0.3,
 			"clampSpeed": 0.15
 		}
@@ -59,7 +59,7 @@
 			"ticks": 30,
 			"loopTicks": 60,
 			"numParticles": 12,
-			"radius": 0.4,
+			"radius": 0.8,
 			"particleRadius": 0.002
 		}
 	]

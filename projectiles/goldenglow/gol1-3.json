@@ -16,6 +16,34 @@
 	],
 	"behaviours": [
 		{
+			"type": "aura",
+			"radius": 2,
+			"against": 1,
+			"tickInterval": 120,
+			"packet": {
+				"damage": 0,
+				"noHit": true,
+				"lifeSteal": 0
+			},
+			"buffs": [
+				{
+					"type": "cooldown",
+					"maxTicks": 1,
+					"owner": true,
+					"color": "#fabed4",
+					"render": {
+						"color": "#fabed422",
+						"particleRadius": 0.0125,
+						"emissionRadiusFactor": 0,
+						"ticks": 10,
+						"light": 1,
+						"invisible": true
+					},
+					"minCooldown": 300
+				}
+			]
+		},
+		{
 			"type": "updateCollideWith",
 			"trigger": {
 				"afterTicks": 2

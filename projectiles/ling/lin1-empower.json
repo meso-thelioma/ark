@@ -10,7 +10,8 @@
 			"packet": {
 				"source": "phys",
 				"lifeSteal": 0,
-				"damage": 10
+				"damage": 10,
+				"against": 14
 			}
 		}
 	],
@@ -65,7 +66,8 @@
 						"packet": {
 							"source": "arts",
 							"lifeSteal": 0,
-							"damage": 7
+							"damage": 7,
+							"against": 14
 						}
 					}
 				],

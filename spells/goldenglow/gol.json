@@ -1,7 +1,7 @@
 {
 	"id": "gol",
 	"name": "Springtime",
-	"description": "Arts Burst with safe, remote drone attacks.",
+	"description": "Arts Burst with punishing positioning.",
 	"passive": true,
 	"untargeted": true,
 	"cooldown": 1,

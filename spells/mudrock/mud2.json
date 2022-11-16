@@ -1,6 +1,6 @@
 {
 	"id": "mud2",
-	"description": "Gain 50 defense which will last one hit. Heal 3 true health if the shield is broken.",
+	"description": "Gain 50 defense which will last one hit. Heal 8 true health if the shield is broken.",
 	"action": "projectile",
 	"color": "#ffe119",
 	"name": "Dawn Goes Down To Day",

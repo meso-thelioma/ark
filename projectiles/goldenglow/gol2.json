@@ -61,68 +61,6 @@
 					}
 				]
 			}
-		},
-		{
-			"type": "spawn",
-			"triggers": [
-				{
-					"type": "interval",
-					"triggerInterval": 60
-				}
-			],
-			"requireParent": true,		
-			"projectile": {
-				"density": 0.01,
-				"radius": 0.003,
-				"speed": 0.6,
-				"maxTicks": 12,
-				"damage": 0,
-				"lifeSteal": 0,
-				"categories": 2,
-				"sound": "fireball",
-				"expireAgainstObjects": 14,
-				"soundHit": "standard",
-				"color": "#fabed4",
-				"buffs": [
-					{
-						"type": "burn",
-						"hitInterval": 1,
-						"maxTicks": 1,
-						"packet": {
-							"source": "arts",
-							"lifeSteal": 0,
-							"damage": 2
-						}
-					}
-				],
-				"collideWith": 1,
-				"behaviours": [
-					{
-						"type": "updateCollideWith",
-						"trigger": {
-							"afterTicks": 2
-						},
-						"collideWith": 65535
-					},
-					{
-						"type": "homing", 
-						"targetType": "follow", 
-						"redirect": true
-					}
-				],
-				"renderers": [
-					{
-						"type": "projectile",
-						"ticks": 10
-					},
-					{
-						"type": "strike",
-						"ticks": 30,
-						"flash": true,
-						"numParticles": 5
-					}
-				]
-			}
 		}
 	],
 	"renderers": [
@@ -133,9 +71,9 @@
 		{
 			"type": "swirl",
 			"color": "#fabed422",
-			"ticks": 10,
+			"ticks": 1,
 			"loopTicks": 120,
-			"numParticles": 12,
+			"numParticles": 3,
 			"radius": 0.04,
 			"particleRadius": 0.002
 		}

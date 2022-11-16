@@ -1,0 +1,43 @@
+{
+	"basedOn": "gel1",
+	"buffs": [
+		{
+			"type": "burn",
+			"hitInterval": 1,
+			"maxTicks": 1,
+			"packet": {
+				"source": "arts",
+				"lifeSteal": 0,
+				"damage": 3
+			}
+		},
+		{
+			"type": "movement",
+			"stack": "slow",
+			"maxTicks": 50,
+			"movementProportion": 0.2,
+			"render": {
+				"color": "#42d4f4",
+				"particleRadius": 0.002,
+				"emissionRadiusFactor": 1,
+				"ticks": 10,
+				"light": 1,
+				"invisible": true
+			}
+		}
+	],	
+	"behaviours": [
+		{
+			"type": "updateCollideWith",
+			"trigger": {
+				"afterTicks": 3
+			},
+			"collideWith": 65535
+		},
+		{
+			"type": "homing",
+			"targetType": "follow",
+			"maxTurnProportion": 0.01
+		}
+	]
+}
