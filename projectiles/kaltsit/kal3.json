@@ -63,8 +63,9 @@
 				"speed": 0,
 				"maxTicks": 1,
 				"damage": 0,
+				"collideWith": 1,
 				"expireOn": 0,
-				"sense": 1,
+				"sensor": true,
 				"categories": 2,
 				"lifeSteal": 0,
 				"buffs": [
