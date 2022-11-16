@@ -63,7 +63,6 @@
 				"speed": 0,
 				"maxTicks": 1,
 				"damage": 0,
-				"collideWith": 0,
 				"expireOn": 0,
 				"sense": 1,
 				"categories": 2,
@@ -72,13 +71,25 @@
 					{
 						"type": "burn",
 						"owner": true,
-						"collideWith": 1,
-						"against": 12,
 						"hitInterval": 1,
 						"maxTicks": 1,
 						"packet": {
+							"source": "kaltsit",
 							"damage": 20
 						}
+					},
+					{
+						"type": "armor",
+						"owner": true,
+						"maxTicks": 2,
+						"proportion": 1,
+						"renderers": [
+							{
+								"type": "buff",
+								"proportion": 1,
+								"source": "kaltsit"
+							}
+						]
 					}
 				],
 				"projectileBuffs": [
