@@ -5483,7 +5483,7 @@
         },
         "gol1": {
             "id": "gol1",
-            "description": "Hold to deal 8 Arts damage. Each stage will increase projectile speed and damage. At full charge, it will taunt drones to the target.",
+            "description": "Hold to deal 4 Arts damage per strike. At full charge, it will taunt drones to the target and silence the caster for 10 seconds.",
             "action": "focus",
             "color": "#fabed4",
             "icon": "andromedaChain",
@@ -5520,30 +5520,13 @@
                     {
                         "type": "spawn",
                         "note": "payoff.",
+                        "requireParent": true,
                         "triggers": [
                             {
-                                "type": "and",
-                                "triggers": [
-                                    {
-                                        "type": "collideWith",
-                                        "collideWith": 16384,
-                                        "against": 1
-                                    },
-                                    {
-                                        "type": "afterTicks",
-                                        "afterTicks": 0
-                                    },
-                                    {
-                                        "type": "not",
-                                        "trigger": {
-                                            "type": "afterTicks",
-                                            "afterTicks": 36
-                                        }
-                                    }
-                                ]
+                                "type": "interval",
+                                "triggerInterval": 30
                             }
                         ],
-                        "expire": true,
                         "projectile": {
                             "density": 0.01,
                             "radius": 0.003,
@@ -5564,7 +5547,7 @@
                                     "packet": {
                                         "source": "arts",
                                         "lifeSteal": 0,
-                                        "damage": 8
+                                        "damage": 4
                                     }
                                 }
                             ],
@@ -5582,82 +5565,6 @@
                                 {
                                     "type": "projectile",
                                     "ticks": 10
-                                },
-                                {
-                                    "type": "strike",
-                                    "ticks": 30,
-                                    "flash": true,
-                                    "numParticles": 5
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "type": "spawn",
-                        "note": "payoff.",
-                        "triggers": [
-                            {
-                                "type": "and",
-                                "triggers": [
-                                    {
-                                        "type": "collideWith",
-                                        "collideWith": 16384,
-                                        "against": 1
-                                    },
-                                    {
-                                        "type": "afterTicks",
-                                        "afterTicks": 36
-                                    },
-                                    {
-                                        "type": "not",
-                                        "trigger": {
-                                            "type": "afterTicks",
-                                            "afterTicks": 180
-                                        }
-                                    }
-                                ]
-                            }
-                        ],
-                        "expire": true,
-                        "projectile": {
-                            "density": 0.01,
-                            "radius": 0.004,
-                            "speed": 0.7,
-                            "maxTicks": 120,
-                            "damage": 0,
-                            "lifeSteal": 0,
-                            "categories": 2,
-                            "sound": "fireball",
-                            "expireAgainstObjects": 14,
-                            "soundHit": "standard",
-                            "color": "#fabed4",
-                            "buffs": [
-                                {
-                                    "type": "burn",
-                                    "hitInterval": 1,
-                                    "maxTicks": 1,
-                                    "packet": {
-                                        "source": "arts",
-                                        "lifeSteal": 0,
-                                        "damage": 12
-                                    }
-                                }
-                            ],
-                            "collideWith": 1,
-                            "behaviours": [
-                                {
-                                    "type": "updateCollideWith",
-                                    "trigger": {
-                                        "afterTicks": 2
-                                    },
-                                    "collideWith": 65535
-                                }
-                            ],
-                            "renderers": [
-                                {
-                                    "type": "projectile",
-                                    "ticks": 10,
-                                    "intermediateInterpolations": 1
                                 },
                                 {
                                     "type": "strike",
@@ -5714,7 +5621,7 @@
                                     "type": "aura",
                                     "radius": 2,
                                     "against": 1,
-                                    "tickInterval": 120,
+                                    "tickInterval": 1,
                                     "packet": {
                                         "damage": 0,
                                         "noHit": true,
@@ -5734,7 +5641,7 @@
                                                 "light": 1,
                                                 "invisible": true
                                             },
-                                            "minCooldown": 300
+                                            "minCooldown": 600
                                         }
                                     ]
                                 },
@@ -5830,13 +5737,6 @@
                         "color": "#fabed4",
                         "offsetRadius": 0.05,
                         "offsetAngleInRevs": 0
-                    },
-                    {
-                        "type": "projectile",
-                        "ticks": 1,
-                        "color": "#fabed4",
-                        "offsetRadius": 0.05,
-                        "offsetAngleInRevs": 0.2
                     },
                     {
                         "type": "projectile",
@@ -6080,11 +5980,11 @@
             "projectile": {
                 "density": 0.01,
                 "radius": 0.0126,
-                "collideWith": 65534,
+                "collideWith": 65535,
                 "selfPassthrough": true,
                 "speed": 0.9,
                 "maxTicks": 30,
-                "expireOn": 0,
+                "expireOn": 1,
                 "damage": 0,
                 "lifeSteal": 0,
                 "categories": 3,
@@ -6098,8 +5998,8 @@
                     "damage": 0,
                     "lifeSteal": 0,
                     "radius": 0.04,
-                    "minImpulse": -0.001,
-                    "maxImpulse": -0.0001,
+                    "minImpulse": 0,
+                    "maxImpulse": 0,
                     "swapWith": 1,
                     "renderTicks": 15,
                     "color": "#fabed4"
@@ -7637,7 +7537,7 @@
         "lum1": {
             "id": "lum1",
             "name": "Starless Wonder",
-            "description": "Heal 15 health and deal 3 physical damage. At increased distances, the healing will be reduced. Healed targets will not take lethal physical damage.",
+            "description": "Heal 15 health and deal 8 physical damage. At increased distances, the healing will be reduced. Healed targets will not take lethal physical damage.",
             "action": "projectile",
             "icon": "bubblingBeam",
             "color": "#880",
@@ -7688,7 +7588,7 @@
                         "packet": {
                             "source": "phys",
                             "lifeSteal": 0,
-                            "damage": 3
+                            "damage": 8
                         }
                     },
                     {
@@ -8139,7 +8039,7 @@
                                                 "source": "heal",
                                                 "noHit": true,
                                                 "lifeSteal": 0,
-                                                "damage": -0.25
+                                                "damage": -1.25
                                             }
                                         }
                                     ]

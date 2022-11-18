@@ -19,7 +19,7 @@
 			"type": "aura",
 			"radius": 2,
 			"against": 1,
-			"tickInterval": 120,
+			"tickInterval": 1,
 			"packet": {
 				"damage": 0,
 				"noHit": true,
@@ -39,7 +39,7 @@
 						"light": 1,
 						"invisible": true
 					},
-					"minCooldown": 300
+					"minCooldown": 600
 				}
 			]
 		},

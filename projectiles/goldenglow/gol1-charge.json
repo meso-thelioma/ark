@@ -22,60 +22,14 @@
 		{
 			"type": "spawn",
 			"note": "payoff.",
+			"requireParent": true,
 			"triggers": [
-				{
-					"type": "and",
-					"triggers": [
-						{
-							"type": "collideWith",
-							"collideWith": 16384,
-							"against": 1
-						},
-						{
-							"type": "afterTicks",
-							"afterTicks": 0
-						},
-						{
-							"type": "not",
-							"trigger": {
-								"type": "afterTicks",
-								"afterTicks": 36
-							}
-						}
-					]
+				{		
+					"type": "interval",
+					"triggerInterval": 30
 				}
 			],
-			"expire": true,
 			"projectile": "gol1"
-		},
-		{
-			"type": "spawn",
-			"note": "payoff.",
-			"triggers": [
-				{
-					"type": "and",
-					"triggers": [
-						{
-							"type": "collideWith",
-							"collideWith": 16384,
-							"against": 1
-						},
-						{
-							"type": "afterTicks",
-							"afterTicks": 36
-						},
-						{
-							"type": "not",
-							"trigger": {
-								"type": "afterTicks",
-								"afterTicks": 180
-							}
-						}
-					]
-				}
-			],
-			"expire": true,
-			"projectile": "gol1-2"
 		},
 		{
 			"type": "spawn",
@@ -114,13 +68,6 @@
 			"color": "#fabed4",
 			"offsetRadius": 0.05,
 			"offsetAngleInRevs": 0
-		},
-		{
-			"type": "projectile",
-			"ticks": 1,
-			"color": "#fabed4",
-			"offsetRadius": 0.05,
-			"offsetAngleInRevs": 0.2
 		},
 		{
 			"type": "projectile",
