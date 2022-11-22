@@ -6,7 +6,7 @@
 	"icon": "ballGlow",
 	"name": "Viral Load",
 	"maxAngleDiffInRevs": 0.01,
-	"cooldown": 90,
+	"cooldown": 120,
 	"throttle": true,
 	"sound": "fireball",
 	"effects": [

@@ -981,7 +981,7 @@
                                                             "categories": 1,
                                                             "against": 14,
                                                             "radius": 0.04,
-                                                            "accelerationPerTick": -0.04
+                                                            "accelerationPerTick": -0.01
                                                         }
                                                     ],
                                                     "renderers": [
@@ -1125,7 +1125,7 @@
             "icon": "ballGlow",
             "name": "Viral Load",
             "maxAngleDiffInRevs": 0.01,
-            "cooldown": 90,
+            "cooldown": 120,
             "throttle": true,
             "sound": "fireball",
             "effects": [
@@ -1333,7 +1333,7 @@
             "icon": "ballGlow",
             "name": "Infectious Smile",
             "maxAngleDiffInRevs": 0.01,
-            "cooldown": 480,
+            "cooldown": 600,
             "throttle": true,
             "effects": [
                 {
@@ -5536,6 +5536,7 @@
                             "lifeSteal": 0,
                             "categories": 2,
                             "sound": "fireball",
+                            "selfPassthrough": true,
                             "expireAgainstObjects": 14,
                             "soundHit": "standard",
                             "color": "#fabed4",
@@ -5600,6 +5601,7 @@
                             "lifeSteal": 0,
                             "categories": 2,
                             "sound": "fireball",
+                            "selfPassthrough": true,
                             "expireAgainstObjects": 14,
                             "soundHit": "standard",
                             "color": "#fabed4",
@@ -5680,7 +5682,7 @@
                                                 "categories": 2,
                                                 "against": 1,
                                                 "radius": 2,
-                                                "accelerationPerTick": 0.1,
+                                                "accelerationPerTick": 0.3,
                                                 "clampSpeed": 2
                                             },
                                             {
@@ -5715,8 +5717,7 @@
                                     "flash": true,
                                     "numParticles": 5
                                 }
-                            ],
-                            "selfPassthrough": true
+                            ]
                         }
                     }
                 ],
@@ -5795,7 +5796,7 @@
             "icon": "andromedaChain",
             "name": "Forget Me Not",
             "maxAngleDiffInRevs": 0.01,
-            "cooldown": 120,
+            "cooldown": 300,
             "effects": [
                 {
                     "icon": "fas fa-address-card",
@@ -5856,7 +5857,7 @@
                             "density": 1,
                             "radius": 0.008,
                             "speed": 0,
-                            "maxTicks": 48000,
+                            "maxTicks": 2400,
                             "damage": 0,
                             "lifeSteal": 0,
                             "categories": 2,
@@ -5872,7 +5873,7 @@
                                     "type": "cooldown",
                                     "cleansable": false,
                                     "maxTicks": 48000,
-                                    "cooldownRateModifier": 0.2,
+                                    "cooldownRateModifier": 0.5,
                                     "spellId": "gol3"
                                 }
                             ],
@@ -5893,7 +5894,7 @@
                                     "ticks": 1,
                                     "loopTicks": 120,
                                     "numParticles": 3,
-                                    "radius": 0.04,
+                                    "radius": 0.007,
                                     "particleRadius": 0.002
                                 }
                             ]
@@ -5919,8 +5920,14 @@
             "maxAngleDiffInRevs": 0.01,
             "cooldown": 600,
             "throttle": true,
-            "recoil": -0.5,
-            "effects": [],
+            "recoil": -0.15,
+            "effects": [
+                {
+                    "icon": "fas fa-address-card",
+                    "title": "Arts Damage",
+                    "text": "Damage * (1 - Resistance) * Buffs"
+                }
+            ],
             "buffs": [],
             "projectile": {
                 "density": 0.01,
@@ -7654,7 +7661,7 @@
             "icon": "bubblingBeam",
             "color": "#880",
             "maxAngleDiffInRevs": 0.01,
-            "cooldown": 240,
+            "cooldown": 450,
             "throttle": true,
             "projectile": {
                 "density": 0.01,
@@ -8791,7 +8798,7 @@
                             "source": "arts",
                             "lifeSteal": 0,
                             "noHit": true,
-                            "damage": -1
+                            "damage": -0.1
                         }
                     },
                     {
@@ -8876,7 +8883,7 @@
                                     "source": "arts",
                                     "lifeSteal": 0,
                                     "noHit": true,
-                                    "damage": -3
+                                    "damage": -0.1
                                 }
                             },
                             {
@@ -9065,9 +9072,18 @@
                                         ],
                                         "renderers": [
                                             {
-                                                "type": "projectile",
-                                                "color": "#4461",
-                                                "ticks": 40
+                                                "type": "reticule",
+                                                "radius": 0.08,
+                                                "minRadius": 0.075,
+                                                "color": "#4462",
+                                                "shrinkTicks": 10
+                                            },
+                                            {
+                                                "type": "reticule",
+                                                "radius": 0.08,
+                                                "minRadius": 0.075,
+                                                "color": "#4462",
+                                                "shrinkTicks": 8
                                             }
                                         ]
                                     }
@@ -9155,7 +9171,7 @@
                             "source": "arts",
                             "lifeSteal": 0,
                             "noHit": true,
-                            "damage": -1
+                            "damage": -0.1
                         }
                     },
                     {
@@ -9240,7 +9256,7 @@
                                     "source": "arts",
                                     "lifeSteal": 0,
                                     "noHit": true,
-                                    "damage": -3
+                                    "damage": -0.1
                                 }
                             },
                             {
@@ -9523,7 +9539,7 @@
         },
         "mud2": {
             "id": "mud2",
-            "description": "Gain 50 defense which will last one hit. Heal 8 true health if the shield is broken.",
+            "description": "Gain 50 defense which will last one hit. Heal 2 true health if the shield is broken.",
             "action": "projectile",
             "color": "#ffe119",
             "name": "Dawn Goes Down To Day",
@@ -9650,7 +9666,7 @@
                                             "packet": {
                                                 "noHit": true,
                                                 "lifeSteal": 0,
-                                                "damage": -8
+                                                "damage": -2
                                             }
                                         }
                                     ]
@@ -10378,7 +10394,7 @@
                                 "type": "collideWith",
                                 "collideWith": 65534,
                                 "against": 12,
-                                "triggerInterval": 4,
+                                "triggerInterval": 12,
                                 "maxHits": 1000
                             }
                         ],
@@ -11416,7 +11432,7 @@
                 "collideWith": 8193,
                 "link": {
                     "linkWith": 1,
-                    "impulsePerTick": 0.0002,
+                    "impulsePerTick": 0.0001,
                     "selfFactor": 1,
                     "targetFactor": -1,
                     "minDistance": 0.025,
@@ -13211,13 +13227,13 @@
         },
         "ska2": {
             "id": "ska2",
-            "description": "Create a Wineglass at cursor which will true heal 1.5 health per second. The Wineglass will shatter and deal 12 true damage after an opponent or projectile collision.",
+            "description": "Create a Wineglass at cursor which will true heal 1.5 health per second. The Wineglass will shatter and deal 6 true damage after an opponent or projectile collision.",
             "action": "projectile",
             "color": "#dcbeff",
             "icon": "fireWave",
             "name": "Intoxicating",
             "maxAngleDiffInRevs": 0.01,
-            "cooldown": 600,
+            "cooldown": 240,
             "effects": [
                 {
                     "icon": "fas fa-address-card",
@@ -13323,7 +13339,7 @@
                                                 "maxTicks": 1,
                                                 "packet": {
                                                     "lifeSteal": 0,
-                                                    "damage": 12
+                                                    "damage": 6
                                                 }
                                             }
                                         ],
@@ -13388,7 +13404,7 @@
                                                             "maxTicks": 1,
                                                             "packet": {
                                                                 "lifeSteal": 0,
-                                                                "damage": 24
+                                                                "damage": 12
                                                             }
                                                         }
                                                     ],
@@ -15550,7 +15566,7 @@
         },
         "wed3": {
             "id": "wed3",
-            "description": "Deal Arts damage and mark opponents. Turrets will also activate the blast. Marked opponents will take 30 Arts damage.",
+            "description": "Deal Arts damage and mark opponents. Turrets will also activate the blast. Marked opponents will take 15 Arts damage.",
             "action": "projectile",
             "color": "#f58231",
             "icon": "teleport",
@@ -15672,7 +15688,7 @@
                                                 "packet": {
                                                     "source": "arts",
                                                     "lifeSteal": 0,
-                                                    "damage": 30
+                                                    "damage": 15
                                                 }
                                             }
                                         ],

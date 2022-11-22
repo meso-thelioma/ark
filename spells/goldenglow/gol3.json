@@ -8,8 +8,14 @@
 	"maxAngleDiffInRevs": 0.01,
 	"cooldown": 600,	
 	"throttle": true,
-	"recoil": -0.5,
-	"effects": [],
+	"recoil": -0.15,
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
 	"buffs": [],
 	"projectile": "gol3"
 }

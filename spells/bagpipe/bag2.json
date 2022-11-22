@@ -6,7 +6,7 @@
 	"icon": "ballGlow",
 	"name": "Infectious Smile",
 	"maxAngleDiffInRevs": 0.01,
-	"cooldown": 480,
+	"cooldown": 600,
 	"throttle": true,
 	"effects": [
 		{

@@ -143,9 +143,18 @@
 							],
 							"renderers": [
 								{
-									"type": "projectile",
-									"color": "#4461",
-									"ticks": 40
+									"type": "reticule",
+									"radius": 0.08,
+									"minRadius": 0.075,
+									"color": "#4462",
+									"shrinkTicks": 10
+								},
+								{
+									"type": "reticule",
+									"radius": 0.08,
+									"minRadius": 0.075,
+									"color": "#4462",
+									"shrinkTicks": 8
 								}
 							]
 						}

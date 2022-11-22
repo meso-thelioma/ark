@@ -95,7 +95,7 @@
 									"maxTicks": 1,
 									"packet": {
 										"lifeSteal": 0,			
-										"damage": 12
+										"damage": 6
 									}
 								}
 							],
@@ -161,7 +161,7 @@
 												"maxTicks": 1,
 												"packet": {
 													"lifeSteal": 0,			
-													"damage": 24
+													"damage": 12
 												}
 											}
 										],

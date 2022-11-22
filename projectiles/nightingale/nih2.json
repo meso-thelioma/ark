@@ -38,7 +38,7 @@
 					"type": "collideWith",
 					"collideWith": 65534,
 					"against": 12,
-					"triggerInterval": 4,
+					"triggerInterval": 12,
 					"maxHits": 1000
 				}
 			],

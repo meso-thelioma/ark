@@ -25,7 +25,7 @@
 	"collideWith": 8193,
 	"link": {
 		"linkWith": 1,
-		"impulsePerTick": 0.0002,
+		"impulsePerTick": 0.0001,
 		"selfFactor": 1,
 		"targetFactor": -1,
 		"minDistance": 0.025,

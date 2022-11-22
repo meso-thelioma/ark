@@ -6,7 +6,7 @@
 	"icon": "bubblingBeam",
 	"color": "#880",
 	"maxAngleDiffInRevs": 0.01,
-	"cooldown": 240,
+	"cooldown": 450,
 	"throttle": true,
 	"projectile": "lum2"
 }

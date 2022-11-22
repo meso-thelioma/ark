@@ -184,7 +184,7 @@
 												"categories": 1,
 												"against": 14,
 												"radius": 0.04,
-												"accelerationPerTick": -0.04
+												"accelerationPerTick": -0.01
 											}
 										],
 										"renderers": [

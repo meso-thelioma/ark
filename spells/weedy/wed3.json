@@ -1,6 +1,6 @@
 {
 	"id": "wed3",
-	"description": "Deal Arts damage and mark opponents. Turrets will also activate the blast. Marked opponents will take 30 Arts damage.",
+	"description": "Deal Arts damage and mark opponents. Turrets will also activate the blast. Marked opponents will take 15 Arts damage.",
 	"action": "projectile",
 	"color": "#f58231",
 	"icon": "teleport",

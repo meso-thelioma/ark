@@ -6,7 +6,7 @@
 	"icon": "andromedaChain",
 	"name": "Forget Me Not",
 	"maxAngleDiffInRevs": 0.01,
-	"cooldown": 120,
+	"cooldown": 300,
 	"effects": [
 		{
 			"icon": "fas fa-address-card",

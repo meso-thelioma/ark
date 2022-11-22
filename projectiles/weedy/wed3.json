@@ -100,7 +100,7 @@
 									"packet": {
 										"source": "arts",
 										"lifeSteal": 0,
-										"damage": 30
+										"damage": 15
 									}
 								}
 							],
