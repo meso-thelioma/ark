@@ -5502,7 +5502,7 @@
                 "radius": 0.002,
                 "collideWith": 16384,
                 "expireOn": 0,
-                "speed": 0.025,
+                "speed": 0.005,
                 "maxTicks": 180,
                 "damage": 0,
                 "attractable": false,
@@ -5515,7 +5515,7 @@
                     {
                         "type": "homing",
                         "maxTurnProportion": 0.1,
-                        "targetType": "follow"
+                        "targetType": "self"
                     },
                     {
                         "type": "spawn",
@@ -5524,7 +5524,7 @@
                         "triggers": [
                             {
                                 "type": "interval",
-                                "triggerInterval": 30
+                                "triggerInterval": 20
                             }
                         ],
                         "projectile": {
@@ -5715,7 +5715,8 @@
                                     "flash": true,
                                     "numParticles": 5
                                 }
-                            ]
+                            ],
+                            "selfPassthrough": true
                         }
                     }
                 ],
@@ -5788,13 +5789,13 @@
         },
         "gol2": {
             "id": "gol2",
-            "description": "Backstep. If a projectile would have collided, cast a drone.",
+            "description": "Backstep. If a projectile would have collided, cast a flower that continously lowers Gladiolus cooldown.",
             "action": "projectile",
             "color": "#fabed4",
             "icon": "andromedaChain",
             "name": "Forget Me Not",
             "maxAngleDiffInRevs": 0.01,
-            "cooldown": 300,
+            "cooldown": 120,
             "effects": [
                 {
                     "icon": "fas fa-address-card",
@@ -5803,10 +5804,10 @@
                 }
             ],
             "throttle": true,
-            "recoil": 0.2,
+            "recoil": 0.35,
             "projectile": {
                 "density": 0.01,
-                "radius": 0.0126,
+                "radius": 0.0146,
                 "collideWith": 65534,
                 "selfPassthrough": true,
                 "speed": 0,
@@ -5853,16 +5854,17 @@
                         "expire": true,
                         "projectile": {
                             "density": 1,
-                            "radius": 0.003,
-                            "speed": 0.07,
+                            "radius": 0.008,
+                            "speed": 0,
                             "maxTicks": 48000,
                             "damage": 0,
                             "lifeSteal": 0,
                             "categories": 2,
                             "sound": "fireball",
-                            "expireOn": 65527,
+                            "expireOn": 8192,
                             "soundHit": "standard",
-                            "expireAgainstObjects": 12,
+                            "expireAgainstObjects": 1,
+                            "minTicks": 30,
                             "color": "#fabed4",
                             "buffs": [],
                             "projectileBuffs": [
@@ -5877,52 +5879,7 @@
                             "behaviours": [
                                 {
                                     "type": "homing",
-                                    "maxTurnProportion": 0.01,
                                     "targetType": "self"
-                                },
-                                {
-                                    "type": "spawn",
-                                    "trigger": {
-                                        "expire": true
-                                    },
-                                    "expire": true,
-                                    "projectile": {
-                                        "density": 30,
-                                        "radius": 0.05,
-                                        "selfPassthrough": true,
-                                        "speed": 0,
-                                        "maxTicks": 10,
-                                        "sense": 1,
-                                        "minTicks": 10,
-                                        "collideWith": 0,
-                                        "damage": 0,
-                                        "expireOn": 0,
-                                        "lifeSteal": 0,
-                                        "categories": 2,
-                                        "sound": "fireball",
-                                        "soundHit": "standard",
-                                        "color": "#fabed4",
-                                        "buffs": [
-                                            {
-                                                "type": "burn",
-                                                "hitInterval": 1,
-                                                "maxTicks": 1,
-                                                "packet": {
-                                                    "source": "arts",
-                                                    "lifeSteal": 0,
-                                                    "damage": 10
-                                                }
-                                            }
-                                        ],
-                                        "behaviours": [],
-                                        "renderers": [
-                                            {
-                                                "type": "projectile",
-                                                "color": "#fabed411",
-                                                "ticks": 40
-                                            }
-                                        ]
-                                    }
                                 }
                             ],
                             "renderers": [
@@ -5954,65 +5911,105 @@
         },
         "gol3": {
             "id": "gol3",
-            "description": "Swap positions with the target. Forget Me Not will have its cooldown reset.",
+            "description": "If the caster's flowers are hit, deal 15 Arts damage. Gladiolus and Forget Me Not will have its cooldown reset if the caster hits a drone. ",
             "action": "projectile",
             "color": "#fabed4",
             "icon": "andromedaChain",
             "name": "Gladiolus",
             "maxAngleDiffInRevs": 0.01,
-            "cooldown": 900,
+            "cooldown": 600,
             "throttle": true,
-            "effects": [
-                {
-                    "icon": "fas fa-address-card",
-                    "title": "Arts Damage",
-                    "text": "Damage * (1 - Resistance) * Buffs"
-                }
-            ],
-            "buffs": [
-                {
-                    "type": "cooldown",
-                    "maxTicks": 1,
-                    "color": "#fabed4",
-                    "spellId": "gol2",
-                    "render": {
-                        "color": "#fabed422",
-                        "particleRadius": 0.0125,
-                        "emissionRadiusFactor": 0,
-                        "ticks": 10,
-                        "light": 1,
-                        "invisible": true
-                    },
-                    "maxCooldown": 1
-                }
-            ],
+            "recoil": -0.5,
+            "effects": [],
+            "buffs": [],
             "projectile": {
                 "density": 0.01,
-                "radius": 0.0126,
-                "collideWith": 65535,
-                "selfPassthrough": true,
+                "radius": 0.0026,
+                "collideWith": 2,
                 "speed": 0.9,
                 "maxTicks": 30,
-                "expireOn": 1,
+                "expireOn": 2,
+                "expireAgainstObjects": 1,
                 "damage": 0,
                 "lifeSteal": 0,
-                "categories": 3,
+                "categories": 8195,
                 "sound": "fireball",
                 "soundHit": "standard",
-                "color": "#fabed4",
+                "color": "#fabed422",
                 "projectileBuffs": [],
-                "behaviours": [],
+                "behaviours": [
+                    {
+                        "type": "spawn",
+                        "triggers": [
+                            {
+                                "type": "collideWith",
+                                "collideWith": 2,
+                                "collideTypes": [
+                                    "gol2"
+                                ],
+                                "against": 1
+                            }
+                        ],
+                        "projectile": {
+                            "density": 0.5,
+                            "attractable": false,
+                            "radius": 0.005,
+                            "speed": 3,
+                            "maxTicks": 30,
+                            "damage": 0,
+                            "lifeSteal": 0.3,
+                            "categories": 6,
+                            "expireOn": 65527,
+                            "sensor": true,
+                            "expireAgainstHeroes": 1,
+                            "sound": "fireball",
+                            "color": "#fabed4",
+                            "buffs": [
+                                {
+                                    "type": "burn",
+                                    "hitInterval": 1,
+                                    "maxTicks": 1,
+                                    "packet": {
+                                        "source": "arts",
+                                        "lifeSteal": 0,
+                                        "damage": 15
+                                    }
+                                }
+                            ],
+                            "projectileBuffs": [
+                                {
+                                    "type": "cooldown",
+                                    "owner": true,
+                                    "maxCooldown": 1,
+                                    "spellIds": [
+                                        "gol2",
+                                        "gol3"
+                                    ],
+                                    "color": "#fabed4"
+                                }
+                            ],
+                            "renderers": [
+                                {
+                                    "type": "ray",
+                                    "intermediatePoints": true,
+                                    "ticks": 30,
+                                    "shine": 1,
+                                    "glow": 0.2,
+                                    "bloom": 0.005,
+                                    "vanish": 1,
+                                    "light": 1.8
+                                }
+                            ],
+                            "behaviours": [
+                                {
+                                    "type": "homing",
+                                    "targetType": "self"
+                                }
+                            ]
+                        }
+                    }
+                ],
                 "buffs": [],
-                "detonate": {
-                    "damage": 0,
-                    "lifeSteal": 0,
-                    "radius": 0.04,
-                    "minImpulse": 0,
-                    "maxImpulse": 0,
-                    "swapWith": 1,
-                    "renderTicks": 15,
-                    "color": "#fabed4"
-                },
                 "renderers": [
                     {
                         "type": "projectile",

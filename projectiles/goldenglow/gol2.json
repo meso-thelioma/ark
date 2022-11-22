@@ -1,15 +1,16 @@
 {
 	"density": 1,
-	"radius": 0.003,
-	"speed": 0.07,
+	"radius": 0.008,
+	"speed": 0,
 	"maxTicks": 48000,
 	"damage": 0,
 	"lifeSteal": 0,
 	"categories": 2,
 	"sound": "fireball",
-	"expireOn": 65527,
+	"expireOn": 8192,
 	"soundHit": "standard",
-	"expireAgainstObjects": 12,
+	"expireAgainstObjects": 1,
+	"minTicks": 30,
 	"color": "#fabed4",
 	"buffs": [],
 	"projectileBuffs": [
@@ -24,52 +25,7 @@
 	"behaviours": [
 		{
 			"type": "homing",
-			"maxTurnProportion": 0.01,
 			"targetType": "self"
-		},
-		{
-			"type": "spawn",
-			"trigger": {
-				"expire": true
-			},
-			"expire": true,			
-			"projectile": {
-				"density": 30,
-				"radius": 0.05,
-				"selfPassthrough": true,
-				"speed": 0,
-				"maxTicks": 10,
-				"sense": 1,
-				"minTicks": 10,					
-				"collideWith": 0,
-				"damage": 0,
-				"expireOn": 0,
-				"lifeSteal": 0,
-				"categories": 2,
-				"sound": "fireball",
-				"soundHit": "standard",
-				"color": "#fabed4",
-				"buffs": [
-					{
-						"type": "burn",
-						"hitInterval": 1,
-						"maxTicks": 1,
-						"packet": {
-							"source": "arts",
-							"lifeSteal": 0,
-							"damage": 10
-						}
-					}
-				],
-				"behaviours": [],
-				"renderers": [
-					{
-						"type": "projectile",
-						"color": "#fabed411",
-						"ticks": 40
-					}
-				]
-			}
 		}
 	],
 	"renderers": [

@@ -2,6 +2,7 @@
 	"basedOn": "gol1",
 	"radius": 0.004,
 	"speed": 3,
+	"selfPassthrough": true,
 	"buffs": [
 		{
 			"type": "burn",

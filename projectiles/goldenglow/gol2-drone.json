@@ -1,6 +1,6 @@
 {
 	"density": 0.01,
-	"radius": 0.0126,
+	"radius": 0.0146,
 	"collideWith": 65534,
 	"selfPassthrough": true,
 	"speed": 0,

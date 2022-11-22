@@ -1,12 +1,12 @@
 {
 	"id": "gol2",	
-	"description": "Backstep. If a projectile would have collided, cast a drone.",
+	"description": "Backstep. If a projectile would have collided, cast a flower that continously lowers Gladiolus cooldown.",
 	"action": "projectile",
 	"color": "#fabed4",
 	"icon": "andromedaChain",
 	"name": "Forget Me Not",
 	"maxAngleDiffInRevs": 0.01,
-	"cooldown": 300,
+	"cooldown": 120,
 	"effects": [
 		{
 			"icon": "fas fa-address-card",
@@ -15,6 +15,6 @@
 		}
 	],
 	"throttle": true,
-	"recoil": 0.2,
+	"recoil": 0.35,
 	"projectile": "gol2-drone"
 }

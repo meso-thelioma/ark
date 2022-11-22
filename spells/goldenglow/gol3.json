@@ -1,36 +1,15 @@
 {
 	"id": "gol3",
-	"description": "Swap positions with the target. Forget Me Not will have its cooldown reset.",
+	"description": "If the caster's flowers are hit, deal 15 Arts damage. Gladiolus and Forget Me Not will have its cooldown reset if the caster hits a drone. ",
 	"action": "projectile",
 	"color": "#fabed4",
 	"icon": "andromedaChain",
 	"name": "Gladiolus",
 	"maxAngleDiffInRevs": 0.01,
-	"cooldown": 900,	
+	"cooldown": 600,	
 	"throttle": true,
-	"effects": [
-		{
-			"icon": "fas fa-address-card",
-			"title": "Arts Damage",
-			"text": "Damage * (1 - Resistance) * Buffs"
-		}
-	],
-	"buffs": [				
-		{
-			"type": "cooldown",
-			"maxTicks": 1,
-			"color": "#fabed4",
-			"spellId": "gol2",
-			"render": {
-				"color": "#fabed422",
-				"particleRadius": 0.0125,
-				"emissionRadiusFactor": 0,
-				"ticks": 10,
-				"light": 1,
-				"invisible": true
-			},
-			"maxCooldown": 1
-		}
-	],
+	"recoil": -0.5,
+	"effects": [],
+	"buffs": [],
 	"projectile": "gol3"
 }
