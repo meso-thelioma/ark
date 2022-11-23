@@ -49,17 +49,10 @@
 					}
 				},
 				{
-					"type": "armor",
-					"maxTicks": 3,
-					"stack": "ceobe",
-					"source": "ceobe",
-					"proportion": 0.5
-				},
-				{
 					"source": "phys",
+					"stack": "bagpipes",
 					"maxTicks": 3,
-					"flat": 20,
-					"maxReduction": 0
+					"flat": -5
 				}
 			]
 		}

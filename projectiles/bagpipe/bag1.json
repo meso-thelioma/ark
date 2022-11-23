@@ -124,7 +124,7 @@
 									"packet": {
 										"source": "phys",
 										"lifeSteal": 0,
-										"damage": 15
+										"damage": 13
 									}
 								},
 								{
@@ -133,7 +133,7 @@
 									"collideWith": 1,
 									"owner": true,
 									"spellId": "bag2",
-									"adjustCooldown": -180
+									"adjustCooldown": -90
 								}
 							],
 							"behaviours": [

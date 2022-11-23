@@ -1,6 +1,6 @@
 {
 	"id": "bag1",
-	"description": "Deal 10 physical damage. On hit, will deal 2 physical damage.",
+	"description": "Deal 10 physical damage. On hit, 2 physical damage will be dealt.",
 	"action": "projectile",
 	"color": "#3cb44b",
 	"icon": "ballGlow",

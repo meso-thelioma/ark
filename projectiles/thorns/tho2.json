@@ -48,6 +48,18 @@
 				"soundHit": "standard",
 				"color": "#fff",
 				"buffs": [],
+				"projectileBuffs": [			
+					{
+						"type": "cooldown",
+						"against": 3,
+						"maxTicks": 1,
+						"cleansable": false,
+						"adjustCooldown": -240,
+						"spellIds": [
+							"tho3"
+						]
+					}
+				],
 				"collideWith": 0,
 				"behaviours": [],
 				"renderers": [

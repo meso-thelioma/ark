@@ -102,7 +102,7 @@
 											"type": "armor",
 											"maxTicks": 120,
 											"source": "phys",
-											"flat": -10,
+											"flat": -5,
 											"maxReduction": 0,
 											"render": {
 												"color": "#3cb44b22",

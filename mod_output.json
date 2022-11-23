@@ -1119,7 +1119,7 @@
         },
         "bag1": {
             "id": "bag1",
-            "description": "Deal 10 physical damage. On hit, will deal 2 physical damage.",
+            "description": "Deal 10 physical damage. On hit, 2 physical damage will be dealt.",
             "action": "projectile",
             "color": "#3cb44b",
             "icon": "ballGlow",
@@ -1261,7 +1261,7 @@
                                                 "packet": {
                                                     "source": "phys",
                                                     "lifeSteal": 0,
-                                                    "damage": 15
+                                                    "damage": 13
                                                 }
                                             },
                                             {
@@ -1270,7 +1270,7 @@
                                                 "collideWith": 1,
                                                 "owner": true,
                                                 "spellId": "bag2",
-                                                "adjustCooldown": -180
+                                                "adjustCooldown": -90
                                             }
                                         ],
                                         "behaviours": [],
@@ -1327,7 +1327,7 @@
         },
         "bag2": {
             "id": "bag2",
-            "description": "Reduce E cooldowns by 4 seconds. If a projectile collides, heal and cause targets to take 10 more physical damage.",
+            "description": "Reduce E cooldowns by 4 seconds. If a projectile collides, heal and cause targets to take 5 more physical damage.",
             "action": "projectile",
             "color": "#3cb44b",
             "icon": "ballGlow",
@@ -1446,7 +1446,7 @@
                                                         "type": "armor",
                                                         "maxTicks": 120,
                                                         "source": "phys",
-                                                        "flat": -10,
+                                                        "flat": -5,
                                                         "maxReduction": 0,
                                                         "render": {
                                                             "color": "#3cb44b22",
@@ -1552,7 +1552,7 @@
         },
         "bag3": {
             "id": "bag3",
-            "description": "For six seconds, Viral Load will deal 15 physical damage and shred 1 defense. Each target hit will reduce Infectious Smile cooldown. During the duration, the caster will gain 20 defense.",
+            "description": "For six seconds, Viral Load will shred 1 defense and deal 13 damage. Each target hit will reduce Infectious Smile cooldown. During the duration, the caster will lose 4 defense.",
             "action": "projectile",
             "color": "#3cb44b",
             "name": "Toxic Exposure",
@@ -1618,17 +1618,10 @@
                                 }
                             },
                             {
-                                "type": "armor",
-                                "maxTicks": 3,
-                                "stack": "ceobe",
-                                "source": "ceobe",
-                                "proportion": 0.5
-                            },
-                            {
                                 "source": "phys",
+                                "stack": "bagpipes",
                                 "maxTicks": 3,
-                                "flat": 20,
-                                "maxReduction": 0
+                                "flat": -5
                             }
                         ]
                     }
@@ -7550,7 +7543,7 @@
         "lum1": {
             "id": "lum1",
             "name": "Starless Wonder",
-            "description": "Heal 15 health and deal 8 physical damage. At increased distances, the healing will be reduced. Healed targets will not take lethal physical damage.",
+            "description": "Heal 15 health and deal 8 physical damage. At increased distances, the healing will be reduced. Healed targets will not take lethal physical damage and will gain 5 defense.",
             "action": "projectile",
             "icon": "bubblingBeam",
             "color": "#880",
@@ -7607,9 +7600,19 @@
                     {
                         "type": "armor",
                         "cleansable": false,
+                        "maxTicks": 60,
+                        "stack": "lummyc",
+                        "source": "ceobe",
+                        "proportion": 0.125
+                    },
+                    {
+                        "type": "armor",
+                        "cleansable": false,
                         "proportion": 0,
                         "minHealth": 10,
                         "source": "phys",
+                        "flat": 5,
+                        "stack": "lummy",
                         "against": 3,
                         "maxTicks": 60,
                         "render": {
@@ -8737,7 +8740,7 @@
         },
         "mos1": {
             "id": "mos1",
-            "description": "Deal 3 Arts damage and regenerate 3 health to allies. Heal 3 health. Healing is treated as Arts damage.",
+            "description": "Deal 3 Arts damage and regenerate 3 health to allies. Heal 0.1 health. Healing is treated as Arts damage.",
             "action": "projectile",
             "color": "#446",
             "icon": "atomicSlashes",
@@ -9052,10 +9055,7 @@
                                                             "ticks": 10,
                                                             "invisible": true,
                                                             "emissionRadiusFactor": 1,
-                                                            "particleRadius": 0.005,
-                                                            "shine": 0.2,
-                                                            "glow": 1,
-                                                            "vanish": 1
+                                                            "particleRadius": 0.0015
                                                         },
                                                         "source": "arts",
                                                         "proportion": 0.05
@@ -9281,7 +9281,7 @@
         "mud": {
             "id": "mud",
             "name": "Pearlescent",
-            "description": "Support DPS with defense and shields. Cannot be healed outside of true healing.",
+            "description": "Support DPS with defense and shields. Regular healing is ineffective.",
             "passive": true,
             "untargeted": true,
             "cooldown": 1,
@@ -14650,7 +14650,7 @@
         },
         "tho2": {
             "id": "tho2",
-            "description": "Deal 20 physical damage. On hit, vision will be obscured.",
+            "description": "Deal 20 physical damage. On hit, vision will be obscured and Winter's Elegy will have a lower cooldown.",
             "action": "projectile",
             "color": "#030",
             "icon": "waveStrike",
@@ -14715,6 +14715,18 @@
                             "soundHit": "standard",
                             "color": "#fff",
                             "buffs": [],
+                            "projectileBuffs": [
+                                {
+                                    "type": "cooldown",
+                                    "against": 3,
+                                    "maxTicks": 1,
+                                    "cleansable": false,
+                                    "adjustCooldown": -240,
+                                    "spellIds": [
+                                        "tho3"
+                                    ]
+                                }
+                            ],
                             "collideWith": 0,
                             "behaviours": [],
                             "renderers": [

@@ -32,6 +32,14 @@
 				"lifeSteal": 0,
 				"damage": 8
 			}
+		},				
+		{
+			"type": "armor",
+			"cleansable": false,
+			"maxTicks": 60,
+			"stack": "lummyc",
+			"source": "ceobe",
+			"proportion": 0.125
 		},
 		{
 			"type": "armor",
@@ -39,6 +47,8 @@
 			"proportion": 0,
 			"minHealth": 10,
 			"source": "phys",
+			"flat": 5,
+			"stack": "lummy",
 			"against": 3,
 			"maxTicks": 60,
 			"render": {

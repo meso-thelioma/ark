@@ -1,7 +1,7 @@
 {
 	"id": "lum1",
 	"name": "Starless Wonder",	
-	"description": "Heal 15 health and deal 8 physical damage. At increased distances, the healing will be reduced. Healed targets will not take lethal physical damage.",
+	"description": "Heal 15 health and deal 8 physical damage. At increased distances, the healing will be reduced. Healed targets will not take lethal physical damage and will gain 5 defense.",
 	"action": "projectile",
 	"icon": "bubblingBeam",
 	"color": "#880",

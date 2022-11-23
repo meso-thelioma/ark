@@ -1,6 +1,6 @@
 {
 	"id": "bag2",
-	"description": "Reduce E cooldowns by 4 seconds. If a projectile collides, heal and cause targets to take 10 more physical damage.",
+	"description": "Reduce E cooldowns by 4 seconds. If a projectile collides, heal and cause targets to take 5 more physical damage.",
 	"action": "projectile",
 	"color": "#3cb44b",
 	"icon": "ballGlow",

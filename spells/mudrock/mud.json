@@ -1,7 +1,7 @@
 {
 	"id": "mud",
 	"name": "Pearlescent",
-	"description": "Support DPS with defense and shields. Cannot be healed outside of true healing.",
+	"description": "Support DPS with defense and shields. Regular healing is ineffective.",
 	"passive": true,
 	"untargeted": true,
 	"cooldown": 1,

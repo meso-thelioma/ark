@@ -1,6 +1,6 @@
 {
 	"id": "bag3",
-	"description": "For six seconds, Viral Load will deal 15 physical damage and shred 1 defense. Each target hit will reduce Infectious Smile cooldown. During the duration, the caster will gain 20 defense.",
+	"description": "For six seconds, Viral Load will shred 1 defense and deal 13 damage. Each target hit will reduce Infectious Smile cooldown. During the duration, the caster will lose 4 defense.",
 	"action": "projectile",
 	"color": "#3cb44b",
 	"name": "Toxic Exposure",
