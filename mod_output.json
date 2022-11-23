@@ -3809,7 +3809,7 @@
         "che": {
             "id": "che",
             "name": "Miracle",
-            "description": "Support DPS with nuking and damage reflection.",
+            "description": "Support DPS with area control.",
             "passive": true,
             "untargeted": true,
             "cooldown": 1,
@@ -4063,7 +4063,7 @@
         },
         "che3": {
             "id": "che3",
-            "description": "Deal 30 Arts damage per second to targets in the radius. Targets will be shifted away.",
+            "description": "Create a field. The field will continously fire at the nearest target in range and deal 3 Arts damage.",
             "action": "projectile",
             "color": "#CEFFFF",
             "icon": "che",
@@ -4071,6 +4071,8 @@
             "maxAngleDiffInRevs": 0.01,
             "cooldown": 1080,
             "throttle": true,
+            "recoil": 0.3,
+            "chargeTicks": 20,
             "effects": [
                 {
                     "icon": "fas fa-address-card",
@@ -4081,51 +4083,82 @@
             "projectile": {
                 "density": 0.001,
                 "attractable": false,
-                "radius": 0.07,
-                "speed": 0.1,
+                "radius": 0.1,
+                "speed": 0.2,
                 "sound": "fireball",
-                "maxTicks": 120,
+                "maxTicks": 300,
                 "damage": 0,
                 "sensor": true,
                 "expireOn": 0,
+                "hitInterval": 3,
+                "collideWith": 1,
                 "lifeSteal": 0,
-                "categories": 16,
+                "categories": 2,
                 "buffs": [],
                 "projectileBuffs": [],
                 "behaviours": [
                     {
-                        "type": "aura",
-                        "against": 15,
-                        "radius": 0.07,
-                        "tickInterval": 1,
-                        "packet": {
-                            "damage": 0,
-                            "noHit": true,
-                            "lifeSteal": 0
-                        },
-                        "buffs": [
+                        "type": "spawn",
+                        "triggers": [
                             {
-                                "type": "burn",
-                                "hitInterval": 1,
-                                "maxTicks": 1,
-                                "against": 15,
-                                "packet": {
-                                    "source": "arts",
-                                    "lifeSteal": 0,
-                                    "noHit": true,
-                                    "damage": 0.5
-                                }
+                                "type": "collideWith",
+                                "collideWith": 1,
+                                "triggerInterval": 6,
+                                "maxHits": 1000
                             }
-                        ]
-                    },
-                    {
-                        "type": "attract",
-                        "collideLike": 65535,
-                        "categories": 1,
-                        "against": 15,
-                        "radius": 0.07,
-                        "accelerationPerTick": -0.005,
-                        "attractToFacing": true
+                        ],
+                        "projectile": {
+                            "density": 0.01,
+                            "radius": 0.003,
+                            "speed": 0.9,
+                            "maxTicks": 12,
+                            "damage": 0,
+                            "collideWith": 8193,
+                            "lifeSteal": 0,
+                            "categories": 2,
+                            "sound": "fireball",
+                            "soundHit": "standard",
+                            "color": "#CEFFFFAA",
+                            "buffs": [
+                                {
+                                    "type": "burn",
+                                    "hitInterval": 1,
+                                    "maxTicks": 1,
+                                    "packet": {
+                                        "source": "arts",
+                                        "lifeSteal": 0,
+                                        "damage": 3
+                                    }
+                                }
+                            ],
+                            "behaviours": [
+                                {
+                                    "type": "updateCollideWith",
+                                    "trigger": {
+                                        "afterTicks": 1
+                                    },
+                                    "collideWith": 65535
+                                },
+                                {
+                                    "type": "homing",
+                                    "targetType": "close",
+                                    "redirect": true
+                                }
+                            ],
+                            "renderers": [
+                                {
+                                    "type": "projectile",
+                                    "ticks": 10
+                                },
+                                {
+                                    "type": "strike",
+                                    "ticks": 30,
+                                    "flash": true,
+                                    "numParticles": 5
+                                }
+                            ],
+                            "selfPassthrough": true
+                        }
                     }
                 ],
                 "color": "#ceffff",
@@ -4136,7 +4169,7 @@
                         "ticks": 6,
                         "loopTicks": 120,
                         "numParticles": 5,
-                        "radius": 0.07,
+                        "radius": 0.1,
                         "particleRadius": 0.002
                     },
                     {
@@ -4145,7 +4178,7 @@
                         "ticks": 6,
                         "loopTicks": -120,
                         "numParticles": 5,
-                        "radius": 0.07,
+                        "radius": 0.09,
                         "particleRadius": 0.002
                     }
                 ]

@@ -10,7 +10,7 @@
 		},
 		{
 			"type": "homing", 
-			"targetType": "follow",
+			"targetType": "close",
 			"redirect": true
 		}
 	],
@@ -21,7 +21,7 @@
 			"hitInterval": 1,
 			"maxTicks": 1,
 			"packet": {
-				"source": "phys",
+				"source": "arts",
 				"lifeSteal": 0,
 				"damage": 3
 			}

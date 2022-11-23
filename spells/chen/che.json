@@ -1,7 +1,7 @@
 {
 	"id": "che",
 	"name": "Miracle",
-	"description": "Support DPS with nuking and damage reflection.",
+	"description": "Support DPS with area control.",
 	"passive": true,
 	"untargeted": true,
 	"cooldown": 1,

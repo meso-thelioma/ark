@@ -1,6 +1,6 @@
 {
 	"id": "che3",
-	"description": "Deal 30 Arts damage per second to targets in the radius. Targets will be shifted away.",
+	"description": "Create a field. The field will continously fire at the nearest target in range and deal 3 Arts damage.",
 	"action": "projectile",
 	"color": "#CEFFFF",
 	"icon": "che",
@@ -8,6 +8,8 @@
 	"maxAngleDiffInRevs": 0.01,
 	"cooldown": 1080,	
 	"throttle": true,
+	"recoil": 0.3,
+	"chargeTicks": 20,
 	"effects": [
 		{
 			"icon": "fas fa-address-card",
