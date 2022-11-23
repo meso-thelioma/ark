@@ -94,14 +94,15 @@
 					"proportion": 0.4
 				}
 			]
-		},		{
-		"type": "attract",
-		"collideLike": 65535,
-		"categories": 1,
-		"against": 14,
-		"radius": 0.2,
-		"accelerationPerTick": 0.0015
-	}
+		},		
+		{
+			"type": "attract",
+			"collideLike": 65535,
+			"categories": 1,
+			"against": 14,
+			"radius": 0.2,
+			"accelerationPerTick": 0.0015
+		}
 	],
 	"buffs": [],
 	"renderers": [
