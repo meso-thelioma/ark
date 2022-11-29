@@ -4063,7 +4063,7 @@
         },
         "che3": {
             "id": "che3",
-            "description": "Create a field. The field will continously fire at the nearest target in range and deal 3 Arts damage. Nearby targets will be shifted.",
+            "description": "Create a field. The field will continously fire at the nearest target in range and deal 2 Arts damage. Nearby targets will be shifted.",
             "action": "projectile",
             "color": "#CEFFFF",
             "icon": "che",
@@ -4127,7 +4127,7 @@
                                     "packet": {
                                         "source": "arts",
                                         "lifeSteal": 0,
-                                        "damage": 3
+                                        "damage": 1.5
                                     }
                                 }
                             ],
@@ -6155,7 +6155,7 @@
         },
         "ire1": {
             "id": "ire1",
-            "description": "Deal 1.5 physical damage per strike.",
+            "description": "Deal 2 physical damage per strike.",
             "action": "spray",
             "color": "#ffd8b1",
             "name": "White Button Down",
@@ -6194,7 +6194,7 @@
                         "packet": {
                             "source": "phys",
                             "lifeSteal": 0,
-                            "damage": 4
+                            "damage": 2
                         }
                     }
                 ],
@@ -8342,7 +8342,7 @@
             "maxAngleDiffInRevs": 0.01,
             "cooldown": 120,
             "throttle": true,
-            "recoil": 0.2,
+            "recoil": 0.5,
             "chargeTicks": 10,
             "effects": [
                 {
@@ -9905,6 +9905,7 @@
                                         {
                                             "type": "burn",
                                             "maxTicks": 1,
+                                            "hitInterval": 1,
                                             "packet": {
                                                 "lifeSteal": 0,
                                                 "noHit": true,
@@ -14039,21 +14040,14 @@
                 "color": "#aaa",
                 "behaviours": [
                     {
-                        "type": "expire",
+                        "type": "spawn",
                         "triggers": [
                             {
                                 "type": "health",
                                 "health": 2
                             }
-                        ]
-                    },
-                    {
-                        "type": "spawn",
-                        "triggers": [
-                            {
-                                "type": "expire"
-                            }
                         ],
+                        "expire": true,
                         "projectile": {
                             "density": 0.01,
                             "radius": 0.003,
@@ -14088,13 +14082,13 @@
                                         "light": 1,
                                         "invisible": true
                                     },
-                                    "maxTicks": 600
+                                    "maxTicks": 300
                                 },
                                 {
                                     "type": "armor",
                                     "cleansable": false,
                                     "minHealth": 1,
-                                    "maxTicks": 600
+                                    "maxTicks": 300
                                 }
                             ],
                             "renderers": []
@@ -14106,7 +14100,7 @@
                         "type": "armor",
                         "cleansable": false,
                         "minHealth": 1,
-                        "maxTicks": 120000000000000000000
+                        "maxTicks": 600000
                     }
                 ],
                 "renderers": []

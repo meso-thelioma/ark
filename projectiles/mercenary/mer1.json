@@ -1,0 +1,100 @@
+{
+	"density": 0.01,
+	"radius": 0.003,
+	"speed": 0.4,
+	"maxTicks": 120,
+	"minTicks": 4,
+	"damage": 0,
+	"collideWith": 8192,
+	"lifeSteal": 0,
+	"categories": 2,
+	"sound": "fireball",
+	"soundHit": "standard",
+	"color": "#aaa",
+	"buffs": [
+		{
+			"type": "burn",
+			"hitInterval": 1,
+			"maxTicks": 1,
+			"packet": {
+				"lifeSteal": 0,
+				"damage": 6
+			}
+		}
+	],
+	"behaviours": [
+		{
+			"type": "updateCollideWith",
+			"trigger": {
+				"afterTicks": 1
+			},
+			"collideWith": 65535
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "and",
+					"triggers": [
+						{
+							"type": "collideWith",
+							"collideWith": 8192,
+							"against": 1
+						},
+						{
+							"type": "not",
+							"trigger": {
+								"type": "afterTicks",
+								"afterTicks": 10
+							}
+						}
+					]
+				}
+			],
+			"numProjectiles": 2,
+			"spread": 0.015,
+			"expire": true,
+			"projectile": {
+				"density": 0.01,
+				"radius": 0.003,
+				"speed": 0.9,
+				"maxTicks": 30,
+				"damage": 0,
+				"lifeSteal": 0,
+				"categories": 2,
+				"sound": "fireball",
+				"soundHit": "standard",
+				"color": "#aaa",
+				"buffs": [],
+				"behaviours": [],
+				"detonate": {
+					"damage": 6,
+					"radius": 0.01,
+					"minImpulse": 0.0001,
+					"maxImpulse": 0.0001,
+					"renderTicks": 10
+				},
+				"renderers": [
+					{
+						"type": "projectile",
+						"colorize": 0.4,
+						"ticks": 10
+					}
+				]
+			}
+		}
+	],
+	"renderers": [
+		{
+			"type": "projectile",
+			"colorize": 0.4,
+			"ticks": 10
+		},
+		{
+			"type": "strike",
+			"ticks": 30,
+			"flash": true,
+			"numParticles": 5
+		}
+	]
+}

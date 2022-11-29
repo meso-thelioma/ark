@@ -85,6 +85,7 @@
 				{
 					"type": "burn",
 					"maxTicks": 1,
+					"hitInterval":1,
 					"packet": {
 						"lifeSteal": 0,
 						"noHit": true,

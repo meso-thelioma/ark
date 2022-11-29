@@ -13,21 +13,14 @@
 	"color": "#aaa",
 	"behaviours": [
 		{
-			"type": "expire",
+			"type": "spawn",
 			"triggers": [
 				{
 					"type": "health",
 					"health": 2
 				}
-			]
-		},
-		{
-			"type": "spawn",
-			"triggers": [
-				{
-					"type": "expire"
-				}
 			],
+			"expire": true,
 			"projectile": {
 				"density": 0.01,
 				"radius": 0.003,
@@ -62,13 +55,13 @@
 							"light": 1,
 							"invisible": true
 						},
-						"maxTicks": 600
+						"maxTicks": 300
 					},
 					{
 						"type": "armor",
 						"cleansable": false,
 						"minHealth": 1,
-						"maxTicks": 600
+						"maxTicks": 300
 					}
 				],
 				"renderers": []
@@ -80,9 +73,8 @@
 			"type": "armor",
 			"cleansable": false,
 			"minHealth": 1,
-			"maxTicks": 120000000000000000000
+			"maxTicks": 600000
 		}
 	],
-	"renderers": [
-	]
+	"renderers": []
 }

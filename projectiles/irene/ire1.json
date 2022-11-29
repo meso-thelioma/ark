@@ -18,7 +18,7 @@
 			"packet": {
 				"source": "phys",
 				"lifeSteal": 0,
-				"damage": 4
+				"damage": 2
 			}
 		}
 	],

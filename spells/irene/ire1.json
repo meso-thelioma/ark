@@ -1,6 +1,6 @@
 {
 	"id": "ire1",
-	"description": "Deal 1.5 physical damage per strike.",
+	"description": "Deal 2 physical damage per strike.",
 	"action": "spray",
 	"color": "#ffd8b1",
 	"name": "White Button Down",
