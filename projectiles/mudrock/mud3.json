@@ -85,18 +85,17 @@
 				{
 					"type": "burn",
 					"maxTicks": 1,
-					"hitInterval":1,
+					"hitInterval": 1,
 					"packet": {
 						"lifeSteal": 0,
 						"noHit": true,
-						"damage": -30
+						"damage": -10
 					}
 				},
 				{
 					"type": "cooldown",
-					"owner": true,
-					"against": 14,
-					"maxTicks": 1,
+					"against": 1,
+					"maxTicks": 10,
 					"color": "#ffe119"
 				}
 			]
@@ -109,7 +108,7 @@
 			"projectile": {
 				"density": 0.001,
 				"attractable": false,
-				"radius": 0.1,
+				"radius": 2,
 				"speed": 0,
 				"maxTicks": 10,
 				"damage": 0,

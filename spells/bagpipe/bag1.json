@@ -13,7 +13,7 @@
 		{
 			"icon": "fas fa-address-card",
 			"title": "Physical Damage",
-			"text": "(Damage - Defense) * Buffs"
+			"text": "Damage * Buffs - Defense"
 		}
 	],
 	"projectile": "bag1"
