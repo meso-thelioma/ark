@@ -9621,7 +9621,7 @@
         },
         "mud2": {
             "id": "mud2",
-            "description": "Gain 50 defense which will last one hit. Heal 2 true health if the shield is broken.",
+            "description": "Gain 25 defense which will last one hit. Heal 2 true health if the shield is broken.",
             "action": "projectile",
             "color": "#ffe119",
             "name": "Daylight",
@@ -9663,14 +9663,14 @@
                         "cleansable": false,
                         "stack": "ceobe",
                         "source": "ceobe",
-                        "proportion": 1.25
+                        "proportion": 0.625
                     },
                     {
                         "type": "armor",
                         "maxTicks": 4800,
                         "cleansable": false,
                         "source": "phys",
-                        "flat": 50
+                        "flat": 25
                     },
                     {
                         "type": "lifeSteal",
@@ -9780,7 +9780,7 @@
             "name": "Ancestor of Broken Sun",
             "icon": "crownedExplosion",
             "maxAngleDiffInRevs": 0.01,
-            "cooldown": 1500,
+            "cooldown": 900,
             "throttle": true,
             "effects": [
                 {
@@ -9996,7 +9996,62 @@
                             "lifeSteal": 0,
                             "categories": 4,
                             "projectileBuffs": [],
-                            "behaviours": [],
+                            "behaviours": [
+                                {
+                                    "type": "spawn",
+                                    "projectile": {
+                                        "density": 0.01,
+                                        "radius": 0.008,
+                                        "speed": 0.49,
+                                        "maxTicks": 20,
+                                        "damage": 0,
+                                        "lifeSteal": 0,
+                                        "categories": 2,
+                                        "sound": "fireball",
+                                        "soundHit": "standard",
+                                        "color": "#ffe119",
+                                        "buffs": [
+                                            {
+                                                "type": "burn",
+                                                "hitInterval": 1,
+                                                "maxTicks": 1,
+                                                "packet": {
+                                                    "source": "phys",
+                                                    "lifeSteal": 0,
+                                                    "damage": 10
+                                                }
+                                            }
+                                        ],
+                                        "collideWith": 1,
+                                        "behaviours": [
+                                            {
+                                                "type": "homing",
+                                                "targetType": "closestEnemy",
+                                                "redirect": true
+                                            },
+                                            {
+                                                "type": "updateCollideWith",
+                                                "trigger": {
+                                                    "afterTicks": 1
+                                                },
+                                                "collideWith": 65535
+                                            }
+                                        ],
+                                        "renderers": [
+                                            {
+                                                "type": "projectile",
+                                                "ticks": 10
+                                            },
+                                            {
+                                                "type": "strike",
+                                                "ticks": 30,
+                                                "flash": true,
+                                                "numParticles": 5
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
                             "color": "#ffe11911",
                             "renderers": [
                                 {

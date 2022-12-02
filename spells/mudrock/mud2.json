@@ -1,6 +1,6 @@
 {
 	"id": "mud2",
-	"description": "Gain 50 defense which will last one hit. Heal 2 true health if the shield is broken.",
+	"description": "Gain 25 defense which will last one hit. Heal 2 true health if the shield is broken.",
 	"action": "projectile",
 	"color": "#ffe119",
 	"name": "Daylight",

@@ -20,14 +20,14 @@
 			"cleansable": false,
 			"stack": "ceobe",
 			"source": "ceobe",
-			"proportion": 1.25
+			"proportion": 0.625
 		},
 		{
 			"type": "armor",
 			"maxTicks": 4800,
 			"cleansable": false,
 			"source": "phys",
-			"flat": 50
+			"flat": 25
 		},
 		{
 			"type": "lifeSteal",
