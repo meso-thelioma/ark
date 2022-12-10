@@ -2,14 +2,23 @@
 	"basedOn": "mos1",
 	"expireOn": 0,
 	"speed": 2,
+	"collideWith": 1,
 	"maxTicks": 50,
 	"hitInterval": 3,
+	"sensor": true,
+	"buffs": [],
+	"behaviours": [],
 	"renderers": [
 		{
-			"type": "projectile",
-			"ticks": 20,
-			"intermediateInterpolations": 1,
+			"type": "ray",
+			"ticks": 30,
 			"shine": 0.4
+		},
+		{
+			"type": "strike",
+			"ticks": 30,
+			"flash": true,
+			"numParticles": 1
 		}
 	]
 }

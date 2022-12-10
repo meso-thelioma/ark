@@ -1,6 +1,6 @@
 {
 	"id": "mos3",
-	"description": "Fire a more volatile Rolled Odds.",
+	"description": "Apply an omen to hit targets. Omens will shatter and deal 10 Arts damage globally if the target is under 20 health.",
 	"action": "projectile",
 	"color": "#446",
 	"icon": "atomicSlashes",	

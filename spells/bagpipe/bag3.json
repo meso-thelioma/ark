@@ -1,6 +1,6 @@
 {
 	"id": "bag3",
-	"description": "For six seconds, Viral Load will shred 1 defense and deal 13 damage. Each target hit will reduce Infectious Smile cooldown. During the duration, the caster will lose 4 defense.",
+	"description": "For six seconds, Viral Load will shred 1 defense and deal 13 damage. Each target hit will reduce Infectious Smile cooldown. During the duration, the caster will take 4 more physical damage.",
 	"action": "projectile",
 	"color": "#3cb44b",
 	"name": "Toxic Exposure",
@@ -12,7 +12,7 @@
 		{
 			"icon": "fas fa-address-card",
 			"title": "Physical Damage",
-			"text": "(Damage - Defense) * Buffs"
+			"text": "Damage * Buffs - Defense"
 		}
 	],
 	"projectile": "bag3"

@@ -6,9 +6,9 @@
 	"name": "In The Wings",
 	"icon": "aura",
 	"maxAngleDiffInRevs": 0.01,
-	"cooldown": 120,
+	"cooldown": 300,
 	"throttle": true,
-	"recoil": 0.5,
+	"recoil": 0.15,
 	"chargeTicks": 10,
 	"effects": [		
 		{

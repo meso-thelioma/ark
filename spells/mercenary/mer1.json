@@ -1,12 +1,12 @@
 {
 	"id": "mer1",
-	"description": "Deal 6 true damage. Charged: Cause knockback in an area and strike twice.",
+	"description": "Deal 6 true damage. Charged: Halve cooldown.",
 	"action": "projectile",
 	"color": "#4df",
 	"name": "Performance",
 	"icon": "aura",
 	"maxAngleDiffInRevs": 0.01,
-	"cooldown": 120,
+	"cooldown": 180,
 	"throttle": true,
 	"chargeTicks": 10,
 	"effects": [

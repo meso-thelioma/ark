@@ -1,6 +1,6 @@
 {
 	"id": "mos1",
-	"description": "Deal 3 Arts damage and regenerate 3 health to allies. Heal 0.1 health. Healing is treated as Arts damage.",
+	"description": "Deal 3 Arts damage and regenerate 3 health to allies. Heal 0.3 health. Healing will be treated as Arts damage.",
 	"action": "projectile",
 	"color": "#446",
 	"icon": "atomicSlashes",

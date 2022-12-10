@@ -43,7 +43,7 @@
 				"attractable": false,
 				"radius": 0.4,
 				"expireOn": 0,
-				"speed": 0.1,
+				"speed": 0,
 				"maxTicks": 120,
 				"damage": 0,
 				"sensor": true,

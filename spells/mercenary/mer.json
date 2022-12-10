@@ -1,7 +1,7 @@
 {
 	"id": "mer",
-	"name": "Mercenary",
-	"description": "Specialist with charging and mobility.",
+	"name": "Belief",
+	"description": "Specialist with low-health support.",
 	"passive": true,
 	"untargeted": true,
 	"cooldown": 1,
@@ -9,7 +9,7 @@
 		{
 			"icon": "fas fa-address-card",
 			"title": "Passive",
-			"text": "Every 6 seconds, charge all skills."
+			"text": "Below half health, skills will be enhanced."
 		},
 		{
 			"icon": "far fa-sad-tear",
@@ -48,16 +48,26 @@
 			"type": "spawn",
 			"triggers": [
 				{
-					"type": "interval",
-					"triggerInterval": 420
+					"type": "and",
+					"triggers": [
+						{
+							"type": "interval",
+							"triggerInterval": 30
+						},
+						{
+							"type": "health",
+							"health": 50,
+							"persist": true
+						}
+					]
 				}
 			],
 			"projectile": {
 				"density": 0.01,
 				"expireOn": 0,
 				"radius": 0.1,
-				"speed": 4,
-				"maxTicks": 60,
+				"speed": 0,
+				"maxTicks": 30,
 				"damage": 0,
 				"sensor": true,
 				"collideWith": 2,

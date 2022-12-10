@@ -1,5 +1,7 @@
 {
 	"basedOn": "che1",
+	"sensor": true,
+	"expireOn": 65534,
 	"behaviours": [
 		{
 			"type": "updateCollideWith",
@@ -29,14 +31,13 @@
 	],
 	"renderers": [
 		{
-			"type": "projectile",
+			"type": "ray",
 			"ticks": 10
 		},
 		{
 			"type": "strike",
 			"ticks": 30,
-			"flash": true,
-			"numParticles": 5
+			"flash": true
 		}
 	]
 }

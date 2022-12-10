@@ -1,6 +1,6 @@
 {
 	"id": "eyj2",
-	"description": "Deal 10 Arts damage. Targets above half health will take 3x damage.",
+	"description": "Deal 10 Arts damage. Targets above half health will take 20 additional Arts damage which will use the target's attack buffs.",
 	"action": "projectile",
 	"color": "#fff2",
 	"name": "Salmon's Blessing",

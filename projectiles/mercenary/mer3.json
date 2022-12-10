@@ -60,7 +60,7 @@
 				"vanish": 1,
 				"light": 1
 			},
-			"movementProportion": 1.3
+			"movementProportion": 1.6
 		}
 	],
 	"behaviours": [
@@ -181,7 +181,7 @@
 							"vanish": 1,
 							"light": 1
 						},
-						"movementProportion": 1.3
+						"movementProportion": 1.6
 					}
 				],
 				"behaviours": [

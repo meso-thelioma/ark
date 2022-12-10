@@ -1552,7 +1552,7 @@
         },
         "bag3": {
             "id": "bag3",
-            "description": "For six seconds, Viral Load will shred 1 defense and deal 13 damage. Each target hit will reduce Infectious Smile cooldown. During the duration, the caster will lose 4 defense.",
+            "description": "For six seconds, Viral Load will shred 1 defense and deal 13 damage. Each target hit will reduce Infectious Smile cooldown. During the duration, the caster will take 4 more physical damage.",
             "action": "projectile",
             "color": "#3cb44b",
             "name": "Toxic Exposure",
@@ -1564,7 +1564,7 @@
                 {
                     "icon": "fas fa-address-card",
                     "title": "Physical Damage",
-                    "text": "(Damage - Defense) * Buffs"
+                    "text": "Damage * Buffs - Defense"
                 }
             ],
             "projectile": {
@@ -4147,16 +4147,17 @@
                             ],
                             "renderers": [
                                 {
-                                    "type": "projectile",
+                                    "type": "ray",
                                     "ticks": 10
                                 },
                                 {
                                     "type": "strike",
                                     "ticks": 30,
-                                    "flash": true,
-                                    "numParticles": 5
+                                    "flash": true
                                 }
                             ],
+                            "sensor": true,
+                            "expireOn": 65534,
                             "selfPassthrough": true
                         }
                     },
@@ -5260,7 +5261,7 @@
         },
         "eyj2": {
             "id": "eyj2",
-            "description": "Deal 10 Arts damage. Targets above half health will take 3x damage.",
+            "description": "Deal 10 Arts damage. Targets above half health will take 20 additional Arts damage which will use the target's attack buffs.",
             "action": "projectile",
             "color": "#fff2",
             "name": "Salmon's Blessing",
@@ -8113,8 +8114,8 @@
         },
         "mer": {
             "id": "mer",
-            "name": "Mercenary",
-            "description": "Specialist with charging and mobility.",
+            "name": "Belief",
+            "description": "Specialist with low-health support.",
             "passive": true,
             "untargeted": true,
             "cooldown": 1,
@@ -8122,7 +8123,7 @@
                 {
                     "icon": "fas fa-address-card",
                     "title": "Passive",
-                    "text": "Every 6 seconds, charge all skills."
+                    "text": "Below half health, skills will be enhanced."
                 },
                 {
                     "icon": "far fa-sad-tear",
@@ -8161,16 +8162,26 @@
                     "type": "spawn",
                     "triggers": [
                         {
-                            "type": "interval",
-                            "triggerInterval": 420
+                            "type": "and",
+                            "triggers": [
+                                {
+                                    "type": "interval",
+                                    "triggerInterval": 30
+                                },
+                                {
+                                    "type": "health",
+                                    "health": 50,
+                                    "persist": true
+                                }
+                            ]
                         }
                     ],
                     "projectile": {
                         "density": 0.01,
                         "expireOn": 0,
                         "radius": 0.1,
-                        "speed": 4,
-                        "maxTicks": 60,
+                        "speed": 0,
+                        "maxTicks": 30,
                         "damage": 0,
                         "sensor": true,
                         "collideWith": 2,
@@ -8215,13 +8226,13 @@
         },
         "mer1": {
             "id": "mer1",
-            "description": "Deal 6 true damage. Charged: Cause knockback in an area and strike twice.",
+            "description": "Deal 6 true damage. Charged: Halve cooldown.",
             "action": "projectile",
             "color": "#4df",
             "name": "Performance",
             "icon": "aura",
             "maxAngleDiffInRevs": 0.01,
-            "cooldown": 120,
+            "cooldown": 180,
             "throttle": true,
             "chargeTicks": 10,
             "effects": [
@@ -8284,34 +8295,54 @@
                                 ]
                             }
                         ],
-                        "numProjectiles": 2,
-                        "spread": 0.015,
                         "expire": true,
                         "projectile": {
-                            "density": 0.01,
-                            "radius": 0.003,
-                            "speed": 0.9,
-                            "maxTicks": 30,
+                            "density": 0.001,
+                            "attractable": false,
+                            "radius": 0.0,
+                            "expireOn": 0,
+                            "speed": 0,
+                            "maxTicks": 1,
                             "damage": 0,
-                            "lifeSteal": 0,
+                            "sensor": true,
                             "categories": 2,
-                            "sound": "fireball",
-                            "soundHit": "standard",
-                            "color": "#aaa",
+                            "collideWith": 0,
+                            "lifeSteal": 0,
                             "buffs": [],
-                            "behaviours": [],
-                            "detonate": {
-                                "damage": 6,
-                                "radius": 0.01,
-                                "minImpulse": 0.0001,
-                                "maxImpulse": 0.0001,
-                                "renderTicks": 10
-                            },
+                            "projectileBuffs": [],
+                            "behaviours": [
+                                {
+                                    "type": "aura",
+                                    "radius": 2,
+                                    "against": 1,
+                                    "tickInterval": 1,
+                                    "packet": {
+                                        "damage": 0,
+                                        "noHit": true,
+                                        "lifeSteal": 0
+                                    },
+                                    "buffs": [
+                                        {
+                                            "type": "cooldown",
+                                            "color": "#fff",
+                                            "maxTicks": 1,
+                                            "maxCooldown": 90,
+                                            "spellId": "mer1"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "color": "#aaa1",
                             "renderers": [
                                 {
-                                    "type": "projectile",
+                                    "type": "swirl",
+                                    "color": "#aaa",
                                     "colorize": 0.4,
-                                    "ticks": 10
+                                    "particleRadius": 0.0005,
+                                    "numParticles": 3,
+                                    "radius": 0.05,
+                                    "loopTicks": -90,
+                                    "ticks": 20
                                 }
                             ]
                         }
@@ -8340,9 +8371,9 @@
             "name": "In The Wings",
             "icon": "aura",
             "maxAngleDiffInRevs": 0.01,
-            "cooldown": 120,
+            "cooldown": 300,
             "throttle": true,
-            "recoil": 0.5,
+            "recoil": 0.15,
             "chargeTicks": 10,
             "effects": [
                 {
@@ -8416,7 +8447,7 @@
                             "attractable": false,
                             "radius": 0.4,
                             "expireOn": 0,
-                            "speed": 0.1,
+                            "speed": 0,
                             "maxTicks": 120,
                             "damage": 0,
                             "sensor": true,
@@ -8500,13 +8531,13 @@
         },
         "mer3": {
             "id": "mer3",
-            "description": "Become intangible. Charged: To targets intersected withn reduce defense by 5 and resistance by 10%. ",
+            "description": "Become intangible. Charged: To targets intersected with, reduce defense by 5 and resistance by 10%.",
             "action": "projectile",
             "color": "#f4d",
             "name": "This Stage, Unrelenting",
             "icon": "aura",
             "maxAngleDiffInRevs": 0.01,
-            "cooldown": 120,
+            "cooldown": 600,
             "chargeTicks": 10,
             "throttle": true,
             "effects": [
@@ -8583,7 +8614,7 @@
                             "vanish": 1,
                             "light": 1
                         },
-                        "movementProportion": 1.3
+                        "movementProportion": 1.6
                     }
                 ],
                 "behaviours": [
@@ -8704,7 +8735,7 @@
                                         "vanish": 1,
                                         "light": 1
                                     },
-                                    "movementProportion": 1.3
+                                    "movementProportion": 1.6
                                 }
                             ],
                             "behaviours": [
@@ -8822,7 +8853,7 @@
         },
         "mos1": {
             "id": "mos1",
-            "description": "Deal 3 Arts damage and regenerate 3 health to allies. Heal 0.1 health. Healing is treated as Arts damage.",
+            "description": "Deal 3 Arts damage and regenerate 3 health to allies. Heal 0.3 health. Healing will be treated as Arts damage.",
             "action": "projectile",
             "color": "#446",
             "icon": "atomicSlashes",
@@ -9191,7 +9222,7 @@
         },
         "mos3": {
             "id": "mos3",
-            "description": "Fire a more volatile Rolled Odds.",
+            "description": "Apply an omen to hit targets. Omens will shatter and deal 10 Arts damage globally if the target is under 20 health.",
             "action": "projectile",
             "color": "#446",
             "icon": "atomicSlashes",
@@ -9221,143 +9252,22 @@
                 "expireOn": 0,
                 "soundHit": "standard",
                 "color": "#446",
-                "buffs": [
-                    {
-                        "type": "burn",
-                        "hitInterval": 1,
-                        "maxTicks": 1,
-                        "packet": {
-                            "source": "arts",
-                            "lifeSteal": 0,
-                            "damage": 3
-                        }
-                    },
-                    {
-                        "type": "burn",
-                        "hitInterval": 1,
-                        "against": 3,
-                        "maxTicks": 1,
-                        "packet": {
-                            "source": "arts",
-                            "lifeSteal": 0,
-                            "damage": -6
-                        }
-                    },
-                    {
-                        "type": "burn",
-                        "hitInterval": 1,
-                        "owner": true,
-                        "against": 14,
-                        "maxTicks": 1,
-                        "packet": {
-                            "source": "arts",
-                            "lifeSteal": 0,
-                            "noHit": true,
-                            "damage": -0.1
-                        }
-                    },
-                    {
-                        "type": "cooldown",
-                        "owner": true,
-                        "against": 14,
-                        "maxTicks": 1,
-                        "color": "#44a"
-                    }
-                ],
-                "behaviours": [
-                    {
-                        "type": "updateCollideWith",
-                        "trigger": {
-                            "afterTicks": 1
-                        },
-                        "collideWith": 65535
-                    },
-                    {
-                        "type": "homing",
-                        "triggers": [
-                            {
-                                "type": "collideWith",
-                                "collideWith": 1,
-                                "triggerInterval": 20,
-                                "maxHits": 1000
-                            }
-                        ],
-                        "maxTicks": 10,
-                        "targetType": "close"
-                    },
-                    {
-                        "type": "homing",
-                        "triggers": [
-                            {
-                                "type": "collideWith",
-                                "collideWith": 1,
-                                "triggerInterval": 5,
-                                "maxHits": 1000
-                            }
-                        ],
-                        "maxTicks": 5,
-                        "targetType": "close"
-                    },
-                    {
-                        "type": "homing",
-                        "triggers": [
-                            {
-                                "type": "collideWith",
-                                "collideWith": 1
-                            }
-                        ],
-                        "revolutionsPerSecond": 0.05,
-                        "targetType": "close"
-                    },
-                    {
-                        "type": "aura",
-                        "triggers": [
-                            {
-                                "type": "collideWith",
-                                "collideWith": 1,
-                                "against": 1,
-                                "triggerInterval": 5,
-                                "maxHits": 1000
-                            }
-                        ],
-                        "against": 1,
-                        "radius": 1,
-                        "maxHits": 1,
-                        "packet": {
-                            "damage": 0,
-                            "noHit": true
-                        },
-                        "tickInterval": 1,
-                        "buffs": [
-                            {
-                                "type": "burn",
-                                "hitInterval": 1,
-                                "against": 1,
-                                "maxTicks": 1,
-                                "packet": {
-                                    "source": "arts",
-                                    "lifeSteal": 0,
-                                    "noHit": true,
-                                    "damage": -0.1
-                                }
-                            },
-                            {
-                                "type": "cooldown",
-                                "against": 1,
-                                "maxTicks": 1,
-                                "color": "#44a"
-                            }
-                        ]
-                    }
-                ],
+                "buffs": [],
+                "behaviours": [],
                 "renderers": [
                     {
-                        "type": "projectile",
-                        "ticks": 20,
-                        "intermediateInterpolations": 1,
+                        "type": "ray",
+                        "ticks": 30,
                         "shine": 0.4
+                    },
+                    {
+                        "type": "strike",
+                        "ticks": 30,
+                        "flash": true,
+                        "numParticles": 1
                     }
-                ]
+                ],
+                "sensor": true
             }
         },
         "mud": {
@@ -14654,6 +14564,128 @@
                                 "numParticles": 5
                             }
                         ]
+                    }
+                },
+                {
+                    "type": "spawn",
+                    "triggers": [
+                        {
+                            "type": "and",
+                            "triggers": [
+                                {
+                                    "type": "collideWith",
+                                    "triggerInterval": 15,
+                                    "maxHits": 1000000000000,
+                                    "collideWith": 2,
+                                    "collideTypes": [
+                                        "mos3"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "projectile": {
+                        "density": 0.001,
+                        "attractable": false,
+                        "radius": 0.02,
+                        "speed": 0.1,
+                        "maxTicks": 6000,
+                        "damage": 0,
+                        "collideWith": 0,
+                        "sense": 2,
+                        "expireOn": 0,
+                        "lifeSteal": 0,
+                        "sound": "fireball",
+                        "categories": 8192,
+                        "projectileBuffs": [],
+                        "behaviours": [
+                            {
+                                "type": "strafe"
+                            },
+                            {
+                                "type": "homing",
+                                "targetType": "self",
+                                "trigger": {
+                                    "afterTicks": 10
+                                }
+                            },
+                            {
+                                "type": "spawn",
+                                "expire": true,
+                                "maxTriggers": 1,
+                                "triggers": [
+                                    {
+                                        "type": "health",
+                                        "health": 20,
+                                        "persist": true
+                                    }
+                                ],
+                                "projectile": {
+                                    "density": 0.01,
+                                    "radius": 0.003,
+                                    "collideWith": 0,
+                                    "expireOn": 0,
+                                    "speed": 0,
+                                    "maxTicks": 120,
+                                    "damage": 0,
+                                    "lifeSteal": 0,
+                                    "categories": 2,
+                                    "sound": "fireball",
+                                    "soundHit": "standard",
+                                    "color": "#aaa",
+                                    "behaviours": [
+                                        {
+                                            "type": "aura",
+                                            "against": 15,
+                                            "radius": 2,
+                                            "tickInterval": 1,
+                                            "maxHits": 1,
+                                            "packet": {
+                                                "damage": 10,
+                                                "source": "arts",
+                                                "noHit": true,
+                                                "lifeSteal": 0
+                                            },
+                                            "buffs": []
+                                        }
+                                    ],
+                                    "buffs": [],
+                                    "renderers": [
+                                        {
+                                            "type": "reticule",
+                                            "radius": 0.12,
+                                            "minRadius": 0.119,
+                                            "shrinkTicks": 120,
+                                            "grow": true,
+                                            "color": "#4363d8",
+                                            "fade": true
+                                        },
+                                        {
+                                            "type": "reticule",
+                                            "radius": 0.42,
+                                            "minRadius": 0.419,
+                                            "startingTicks": 20,
+                                            "shrinkTicks": 20,
+                                            "grow": true,
+                                            "color": "#4363d8",
+                                            "fade": true
+                                        },
+                                        {
+                                            "type": "reticule",
+                                            "radius": 0.32,
+                                            "minRadius": 0.319,
+                                            "startingTicks": 60,
+                                            "shrinkTicks": 70,
+                                            "grow": true,
+                                            "color": "#4363d8",
+                                            "fade": true
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "color": "#aaa1",
+                        "renderers": []
                     }
                 }
             ]

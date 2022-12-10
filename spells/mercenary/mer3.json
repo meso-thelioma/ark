@@ -1,12 +1,12 @@
 {
 	"id": "mer3",
-	"description": "Become intangible. Charged: To targets intersected withn reduce defense by 5 and resistance by 10%. ",
+	"description": "Become intangible. Charged: To targets intersected with, reduce defense by 5 and resistance by 10%.",
 	"action": "projectile",
 	"color": "#f4d",
 	"name": "This Stage, Unrelenting",
 	"icon": "aura",
 	"maxAngleDiffInRevs": 0.01,
-	"cooldown": 120,
+	"cooldown": 600,
 	"chargeTicks": 10,
 	"throttle": true,
 	"effects": [		
