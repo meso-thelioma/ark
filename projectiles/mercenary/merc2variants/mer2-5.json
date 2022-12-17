@@ -7,7 +7,7 @@
 			"type": "armor",
 			"maxTicks": 60,
 			"render": {
-				"color": "#f80",
+				"color": "#0f8",
 				"particleRadius": 0.015,
 				"emissionRadiusFactor": 0,
 				"ticks": 10,
