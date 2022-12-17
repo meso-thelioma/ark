@@ -8080,15 +8080,15 @@
         },
         "mer1": {
             "id": "mer1",
-            "description": "Deal 8 true damage.",
+            "description": "Deal 8 true damage and vanish the target.",
             "action": "projectile",
             "color": "#4df",
             "name": "Choral Weltschmerz",
             "icon": "aura",
             "maxAngleDiffInRevs": 0.01,
-            "cooldown": 90,
+            "cooldown": 180,
             "throttle": true,
-            "chargeTicks": 10,
+            "chargeTicks": 30,
             "effects": [
                 {
                     "icon": "fas fa-address-card",
@@ -8122,11 +8122,11 @@
                 }
             ],
             "projectile": {
-                "density": 0.01,
+                "density": 0,
                 "radius": 0.003,
-                "speed": 0.1,
+                "speed": 0.6,
                 "maxTicks": 20,
-                "minTicks": 6,
+                "minTicks": 20,
                 "restitution": 0,
                 "damage": 0,
                 "collideWith": 65535,
@@ -8144,26 +8144,70 @@
                             "lifeSteal": 0,
                             "damage": 8
                         }
+                    },
+                    {
+                        "type": "cooldown",
+                        "cleansable": false,
+                        "maxTicks": 20,
+                        "minCooldown": 20
+                    },
+                    {
+                        "type": "mass",
+                        "cleansable": false,
+                        "maxTicks": 20,
+                        "radius": 0.014,
+                        "density": 1000000,
+                        "restrictCollideWith": 0
+                    },
+                    {
+                        "type": "movement",
+                        "cleansable": false,
+                        "maxTicks": 20,
+                        "movementProportion": 0
+                    },
+                    {
+                        "type": "glide",
+                        "cleansable": false,
+                        "maxTicks": 20,
+                        "linearDampingMultiplier": 1000
+                    },
+                    {
+                        "type": "vanish",
+                        "cleansable": false,
+                        "maxTicks": 20,
+                        "sound": "phaseOut",
+                        "renderStart": {
+                            "numParticles": 10,
+                            "color": "#111",
+                            "colorize": 0.1,
+                            "ticks": 15,
+                            "particleRadius": 0.014,
+                            "glow": 0.3,
+                            "shine": 1,
+                            "bloom": 0,
+                            "vanish": 1,
+                            "light": 1
+                        },
+                        "renderFinish": {
+                            "numParticles": 10,
+                            "color": "#111",
+                            "colorize": 0.1,
+                            "ticks": 15,
+                            "particleRadius": 0.014,
+                            "glow": 0.3,
+                            "shine": 1,
+                            "bloom": 0,
+                            "vanish": 1,
+                            "light": 1
+                        }
                     }
                 ],
                 "behaviours": [
                     {
-                        "type": "homing",
-                        "triggers": [
-                            {
-                                "type": "afterTicks",
-                                "afterTicks": 6
-                            }
-                        ],
-                        "targetType": "self",
-                        "maxTurnProportion": 0,
-                        "newSpeed": 0.6
-                    },
-                    {
                         "type": "spawn",
                         "expire": true,
                         "numProjectiles": 3,
-                        "spread": 0.2,
+                        "spread": 0.05,
                         "triggers": [
                             {
                                 "type": "and",
@@ -8187,9 +8231,9 @@
                             }
                         ],
                         "projectile": {
-                            "density": 0.01,
+                            "density": 0,
                             "radius": 0.003,
-                            "speed": 0.1,
+                            "speed": 0.6,
                             "maxTicks": 30,
                             "minTicks": 0,
                             "restitution": 0,
@@ -8255,7 +8299,7 @@
                         "type": "spawn",
                         "expire": true,
                         "numProjectiles": 3,
-                        "spread": 0.2,
+                        "spread": 0.05,
                         "triggers": [
                             {
                                 "type": "and",
@@ -8279,9 +8323,9 @@
                             }
                         ],
                         "projectile": {
-                            "density": 0.01,
+                            "density": 0,
                             "radius": 0.003,
-                            "speed": 0.1,
+                            "speed": 0.6,
                             "maxTicks": 30,
                             "minTicks": 0,
                             "restitution": 0,
@@ -8337,7 +8381,7 @@
                         "type": "spawn",
                         "expire": true,
                         "numProjectiles": 3,
-                        "spread": 0.2,
+                        "spread": 0.05,
                         "triggers": [
                             {
                                 "type": "and",
@@ -8369,7 +8413,7 @@
                         "projectile": {
                             "density": 0.5,
                             "radius": 0.003,
-                            "speed": 0.1,
+                            "speed": 0.6,
                             "maxTicks": 30,
                             "minTicks": 0,
                             "restitution": 0,
@@ -8441,7 +8485,7 @@
                             }
                         ],
                         "projectile": {
-                            "density": 0.01,
+                            "density": 0,
                             "radius": 0.003,
                             "speed": 0.9,
                             "maxTicks": 60,
@@ -8537,7 +8581,7 @@
                             }
                         ],
                         "projectile": {
-                            "density": 0.01,
+                            "density": 0,
                             "radius": 0.003,
                             "speed": 0.9,
                             "maxTicks": 60,
@@ -8709,9 +8753,9 @@
                             }
                         ],
                         "projectile": {
-                            "density": 0.01,
+                            "density": 0,
                             "radius": 0.003,
-                            "speed": 0.1,
+                            "speed": 0.6,
                             "maxTicks": 80,
                             "minTicks": 0,
                             "restitution": 1,
@@ -8805,9 +8849,9 @@
                             }
                         ],
                         "projectile": {
-                            "density": 0.01,
+                            "density": 0,
                             "radius": 0.003,
-                            "speed": 0.1,
+                            "speed": 0.6,
                             "maxTicks": 80,
                             "minTicks": 0,
                             "restitution": 1,
@@ -8899,7 +8943,7 @@
                         "projectile": {
                             "density": 1,
                             "radius": 0.003,
-                            "speed": 0.1,
+                            "speed": 0.6,
                             "maxTicks": 80,
                             "minTicks": 0,
                             "restitution": 1,
@@ -8975,7 +9019,7 @@
             "name": "Faith of Reprisal",
             "icon": "aura",
             "maxAngleDiffInRevs": 0.01,
-            "cooldown": 300,
+            "cooldown": 240,
             "throttle": true,
             "recoil": -0.25,
             "chargeTicks": 10,
@@ -9072,7 +9116,7 @@
                             }
                         ],
                         "projectile": {
-                            "density": 0.01,
+                            "density": 0,
                             "radius": 0.005,
                             "speed": 0.6,
                             "maxTicks": 60,
@@ -9152,7 +9196,7 @@
                             }
                         ],
                         "projectile": {
-                            "density": 0.01,
+                            "density": 0,
                             "radius": 0.005,
                             "speed": 0.6,
                             "maxTicks": 60,
@@ -9234,7 +9278,7 @@
                             }
                         ],
                         "projectile": {
-                            "density": 0.01,
+                            "density": 0,
                             "radius": 0.005,
                             "speed": 0.6,
                             "maxTicks": 60,
@@ -9306,7 +9350,7 @@
                             }
                         ],
                         "projectile": {
-                            "density": 0.01,
+                            "density": 0,
                             "radius": 0.003,
                             "speed": 0.9,
                             "maxTicks": 60,
@@ -9421,7 +9465,7 @@
                             }
                         ],
                         "projectile": {
-                            "density": 0.01,
+                            "density": 0,
                             "radius": 0.003,
                             "speed": 0.9,
                             "maxTicks": 60,
@@ -9587,7 +9631,7 @@
                             }
                         ],
                         "projectile": {
-                            "density": 0.01,
+                            "density": 0,
                             "radius": 0.08,
                             "speed": 0.1,
                             "maxTicks": 20,
@@ -9678,7 +9722,7 @@
                             }
                         ],
                         "projectile": {
-                            "density": 0.01,
+                            "density": 0,
                             "radius": 0.08,
                             "speed": 0.1,
                             "maxTicks": 20,
@@ -9771,7 +9815,7 @@
                             }
                         ],
                         "projectile": {
-                            "density": 0.01,
+                            "density": 0,
                             "radius": 0.08,
                             "speed": 0.1,
                             "maxTicks": 20,

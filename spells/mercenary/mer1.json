@@ -1,14 +1,14 @@
 {
 	"id": "mer1",
-	"description": "Deal 8 true damage.",
+	"description": "Deal 8 true damage and vanish the target.",
 	"action": "projectile",
 	"color": "#4df",
 	"name": "Choral Weltschmerz",
 	"icon": "aura",
 	"maxAngleDiffInRevs": 0.01,
-	"cooldown": 90,
+	"cooldown": 180,
 	"throttle": true,
-	"chargeTicks": 10,
+	"chargeTicks": 30,
 	"effects": [
 		{
 			"icon": "fas fa-address-card",
