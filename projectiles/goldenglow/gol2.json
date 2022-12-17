@@ -25,7 +25,7 @@
 	"behaviours": [
 		{
 			"type": "homing",
-			"targetType": "self"
+			"targetType": "close"
 		}
 	],
 	"renderers": [
