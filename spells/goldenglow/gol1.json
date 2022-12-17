@@ -1,6 +1,6 @@
 {
 	"id": "gol1",
-	"description": "Hold to deal 4 Arts damage per strike. At full charge, it will taunt drones to the target and silence the caster for 10 seconds.",
+	"description": "Hold to deal 4 Arts damage per strike. At full charge, it will deal 16 Arts damage and silence Eluding Sun for 10 seconds.",
 	"action": "focus",
 	"color": "#fabed4",
 	"icon": "andromedaChain",

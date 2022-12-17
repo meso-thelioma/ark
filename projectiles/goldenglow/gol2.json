@@ -1,7 +1,7 @@
 {
 	"density": 1,
 	"radius": 0.008,
-	"speed": 0,
+	"speed": 0.05,
 	"maxTicks": 2400,
 	"damage": 0,
 	"lifeSteal": 0,

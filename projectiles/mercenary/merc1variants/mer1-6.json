@@ -13,7 +13,7 @@
 				"damage": 8
 			},
 			"render": {
-				"color": "#8f0",
+				"color": "#08f",
 				"particleRadius": 0.002,
 				"emissionRadiusFactor": 1,
 				"ticks": 10,

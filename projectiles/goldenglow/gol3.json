@@ -1,6 +1,6 @@
 {
 	"density": 0.01,
-	"radius": 0.0026,
+	"radius": 0.01,
 	"collideWith": 2,
 	"speed": 0.9,
 	"maxTicks": 30,
@@ -11,7 +11,7 @@
 	"categories": 8195,
 	"sound": "fireball",
 	"soundHit": "standard",
-	"color": "#fabed422",
+	"color": "#fabed412",
 	"projectileBuffs": [],
 	"behaviours": [
 		{
@@ -26,18 +26,19 @@
 					"against": 1
 				}
 			],
+			"numProjectiles": 4,
+			"spread": 0.75,
 			"projectile": {
 				"density": 0.5,
 				"attractable": false,
-				"radius": 0.005,
+				"radius": 0.006,
 				"speed": 3,
-				"maxTicks": 30,
+				"maxTicks": 5,
 				"damage": 0,
 				"lifeSteal": 0.3,
 				"categories": 6,
-				"expireOn": 65527,
+				"expireOn": 65526,
 				"sensor": true,
-				"expireAgainstHeroes": 1,
 				"sound": "fireball",
 				"color": "#fabed4",
 				"buffs": [
@@ -48,7 +49,7 @@
 						"packet": {
 							"source": "arts",
 							"lifeSteal": 0,
-							"damage": 15
+							"damage": 4
 						}
 					}
 				],
@@ -57,13 +58,9 @@
 						"type": "cooldown",
 						"owner": true,
 						"maxCooldown": 1,
-						"spellIds": [
-							"gol2",
-							"gol3"
-						],
 						"color": "#fabed4"
 					}
-	],
+				],
 				"renderers": [
 					{
 						"type": "ray",
@@ -76,12 +73,7 @@
 						"light": 1.8
 					}
 				],
-				"behaviours": [
-					{
-						"type": "homing",
-						"targetType": "self"
-					}
-				]
+				"behaviours": []
 			}
 		}
 	],
@@ -89,6 +81,7 @@
 	"renderers": [
 		{
 			"type": "projectile",
+			"intermediateInterpolations": 1,
 			"ticks": 20
 		}
 	]

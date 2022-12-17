@@ -5504,7 +5504,7 @@
         },
         "gol1": {
             "id": "gol1",
-            "description": "Hold to deal 4 Arts damage per strike. At full charge, it will taunt drones to the target and silence the caster for 10 seconds.",
+            "description": "Hold to deal 4 Arts damage per strike. At full charge, it will deal 16 Arts damage and silence Eluding Sun for 10 seconds.",
             "action": "focus",
             "color": "#fabed4",
             "icon": "andromedaChain",
@@ -5656,6 +5656,7 @@
                                             "maxTicks": 1,
                                             "owner": true,
                                             "color": "#fabed4",
+                                            "spellId": "gol1",
                                             "render": {
                                                 "color": "#fabed422",
                                                 "particleRadius": 0.0125,
@@ -5674,57 +5675,6 @@
                                         "afterTicks": 2
                                     },
                                     "collideWith": 65535
-                                },
-                                {
-                                    "type": "spawn",
-                                    "trigger": {
-                                        "collideWith": 1,
-                                        "against": 14
-                                    },
-                                    "projectile": {
-                                        "density": 0.01,
-                                        "radius": 0.0125,
-                                        "speed": 0.1,
-                                        "damage": 0,
-                                        "maxTicks": 90,
-                                        "sense": 0,
-                                        "ccd": true,
-                                        "sensor": true,
-                                        "expireOn": 0,
-                                        "collideWith": 0,
-                                        "categories": 2,
-                                        "sound": "fireball",
-                                        "soundHit": "standard",
-                                        "color": "#dcbeff22",
-                                        "behaviours": [
-                                            {
-                                                "type": "attract",
-                                                "collideLike": 1,
-                                                "categories": 2,
-                                                "against": 1,
-                                                "radius": 2,
-                                                "accelerationPerTick": 0.3,
-                                                "clampSpeed": 2
-                                            },
-                                            {
-                                                "type": "homing",
-                                                "targetType": "closestEnemy",
-                                                "targetVanish": true
-                                            }
-                                        ],
-                                        "buffs": [],
-                                        "renderers": [
-                                            {
-                                                "type": "swirl",
-                                                "ticks": 10,
-                                                "color": "#fabed4",
-                                                "radius": 0.025,
-                                                "particleRadius": 0.001,
-                                                "loopTicks": 120,
-                                                "numParticles": 4
-                                            }
-                                        ]
-                                    }
                                 }
                             ],
                             "renderers": [
@@ -5862,7 +5812,7 @@
                 "behaviours": [
                     {
                         "type": "homing",
-                        "targetType": "self"
+                        "targetType": "close"
                     },
                     {
                         "type": "spawn",
@@ -5877,7 +5827,7 @@
                         "projectile": {
                             "density": 1,
                             "radius": 0.008,
-                            "speed": 0,
+                            "speed": 0.05,
                             "maxTicks": 2400,
                             "damage": 0,
                             "lifeSteal": 0,
@@ -5933,7 +5883,7 @@
         },
         "gol3": {
             "id": "gol3",
-            "description": "If the caster's flowers are hit, deal 15 Arts damage. Gladiolus and Forget Me Not will have its cooldown reset if the caster hits a drone. ",
+            "description": "If the caster's flowers are hit, deal 16 Arts damage. All skills will have its cooldown reset if the caster hits a drone.",
             "action": "projectile",
             "color": "#fabed4",
             "icon": "andromedaChain",
@@ -5952,7 +5902,7 @@
             "buffs": [],
             "projectile": {
                 "density": 0.01,
-                "radius": 0.0026,
+                "radius": 0.01,
                 "collideWith": 2,
                 "speed": 0.9,
                 "maxTicks": 30,
@@ -5963,7 +5913,7 @@
                 "categories": 8195,
                 "sound": "fireball",
                 "soundHit": "standard",
-                "color": "#fabed422",
+                "color": "#fabed412",
                 "projectileBuffs": [],
                 "behaviours": [
                     {
@@ -5978,18 +5928,19 @@
                                 "against": 1
                             }
                         ],
+                        "numProjectiles": 4,
+                        "spread": 0.75,
                         "projectile": {
                             "density": 0.5,
                             "attractable": false,
-                            "radius": 0.005,
+                            "radius": 0.006,
                             "speed": 3,
-                            "maxTicks": 30,
+                            "maxTicks": 5,
                             "damage": 0,
                             "lifeSteal": 0.3,
                             "categories": 6,
-                            "expireOn": 65527,
+                            "expireOn": 65526,
                             "sensor": true,
-                            "expireAgainstHeroes": 1,
                             "sound": "fireball",
                             "color": "#fabed4",
                             "buffs": [
@@ -6000,7 +5951,7 @@
                                     "packet": {
                                         "source": "arts",
                                         "lifeSteal": 0,
-                                        "damage": 15
+                                        "damage": 4
                                     }
                                 }
                             ],
@@ -6009,10 +5960,6 @@
                                     "type": "cooldown",
                                     "owner": true,
                                     "maxCooldown": 1,
-                                    "spellIds": [
-                                        "gol2",
-                                        "gol3"
-                                    ],
                                     "color": "#fabed4"
                                 }
                             ],
@@ -6028,12 +5975,7 @@
                                     "light": 1.8
                                 }
                             ],
-                            "behaviours": [
-                                {
-                                    "type": "homing",
-                                    "targetType": "self"
-                                }
-                            ]
+                            "behaviours": []
                         }
                     }
                 ],
@@ -6041,6 +5983,7 @@
                 "renderers": [
                     {
                         "type": "projectile",
+                        "intermediateInterpolations": 1,
                         "ticks": 20
                     }
                 ]
@@ -8703,7 +8646,7 @@
                                         "damage": 8
                                     },
                                     "render": {
-                                        "color": "#8f0",
+                                        "color": "#08f",
                                         "particleRadius": 0.002,
                                         "emissionRadiusFactor": 1,
                                         "ticks": 10,
