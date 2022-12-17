@@ -1,0 +1,31 @@
+{
+	"basedOn": "mer1-4",
+	"color": "#0f8",	
+	"behaviours": [		
+		{
+			"type": "homing",
+			"targetType": "follow",
+			"revolutionsPerSecond": 0.005
+		}
+	],
+	"buffs": [
+		{
+			"type": "burn",
+			"hitInterval": 10,
+			"maxTicks": 100,
+			"packet": {
+				"lifeSteal": 0,
+				"source": "arts",
+				"damage": 0.8
+			},
+			"render": {
+				"color": "#0f8",
+				"particleRadius": 0.002,
+				"emissionRadiusFactor": 1,
+				"ticks": 10,
+				"light": 1,
+				"invisible": true
+			}
+		}
+	]
+}

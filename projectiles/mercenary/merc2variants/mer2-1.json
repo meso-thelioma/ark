@@ -1,0 +1,48 @@
+{
+	"basedOn": "mer1",
+	"maxTicks": 60,
+	"speed": 0.6,
+	"radius": 0.005,
+	"minTicks": 0,
+	"sensor": true,
+	"collideWith": 65535,
+	"behaviours": [
+		{
+			"type": "strafe"
+		}
+	],
+	"buffs": [						
+		{
+			"type": "mass",
+			"maxTicks": 30,
+			"radius": 0.0125,
+			"sense": 128
+		},
+		{
+			"type": "movement",
+			"maxTicks": 30,
+			"movementProportion": 0,
+			"render": {
+				"color": "#f00",
+				"particleRadius": 0.002,
+				"emissionRadiusFactor": 1,
+				"ticks": 10,
+				"light": 1,
+				"invisible": true
+			}
+		}
+	],
+	"color": "#f00",
+	"renderers": [
+		{
+			"type": "projectile",
+			"ticks": 10
+		},
+		{
+			"type": "strike",
+			"ticks": 30,
+			"flash": true,
+			"numParticles": 5
+		}
+	]
+}

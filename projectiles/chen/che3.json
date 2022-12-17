@@ -2,14 +2,13 @@
 	"density": 0.001,
 	"attractable": false,
 	"radius": 0.1,
-	"speed": 0.1,
+	"speed": 0,
 	"sound": "fireball",
 	"maxTicks": 300,
 	"damage": 0,
 	"sensor": true,
 	"expireOn": 0,
-	"hitInterval": 3,
-	"collideWith": 1,
+	"collideWith": 0,
 	"lifeSteal": 0,
 	"categories": 2,
 	"buffs": [],
@@ -17,24 +16,9 @@
 	"behaviours": [
 		{
 			"type": "spawn",
-			"triggers": [
-				{
-					"type": "collideWith",
-					"collideWith": 1,
-					"triggerInterval": 6,
-					"maxHits": 1000
-				}
-			],
+			"numProjectiles": 20,
+			"spread": 0.95,
 			"projectile": "che1-sentry"
-		},
-		{
-			"type": "attract",
-			"collideLike": 65535,
-			"categories": 1,
-			"against": 15,
-			"radius": 0.1,
-			"accelerationPerTick": 0.0015,
-			"attractToFacing": true
 		}
 	],
 	"color": "#ceffff",

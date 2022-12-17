@@ -1,0 +1,59 @@
+{
+	"basedOn": "mer1",
+	"color": "#00f",
+	"speed": 0.1,
+	"minTicks": 0,
+	"collideWith": 1,
+	"radius": 0.08,
+	"sensor": true,
+	"expireOn": 0,
+	"hitInterval": 20,
+	"maxTicks": 20,
+	"behaviours": [
+		{
+			"type": "attract",
+			"collideLike": 65535,
+			"categories": 1,
+			"against": 14,
+			"radius": 0.08,
+			"accelerationPerTick": -0.0015,
+			"attractToFacing": true
+		}
+	],
+	"buffs": [		
+		{
+			"type": "mass",
+			"maxTicks": 30,
+			"radius": 0.0125,
+			"sense": 128
+		},
+		{
+			"type": "movement",
+			"maxTicks": 30,
+			"movementProportion": 0,
+			"render": {
+				"color": "#f00",
+				"particleRadius": 0.002,
+				"emissionRadiusFactor": 1,
+				"ticks": 10,
+				"light": 1,
+				"invisible": true
+			}
+		}
+	],
+	"renderers": [
+		{
+			"type": "polygon",
+			"numPoints": 8,
+			"light": 0.3,
+			"radiusMultiplier": 1.05,
+			"revolutionInterval": 60,
+			"ticks": 10
+		},
+		{
+			"type": "strike",
+			"ticks": 10,
+			"numParticles": 5
+		}
+	]
+}

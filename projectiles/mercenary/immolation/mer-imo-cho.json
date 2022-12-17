@@ -1,0 +1,18 @@
+{
+	"basedOn": "exu3",
+	"maxTicks": 450,
+	"radius": 0.2,
+	"categories": 2,
+	"behaviours": [
+		{
+			"type": "strafe"
+		},
+		{
+			"type": "homing",
+			"targetType": "self",
+			"trigger": {
+				"afterTicks": 10
+			}
+		}
+	]
+}

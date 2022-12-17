@@ -1,0 +1,23 @@
+{
+	"basedOn": "mer1-6",
+	"color": "#08f",
+	"minTicks": 0,
+	"density": 1,
+	"buffs": [
+		{
+			"type": "armor",
+			"maxTicks": 60,
+			"render": {
+				"color": "#8f0",
+				"particleRadius": 0.015,
+				"emissionRadiusFactor": 0,
+				"ticks": 10,
+				"light": 0.1,
+				"invisible": true
+			},
+			"stack": "mercenaryphys",
+			"source": "phys",
+			"proportion": 0.3
+		}
+	]
+}

@@ -1,20 +1,45 @@
 {
 	"id": "mer2",
-	"description": "Backstep. Charged: Heal 15 health and levitate at cursor.",
+	"description": "After a delay, dash.",
 	"action": "projectile",
 	"color": "#df4",
-	"name": "In The Wings",
+	"name": "Faith of Reprisal",
 	"icon": "aura",
 	"maxAngleDiffInRevs": 0.01,
 	"cooldown": 300,
 	"throttle": true,
-	"recoil": 0.15,
+	"recoil": -0.25,
 	"chargeTicks": 10,
-	"effects": [		
+	"effects": [
 		{
 			"icon": "fas fa-address-card",
-			"title": "Healing",
-			"text": "Heal * Buffs"
+			"title": "Creed of Immolation",
+			"text": "Creates disjointed slash"
+		},
+		{
+			"icon": "fas fa-address-card",
+			"title": "Creed of Repentance",
+			"text": "Fires Choral Weltschmerz"
+		},		
+		{
+			"icon": "fas fa-address-card",
+			"title": "Creed of Salvation",
+			"text": "Shifts nearby targets in the opposite direction"
+		},
+		{
+			"icon": "fas fa-address-card",
+			"title": "Figment of Connection",
+			"text": "Binds"
+		},
+		{
+			"icon": "fas fa-address-card",
+			"title": "Figment of Choice",
+			"text": "Increases Arts damage taken by 2"
+		},
+		{
+			"icon": "fas fa-address-card",
+			"title": "Figment of Complacency",
+			"text": "Increases physical damage taken by 30%"
 		}
 	],
 	"buffs": [

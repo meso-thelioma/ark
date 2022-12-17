@@ -1,0 +1,21 @@
+{
+	"basedOn": "mer2-7",
+	"color": "#f08",
+	"buffs": [
+		{
+			"type": "armor",
+			"maxTicks": 60,
+			"render": {
+				"color": "#f08",
+				"particleRadius": 0.015,
+				"emissionRadiusFactor": 0,
+				"ticks": 10,
+				"light": 0.1,
+				"invisible": true
+			},
+			"stack": "mercenaryphys",
+			"source": "phys",
+			"proportion": 0.3
+		}
+	]
+}

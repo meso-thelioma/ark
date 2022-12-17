@@ -1,19 +1,44 @@
 {
 	"id": "mer1",
-	"description": "Deal 6 true damage. Charged: Halve cooldown.",
+	"description": "Deal 8 true damage.",
 	"action": "projectile",
 	"color": "#4df",
-	"name": "Performance",
+	"name": "Choral Weltschmerz",
 	"icon": "aura",
 	"maxAngleDiffInRevs": 0.01,
-	"cooldown": 180,
+	"cooldown": 90,
 	"throttle": true,
 	"chargeTicks": 10,
 	"effects": [
 		{
 			"icon": "fas fa-address-card",
-			"title": "True Damage",
-			"text": "Damage * Buffs"
+			"title": "Creed of Immolation",
+			"text": "Deals one-third damage; spreadshot with three hits"
+		},
+		{
+			"icon": "fas fa-address-card",
+			"title": "Creed of Repentance",
+			"text": "Deals full damage; range and speed increased"
+		},		
+		{
+			"icon": "fas fa-address-card",
+			"title": "Creed of Salvation",
+			"text": "Deals half damage; bounces off obstacles and targets"
+		},
+		{
+			"icon": "fas fa-address-card",
+			"title": "Figment of Connection",
+			"text": "Deals true damage; heals allies; slows"
+		},
+		{
+			"icon": "fas fa-address-card",
+			"title": "Figment of Choice",
+			"text": "Deals Arts damage over time; homes"
+		},
+		{
+			"icon": "fas fa-address-card",
+			"title": "Figment of Complacency",
+			"text": "Deals physical damage; gains knockback"
 		}
 	],
 	"projectile": "mer1"

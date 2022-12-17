@@ -1,0 +1,57 @@
+{
+	"basedOn": "mer1",
+	"maxTicks": 60,
+	"speed": 0.9,	
+	"minTicks": 0,
+	"behaviours": [],
+	"collideWith": 65535,
+	"buffs": [
+		{
+			"type": "burn",
+			"hitInterval": 1,
+			"against": 12,
+			"maxTicks": 1,
+			"packet": {
+				"lifeSteal": 0,
+				"damage": 8
+			}
+		},
+		{
+			"type": "burn",
+			"hitInterval": 1,
+			"maxTicks": 1,
+			"against": 3,
+			"packet": {
+				"lifeSteal": 0,
+				"source": "heal",
+				"damage": -8
+			}
+		},
+		{
+			"type": "movement",
+			"maxTicks": 20,
+			"movementProportion": 0.5,
+			"render": {
+				"color": "#0f0",
+				"particleRadius": 0.002,
+				"emissionRadiusFactor": 1,
+				"ticks": 10,
+				"light": 1,
+				"invisible": true
+			}
+		}
+	],
+	"color": "#0f0",
+	"renderers": [
+		{
+			"type": "ray",
+			"ticks": 20
+		},
+		{
+			"type": "strike",
+			"ticks": 30,
+			"flash": true,
+			"numParticles": 5
+		}
+	]
+}

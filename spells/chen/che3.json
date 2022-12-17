@@ -1,6 +1,6 @@
 {
 	"id": "che3",
-	"description": "Create a field. The field will continously fire at the nearest target in range and deal 2 Arts damage. Nearby targets will be shifted.",
+	"description": "Create a field. Targets which cross the edge of the field will silence in an area.",
 	"action": "projectile",
 	"color": "#CEFFFF",
 	"icon": "che",
@@ -10,12 +10,6 @@
 	"throttle": true,
 	"recoil": 0.3,
 	"chargeTicks": 20,
-	"effects": [
-		{
-			"icon": "fas fa-address-card",
-			"title": "Arts Damage",
-			"text": "Damage * (1 - Resistance) * Buffs"
-		}
-	],
+	"effects": [],
 	"projectile": "che3"
 }

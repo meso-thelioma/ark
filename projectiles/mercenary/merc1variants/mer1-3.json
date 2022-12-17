@@ -1,0 +1,26 @@
+{
+	"basedOn": "mer1-1",
+	"color": "#8f0",
+	"behaviours": [],
+	"density": 0.5,
+	"buffs": [
+		{
+			"type": "burn",
+			"hitInterval": 1,
+			"maxTicks": 1,
+			"packet": {
+				"lifeSteal": 0,
+				"source": "phys",
+				"damage": 2.66666666666667
+			},
+			"render": {
+				"color": "#8f0",
+				"particleRadius": 0.002,
+				"emissionRadiusFactor": 1,
+				"ticks": 10,
+				"light": 1,
+				"invisible": true
+			}
+		}
+	]
+}

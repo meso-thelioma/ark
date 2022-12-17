@@ -1,16 +1,11 @@
 {
 	"id": "mer",
 	"name": "Belief",
-	"description": "Specialist with low-health support.",
+	"description": "Specialist with three major and minor gamestyles..",
 	"passive": true,
 	"untargeted": true,
 	"cooldown": 1,
 	"effects": [
-		{
-			"icon": "fas fa-address-card",
-			"title": "Passive",
-			"text": "Below half health, skills will be enhanced."
-		},
 		{
 			"icon": "far fa-sad-tear",
 			"title": "Memory",
@@ -43,70 +38,5 @@
 	"icon": "aura",
 	"color": "#fff",
 	"action": "buff",
-	"behaviours": [
-		{
-			"type": "spawn",
-			"triggers": [
-				{
-					"type": "and",
-					"triggers": [
-						{
-							"type": "interval",
-							"triggerInterval": 30
-						},
-						{
-							"type": "health",
-							"health": 50,
-							"persist": true
-						}
-					]
-				}
-			],
-			"projectile": {
-				"density": 0.01,
-				"expireOn": 0,
-				"radius": 0.1,
-				"speed": 0,
-				"maxTicks": 30,
-				"damage": 0,
-				"sensor": true,
-				"collideWith": 2,
-				"lifeSteal": 0,
-				"categories": 8192,
-				"sound": "fireball",
-				"soundHit": "standard",
-				"expireAgainstObjects": 1,
-				"color": "#aaa",
-				"projectileBuffs": [
-					{
-						"type": "lifeSteal",
-						"cleansable": false,
-						"maxTicks": 60,
-						"renderers": [
-							{
-								"type": "swirl",
-								"color": "#aaa",
-								"colorize": 0.4,
-								"particleRadius": 0.0005,
-								"numParticles": 3,
-								"radius": 0.015,
-								"loopTicks": -90,
-								"ticks": 4
-							}
-						]
-					}
-				],
-				"behaviours": [
-					{
-						"type": "strafe"
-					},
-					{
-						"type": "homing",
-						"targetType": "self"
-					}
-				],
-				"renderers": []
-			}
-		}
-	]
+	"behaviours": []
 }

@@ -1,11 +1,12 @@
 {
 	"density": 0.01,
 	"radius": 0.003,
-	"speed": 0.4,
-	"maxTicks": 120,
-	"minTicks": 4,
+	"speed": 0.6,
+	"maxTicks": 20,
+	"minTicks": 1,
+	"restitution": 0,
 	"damage": 0,
-	"collideWith": 8192,
+	"collideWith": 65526,
 	"lifeSteal": 0,
 	"categories": 2,
 	"sound": "fireball",
@@ -18,11 +19,11 @@
 			"maxTicks": 1,
 			"packet": {
 				"lifeSteal": 0,
-				"damage": 6
+				"damage": 8
 			}
 		}
 	],
-	"behaviours": [
+	"behaviours": [		
 		{
 			"type": "updateCollideWith",
 			"trigger": {
@@ -32,76 +33,288 @@
 		},
 		{
 			"type": "spawn",
+			"expire": true,
+			"numProjectiles": 3,
+			"spread": 0.2,
 			"triggers": [
 				{
 					"type": "and",
 					"triggers": [
 						{
 							"type": "collideWith",
-							"collideWith": 8192,
-							"against": 1
+							"collideWith": 1,
+							"against": 1,
+							"collideTypes": "mer3"
 						},
 						{
 							"type": "not",
 							"trigger": {
-								"type": "afterTicks",
-								"afterTicks": 10
+								"type": "collideWith",
+								"collideWith": 65534,
+								"against": 1,
+								"collideTypes": "mer3"
 							}
 						}
 					]
 				}
 			],
-			"expire": true,	
-			"projectile": {
-				"density": 0.001,
-				"attractable": false,
-				"radius": 0.0,
-				"expireOn": 0,
-				"speed": 0,
-				"maxTicks": 1,
-				"damage": 0,
-				"sensor": true,
-				"categories": 2,
-				"collideWith": 0,
-				"lifeSteal": 0,
-				"buffs": [],
-				"projectileBuffs": [],
-				"behaviours": [
-					{
-						"type": "aura",
-						"radius": 2,
-						"against": 1,
-						"tickInterval": 1,
-						"packet": {
-							"damage": 0,
-							"noHit": true,
-							"lifeSteal": 0
+			"projectile": "mer1-1"
+		},		
+		{
+			"type": "spawn",
+			"expire": true,
+			"numProjectiles": 3,
+			"spread": 0.2,
+			"triggers": [
+				{
+					"type": "and",
+					"triggers": [
+						{
+							"type": "collideWith",
+							"collideWith": 2,
+							"against": 1,
+							"collideTypes": "mer3"
 						},
-						"buffs": [
-							{
-								"type": "cooldown",
-								"color": "#fff",
-								"maxTicks": 1,
-								"maxCooldown": 90,
-								"spellId": "mer1"
+						{
+							"type": "not",
+							"trigger": {
+								"type": "collideWith",
+								"collideWith": 65533,
+								"against": 1,
+								"collideTypes": "mer3"
 							}
-						]
-					}
-				],
-				"color": "#aaa1",
-				"renderers": [
-					{
-						"type": "swirl",
-						"color": "#aaa",
-						"colorize": 0.4,
-						"particleRadius": 0.0005,
-						"numParticles": 3,
-						"radius": 0.05,
-						"loopTicks": -90,
-						"ticks": 20
-					}
-				]
-			}
+						}
+					]
+				}
+			],
+			"projectile": "mer1-2"
+		},
+		{
+			"type": "spawn",
+			"expire": true,
+			"numProjectiles": 3,
+			"spread": 0.2,
+			"triggers": [
+				{
+					"type": "and",
+					"triggers": [
+						{
+							"type": "collideWith",
+							"collideWith": 1,
+							"against": 1,
+							"collideTypes": "mer3"
+						},						
+						{
+							"type": "collideWith",
+							"collideWith": 2,
+							"against": 1,
+							"collideTypes": "mer3"
+						},
+						{
+							"type": "not",
+							"trigger": {
+								"type": "collideWith",
+								"collideWith": 65532,
+								"against": 1,
+								"collideTypes": "mer3"
+							}
+						}
+					]
+				}
+			],
+			"projectile": "mer1-3"
+		},
+		{
+			"type": "spawn",
+			"expire": true,
+			"triggers": [
+				{
+					"type": "and",
+					"triggers": [
+						{
+							"type": "collideWith",
+							"collideWith": 4,
+							"against": 1,
+							"collideTypes": "mer3"
+						},						
+						{
+							"type": "not",
+							"trigger": {
+								"type": "collideWith",
+								"collideWith": 65531,
+								"against": 1,
+								"collideTypes": "mer3"
+							}
+						}
+					]
+				}
+			],
+			"projectile": "mer1-4"
+		},
+		{
+			"type": "spawn",
+			"expire": true,
+			"triggers": [
+				{
+					"type": "and",
+					"triggers": [
+						{
+							"type": "collideWith",
+							"collideWith": 1,
+							"against": 1,
+							"collideTypes": "mer3"
+						},						
+						{
+							"type": "collideWith",
+							"collideWith": 4,
+							"against": 1,
+							"collideTypes": "mer3"
+						},
+						{
+							"type": "not",
+							"trigger": {
+								"type": "collideWith",
+								"collideWith": 65530,
+								"against": 1,
+								"collideTypes": "mer3"
+							}
+						}
+					]
+				}
+			],
+			"projectile": "mer1-5"
+		},
+		{
+			"type": "spawn",
+			"expire": true,
+			"triggers": [
+				{
+					"type": "and",
+					"triggers": [
+						{
+							"type": "collideWith",
+							"collideWith": 2,
+							"against": 1,
+							"collideTypes": "mer3"
+						},						
+						{
+							"type": "collideWith",
+							"collideWith": 4,
+							"against": 1,
+							"collideTypes": "mer3"
+						},
+						{
+							"type": "not",
+							"trigger": {
+								"type": "collideWith",
+								"collideWith": 65529,
+								"against": 1,
+								"collideTypes": "mer3"
+							}
+						}
+					]
+				}
+			],
+			"projectile": "mer1-6"
+		},
+		{
+			"type": "spawn",
+			"expire": true,
+			"triggers": [
+				{
+					"type": "and",
+					"triggers": [
+						{
+							"type": "collideWith",
+							"collideWith": 1,
+							"against": 1,
+							"collideTypes": "mer3"
+						},						
+						{
+							"type": "collideWith",
+							"collideWith": 2,
+							"against": 1,
+							"collideTypes": "mer3"
+						},						
+						{
+							"type": "collideWith",
+							"collideWith": 4,
+							"against": 1,
+							"collideTypes": "mer3"
+						},
+						{
+							"type": "not",
+							"trigger": {
+								"type": "collideWith",
+								"collideWith": 65528,
+								"against": 1,
+								"collideTypes": "mer3"
+							}
+						}
+					]
+				}
+			],
+			"projectile": "mer1-7"
+		},
+		{
+			"type": "spawn",
+			"expire": true,
+			"triggers": [
+				{
+					"type": "and",
+					"triggers": [
+						{
+							"type": "collideWith",
+							"collideWith": 8,
+							"against": 1,
+							"collideTypes": "mer3"
+						},						
+						{
+							"type": "not",
+							"trigger": {
+								"type": "collideWith",
+								"collideWith": 65527,
+								"against": 1,
+								"collideTypes": "mer3"
+							}
+						}
+					]
+				}
+			],
+			"projectile": "mer1-8"
+		},
+		{
+			"type": "spawn",
+			"expire": true,
+			"triggers": [
+				{
+					"type": "and",
+					"triggers": [
+						{
+							"type": "collideWith",
+							"collideWith": 1,
+							"against": 1,
+							"collideTypes": "mer3"
+						},											
+						{
+							"type": "collideWith",
+							"collideWith": 8,
+							"against": 1,
+							"collideTypes": "mer3"
+						},
+						{
+							"type": "not",
+							"trigger": {
+								"type": "collideWith",
+								"collideWith": 65526,
+								"against": 1,
+								"collideTypes": "mer3"
+							}
+						}
+					]
+				}
+			],
+			"projectile": "mer1-9"
 		}
 	],
 	"renderers": [

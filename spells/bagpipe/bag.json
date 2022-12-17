@@ -1,7 +1,7 @@
 {
 	"id": "bag",
 	"name": "Plague",
-	"description": "Physical Burst with defense and cooldown reduction.",
+	"description": "Physical Burst with weakening and cooldown reduction.",
 	"passive": true,
 	"untargeted": true,
 	"cooldown": 1,

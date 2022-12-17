@@ -77,10 +77,40 @@
 			"type": "reticule",
 			"radius": 0.1,
 			"minRadius": 0.095,
-			"color": "#ceffff",
+			"color": "#ceffff22",
 			"arc": {
 				"type": "dynamic",
 				"ticks": 125
+			}
+		},
+		{
+			"type": "reticule",
+			"radius": 0.1,
+			"minRadius": 0.095,
+			"color": "#ceffff22",
+			"arc": {
+				"type": "dynamic",
+				"ticks": 115
+			}
+		},
+		{
+			"type": "reticule",
+			"radius": 0.1,
+			"minRadius": 0.095,
+			"color": "#ceffff22",
+			"arc": {
+				"type": "dynamic",
+				"ticks": 105
+			}
+		},
+		{
+			"type": "reticule",
+			"radius": 0.1,
+			"minRadius": 0.095,
+			"color": "#ceffff22",
+			"arc": {
+				"type": "dynamic",
+				"ticks": 95
 			}
 		}
 	]
