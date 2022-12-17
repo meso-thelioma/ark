@@ -8124,13 +8124,12 @@
             "projectile": {
                 "density": 0.01,
                 "radius": 0.003,
-                "speed": 0.6,
+                "speed": 0.1,
                 "maxTicks": 20,
                 "minTicks": 6,
                 "restitution": 0,
                 "damage": 0,
                 "collideWith": 65535,
-                "sensor": true,
                 "lifeSteal": 0,
                 "categories": 2,
                 "sound": "fireball",
@@ -8148,6 +8147,18 @@
                     }
                 ],
                 "behaviours": [
+                    {
+                        "type": "homing",
+                        "triggers": [
+                            {
+                                "type": "afterTicks",
+                                "afterTicks": 6
+                            }
+                        ],
+                        "targetType": "self",
+                        "maxTurnProportion": 0,
+                        "newSpeed": 0.6
+                    },
                     {
                         "type": "spawn",
                         "expire": true,
@@ -8178,13 +8189,12 @@
                         "projectile": {
                             "density": 0.01,
                             "radius": 0.003,
-                            "speed": 0.6,
+                            "speed": 0.1,
                             "maxTicks": 30,
                             "minTicks": 0,
                             "restitution": 0,
                             "damage": 0,
                             "collideWith": 65535,
-                            "sensor": true,
                             "lifeSteal": 0,
                             "categories": 2,
                             "sound": "fireball",
@@ -8271,13 +8281,12 @@
                         "projectile": {
                             "density": 0.01,
                             "radius": 0.003,
-                            "speed": 0.6,
+                            "speed": 0.1,
                             "maxTicks": 30,
                             "minTicks": 0,
                             "restitution": 0,
                             "damage": 0,
                             "collideWith": 65535,
-                            "sensor": true,
                             "lifeSteal": 0,
                             "categories": 2,
                             "sound": "fireball",
@@ -8360,13 +8369,12 @@
                         "projectile": {
                             "density": 0.5,
                             "radius": 0.003,
-                            "speed": 0.6,
+                            "speed": 0.1,
                             "maxTicks": 30,
                             "minTicks": 0,
                             "restitution": 0,
                             "damage": 0,
                             "collideWith": 65535,
-                            "sensor": true,
                             "lifeSteal": 0,
                             "categories": 2,
                             "sound": "fireball",
@@ -8441,7 +8449,6 @@
                             "restitution": 0,
                             "damage": 0,
                             "collideWith": 65535,
-                            "sensor": true,
                             "lifeSteal": 0,
                             "categories": 2,
                             "sound": "fireball",
@@ -8538,7 +8545,6 @@
                             "restitution": 0,
                             "damage": 0,
                             "collideWith": 65535,
-                            "sensor": true,
                             "lifeSteal": 0,
                             "categories": 2,
                             "sound": "fireball",
@@ -8625,7 +8631,6 @@
                             "restitution": 0,
                             "damage": 0,
                             "collideWith": 65535,
-                            "sensor": true,
                             "lifeSteal": 0,
                             "categories": 2,
                             "sound": "fireball",
@@ -8706,13 +8711,12 @@
                         "projectile": {
                             "density": 0.01,
                             "radius": 0.003,
-                            "speed": 0.6,
+                            "speed": 0.1,
                             "maxTicks": 80,
                             "minTicks": 0,
                             "restitution": 1,
                             "damage": 0,
                             "collideWith": 65535,
-                            "sensor": true,
                             "lifeSteal": 0,
                             "categories": 2,
                             "sound": "fireball",
@@ -8803,13 +8807,12 @@
                         "projectile": {
                             "density": 0.01,
                             "radius": 0.003,
-                            "speed": 0.6,
+                            "speed": 0.1,
                             "maxTicks": 80,
                             "minTicks": 0,
                             "restitution": 1,
                             "damage": 0,
                             "collideWith": 65535,
-                            "sensor": true,
                             "lifeSteal": 0,
                             "categories": 2,
                             "sound": "fireball",
@@ -8896,13 +8899,12 @@
                         "projectile": {
                             "density": 1,
                             "radius": 0.003,
-                            "speed": 0.6,
+                            "speed": 0.1,
                             "maxTicks": 80,
                             "minTicks": 0,
                             "restitution": 1,
                             "damage": 0,
                             "collideWith": 65535,
-                            "sensor": true,
                             "lifeSteal": 0,
                             "categories": 2,
                             "sound": "fireball",
@@ -9078,7 +9080,6 @@
                             "restitution": 0,
                             "damage": 0,
                             "collideWith": 65535,
-                            "sensor": true,
                             "lifeSteal": 0,
                             "categories": 2,
                             "sound": "fireball",
@@ -9121,7 +9122,8 @@
                                     "flash": true,
                                     "numParticles": 5
                                 }
-                            ]
+                            ],
+                            "sensor": true
                         }
                     },
                     {
@@ -9158,7 +9160,6 @@
                             "restitution": 0,
                             "damage": 0,
                             "collideWith": 65535,
-                            "sensor": true,
                             "lifeSteal": 0,
                             "categories": 2,
                             "sound": "fireball",
@@ -9197,7 +9198,8 @@
                                     "flash": true,
                                     "numParticles": 5
                                 }
-                            ]
+                            ],
+                            "sensor": true
                         }
                     },
                     {
@@ -9240,7 +9242,6 @@
                             "restitution": 0,
                             "damage": 0,
                             "collideWith": 65535,
-                            "sensor": true,
                             "lifeSteal": 0,
                             "categories": 2,
                             "sound": "fireball",
@@ -9275,7 +9276,8 @@
                                     "flash": true,
                                     "numParticles": 5
                                 }
-                            ]
+                            ],
+                            "sensor": true
                         }
                     },
                     {
@@ -9312,7 +9314,6 @@
                             "restitution": 0,
                             "damage": 0,
                             "collideWith": 65535,
-                            "sensor": true,
                             "lifeSteal": 0,
                             "categories": 2,
                             "sound": "fireball",
@@ -9428,7 +9429,6 @@
                             "restitution": 0,
                             "damage": 0,
                             "collideWith": 65535,
-                            "sensor": true,
                             "lifeSteal": 0,
                             "categories": 2,
                             "sound": "fireball",
@@ -9512,7 +9512,6 @@
                             "restitution": 0,
                             "damage": 0,
                             "collideWith": 65535,
-                            "sensor": true,
                             "lifeSteal": 0,
                             "categories": 2,
                             "sound": "fireball",
@@ -9596,7 +9595,6 @@
                             "restitution": 0,
                             "damage": 0,
                             "collideWith": 1,
-                            "sensor": true,
                             "lifeSteal": 0,
                             "categories": 2,
                             "sound": "fireball",
@@ -9649,6 +9647,7 @@
                                     "numParticles": 5
                                 }
                             ],
+                            "sensor": true,
                             "expireOn": 0,
                             "hitInterval": 20
                         }
@@ -9687,7 +9686,6 @@
                             "restitution": 0,
                             "damage": 0,
                             "collideWith": 1,
-                            "sensor": true,
                             "lifeSteal": 0,
                             "categories": 2,
                             "sound": "fireball",
@@ -9736,6 +9734,7 @@
                                     "numParticles": 5
                                 }
                             ],
+                            "sensor": true,
                             "expireOn": 0,
                             "hitInterval": 20
                         }
@@ -9780,7 +9779,6 @@
                             "restitution": 0,
                             "damage": 0,
                             "collideWith": 1,
-                            "sensor": true,
                             "lifeSteal": 0,
                             "categories": 2,
                             "sound": "fireball",
@@ -9829,6 +9827,7 @@
                                     "numParticles": 5
                                 }
                             ],
+                            "sensor": true,
                             "expireOn": 0,
                             "hitInterval": 20
                         }
