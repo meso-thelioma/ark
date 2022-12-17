@@ -1,7 +1,8 @@
 {
 	"basedOn": "gol1",
 	"radius": 0.004,
-	"speed": 3,
+	"maxTicks": 6,
+	"speed": -3,
 	"selfPassthrough": true,
 	"buffs": [
 		{
@@ -16,6 +17,11 @@
 		}
 	],
 	"behaviours": [
+		{
+			"type": "homing",
+			"redirect": true,
+			"targetType": "self"
+		},
 		{
 			"type": "aura",
 			"radius": 2,

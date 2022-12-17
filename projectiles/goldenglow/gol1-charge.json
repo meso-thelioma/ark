@@ -3,7 +3,7 @@
 	"radius": 0.002,
 	"collideWith": 0,
 	"expireOn": 0,
-	"speed": 0.005,
+	"speed": 0,
 	"maxTicks": 180,
 	"damage": 0,
 	"attractable": false,
@@ -13,12 +13,7 @@
 	"sound": "fireball",
 	"soundHit": "standard",
 	"color": "#aaa",
-	"behaviours": [
-		{
-			"type": "homing",
-			"maxTurnProportion": 0.1,
-			"targetType": "self"
-		},
+	"behaviours": [		
 		{
 			"type": "spawn",
 			"note": "payoff.",
@@ -54,20 +49,13 @@
 	"renderers": [
 		{
 			"type": "reticule",
-			"radius": 0.05,
-			"minRadius": 0.05,
+			"minRadius": 0.1495,
+			"radius": 0.15,
 			"color": "#fabed444",
 			"arc": {
 				"type": "dynamic",
 				"ticks": 180
 			}
-		},
-		{
-			"type": "projectile",
-			"ticks": 1,
-			"color": "#fabed4",
-			"offsetRadius": 0.05,
-			"offsetAngleInRevs": 0
 		},
 		{
 			"type": "projectile",
