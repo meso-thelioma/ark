@@ -1,6 +1,6 @@
 {
 	"id": "exu3",
-	"description": "For five seconds, Repent will have halved cooldown and fire two bullets. Repent will deal 2 less damage per 25% health lost.",
+	"description": "For five seconds, Repent will have halved cooldown and fire two bullets. Repent will deal less damage per 25% health lost.",
 	"action": "projectile",
 	"color": "#aaa",
 	"name": "Face Rapture",

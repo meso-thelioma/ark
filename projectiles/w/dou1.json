@@ -54,6 +54,25 @@
 								"lifeSteal": 0,
 								"damage": 20
 							}
+						},						
+						{
+							"type": "mass",
+							"maxTicks": 30,
+							"radius": 0.0125,
+							"sense": 128
+						},
+						{
+							"type": "movement",
+							"movementProportion": 0,
+							"maxTicks": 30,
+							"render": {
+								"color": "#911eb4",
+								"particleRadius": 0.0025,
+								"emissionRadiusFactor": 1,
+								"ticks": 10,
+								"light": 1,
+								"invisible": true
+							}
 						}
 					]
 				},

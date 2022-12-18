@@ -40,15 +40,24 @@
 		}
 	],
 	"projectileBuffs": [],
-	"behaviours": [
+	"behaviours": [			
+		{
+			"type": "attract",
+			"collideLike": 2,
+			"categories": 2,
+			"against": 1,
+			"radius": 0.8,
+			"accelerationPerTick": 0.4,
+			"clampSpeed": 0.4
+		},
 		{
 			"type": "attract",
 			"collideLike": 8192,
 			"categories": 8192,
 			"against": 1,
 			"radius": 0.8,
-			"accelerationPerTick": 0.3,
-			"clampSpeed": 0.15
+			"accelerationPerTick": 0.5,
+			"clampSpeed": 0.4
 		}
 	],
 	"color": "#911eb4",

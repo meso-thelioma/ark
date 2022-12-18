@@ -1,6 +1,6 @@
 {
 	"id": "exu2",
-	"description": "Cause nearby targets to take 10% more physical damage.",
+	"description": "Cause nearby allies to take 10% less physical damage. Fire Face Repentance once every 1.5s, independent of cooldown.",
 	"action": "projectile",
 	"color": "#aaa",
 	"name": "Face Redemption",

@@ -4919,7 +4919,7 @@
         },
         "exu2": {
             "id": "exu2",
-            "description": "Cause nearby targets to take 10% more physical damage.",
+            "description": "Cause nearby allies to take 10% less physical damage. Fire Face Repentance once every 1.5s, independent of cooldown.",
             "action": "projectile",
             "color": "#aaa",
             "name": "Face Redemption",
@@ -4975,7 +4975,7 @@
                     {
                         "type": "aura",
                         "radius": 0.08,
-                        "against": 15,
+                        "against": 3,
                         "tickInterval": 1,
                         "packet": {
                             "damage": 0,
@@ -4985,7 +4985,7 @@
                         "buffs": [
                             {
                                 "type": "armor",
-                                "proportion": 0.1,
+                                "proportion": -0.1,
                                 "stack": "bless",
                                 "source": "phys",
                                 "maxTicks": 10,
@@ -5000,6 +5000,140 @@
                                 "against": 15
                             }
                         ]
+                    },
+                    {
+                        "type": "spawn",
+                        "triggers": [
+                            {
+                                "type": "interval",
+                                "triggerInterval": 90
+                            }
+                        ],
+                        "projectile": {
+                            "density": 0.01,
+                            "radius": 0.003,
+                            "speed": 0.9,
+                            "maxTicks": 90,
+                            "damage": 0,
+                            "collideWith": 8192,
+                            "lifeSteal": 0,
+                            "categories": 2,
+                            "sound": "fireball",
+                            "soundHit": "standard",
+                            "color": "#aaa",
+                            "buffs": [
+                                {
+                                    "type": "burn",
+                                    "hitInterval": 1,
+                                    "maxTicks": 1,
+                                    "packet": {
+                                        "source": "phys",
+                                        "lifeSteal": 0,
+                                        "damage": 8
+                                    }
+                                }
+                            ],
+                            "behaviours": [
+                                {
+                                    "type": "updateCollideWith",
+                                    "trigger": {
+                                        "afterTicks": 1
+                                    },
+                                    "collideWith": 65535
+                                },
+                                {
+                                    "type": "spawn",
+                                    "expire": true,
+                                    "trigger": {
+                                        "collideWith": 8192,
+                                        "against": 1
+                                    },
+                                    "numProjectiles": 2,
+                                    "spread": 0.01,
+                                    "projectile": {
+                                        "density": 0.01,
+                                        "radius": 0.003,
+                                        "speed": 0.9,
+                                        "maxTicks": 90,
+                                        "damage": 0,
+                                        "lifeSteal": 0,
+                                        "categories": 2,
+                                        "sound": "fireball",
+                                        "soundHit": "standard",
+                                        "color": "#aaa",
+                                        "buffs": [
+                                            {
+                                                "type": "burn",
+                                                "hitInterval": 1,
+                                                "maxTicks": 1,
+                                                "packet": {
+                                                    "source": "phys",
+                                                    "lifeSteal": 0,
+                                                    "damage": 2
+                                                }
+                                            },
+                                            {
+                                                "type": "burn",
+                                                "hitInterval": 1,
+                                                "maxTicks": 1,
+                                                "packet": {
+                                                    "source": "phys",
+                                                    "minHealth": 25,
+                                                    "lifeSteal": 0,
+                                                    "damage": 2
+                                                }
+                                            },
+                                            {
+                                                "type": "burn",
+                                                "hitInterval": 1,
+                                                "maxTicks": 1,
+                                                "packet": {
+                                                    "source": "phys",
+                                                    "minHealth": 50,
+                                                    "lifeSteal": 0,
+                                                    "damage": 2
+                                                }
+                                            },
+                                            {
+                                                "type": "burn",
+                                                "hitInterval": 1,
+                                                "maxTicks": 1,
+                                                "packet": {
+                                                    "source": "phys",
+                                                    "minHealth": 75,
+                                                    "lifeSteal": 0,
+                                                    "damage": 2
+                                                }
+                                            }
+                                        ],
+                                        "renderers": [
+                                            {
+                                                "type": "ray",
+                                                "ticks": 4
+                                            },
+                                            {
+                                                "type": "strike",
+                                                "ticks": 30,
+                                                "flash": true,
+                                                "numParticles": 5
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "renderers": [
+                                {
+                                    "type": "ray",
+                                    "ticks": 10
+                                },
+                                {
+                                    "type": "strike",
+                                    "ticks": 30,
+                                    "flash": true,
+                                    "numParticles": 5
+                                }
+                            ]
+                        }
                     }
                 ],
                 "buffs": [],
@@ -5008,7 +5142,7 @@
         },
         "exu3": {
             "id": "exu3",
-            "description": "For five seconds, Repent will have halved cooldown and fire two bullets. Repent will deal 2 less damage per 25% health lost.",
+            "description": "For five seconds, Repent will have halved cooldown and fire two bullets. Repent will deal less damage per 25% health lost.",
             "action": "projectile",
             "color": "#aaa",
             "name": "Face Rapture",
@@ -17326,7 +17460,7 @@
         },
         "dou1": {
             "id": "dou1",
-            "description": "Deal 20 physical damage in a wide area.",
+            "description": "Deal 20 physical damage in a wide area which will bind.",
             "action": "projectile",
             "color": "#911eb4",
             "name": "Shellshock",
@@ -17396,6 +17530,25 @@
                                             "source": "phys",
                                             "lifeSteal": 0,
                                             "damage": 20
+                                        }
+                                    },
+                                    {
+                                        "type": "mass",
+                                        "maxTicks": 30,
+                                        "radius": 0.0125,
+                                        "sense": 128
+                                    },
+                                    {
+                                        "type": "movement",
+                                        "movementProportion": 0,
+                                        "maxTicks": 30,
+                                        "render": {
+                                            "color": "#911eb4",
+                                            "particleRadius": 0.0025,
+                                            "emissionRadiusFactor": 1,
+                                            "ticks": 10,
+                                            "light": 1,
+                                            "invisible": true
                                         }
                                     }
                                 ]
@@ -17499,12 +17652,21 @@
                 "behaviours": [
                     {
                         "type": "attract",
+                        "collideLike": 2,
+                        "categories": 2,
+                        "against": 1,
+                        "radius": 0.8,
+                        "accelerationPerTick": 0.4,
+                        "clampSpeed": 0.4
+                    },
+                    {
+                        "type": "attract",
                         "collideLike": 8192,
                         "categories": 8192,
                         "against": 1,
                         "radius": 0.8,
-                        "accelerationPerTick": 0.3,
-                        "clampSpeed": 0.15
+                        "accelerationPerTick": 0.5,
+                        "clampSpeed": 0.4
                     }
                 ],
                 "color": "#911eb4",
@@ -17523,7 +17685,7 @@
         },
         "dou3": {
             "id": "dou3",
-            "description": "Deal 5 instances of 20 physical damage and bind.",
+            "description": "Deal 5 instances of 20 physical damage which will bind.",
             "action": "spray",
             "jitterRatio": 0.7,
             "numProjectilesPerTick": 5,

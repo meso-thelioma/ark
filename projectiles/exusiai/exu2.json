@@ -39,7 +39,7 @@
 		{
 			"type": "aura",
 			"radius": 0.08,
-			"against": 15,
+			"against": 3,
 			"tickInterval": 1,
 			"packet": {
 				"damage": 0,
@@ -49,7 +49,7 @@
 			"buffs": [
 				{
 					"type": "armor",
-					"proportion": 0.1,
+					"proportion": -0.1,
 					"stack": "bless",
 					"source": "phys",
 					"maxTicks": 10,
@@ -64,6 +64,16 @@
 					"against": 15
 				}
 			]
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "interval",
+					"triggerInterval": 90
+				}
+			],
+			"projectile": "exu1"
 		}
 	],
 	"buffs": [],
