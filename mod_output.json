@@ -4851,7 +4851,7 @@
                                     "packet": {
                                         "source": "phys",
                                         "lifeSteal": 0,
-                                        "damage": 2
+                                        "damage": 5
                                     }
                                 },
                                 {
@@ -4862,7 +4862,7 @@
                                         "source": "phys",
                                         "minHealth": 25,
                                         "lifeSteal": 0,
-                                        "damage": 2
+                                        "damage": 1
                                     }
                                 },
                                 {
@@ -4873,7 +4873,7 @@
                                         "source": "phys",
                                         "minHealth": 50,
                                         "lifeSteal": 0,
-                                        "damage": 2
+                                        "damage": 1
                                     }
                                 },
                                 {
@@ -4884,7 +4884,7 @@
                                         "source": "phys",
                                         "minHealth": 75,
                                         "lifeSteal": 0,
-                                        "damage": 2
+                                        "damage": 1
                                     }
                                 }
                             ],
@@ -5078,7 +5078,7 @@
                                                 "packet": {
                                                     "source": "phys",
                                                     "lifeSteal": 0,
-                                                    "damage": 2
+                                                    "damage": 5
                                                 }
                                             },
                                             {
@@ -5089,7 +5089,7 @@
                                                     "source": "phys",
                                                     "minHealth": 25,
                                                     "lifeSteal": 0,
-                                                    "damage": 2
+                                                    "damage": 1
                                                 }
                                             },
                                             {
@@ -5100,7 +5100,7 @@
                                                     "source": "phys",
                                                     "minHealth": 50,
                                                     "lifeSteal": 0,
-                                                    "damage": 2
+                                                    "damage": 1
                                                 }
                                             },
                                             {
@@ -5111,7 +5111,7 @@
                                                     "source": "phys",
                                                     "minHealth": 75,
                                                     "lifeSteal": 0,
-                                                    "damage": 2
+                                                    "damage": 1
                                                 }
                                             }
                                         ],
@@ -5151,7 +5151,7 @@
         },
         "exu3": {
             "id": "exu3",
-            "description": "For five seconds, Repentance will be silenced and fire two bullets. Repentance will deal less damage per 25% health lost. Deal 80% more damage.",
+            "description": "For five seconds, Repentance will be silenced and fire two bullets. Repentance will deal 80% more damage, and will deal less damage per 25% health lost.",
             "action": "projectile",
             "color": "#aaa",
             "name": "Rapture",

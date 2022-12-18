@@ -419,7 +419,8 @@
 								"type": "cooldown",
 								"maxTicks": 1,
 								"cleansable": false,
-								"color": "#cff","adjustCooldown":50
+								"color": "#cff",
+								"adjustCooldown": 50
 							}
 						]
 					}

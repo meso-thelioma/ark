@@ -41,7 +41,7 @@
 						"packet": {
 							"source": "phys",
 							"lifeSteal": 0,
-							"damage": 2
+							"damage": 5
 						}
 					},
 					{
@@ -52,7 +52,7 @@
 							"source": "phys",
 							"minHealth": 25,
 							"lifeSteal": 0,
-							"damage": 2
+							"damage": 1
 						}
 					},							
 					{
@@ -63,7 +63,7 @@
 							"source": "phys",
 							"minHealth": 50,
 							"lifeSteal": 0,
-							"damage": 2
+							"damage": 1
 						}
 					},						
 					{
@@ -74,7 +74,7 @@
 							"source": "phys",
 							"minHealth": 75,
 							"lifeSteal": 0,
-							"damage": 2
+							"damage": 1
 						}
 					}
 				],
