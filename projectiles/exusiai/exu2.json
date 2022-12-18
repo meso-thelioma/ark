@@ -30,6 +30,9 @@
 	],
 	"behaviours": [
 		{
+			"type": "expireOnOwnerDeath"
+		},
+		{
 			"type": "strafe"
 		},
 		{
@@ -73,6 +76,7 @@
 					"triggerInterval": 90
 				}
 			],
+			"requireParent": true,
 			"projectile": "exu1-2"
 		}
 	],

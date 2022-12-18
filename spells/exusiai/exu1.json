@@ -3,7 +3,7 @@
 	"description": "Deal 8 physical damage.",
 	"action": "projectile",
 	"color": "#aaa",
-	"name": "Face Repentance",
+	"name": "Repentance",
 	"icon": "halo",
 	"maxAngleDiffInRevs": 0.01,
 	"cooldown": 90,
