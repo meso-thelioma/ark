@@ -9566,7 +9566,7 @@
                                     "type": "armor",
                                     "maxTicks": 60,
                                     "render": {
-                                        "color": "#8f0",
+                                        "color": "#08f",
                                         "particleRadius": 0.015,
                                         "emissionRadiusFactor": 0,
                                         "ticks": 10,
