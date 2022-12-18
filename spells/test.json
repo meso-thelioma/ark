@@ -284,7 +284,7 @@
 				"expireOn": 0,
 				"lifeSteal": 0,
 				"sound": "fireball",
-				"categories": 8192,
+				"categories": 2,
 				"projectileBuffs": [],
 				"behaviours": [
 					{
