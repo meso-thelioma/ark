@@ -1,7 +1,7 @@
 {
 	"id": "gol",
 	"name": "Springtime",
-	"description": "Arts Burst with punishing positioning.",
+	"description": "Arts Burst with flexible damage.",
 	"passive": true,
 	"untargeted": true,
 	"cooldown": 1,

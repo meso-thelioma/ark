@@ -1,7 +1,7 @@
 {
 	"id": "eyj",
 	"name": "Fisherman",
-	"description": "Arts Burst with crowd control and shred.",
+	"description": "Arts Burst with crowd control and piece.",
 	"passive": true,
 	"untargeted": true,
 	"cooldown": 1,

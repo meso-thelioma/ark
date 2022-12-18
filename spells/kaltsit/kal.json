@@ -1,7 +1,7 @@
 {
 	"id": "kal",
 	"name": "Visionary",
-	"description": "True DPS with healing and AoE.",
+	"description": "True DPS with healing and disjointed attacks.",
 	"passive": true,
 	"untargeted": true,
 	"cooldown": 1,

@@ -1,7 +1,7 @@
 {
 	"id": "pha",
 	"name": "Tragedy",
-	"description": "Physical Burst with mobility and bind.",
+	"description": "Physical Burst with mobility and defense reduction.",
 	"passive": true,
 	"untargeted": true,
 	"cooldown": 1,

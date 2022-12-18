@@ -1,7 +1,7 @@
 {
 	"id": "mos",
 	"name": "Gambler",
-	"description": "Support Healer with stall and Arts resistance reduction.",
+	"description": "Support Healer with chain damage and Arts resistance reduction.",
 	"passive": true,
 	"untargeted": true,
 	"cooldown": 1,

@@ -1,7 +1,7 @@
 {
 	"id": "sur",
 	"name": "Allergen",
-	"description": "Arts Burst with lifesteal and immortality.",
+	"description": "Arts Burst with lifesteal and death prevention.",
 	"passive": true,
 	"untargeted": true,
 	"cooldown": 1,

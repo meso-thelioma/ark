@@ -1,7 +1,7 @@
 {
 	"id": "dor",
 	"name": "Chef",
-	"description": "Arts Burst with area damage.",
+	"description": "Arts Burst with area nuking.",
 	"passive": true,
 	"untargeted": true,
 	"cooldown": 1,

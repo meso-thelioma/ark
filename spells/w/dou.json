@@ -1,7 +1,7 @@
 {
 	"id": "dou",
 	"name": "Bombardier",
-	"description": "Physical Burst with area damage and bind support.",
+	"description": "Physical Burst with binding damage.",
 	"passive": true,
 	"untargeted": true,
 	"cooldown": 1,

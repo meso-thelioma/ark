@@ -6,7 +6,7 @@
 	"name": "Repentance",
 	"icon": "halo",
 	"maxAngleDiffInRevs": 0.01,
-	"cooldown": 90,
+	"cooldown": 120,
 	"throttle": true,
 	"effects": [
 		{

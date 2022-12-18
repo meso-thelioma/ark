@@ -1,7 +1,7 @@
 {
 	"id": "pal",
 	"name": "Fascination",
-	"description": "Support DPS with regeneration and positioning.",
+	"description": "Support DPS with regeneration.",
 	"passive": true,
 	"untargeted": true,
 	"cooldown": 1,

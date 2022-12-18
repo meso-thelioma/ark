@@ -395,7 +395,7 @@
         "gel": {
             "id": "gel",
             "name": "Neutrino",
-            "description": "Support DPS with AoE slow and passive regeneration.",
+            "description": "Support DPS with area slow and passive regeneration.",
             "passive": true,
             "untargeted": true,
             "cooldown": 1,
@@ -4182,7 +4182,7 @@
         "dor": {
             "id": "dor",
             "name": "Chef",
-            "description": "Arts Burst with area damage.",
+            "description": "Arts Burst with area nuking.",
             "passive": true,
             "untargeted": true,
             "cooldown": 1,
@@ -4684,7 +4684,7 @@
         "exu": {
             "id": "exu",
             "name": "Reverent",
-            "description": "Physical DPS with multihits and health ramping.",
+            "description": "Physical DPS with multihits and consistency.",
             "passive": true,
             "untargeted": true,
             "cooldown": 1,
@@ -4782,7 +4782,7 @@
             "name": "Repentance",
             "icon": "halo",
             "maxAngleDiffInRevs": 0.01,
-            "cooldown": 90,
+            "cooldown": 120,
             "throttle": true,
             "effects": [
                 {
@@ -5207,7 +5207,7 @@
                                 "maxTicks": 1,
                                 "cleansable": false,
                                 "spellId": "exu1",
-                                "minCooldown": 60
+                                "minCooldown": 90
                             },
                             {
                                 "type": "lifeSteal",
@@ -5234,7 +5234,7 @@
         "eyj": {
             "id": "eyj",
             "name": "Fisherman",
-            "description": "Arts Burst with crowd control and shred.",
+            "description": "Arts Burst with crowd control and piece.",
             "passive": true,
             "untargeted": true,
             "cooldown": 1,
@@ -5559,7 +5559,7 @@
         "gol": {
             "id": "gol",
             "name": "Springtime",
-            "description": "Arts Burst with punishing positioning.",
+            "description": "Arts Burst with flexible damage.",
             "passive": true,
             "untargeted": true,
             "cooldown": 1,
@@ -6507,7 +6507,7 @@
         "kal": {
             "id": "kal",
             "name": "Visionary",
-            "description": "True DPS with healing and AoE.",
+            "description": "True DPS with healing and disjointed attacks.",
             "passive": true,
             "untargeted": true,
             "cooldown": 1,
@@ -10962,7 +10962,7 @@
         "mos": {
             "id": "mos",
             "name": "Gambler",
-            "description": "Support Healer with stall and Arts resistance reduction.",
+            "description": "Support Healer with chain damage and Arts resistance reduction.",
             "passive": true,
             "untargeted": true,
             "cooldown": 1,
@@ -12774,7 +12774,7 @@
         "pal": {
             "id": "pal",
             "name": "Fascination",
-            "description": "Support DPS with regeneration and positioning.",
+            "description": "Support DPS with regeneration.",
             "passive": true,
             "untargeted": true,
             "cooldown": 1,
@@ -13156,7 +13156,7 @@
         "pha": {
             "id": "pha",
             "name": "Tragedy",
-            "description": "Physical Burst with mobility and bind.",
+            "description": "Physical Burst with mobility and defense reduction.",
             "passive": true,
             "untargeted": true,
             "cooldown": 1,
@@ -15964,7 +15964,7 @@
         "sur": {
             "id": "sur",
             "name": "Allergen",
-            "description": "Arts Burst with lifesteal and immortality.",
+            "description": "Arts Burst with lifesteal and death prevention.",
             "passive": true,
             "untargeted": true,
             "cooldown": 1,
@@ -17380,7 +17380,7 @@
         "dou": {
             "id": "dou",
             "name": "Bombardier",
-            "description": "Physical Burst with area damage and bind support.",
+            "description": "Physical Burst with binding damage.",
             "passive": true,
             "untargeted": true,
             "cooldown": 1,

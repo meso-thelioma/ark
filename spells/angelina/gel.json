@@ -1,7 +1,7 @@
 {
 	"id": "gel",
 	"name": "Neutrino",
-	"description": "Support DPS with AoE slow and passive regeneration.",
+	"description": "Support DPS with area slow and passive regeneration.",
 	"passive": true,
 	"untargeted": true,
 	"cooldown": 1,

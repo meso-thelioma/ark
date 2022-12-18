@@ -1,7 +1,7 @@
 {
 	"id": "exu",
 	"name": "Reverent",
-	"description": "Physical DPS with multihits and health ramping.",
+	"description": "Physical DPS with multihits and consistency.",
 	"passive": true,
 	"untargeted": true,
 	"cooldown": 1,
