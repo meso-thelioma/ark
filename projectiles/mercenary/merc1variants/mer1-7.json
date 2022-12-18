@@ -6,6 +6,7 @@
 	"expireOn": 65526,
 	"hitInterval": 20,
 	"restitution": 1,
+	"density": 0.01,
 	"maxTicks": 80,
 	"behaviours": [],
 	"buffs": [

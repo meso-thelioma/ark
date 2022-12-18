@@ -8231,7 +8231,7 @@
                             }
                         ],
                         "projectile": {
-                            "density": 0,
+                            "density": 0.01,
                             "radius": 0.003,
                             "speed": 0.6,
                             "maxTicks": 30,
@@ -8323,7 +8323,7 @@
                             }
                         ],
                         "projectile": {
-                            "density": 0,
+                            "density": 0.01,
                             "radius": 0.003,
                             "speed": 0.6,
                             "maxTicks": 30,
@@ -8485,7 +8485,7 @@
                             }
                         ],
                         "projectile": {
-                            "density": 0,
+                            "density": 0.01,
                             "radius": 0.003,
                             "speed": 0.9,
                             "maxTicks": 60,
@@ -8581,7 +8581,7 @@
                             }
                         ],
                         "projectile": {
-                            "density": 0,
+                            "density": 0.01,
                             "radius": 0.003,
                             "speed": 0.9,
                             "maxTicks": 60,
@@ -8753,7 +8753,7 @@
                             }
                         ],
                         "projectile": {
-                            "density": 0,
+                            "density": 0.01,
                             "radius": 0.003,
                             "speed": 0.6,
                             "maxTicks": 80,
@@ -8849,7 +8849,7 @@
                             }
                         ],
                         "projectile": {
-                            "density": 0,
+                            "density": 0.01,
                             "radius": 0.003,
                             "speed": 0.6,
                             "maxTicks": 80,
@@ -9350,7 +9350,7 @@
                             }
                         ],
                         "projectile": {
-                            "density": 0,
+                            "density": 0.01,
                             "radius": 0.003,
                             "speed": 0.9,
                             "maxTicks": 60,
@@ -9465,7 +9465,7 @@
                             }
                         ],
                         "projectile": {
-                            "density": 0,
+                            "density": 0.01,
                             "radius": 0.003,
                             "speed": 0.9,
                             "maxTicks": 60,

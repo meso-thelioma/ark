@@ -3,6 +3,7 @@
 	"maxTicks": 60,
 	"speed": 0.9,	
 	"minTicks": 0,
+	"density": 0.01,
 	"behaviours": [],
 	"collideWith": 65535,
 	"buffs": [

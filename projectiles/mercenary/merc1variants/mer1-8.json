@@ -2,6 +2,7 @@
 	"basedOn": "mer1-7",
 	"color": "#80f",	
 	"restitution": 1,
+	"density": 0.01,
 	"behaviours": [		
 		{
 			"type": "homing",
