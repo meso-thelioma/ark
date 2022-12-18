@@ -5035,6 +5035,11 @@
                             ],
                             "behaviours": [
                                 {
+                                    "type": "homing",
+                                    "targetType": "follow",
+                                    "redirect": true
+                                },
+                                {
                                     "type": "updateCollideWith",
                                     "trigger": {
                                         "afterTicks": 1
