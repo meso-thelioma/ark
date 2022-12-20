@@ -8229,7 +8229,7 @@
             "name": "Choral Weltschmerz",
             "icon": "aura",
             "maxAngleDiffInRevs": 0.01,
-            "cooldown": 180,
+            "cooldown": 90,
             "throttle": true,
             "chargeTicks": 30,
             "effects": [
@@ -9162,7 +9162,7 @@
             "name": "Faith of Reprisal",
             "icon": "aura",
             "maxAngleDiffInRevs": 0.01,
-            "cooldown": 240,
+            "cooldown": 120,
             "throttle": true,
             "recoil": -0.25,
             "chargeTicks": 10,
@@ -11567,7 +11567,7 @@
         },
         "mud1": {
             "id": "mud1",
-            "description": "Deal 7.5 physical damage. Charging will increase damage/healing dealt by 60% per second.",
+            "description": "Deal 7.5 physical damage. Charging will increase damage dealt by 60% per second.",
             "action": "focus",
             "focusDelaysCooldown": true,
             "movementProportionWhileChannelling": 0.5,
@@ -11630,6 +11630,7 @@
                                 "type": "lifeSteal",
                                 "against": 1,
                                 "stack": "mudro",
+                                "source": "phys",
                                 "maxStacks": 10,
                                 "damageMultiplier": 1.3,
                                 "cleansable": false,
@@ -16939,10 +16940,9 @@
                                 "buffs": [
                                     {
                                         "type": "cooldown",
-                                        "maxTicks": 1,
-                                        "cleansable": false,
+                                        "maxTicks": 10,
                                         "color": "#cff",
-                                        "adjustCooldown": 50
+                                        "minCooldown": 50
                                     }
                                 ]
                             }
@@ -17694,10 +17694,10 @@
         },
         "dou3": {
             "id": "dou3",
-            "description": "Deal 5 instances of 20 physical damage which will bind.",
+            "description": "Deal 4 instances of 20 physical damage which will bind.",
             "action": "spray",
             "jitterRatio": 0.7,
-            "numProjectilesPerTick": 5,
+            "numProjectilesPerTick": 4,
             "lengthTicks": 1,
             "intervalTicks": 1,
             "color": "#911eb4",

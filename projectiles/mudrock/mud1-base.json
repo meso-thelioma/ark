@@ -37,6 +37,7 @@
 					"type": "lifeSteal",
 					"against": 1,
 					"stack": "mudro",
+					"source": "phys",
 					"maxStacks": 10,
 					"damageMultiplier": 1.3,
 					"cleansable": false,

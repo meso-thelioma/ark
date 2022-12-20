@@ -1,6 +1,6 @@
 {
 	"id": "mud1",
-	"description": "Deal 7.5 physical damage. Charging will increase damage/healing dealt by 60% per second.",
+	"description": "Deal 7.5 physical damage. Charging will increase damage dealt by 60% per second.",
 	"action": "focus",
 	"focusDelaysCooldown": true,
 	"movementProportionWhileChannelling": 0.5,	

@@ -6,7 +6,7 @@
 	"name": "Faith of Reprisal",
 	"icon": "aura",
 	"maxAngleDiffInRevs": 0.01,
-	"cooldown": 240,
+	"cooldown": 120,
 	"throttle": true,
 	"recoil": -0.25,
 	"chargeTicks": 10,

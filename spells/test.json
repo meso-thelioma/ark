@@ -417,10 +417,9 @@
 						"buffs": [
 							{
 								"type": "cooldown",
-								"maxTicks": 1,
-								"cleansable": false,
+								"maxTicks": 10,
 								"color": "#cff",
-								"adjustCooldown": 50
+								"minCooldown": 50
 							}
 						]
 					}

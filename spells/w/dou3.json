@@ -1,9 +1,9 @@
 {
 	"id": "dou3",
-	"description": "Deal 5 instances of 20 physical damage which will bind.",
+	"description": "Deal 4 instances of 20 physical damage which will bind.",
 	"action": "spray",
 	"jitterRatio": 0.7,
-	"numProjectilesPerTick": 5,
+	"numProjectilesPerTick": 4,
 	"lengthTicks": 1,
 	"intervalTicks": 1,
 	"color": "#911eb4",

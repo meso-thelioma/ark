@@ -6,7 +6,7 @@
 	"name": "Choral Weltschmerz",
 	"icon": "aura",
 	"maxAngleDiffInRevs": 0.01,
-	"cooldown": 180,
+	"cooldown": 90,
 	"throttle": true,
 	"chargeTicks": 30,
 	"effects": [
