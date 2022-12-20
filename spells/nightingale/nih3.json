@@ -1,6 +1,6 @@
 {
 	"id": "nih3",
-	"description": "For ten seconds, Prescription will emit a large AoE which will heal 6 health and grant 40% Arts resistance.",
+	"description": "For ten seconds, Prescription will emit a large AoE which will heal 6 health and grant 10% Arts resistance.",
 	"action": "projectile",
 	"color": "#bfef45",
 	"name": "Medical Service",

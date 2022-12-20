@@ -144,7 +144,7 @@
 								"stack": "night",
 								"cleansable": false,
 								"source": "arts",
-								"proportion": -0.4
+								"proportion": -0.1
 							},
 							{
 								"type": "armor",
@@ -161,7 +161,7 @@
 								"stack": "nightc",
 								"cleansable": false,
 								"source": "ceobe",
-								"proportion": -0.4
+								"proportion": -0.1
 							}
 						]
 					}

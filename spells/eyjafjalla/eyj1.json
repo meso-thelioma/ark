@@ -1,6 +1,6 @@
 {
 	"id": "eyj1",
-	"description": "Deal 8 Arts damage.",
+	"description": "Deal 7 Arts damage.",
 	"action": "projectile",
 	"name": "Trout Cannon",
 	"color": "#fff2",

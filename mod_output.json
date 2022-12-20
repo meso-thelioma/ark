@@ -5322,7 +5322,7 @@
         },
         "eyj1": {
             "id": "eyj1",
-            "description": "Deal 8 Arts damage.",
+            "description": "Deal 7 Arts damage.",
             "action": "projectile",
             "name": "Trout Cannon",
             "color": "#fff2",
@@ -12464,7 +12464,7 @@
                                             "stack": "night",
                                             "cleansable": false,
                                             "source": "arts",
-                                            "proportion": -0.4
+                                            "proportion": -0.1
                                         },
                                         {
                                             "type": "armor",
@@ -12481,7 +12481,7 @@
                                             "stack": "nightc",
                                             "cleansable": false,
                                             "source": "ceobe",
-                                            "proportion": -0.4
+                                            "proportion": -0.1
                                         }
                                     ]
                                 }
@@ -12693,7 +12693,7 @@
         },
         "nih3": {
             "id": "nih3",
-            "description": "For ten seconds, Prescription will emit a large AoE which will heal 6 health and grant 40% Arts resistance.",
+            "description": "For ten seconds, Prescription will emit a large AoE which will heal 6 health and grant 10% Arts resistance.",
             "action": "projectile",
             "color": "#bfef45",
             "name": "Medical Service",
