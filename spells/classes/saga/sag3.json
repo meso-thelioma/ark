@@ -1,6 +1,6 @@
 {
 	"id": "sag3",
-	"description": "Deal 10 physical damage. Nearby targets will be marked. Gain 90% damage per target.",
+	"description": "Deal 10 physical damage. Nearby targets will breakdown. Gain 90% damage per target.",
 	"action": "projectile",
 	"color": "#66002f",
 	"icon": "crossedSlashes",
@@ -13,6 +13,11 @@
 			"icon": "fas fa-address-card",
 			"title": "Physical Damage",
 			"text": "Damage * Buffs - Defense"
+		},
+		{
+			"icon": "fas fa-address-card",
+			"title": "Mental Damage",
+			"text": "Upon reaching 10 stacks, bind and breakdown"
 		}
 	],
 	"projectile": "sag3"

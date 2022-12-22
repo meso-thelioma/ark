@@ -1,0 +1,29 @@
+{
+	"density": 0.001,
+	"attractable": false,
+	"radius": 0.1,
+	"speed": 1,
+	"maxTicks": 300,
+	"damage": 0,
+	"collideWith": 0,
+	"sense": 2,
+	"expireOn": 0,
+	"lifeSteal": 0,
+	"sound": "fireball",
+	"categories": 8192,
+	"projectileBuffs": [],
+	"behaviours": [
+		{
+			"type": "strafe"
+		},
+		{
+			"type": "homing",
+			"targetType": "self",
+			"trigger": {
+				"afterTicks": 10
+			}
+		}
+	],
+	"color": "#aaa1",
+	"renderers": []
+}

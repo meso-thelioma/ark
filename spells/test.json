@@ -1,15 +1,20 @@
 {
 	"id": "test",
-	"name": "Target",
-	"description": "Slot to streamline conditional spells.",
+	"name": "Breakdown",
+	"description": "In a crisis, deal 20% less Arts and Physical damage; heal 100% less.",
 	"passive": true,
 	"untargeted": true,
 	"cooldown": 1,
 	"effects": [
 		{
 			"icon": "far fa-sad-tear",
+			"title": "Mental Accumulation",
+			"text": "Reducible by certain skills; when accumulated, apply Breakdown for 5 seconds."
+		},		
+		{
+			"icon": "far fa-sad-tear",
 			"title": "Memory",
-			"text": "And yet the light is gone once more."
+			"text": "And yet, the light is gone once more."
 		}
 	],	
 	"buffs": [],
@@ -449,6 +454,463 @@
 						"fade": true,
 						"radius": 0.08
 					}
+				]
+			}
+		},
+	{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "collideWith",
+					"triggerInterval": 5,
+					"maxHits": 1000000000000,
+					"collideWith": 32,
+					"notCollideTypes": [
+						"a",
+						"cosmic",
+						"fast",
+						"forcefield",
+						"forcefield1",
+						"inward",
+						"left",
+						"slow",
+						"vanish"
+					]
+				}
+			],
+			"note": "stack 1",
+			"projectile": {
+				"density": 1e-14,
+				"radius": 0.01,
+				"speed": 3,
+				"maxTicks": 1200,
+				"damage": 0,
+				"expireAgainstObjects": 1,
+				"expireAgainstHeroes": 0,
+				"collideWith": 8272,
+				"minTicks": 4,
+				"expireOn": 1,
+				"lifeSteal": 0,
+				"categories": 18,
+				"sound": "fireball",
+				"soundHit": "standard",
+				"color": "#f00",
+				"buffs": [],
+				"projectileBuffs": [
+					{
+						"type": "mass",
+						"radius": 0.0125,
+						"maxTicks": 1200,
+						"cleansable": false,
+						"renderers": [
+							{
+								"type": "reticule",
+								"minRadius": 0.045,
+								"radius": 0.05,
+								"arc": {
+									"type": "fixed",
+									"startAngleInRevs": 0,
+									"endAngleInRevs": 0.334
+								},
+								"color": "#aaa"
+							}
+						]
+					}
+				],
+				"behaviours": [
+					{
+						"type": "strafe"
+					},
+					{
+						"type": "expire",
+						"note": "expire on 64",
+						"triggers": [
+							{
+								"type": "collideWith",
+								"collideWith": 64,
+								"against": 1
+							}
+						]
+					},
+					{
+						"type": "homing",
+						"targetType": "self",
+						"triggers": [
+							{
+								"type": "afterTicks",
+								"afterTicks": 5
+							}
+						],
+						"maxTurnProportion": 0.9
+					},
+					{
+						"type": "spawn",
+						"triggers": [
+							{
+								"type": "collideWith",
+								"collideWith": 16,
+								"against": 1
+							}
+						],
+						"expire": true,
+						"note": "after 2 stacks collide, spawn a trigger",
+						"projectile": {
+							"density": 1e-14,
+							"radius": 0.01,
+							"speed": 3,
+							"maxTicks": 40,
+							"attractable": false,
+							"damage": 0,
+							"expireAgainstObjects": 0,
+							"expireAgainstHeroes": 1,
+							"collideWith": 1,
+							"minTicks": 4,
+							"sensor": true,
+							"expireOn": 1,
+							"lifeSteal": 0,
+							"categories": 18,
+							"sound": "fireball",
+							"projectileBuffs": [
+								{
+									"type": "mass",
+									"radius": 0.0125,
+									"maxTicks": 1200,
+									"cleansable": false,
+									"renderers": [
+										{
+											"type": "reticule",
+											"minRadius": 0.045,
+											"radius": 0.05,
+											"arc": {
+												"type": "fixed",
+												"startAngleInRevs": 0,
+												"endAngleInRevs": 0.334
+											},
+											"color": "#aaa"
+										}
+									]
+								}
+							],
+							"soundHit": "standard",
+							"color": "#ff0",
+							"buffs": [],
+							"behaviours": [
+								{
+									"type": "strafe"
+								},
+								{
+									"type": "homing",
+									"targetType": "self",
+									"trigger": {
+										"afterTicks": 5
+									}
+								}
+							],
+							"renderers": [
+							]
+						}
+					}
+				],
+				"renderers": [
+				]
+			}
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "collideWith",
+					"triggerInterval": 5,
+					"against": 1,
+					"maxHits": 1000000000000,
+					"collideWith": 16
+				}
+			],
+			"note": "stack 2",
+			"projectile": {
+				"density": 1e-14,
+				"radius": 0.01,
+				"speed": 3,
+				"maxTicks": 1200,
+				"damage": 0,
+				"expireAgainstObjects": 1,
+				"expireAgainstHeroes": 0,
+				"collideWith": 96,
+				"minTicks": 40,
+				"expireOn": 0,
+				"lifeSteal": 0,
+				"categories": 8224,
+				"sound": "fireball",
+				"soundHit": "standard",
+				"color": "#0f0",
+				"buffs": [],
+				"projectileBuffs": [
+					{
+						"type": "mass",
+						"radius": 0.0125,
+						"maxTicks": 1200,
+						"cleansable": false,
+						"renderers": [
+							{
+								"type": "reticule",
+								"minRadius": 0.045,
+								"radius": 0.05,
+								"arc": {
+									"type": "fixed",
+									"startAngleInRevs": 0,
+									"endAngleInRevs": 0.66
+								},
+								"color": "#aaa"
+							}
+						]
+					}
+				],
+				"behaviours": [
+					{
+						"type": "spawn",
+						"expire": true,
+						"note": "downgrade to stack 1",
+						"triggers": [
+							{
+								"type": "collideWith",
+								"collideWith": 64,
+								"against": 1
+							}
+						],
+						"projectile": {
+							"density": 1e-14,
+							"radius": 0.01,
+							"speed": 3,
+							"maxTicks": 30,
+							"attractable": false,
+							"damage": 0,
+							"expireAgainstObjects": 0,
+							"expireAgainstHeroes": 1,
+							"collideWith": 1,
+							"minTicks": 4,
+							"expireOn": 1,
+							"lifeSteal": 0,
+							"categories": 8240,
+							"sound": "fireball",
+							"projectileBuffs": [
+								{
+									"type": "mass",
+									"radius": 0.0125,
+									"maxTicks": 1200,
+									"cleansable": false,
+									"renderers": [
+										{
+											"type": "reticule",
+											"minRadius": 0.045,
+											"radius": 0.05,
+											"arc": {
+												"type": "fixed",
+												"startAngleInRevs": 0,
+												"endAngleInRevs": 0.334
+											},
+											"color": "#aaa"
+										}
+									]
+								}
+							],
+							"soundHit": "standard",
+							"color": "#ff0",
+							"buffs": [],
+							"behaviours": [
+								{
+									"type": "strafe"
+								},
+								{
+									"type": "homing",
+									"targetType": "self",
+									"trigger": {
+										"afterTicks": 5
+									}
+								}
+							],
+							"renderers": []
+						}
+					},
+					{
+						"type": "homing",
+						"targetType": "self",
+						"trigger": {
+							"afterTicks": 5
+						},
+						"maxTurnProportion": 0.9
+					},
+					{
+						"type": "strafe"
+					},
+					{
+						"type": "spawn",
+						"triggers": [
+							{
+								"type": "collideWith",
+								"collideWith": 32
+							}
+						],
+						"note": "stack 3",
+						"expire": true,
+						"projectile": {
+							"density": 1e-14,
+							"radius": 0.01,
+							"speed": 3,
+							"sensor": true,
+							"maxTicks": 40,
+							"attractable": false,
+							"damage": 0,
+							"expireAgainstObjects": 0,
+							"expireAgainstHeroes": 1,
+							"collideWith": 1,
+							"minTicks": 4,
+							"expireOn": 1,
+							"lifeSteal": 0,
+							"categories": 8192,
+							"sound": "fireball",
+							"soundHit": "standard",
+							"color": "#0ff",
+							"buffs": [],
+							"projectileBuffs": [
+								{
+									"type": "mass",
+									"radius": 0.0125,
+									"maxTicks": 1200,
+									"cleansable": false,
+									"renderers": [
+										{
+											"type": "reticule",
+											"minRadius": 0.045,
+											"radius": 0.05,
+											"arc": {
+												"type": "fixed",
+												"startAngleInRevs": 0,
+												"endAngleInRevs": 1
+											},
+											"color": "#aaa"
+										}
+									]
+								}
+							],
+							"behaviours": [
+								{
+									"type": "strafe"
+								},
+								{
+									"type": "homing",
+									"targetType": "self",
+									"trigger": {
+										"afterTicks": 5
+									}
+								},
+								{
+									"type": "spawn",
+									"trigger": {
+										"expire": true
+									},
+									"note": "payoff",
+									"projectile": {
+										"density": 0.001,
+										"attractable": false,
+										"radius": 2,
+										"speed": 0,
+										"maxTicks": 10,
+										"damage": 0,
+										"collideWith": 48,
+										"expireOn": 0,
+										"sound": "fireball",
+										"categories": 48,
+										"sensor": true,
+										"lifeSteal": 0,
+										"projectileBuffs": [
+											{
+												"type": "mass",
+												"radius": 0.0125,
+												"maxTicks": 30,
+												"cleansable": false,
+												"renderers": [
+													{
+														"type": "reticule",
+														"minRadius": 0.045,
+														"radius": 0.05,
+														"shrinkTicks": 30,
+														"fade": true,
+														"easing": [
+															1,
+															0.17,
+															0.9,
+															0
+														],
+														"color": "#aaa"
+													}
+												]
+											}
+										],
+										"color": "#aaa1",
+										"renderers": [],
+										"behaviours": [
+											{
+												"type": "aura",
+												"packet": {
+													"damage": 0,
+													"noHit": true
+												},
+												"radius": 2,
+												"against": 1,
+												"tickInterval": 10,
+												"buffs": [
+													{
+														"type": "lifeSteal",
+														"against": 15,
+														"stack": "breakdown",
+														"source": "heal",
+														"damageMultiplier": 0,
+														"maxTicks": 300,
+														"render": {
+															"color": "#aaa4",
+															"particleRadius": 0.015,
+															"emissionRadiusFactor": 0.5,
+															"ticks": 10,
+															"light": 1,
+															"invisible": true
+														}
+													},
+													{
+														"type": "lifeSteal",
+														"against": 15,
+														"stack": "breakdown",
+														"source": "phys",
+														"damageMultiplier": 0.8,
+														"maxTicks": 300
+													},
+													{
+														"type": "lifeSteal",
+														"against": 15,
+														"stack": "breakdown",
+														"source": "arts",
+														"damageMultiplier": 0.8,
+														"maxTicks": 300
+													},
+													{
+														"type": "lifeSteal",
+														"against": 15,
+														"stack": "breakdown",
+														"source": "ceobe",
+														"damageMultiplier": 0.8,
+														"maxTicks": 300
+													}
+												]
+											}
+										]
+									}
+								}
+							],
+							"renderers": [
+							]
+						}
+					}
+				],
+				"renderers": [
 				]
 			}
 		}

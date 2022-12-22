@@ -1,6 +1,6 @@
 {
 	"id": "wed3",
-	"description": "Deal Arts damage and mark opponents. Turrets will also activate the blast. Marked opponents will take 15 Arts damage.",
+	"description": "Deal Arts damage. Turrets will also activate the blast. Targets will take 15 Arts damage and incur Breakdown.",
 	"action": "projectile",
 	"color": "#f58231",
 	"icon": "teleport",
@@ -18,6 +18,11 @@
 			"icon": "fas fa-address-card",
 			"title": "True Damage",
 			"text": "Damage * Buffs"
+		},
+		{
+			"icon": "fas fa-address-card",
+			"title": "Mental Damage",
+			"text": "Upon reaching 10 stacks, bind and breakdown"
 		}
 	],
 	"projectile": "wed3"
