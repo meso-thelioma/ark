@@ -1,6 +1,6 @@
 {
 	"id": "pha3",
-	"description": "Dash. Deal 5 physical damage.",
+	"description": "Dash. Deal 2.5 physical damage per strike.",
 	"action": "projectile",
 	"color": "#469990",
 	"icon": "deadlyStrike",

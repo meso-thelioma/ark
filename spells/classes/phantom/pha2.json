@@ -1,6 +1,6 @@
 {
 	"id": "pha2",
-	"description": "Reduce defense by 6. Increase mental accumulation.",
+	"description": "Repel targets. Reduce defense by 6. Increase mental accumulation.",
 	"action": "projectile",
 	"color": "#469990",
 	"icon": "deadlyStrike",
