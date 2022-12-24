@@ -59,7 +59,7 @@
 							"packet": {
 								"source": "phys",
 								"lifeSteal": 0,
-								"damage": 20
+								"damage": 15
 							}
 						},
 						{

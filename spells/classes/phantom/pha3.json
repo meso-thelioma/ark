@@ -1,6 +1,6 @@
 {
 	"id": "pha3",
-	"description": "Dash. Deal 5 physical damage which will shred 3 defense per hit.",
+	"description": "Dash. Deal 5 physical damage.",
 	"action": "projectile",
 	"color": "#469990",
 	"icon": "deadlyStrike",

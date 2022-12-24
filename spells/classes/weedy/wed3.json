@@ -1,6 +1,6 @@
 {
 	"id": "wed3",
-	"description": "Deal Arts damage. Turrets will also activate the blast. Targets will take 15 Arts damage and incur Breakdown.",
+	"description": "Deal Arts damage. Turrets will also activate the blast. Reduce mental accumulation. Targets will incur Breakdown.",
 	"action": "projectile",
 	"color": "#f58231",
 	"icon": "teleport",
@@ -15,14 +15,9 @@
 			"text": "Damage * (1 - Resistance) * Buffs"
 		},
 		{
-			"icon": "fas fa-address-card",
-			"title": "True Damage",
-			"text": "Damage * Buffs"
-		},
-		{
-			"icon": "fas fa-address-card",
-			"title": "Mental Damage",
-			"text": "Upon reaching 10 stacks, bind and breakdown"
+			"icon": "far fa-sad-tear",
+			"title": "Mental Accumulation",
+			"text": "Reducible by certain skills; when accumulated, apply Breakdown for 5 seconds."
 		}
 	],
 	"projectile": "wed3"

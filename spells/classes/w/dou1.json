@@ -1,6 +1,6 @@
 {
 	"id": "dou1",
-	"description": "Deal 20 physical damage in a wide area which will bind.",
+	"description": "Deal 20 physical damage which will bind.",
 	"action": "projectile",
 	"color": "#911eb4",
 	"name": "Shellshock",

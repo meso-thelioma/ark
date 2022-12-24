@@ -1,7 +1,7 @@
 {
 	"id": "test",
 	"name": "Breakdown",
-	"description": "In a crisis, deal 20% less Arts and Physical damage; heal 100% less.",
+	"description": "In a crisis, deal 20% less Arts and physical damage; heal 100% less. Continously decrease mental accumulation.",
 	"passive": true,
 	"untargeted": true,
 	"cooldown": 1,
@@ -119,7 +119,7 @@
 			],
 			"projectile": "che-hit"
 		},
-	{
+		{
 			"type": "spawn",
 			"triggers": [
 				{

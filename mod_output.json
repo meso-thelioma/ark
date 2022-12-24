@@ -9,7 +9,7 @@
         "subtitleRight": "design",
         "private": false
     },
-    "Code": "var center = { x: 0.5, y: 0.5 };\n\nvar CloseEnoughDistance = 0.05;\nvar CloseEnoughRadians = 0.1 * Math.PI;\nvar MissRadius = 0.05;\nvar DodgeRadius = 0.15;\nvar SpellCastIntervalMilliseconds = 1000;\nvar SpellCastJitterMilliseconds = 500;\n\nvar TicksPerSecond = 60;\n\nvar HardReactionMilliseconds = 600;\nvar EasyReactionMilliseconds = 3000;\nvar ReactionMillisecondsLookup = {\n  // Change the reaction time on certain spells\n  retarget: 200,\n};\n\nvar alreadyChosenSpells = false;\nvar nextSpell = 0;\n\n// See ai.contracts.ts:\n// input is InputContract - contains information about the current state of the world\n// output is OutputContract - an action you want to take in response to the world\nfunction act(input) {\n  // Want the bot to do nothing? Uncomment the line below (remove the //):\n  // return null;\n\n  var state = input.state;\n  var heroId = input.heroId;\n  var hero = state.heroes[heroId];\n  var cooldowns = input.cooldowns;\n  var settings = input.settings;\n  var difficulty = input.difficulty;\n\n  var opponent = findOpponent(state.heroes, heroId);\n  if (!(hero && opponent)) {\n    // Either we're dead, or everyone else is, nothing to do\n    return null;\n  }\n\n  var action = null;\n  if (state.started) {\n    action =\n      recovery(state, hero, cooldowns) ||\n      dodge(state, hero, cooldowns) ||\n      castSpell(state, hero, opponent, cooldowns, settings) ||\n      focus(hero, opponent) ||\n      chase(state, hero, cooldowns, opponent) ||\n      move(state, hero) ||\n      face(state, hero, opponent);\n  } else {\n    action =\n      chooseSpells(settings, heroId) ||\n      dodge(state, hero, cooldowns) ||\n      move(state, hero) ||\n      face(state, hero, opponent);\n  }\n\n  if (action) {\n    // Give the bot a reaction time otherwise it is OP\n    var reactionMilliseconds =\n      ReactionMillisecondsLookup[action.spellId] ||\n      defaultReactionMilliseconds(difficulty);\n    action.delayMilliseconds = reactionMilliseconds;\n    return action;\n  } else {\n    return null;\n  }\n}\n\nfunction defaultReactionMilliseconds(difficulty) {\n  var alpha = Math.sqrt(difficulty);\n  return (\n    alpha * HardReactionMilliseconds + (1 - alpha) * EasyReactionMilliseconds\n  );\n}\n\nfunction chooseSpells(settings, heroId) {\n  if (alreadyChosenSpells) {\n    return null;\n  }\n  alreadyChosenSpells = true;\n\n  var spells = randomSpells(settings);\n\n  var classList = [\n    \"exu\",\n    \"ceo\",\n    \"kal\",\n    \"ire\",\n    \"tho\",\n    \"wed\",\n    \"sur\",\n    \"eyj\",\n    \"gol\",\n    \"dor\",\n    \"bag\",\n    \"dou\",\n    \"pha\",\n    \"lin\",\n    \"sag\",\n    \"nih\",\n    \"sar\",\n    \"sai\",\n    \"lum\",\n    \"mos\",\n    \"gel\",\n    \"mud\",\n    \"ska\",\n    \"pal\",\n    \"che\"\n    \"fin\"\n  ];\n\n  var chosenClass = classList[Math.floor(Math.random() * classList.length)]\n  spells[\"a\"] = (chosenClass);\n  spells[\"q\"] = (chosenClass + \"1\");\n  spells[\"w\"] = (chosenClass + \"2\");\n  spells[\"e\"] = (chosenClass + \"3\");\n\n  // Want to test a particular spell? Uncomment and edit the lines below\n  // spells[\"e\"] = \"saber\";\n\n  return { spells };\n}\n\nfunction randomSpells(settings) {\n  var keyBindings = {};\n  var allOptions = settings.Choices.Options;\n  for (var btn in allOptions) {\n    // One of the buttons, e.g. Q or R\n    var options = allOptions[btn];\n\n    var spellIds = [];\n    for (var i = 0; i < options.length; ++i) {\n      var row = options[i];\n      for (var j = 0; j < row.length; ++j) {\n        var spellId = row[j];\n        spellIds.push(spellId);\n      }\n    }\n\n    if (spellIds.length > 1) {\n      keyBindings[btn] = spellIds[Math.floor(Math.random() * spellIds.length)];\n    }\n  }\n  return keyBindings;\n}\n\nfunction findOpponent(heroes, myHeroId) {\n  var myHero = heroes[myHeroId];\n  if (!myHero) {\n    return null;\n  }\n\n  var choice = null;\n  var mostHealth = 0;\n  for (var heroId in heroes) {\n    var hero = heroes[heroId];\n\n    if (!hero.isEnemy) {\n      continue;\n    }\n\n    // Uncomment the line below to only target humans\n    // if (hero.isBot) { continue; }\n\n    if (hero.health > mostHealth) {\n      // Target the enemy with the most health\n      mostHealth = hero.health;\n      choice = hero;\n    }\n  }\n  return choice;\n}\n\nfunction recovery(state, hero, cooldowns) {\n  if (hero.inside || state.radius <= 0) {\n    // No need to recover\n    return null;\n  }\n\n  var spellId = null;\n  if (cooldowns[\"teleport\"] === 0) {\n    spellId = \"teleport\";\n  } else if (cooldowns[\"thrust\"] === 0) {\n    spellId = \"thrust\";\n  } else if (cooldowns[\"swap\"] === 0) {\n    spellId = \"swap\";\n  } else if (cooldowns[\"voidRush\"] === 0) {\n    spellId = \"voidRush\";\n  } else if (cooldowns[\"vanish\"] === 0) {\n    spellId = \"vanish\";\n  } else {\n    spellId = \"move\";\n  }\n\n  if (spellId) {\n    return { spellId, target: center };\n  }\n  return null;\n}\n\nfunction deflect(state, hero, cooldowns, projectile) {\n  var target = vectorMidpoint(hero.pos, projectile.pos);\n  var spellId = null;\n  if (cooldowns[\"shield\"] === 0) {\n    spellId = \"shield\";\n  } else if (cooldowns[\"icewall\"] === 0) {\n    spellId = \"icewall\";\n  } else if (cooldowns[\"saber\"] === 0) {\n    spellId = \"saber\";\n  } else if (cooldowns[\"dualSaber\"] === 0) {\n    spellId = \"dualSaber\";\n  } else if (cooldowns[\"meteor\"] === 0) {\n    spellId = \"meteor\";\n  } else if (cooldowns[\"meteorite\"] === 0) {\n    spellId = \"meteorite\";\n  } else if (cooldowns[\"whirlwind\"] === 0) {\n    spellId = \"whirlwind\";\n  } else if (cooldowns[\"phaseOut\"] === 0) {\n    spellId = \"phaseOut\";\n  } else {\n    spellId = null;\n  }\n\n  if (spellId) {\n    return { spellId, target };\n  } else {\n    return null;\n  }\n}\n\nfunction castSpell(state, hero, opponent, cooldowns, settings) {\n  if (!readyForNextSpell(hero)) {\n    return null;\n  }\n\n  var candidates = [];\n  for (var spellId in cooldowns) {\n    var readyToCast = !cooldowns[spellId];\n    var spell = settings.Spells[spellId];\n\n    if (spell && readyToCast) {\n      candidates.push(spellId);\n    }\n  }\n\n  if (candidates.length > 0) {\n    var spellId = candidates[Math.floor(Math.random() * candidates.length)];\n    var action = { spellId, target: jitter(opponent.pos, MissRadius) };\n    if (action.spellId === spellId) {\n      updateNextSpellTime();\n    }\n    return action;\n  } else {\n    return null;\n  }\n}\n\nfunction validAttack(state, hero, opponent, spell) {\n  var opponentShielded = !!opponent.shieldTicksRemaining;\n\n  var distance = vectorDistance(hero.pos, opponent.pos);\n  if (\n    spell.action === \"projectile\" ||\n    spell.action === \"spray\" ||\n    spell.action === \"retractor\" ||\n    spell.action === \"focus\" ||\n    spell.action === \"charge\"\n  ) {\n    if (spell.id === \"swap\") {\n      // Swap doesn't work as an attack\n      return false;\n    }\n    if (opponentShielded && !spell.projectile.detonate) {\n      // Detonate spells can penetrate shields, nothing else can\n      return false;\n    }\n    if (spell.id === \"whip\") {\n      // Just keep casting Electroshock even if out of range\n      return true;\n    }\n\n    var range =\n      (spell.projectile.speed * spell.projectile.maxTicks) / TicksPerSecond +\n      opponent.radius;\n    return distance <= range;\n  } else if (spell.action === \"scourge\") {\n    var range = spell.detonate.radius + opponent.radius;\n    return distance <= range;\n  } else if (spell.id === \"blaze\") {\n    return true;\n  } else {\n    return false;\n  }\n}\n\nfunction readyForNextSpell(hero) {\n  return (\n    Date.now() >= nextSpell || // Don't cast too fast\n    !!hero.link // If linked to something, cast as many spells as possible\n  );\n}\n\nfunction updateNextSpellTime() {\n  nextSpell =\n    Date.now() +\n    SpellCastIntervalMilliseconds +\n    Math.floor(\n      (Math.random() < 0.5 ? -1 : 1) *\n        Math.random() *\n        SpellCastJitterMilliseconds\n    );\n}\n\nfunction jitter(target, missRadius) {\n  var radius = Math.random() * missRadius;\n  var angle = Math.random() * 2 * Math.PI;\n  return {\n    x: target.x + radius * Math.cos(angle),\n    y: target.y + radius * Math.sin(angle),\n  };\n}\n\nfunction focus(hero, opponent) {\n  // When using a spell (e.g. Acolyte Beam, Spirit Missile) - ensure we are focusing the enemy, otherwise we will miss\n  if (hero.casting) {\n    if (\n      hero.casting.spellId === \"blast\" ||\n      hero.casting.spellId === \"retractor\" ||\n      hero.casting.spellId === \"rocket\"\n    ) {\n      // Have to release or it won't fire\n      return {\n        spellId: hero.casting.spellId,\n        release: true,\n        target: opponent.pos,\n      };\n    } else if (\n      hero.casting.spellId === \"saber\" ||\n      hero.casting.spellId === \"dualSaber\"\n    ) {\n      // Don't focus the lightsaber, just swish it around\n      return {\n        spellId: \"retarget\",\n        target: vectorPlus(\n          hero.pos,\n          vectorFromAngle(hero.heading + Math.PI / 2)\n        ),\n      };\n    } else if (hero.casting.spellId === \"grapple\") {\n      // Throw away to the right (TODO: be smarter about this)\n      return {\n        spellId: hero.casting.spellId,\n        release: true,\n        target: vectorPlus(\n          hero.pos,\n          vectorFromAngle(hero.heading + Math.PI / 2)\n        ),\n      };\n    } else if (hero.casting.spellId === \"halo\") {\n      return { spellId: \"move\", target: opponent.pos };\n    } else {\n      return { spellId: \"retarget\", target: opponent.pos };\n    }\n  } else {\n    return null;\n  }\n}\n\nfunction chase(state, hero, cooldowns, opponent) {\n  if (\"whip\" in cooldowns) {\n    // Got to get within range when using Electroshock\n    var target = vectorMidpoint(hero.pos, opponent.pos);\n    return { spellId: \"move\", target };\n  } else {\n    return null;\n  }\n}\n\nfunction move(state, hero) {\n  var centroid = { x: 0, y: 0 };\n  var numOpponents = 0;\n  for (var heroId in state.heroes) {\n    if (heroId === hero.id) {\n      continue; // Ignore self\n    }\n\n    var opponent = state.heroes[heroId];\n    centroid.x += opponent.pos.x;\n    centroid.y += opponent.pos.y;\n\n    ++numOpponents;\n  }\n  centroid.x /= numOpponents;\n  centroid.y /= numOpponents;\n\n  if (!numOpponents) {\n    return;\n  }\n\n  var offset = vectorNegate(vectorDiff(centroid, center)); // Move to the opposite side of the arena\n  var targetDistance = state.radius * 0.33; // Closer to center than edge (for polygonal maps)\n  var target = vectorPlus(center, vectorRelengthen(offset, targetDistance));\n\n  var distanceToTarget = vectorDistance(hero.pos, target);\n  if (distanceToTarget <= CloseEnoughDistance) {\n    // Close enough - don't send any action so the game can sleep while waiting for players\n    return null;\n  }\n\n  return { spellId: \"move\", target };\n}\n\nfunction face(state, hero, opponent) {\n  var target = opponent.pos;\n  var targetAngle = vectorAngle(vectorDiff(opponent.pos, hero.pos));\n  var angleDelta = vectorAngleDelta(hero.heading, targetAngle);\n  if (Math.abs(angleDelta) <= CloseEnoughRadians) {\n    return null;\n  }\n\n  return { spellId: \"retarget\", target };\n}\n\nfunction dodge(state, hero, cooldowns) {\n  for (var projectileId in state.projectiles) {\n    var projectile = state.projectiles[projectileId];\n    if (projectile.ownerId === hero.id) {\n      // This is my own projectile\n      continue;\n    }\n\n    if (projectile.spellId === \"halo\") {\n      // Halo is never coming for us, it orbits around its owner\n      continue;\n    }\n\n    var diff = vectorDiff(hero.pos, projectile.pos);\n    var distancePerTimeStep = vectorDot(projectile.velocity, vectorUnit(diff));\n    if (distancePerTimeStep <= 0) {\n      // Not coming towards us\n      continue;\n    }\n\n    var timeToCollision = vectorLength(diff) / distancePerTimeStep;\n    if (timeToCollision <= 0 || timeToCollision >= 30) {\n      // Not coming towards us or too far away\n      continue;\n    }\n\n    var collisionPoint = vectorPlus(\n      projectile.pos,\n      vectorMultiply(projectile.velocity, timeToCollision)\n    );\n    var distanceToCollision = vectorDistance(collisionPoint, hero.pos);\n    var dodgeRadius = Math.max(DodgeRadius, projectile.radius) + hero.radius;\n    if (distanceToCollision > dodgeRadius) {\n      // Won't hit us\n      continue;\n    }\n\n    var deflectAction = deflect(state, hero, cooldowns, projectile);\n    if (deflectAction) {\n      return deflectAction;\n    }\n\n    // Run away from collision point\n    var direction = vectorUnit(\n      vectorNegate(vectorDiff(collisionPoint, hero.pos))\n    );\n    var step = vectorMultiply(direction, dodgeRadius);\n    var target = vectorPlus(hero.pos, step);\n    return { spellId: \"move\", target };\n  }\n  return null;\n}\n\nfunction vectorDiff(to, from) {\n  return { x: to.x - from.x, y: to.y - from.y };\n}\n\nfunction vectorLength(vector) {\n  return Math.sqrt(vector.x * vector.x + vector.y * vector.y);\n}\n\nfunction vectorDistance(from, to) {\n  return vectorLength(vectorDiff(from, to));\n}\n\nfunction vectorUnit(vec) {\n  var length = vectorLength(vec);\n  return length === 0 ? vec : vectorMultiply(vec, 1 / length);\n}\n\nfunction vectorPlus(from, offset) {\n  return { x: from.x + offset.x, y: from.y + offset.y };\n}\n\nfunction vectorMultiply(vec, multiplier) {\n  return { x: vec.x * multiplier, y: vec.y * multiplier };\n}\n\nfunction vectorRelengthen(vec, length) {\n  return vectorMultiply(vectorUnit(vec), length);\n}\n\nfunction vectorNegate(vec) {\n  return vectorMultiply(vec, -1);\n}\n\nfunction vectorDot(a, b) {\n  return a.x * b.x + a.y * b.y;\n}\n\nfunction vectorMidpoint(a, b) {\n  var diff = vectorDiff(b, a);\n  return vectorPlus(a, vectorMultiply(diff, 0.5));\n}\n\nfunction vectorFromAngle(angle) {\n  return { x: Math.cos(angle), y: Math.sin(angle) };\n}\n\nfunction vectorAngle(vec) {\n  return Math.atan2(vec.y, vec.x);\n}\n\nfunction vectorAngleDelta(currentAngle, targetAngle) {\n  var delta = targetAngle - currentAngle;\n  while (delta > Math.PI) {\n    delta -= 2 * Math.PI;\n  }\n  while (delta < -Math.PI) {\n    delta += 2 * Math.PI;\n  }\n  return delta;\n}\n\n// See ai.contracts.ts: Must return a BotContract\nreturn { act };\n",
+    "Code": "var center = { x: 0.5, y: 0.5 };\n\nvar CloseEnoughDistance = 0.05;\nvar CloseEnoughRadians = 0.1 * Math.PI;\nvar MissRadius = 0.05;\nvar DodgeRadius = 0.15;\nvar SpellCastIntervalMilliseconds = 1000;\nvar SpellCastJitterMilliseconds = 500;\n\nvar TicksPerSecond = 60;\n\nvar HardReactionMilliseconds = 600;\nvar EasyReactionMilliseconds = 3000;\nvar ReactionMillisecondsLookup = {\n  // Change the reaction time on certain spells\n  retarget: 200\n};\n\nvar alreadyChosenSpells = false;\nvar nextSpell = 0;\n\n// See ai.contracts.ts:\n// input is InputContract - contains information about the current state of the world\n// output is OutputContract - an action you want to take in response to the world\nfunction act(input) {\n  // Want the bot to do nothing? Uncomment the line below (remove the //):\n  // return null;\n\n  var state = input.state;\n  var heroId = input.heroId;\n  var hero = state.heroes[heroId];\n  var cooldowns = input.cooldowns;\n  var settings = input.settings;\n  var difficulty = input.difficulty;\n\n  var opponent = findOpponent(state.heroes, heroId);\n  if (!(hero && opponent)) {\n    // Either we're dead, or everyone else is, nothing to do\n    return null;\n  }\n  var action = null;\n  if (state.started) {\n    action =\n      recovery(state, hero, cooldowns) ||\n      dodge(state, hero, cooldowns) ||\n      castSpell(state, hero, opponent, cooldowns, settings) ||\n      focus(hero, opponent) ||\n      chase(state, hero, cooldowns, opponent) ||\n      move(state, hero) ||\n      face(state, hero, opponent);\n  } else {\n    action =\n      chooseSpells(settings, heroId) ||\n      dodge(state, hero, cooldowns) ||\n      move(state, hero) ||\n      face(state, hero, opponent);\n  }\n\n  if (action) {\n    // Give the bot a reaction time otherwise it is OP\n    var reactionMilliseconds =\n      ReactionMillisecondsLookup[action.spellId] ||\n      defaultReactionMilliseconds(difficulty);\n    action.delayMilliseconds = reactionMilliseconds;\n    return action;\n  } else {\n    return null;\n  }\n}\n\nfunction defaultReactionMilliseconds(difficulty) {\n  var alpha = Math.sqrt(difficulty);\n  return (\n    alpha * HardReactionMilliseconds + (1 - alpha) * EasyReactionMilliseconds\n  );\n}\n\nfunction chooseSpells(settings, heroId) {\n  if (alreadyChosenSpells) {\n    return null;\n  }\n  alreadyChosenSpells = true;\n\n  var spells = randomSpells(settings);\n\n  var classList = [\n    \"exu\",\n    \"ceo\",\n    \"kal\",\n    \"ire\",\n    \"tho\",\n    \"wed\",\n    \"sur\",\n    \"eyj\",\n    \"gol\",\n    \"dor\",\n    \"bag\",\n    \"dou\",\n    \"pha\",\n    \"lin\",\n    \"sag\",\n    \"nih\",\n    \"sar\",\n    \"sai\",\n    \"lum\",\n    \"mos\",\n    \"gel\",\n    \"mud\",\n    \"ska\",\n    \"pal\",\n    \"che\",\n    \"fin\"\n  ];\n\n  var chosenClass = classList[Math.floor(Math.random() * classList.length)]\n\n  spells.a = chosenClass;\n  spells.q = (chosenClass + \"1\");\n  spells.w = (chosenClass + \"2\");\n  spells.e = (chosenClass + \"3\");\n\n  // Want to test a particular spell? Uncomment and edit the lines below\n  // spells[\"e\"] = \"saber\";\n\n  return { spells };\n}\n\nfunction randomSpells(settings) {\n  var keyBindings = {};\n  var allOptions = settings.Choices.Options;\n  for (var btn in allOptions) {\n    // One of the buttons, e.g. Q or R\n    var options = allOptions[btn];\n\n    var spellIds = [];\n    for (var i = 0; i < options.length; ++i) {\n      var row = options[i];\n      for (var j = 0; j < row.length; ++j) {\n        var spellId = row[j];\n        spellIds.push(spellId);\n      }\n    }\n\n    if (spellIds.length > 1) {\n      keyBindings[btn] = spellIds[Math.floor(Math.random() * spellIds.length)];\n    }\n  }\n  return keyBindings;\n}\n\nfunction findOpponent(heroes, myHeroId) {\n  var myHero = heroes[myHeroId];\n  if (!myHero) {\n    return null;\n  }\n\n  var choice = null;\n  var mostHealth = 0;\n  for (var heroId in heroes) {\n    var hero = heroes[heroId];\n\n    if (!hero.isEnemy) {\n      continue;\n    }\n\n    // Uncomment the line below to only target humans\n    // if (hero.isBot) { continue; }\n\n    if (hero.health > mostHealth) {\n      // Target the enemy with the most health\n      mostHealth = hero.health;\n      choice = hero;\n    }\n  }\n  return choice;\n}\n\nfunction recovery(state, hero, cooldowns) {\n  if (hero.inside || state.radius <= 0) {\n    // No need to recover\n    return null;\n  }\n\n  var spellId = null;\n  if (cooldowns[\"teleport\"] === 0) {\n    spellId = \"teleport\";\n  } else if (cooldowns[\"thrust\"] === 0) {\n    spellId = \"thrust\";\n  } else if (cooldowns[\"swap\"] === 0) {\n    spellId = \"swap\";\n  } else if (cooldowns[\"voidRush\"] === 0) {\n    spellId = \"voidRush\";\n  } else if (cooldowns[\"vanish\"] === 0) {\n    spellId = \"vanish\";\n  } else {\n    spellId = \"move\";\n  }\n\n  if (spellId) {\n    return { spellId, target: center };\n  }\n  return null;\n}\n\nfunction deflect(state, hero, cooldowns, projectile) {\n  var target = vectorMidpoint(hero.pos, projectile.pos);\n  var spellId = null;\n  if (cooldowns[\"shield\"] === 0) {\n    spellId = \"shield\";\n  } else if (cooldowns[\"icewall\"] === 0) {\n    spellId = \"icewall\";\n  } else if (cooldowns[\"saber\"] === 0) {\n    spellId = \"saber\";\n  } else if (cooldowns[\"dualSaber\"] === 0) {\n    spellId = \"dualSaber\";\n  } else if (cooldowns[\"meteor\"] === 0) {\n    spellId = \"meteor\";\n  } else if (cooldowns[\"meteorite\"] === 0) {\n    spellId = \"meteorite\";\n  } else if (cooldowns[\"whirlwind\"] === 0) {\n    spellId = \"whirlwind\";\n  } else if (cooldowns[\"phaseOut\"] === 0) {\n    spellId = \"phaseOut\";\n  } else {\n    spellId = null;\n  }\n\n  if (spellId) {\n    return { spellId, target };\n  } else {\n    return null;\n  }\n}\n\nfunction castSpell(state, hero, opponent, cooldowns, settings) {\n  if (!readyForNextSpell(hero)) {\n    return null;\n  }\n\n  var candidates = [];\n  for (var spellId in cooldowns) {\n    var readyToCast = !cooldowns[spellId];\n    var spell = settings.Spells[spellId];\n\n    if (spell && readyToCast) {\n      candidates.push(spellId);\n    }\n  }\n\n  if (candidates.length > 0) {\n    var spellId = candidates[Math.floor(Math.random() * candidates.length)];\n    var action = { spellId, target: jitter(opponent.pos, MissRadius) };\n    if (action.spellId === spellId) {\n      updateNextSpellTime();\n    }\n    return action;\n  } else {\n    return null;\n  }\n}\n\nfunction validAttack(state, hero, opponent, spell) {\n  var opponentShielded = !!opponent.shieldTicksRemaining;\n\n  var distance = vectorDistance(hero.pos, opponent.pos);\n  if (\n    spell.action === \"projectile\" ||\n    spell.action === \"spray\" ||\n    spell.action === \"retractor\" ||\n    spell.action === \"focus\" ||\n    spell.action === \"charge\"\n  ) {\n    if (spell.id === \"swap\") {\n      // Swap doesn't work as an attack\n      return false;\n    }\n    if (opponentShielded && !spell.projectile.detonate) {\n      // Detonate spells can penetrate shields, nothing else can\n      return false;\n    }\n    if (spell.id === \"whip\") {\n      // Just keep casting Electroshock even if out of range\n      return true;\n    }\n\n    var range =\n      (spell.projectile.speed * spell.projectile.maxTicks) / TicksPerSecond +\n      opponent.radius;\n    return distance <= range;\n  } else if (spell.action === \"scourge\") {\n    var range = spell.detonate.radius + opponent.radius;\n    return distance <= range;\n  } else if (spell.id === \"blaze\") {\n    return true;\n  } else {\n    return false;\n  }\n}\n\nfunction readyForNextSpell(hero) {\n  return (\n    Date.now() >= nextSpell || // Don't cast too fast\n    !!hero.link // If linked to something, cast as many spells as possible\n  );\n}\n\nfunction updateNextSpellTime() {\n  nextSpell =\n    Date.now() +\n    SpellCastIntervalMilliseconds +\n    Math.floor(\n      (Math.random() < 0.5 ? -1 : 1) *\n        Math.random() *\n        SpellCastJitterMilliseconds\n    );\n}\n\nfunction jitter(target, missRadius) {\n  var radius = Math.random() * missRadius;\n  var angle = Math.random() * 2 * Math.PI;\n  return {\n    x: target.x + radius * Math.cos(angle),\n    y: target.y + radius * Math.sin(angle),\n  };\n}\n\nfunction focus(hero, opponent) {\n  // When using a spell (e.g. Acolyte Beam, Spirit Missile) - ensure we are focusing the enemy, otherwise we will miss\n  if (hero.casting) {\n    if (\n      hero.casting.spellId === \"blast\" ||\n      hero.casting.spellId === \"retractor\" ||\n      hero.casting.spellId === \"rocket\"\n    ) {\n      // Have to release or it won't fire\n      return {\n        spellId: hero.casting.spellId,\n        release: true,\n        target: opponent.pos,\n      };\n    } else if (\n      hero.casting.spellId === \"saber\" ||\n      hero.casting.spellId === \"dualSaber\"\n    ) {\n      // Don't focus the lightsaber, just swish it around\n      return {\n        spellId: \"retarget\",\n        target: vectorPlus(\n          hero.pos,\n          vectorFromAngle(hero.heading + Math.PI / 2)\n        ),\n      };\n    } else if (hero.casting.spellId === \"grapple\") {\n      // Throw away to the right (TODO: be smarter about this)\n      return {\n        spellId: hero.casting.spellId,\n        release: true,\n        target: vectorPlus(\n          hero.pos,\n          vectorFromAngle(hero.heading + Math.PI / 2)\n        ),\n      };\n    } else if (hero.casting.spellId === \"halo\") {\n      return { spellId: \"move\", target: opponent.pos };\n    } else {\n      return { spellId: \"retarget\", target: opponent.pos };\n    }\n  } else {\n    return null;\n  }\n}\n\nfunction chase(state, hero, cooldowns, opponent) {\n  if (\"whip\" in cooldowns) {\n    // Got to get within range when using Electroshock\n    var target = vectorMidpoint(hero.pos, opponent.pos);\n    return { spellId: \"move\", target };\n  } else {\n    return null;\n  }\n}\n\nfunction move(state, hero) {\n  var centroid = { x: 0, y: 0 };\n  var numOpponents = 0;\n  for (var heroId in state.heroes) {\n    if (heroId === hero.id) {\n      continue; // Ignore self\n    }\n\n    var opponent = state.heroes[heroId];\n    centroid.x += opponent.pos.x;\n    centroid.y += opponent.pos.y;\n\n    ++numOpponents;\n  }\n  centroid.x /= numOpponents;\n  centroid.y /= numOpponents;\n\n  if (!numOpponents) {\n    return;\n  }\n\n  var offset = vectorNegate(vectorDiff(centroid, center)); // Move to the opposite side of the arena\n  var targetDistance = state.radius * 0.33; // Closer to center than edge (for polygonal maps)\n  var target = vectorPlus(center, vectorRelengthen(offset, targetDistance));\n\n  var distanceToTarget = vectorDistance(hero.pos, target);\n  if (distanceToTarget <= CloseEnoughDistance) {\n    // Close enough - don't send any action so the game can sleep while waiting for players\n    return null;\n  }\n\n  return { spellId: \"move\", target };\n}\n\nfunction face(state, hero, opponent) {\n  var target = opponent.pos;\n  var targetAngle = vectorAngle(vectorDiff(opponent.pos, hero.pos));\n  var angleDelta = vectorAngleDelta(hero.heading, targetAngle);\n  if (Math.abs(angleDelta) <= CloseEnoughRadians) {\n    return null;\n  }\n\n  return { spellId: \"retarget\", target };\n}\n\nfunction dodge(state, hero, cooldowns) {\n  for (var projectileId in state.projectiles) {\n    var projectile = state.projectiles[projectileId];\n    if (projectile.ownerId === hero.id) {\n      // This is my own projectile\n      continue;\n    }\n\n    if (projectile.spellId === \"halo\") {\n      // Halo is never coming for us, it orbits around its owner\n      continue;\n    }\n\n    var diff = vectorDiff(hero.pos, projectile.pos);\n    var distancePerTimeStep = vectorDot(projectile.velocity, vectorUnit(diff));\n    if (distancePerTimeStep <= 0) {\n      // Not coming towards us\n      continue;\n    }\n\n    var timeToCollision = vectorLength(diff) / distancePerTimeStep;\n    if (timeToCollision <= 0 || timeToCollision >= 30) {\n      // Not coming towards us or too far away\n      continue;\n    }\n\n    var collisionPoint = vectorPlus(\n      projectile.pos,\n      vectorMultiply(projectile.velocity, timeToCollision)\n    );\n    var distanceToCollision = vectorDistance(collisionPoint, hero.pos);\n    var dodgeRadius = Math.max(DodgeRadius, projectile.radius) + hero.radius;\n    if (distanceToCollision > dodgeRadius) {\n      // Won't hit us\n      continue;\n    }\n\n    var deflectAction = deflect(state, hero, cooldowns, projectile);\n    if (deflectAction) {\n      return deflectAction;\n    }\n\n    // Run away from collision point\n    var direction = vectorUnit(\n      vectorNegate(vectorDiff(collisionPoint, hero.pos))\n    );\n    var step = vectorMultiply(direction, dodgeRadius);\n    var target = vectorPlus(hero.pos, step);\n    return { spellId: \"move\", target };\n  }\n  return null;\n}\n\nfunction vectorDiff(to, from) {\n  return { x: to.x - from.x, y: to.y - from.y };\n}\n\nfunction vectorLength(vector) {\n  return Math.sqrt(vector.x * vector.x + vector.y * vector.y);\n}\n\nfunction vectorDistance(from, to) {\n  return vectorLength(vectorDiff(from, to));\n}\n\nfunction vectorUnit(vec) {\n  var length = vectorLength(vec);\n  return length === 0 ? vec : vectorMultiply(vec, 1 / length);\n}\n\nfunction vectorPlus(from, offset) {\n  return { x: from.x + offset.x, y: from.y + offset.y };\n}\n\nfunction vectorMultiply(vec, multiplier) {\n  return { x: vec.x * multiplier, y: vec.y * multiplier };\n}\n\nfunction vectorRelengthen(vec, length) {\n  return vectorMultiply(vectorUnit(vec), length);\n}\n\nfunction vectorNegate(vec) {\n  return vectorMultiply(vec, -1);\n}\n\nfunction vectorDot(a, b) {\n  return a.x * b.x + a.y * b.y;\n}\n\nfunction vectorMidpoint(a, b) {\n  var diff = vectorDiff(b, a);\n  return vectorPlus(a, vectorMultiply(diff, 0.5));\n}\n\nfunction vectorFromAngle(angle) {\n  return { x: Math.cos(angle), y: Math.sin(angle) };\n}\n\nfunction vectorAngle(vec) {\n  return Math.atan2(vec.y, vec.x);\n}\n\nfunction vectorAngleDelta(currentAngle, targetAngle) {\n  var delta = targetAngle - currentAngle;\n  while (delta > Math.PI) {\n    delta -= 2 * Math.PI;\n  }\n  while (delta < -Math.PI) {\n    delta += 2 * Math.PI;\n  }\n  return delta;\n}\n\n// See ai.contracts.ts: Must return a BotContract\nreturn { act };\n",
     "Choices": {
         "Keys": [
             {
@@ -81,8 +81,7 @@
                 ],
                 [
                     "mer",
-                    "a.a",
-                    "b.a"
+                    "fin"
                 ]
             ],
             "q": [
@@ -123,8 +122,7 @@
                 ],
                 [
                     "mer1",
-                    "a.q",
-                    "b.q"
+                    "fin1"
                 ]
             ],
             "w": [
@@ -165,8 +163,7 @@
                 ],
                 [
                     "mer2",
-                    "a.w",
-                    "b.w"
+                    "fin2"
                 ]
             ],
             "e": [
@@ -207,8 +204,7 @@
                 ],
                 [
                     "mer3",
-                    "a.e",
-                    "b.e"
+                    "fin3"
                 ]
             ],
             "r": [
@@ -3168,7 +3164,7 @@
         },
         "exu2": {
             "id": "exu2",
-            "description": "Cause nearby allies to take 10% less physical damage. Fire Repentance once every 1.5s, independent of cooldown.",
+            "description": "Cause nearby allies to take 10% less physical damage. Fire Repentance once every 2.5s, independent of cooldown.",
             "action": "projectile",
             "color": "#aaa",
             "name": "Redemption",
@@ -11179,7 +11175,7 @@
         "pal2": {
             "id": "pal2",
             "name": "Lunar Hysterics",
-            "description": "Heal nearby allies 9 health. Cooldown will be lowered on hit.",
+            "description": "Heal nearby allies 9 health. Increase mental accumulation. Cooldown will be lowered on hit.",
             "action": "projectile",
             "icon": "bodySwapping",
             "color": "#afc",
@@ -11191,6 +11187,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Healing",
                     "text": "Heal * Buffs"
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Mental Accumulation",
+                    "text": "Reducible by certain skills; when accumulated, apply Breakdown for 5 seconds."
                 }
             ],
             "projectile": {
@@ -11201,7 +11202,8 @@
                 "collideWith": 0,
                 "damage": 0,
                 "lifeSteal": 0,
-                "categories": 2,
+                "categories": 34,
+                "sensor": true,
                 "sound": "fireball",
                 "soundHit": "standard",
                 "color": "#bfef45",
@@ -11589,26 +11591,26 @@
         },
         "fin2": {
             "id": "fin2",
-            "description": "Deal 8 physical damage and apply mental accumulation.",
+            "description": "Deal 8 physical damage and increase mental accumulation.",
             "action": "projectile",
             "color": "#8a8",
             "name": "I love making, I love doing",
             "icon": "pipe",
             "maxAngleDiffInRevs": 0.01,
-            "cooldown": 120,
+            "cooldown": 450,
             "chargeTicks": 5,
             "recoil": 0.5,
             "throttle": true,
             "effects": [
                 {
-                    "icon": "far fa-sad-tear",
-                    "title": "Mental Accumulation",
-                    "text": "Reducible by certain skills; when accumulated, apply Breakdown for 5 seconds."
-                },
-                {
                     "icon": "fas fa-address-card",
                     "title": "Physical Damage",
                     "text": "Damage * Buffs - Defense"
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Mental Accumulation",
+                    "text": "Reducible by certain skills; when accumulated, apply Breakdown for 5 seconds."
                 }
             ],
             "projectile": {
@@ -11669,7 +11671,7 @@
             "name": "Blood on the Painted",
             "icon": "pipe",
             "maxAngleDiffInRevs": 0.01,
-            "cooldown": 120,
+            "cooldown": 600,
             "throttle": true,
             "effects": [
                 {
@@ -11970,7 +11972,7 @@
         },
         "pha2": {
             "id": "pha2",
-            "description": "Deal 5 physical damage which will shred 3 defense per hit.",
+            "description": "Reduce defense by 6. Increase mental accumulation.",
             "action": "projectile",
             "color": "#469990",
             "icon": "deadlyStrike",
@@ -11983,113 +11985,60 @@
                     "icon": "fas fa-address-card",
                     "title": "Physical Damage",
                     "text": "Damage * Buffs - Defense"
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Mental Accumulation",
+                    "text": "Reducible by certain skills; when accumulated, apply Breakdown for 5 seconds."
                 }
             ],
             "projectile": {
-                "density": 1,
-                "radius": 0.003,
-                "speed": 0.65,
-                "maxTicks": 6000,
+                "density": 30,
+                "radius": 0.14,
+                "selfPassthrough": true,
+                "speed": 0,
+                "maxTicks": 10,
+                "expireOn": 0,
+                "sensor": true,
                 "damage": 0,
                 "lifeSteal": 0,
-                "categories": 2,
+                "categories": 34,
                 "sound": "fireball",
-                "expireOn": 0,
                 "soundHit": "standard",
                 "color": "#469990",
-                "buffs": [],
+                "buffs": [
+                    {
+                        "type": "armor",
+                        "maxTicks": 3,
+                        "source": "phys",
+                        "flat": -6,
+                        "maxReduction": 0
+                    }
+                ],
                 "behaviours": [
                     {
-                        "type": "spawn",
-                        "trigger": {
-                            "atCursor": true
-                        },
-                        "expire": true,
-                        "projectile": {
-                            "density": 30,
-                            "radius": 0.04,
-                            "selfPassthrough": true,
-                            "speed": 0,
-                            "maxTicks": 15,
-                            "hitInterval": 5,
-                            "expireOn": 0,
-                            "sense": 1,
-                            "collideWith": 0,
-                            "damage": 0,
-                            "lifeSteal": 0,
-                            "categories": 2,
-                            "sound": "fireball",
-                            "soundHit": "standard",
-                            "color": "#469990",
-                            "buffs": [
-                                {
-                                    "type": "burn",
-                                    "hitInterval": 1,
-                                    "maxTicks": 1,
-                                    "packet": {
-                                        "source": "phys",
-                                        "lifeSteal": 0,
-                                        "damage": 5
-                                    }
-                                },
-                                {
-                                    "type": "mass",
-                                    "maxTicks": 120,
-                                    "radius": 0.0125,
-                                    "sense": 128
-                                },
-                                {
-                                    "type": "movement",
-                                    "movementProportion": 0,
-                                    "maxTicks": 120,
-                                    "render": {
-                                        "color": "#469990",
-                                        "particleRadius": 0.0025,
-                                        "emissionRadiusFactor": 1,
-                                        "ticks": 10,
-                                        "light": 1,
-                                        "invisible": true
-                                    }
-                                },
-                                {
-                                    "type": "armor",
-                                    "maxTicks": 3,
-                                    "source": "phys",
-                                    "flat": -3,
-                                    "maxReduction": 0
-                                }
-                            ],
-                            "behaviours": [
-                                {
-                                    "type": "attract",
-                                    "attractLike": 2,
-                                    "against": 12,
-                                    "categories": 1,
-                                    "radius": 0.04,
-                                    "accelerationPerTick": 0.09
-                                }
-                            ],
-                            "renderers": [
-                                {
-                                    "type": "projectile",
-                                    "color": "#46999011",
-                                    "ticks": 40
-                                }
-                            ]
-                        }
+                        "type": "attract",
+                        "attractLike": 2,
+                        "against": 12,
+                        "categories": 1,
+                        "radius": 0.14,
+                        "accelerationPerTick": -0.02
                     }
                 ],
                 "renderers": [
                     {
-                        "type": "projectile",
-                        "ticks": 10
+                        "type": "reticule",
+                        "radius": 0.2,
+                        "shrinkTicks": 40,
+                        "grow": true,
+                        "fade": true
                     }
                 ]
             }
         },
         "pha3": {
             "id": "pha3",
-            "description": "Dash. Deal 5 physical damage which will shred 3 defense per hit.",
+            "description": "Dash. Deal 5 physical damage.",
             "action": "projectile",
             "color": "#469990",
             "icon": "deadlyStrike",
@@ -12106,98 +12055,50 @@
                 }
             ],
             "projectile": {
-                "density": 0.01,
-                "radius": 0.003,
+                "density": 30,
+                "radius": 0.14,
+                "selfPassthrough": true,
                 "speed": 0,
-                "maxTicks": 21,
+                "maxTicks": 10,
+                "expireOn": 0,
+                "sensor": true,
                 "damage": 0,
                 "lifeSteal": 0,
-                "categories": 2,
+                "categories": 34,
                 "sound": "fireball",
-                "expireOn": 0,
                 "soundHit": "standard",
                 "color": "#469990",
-                "projectileBuffs": [
+                "buffs": [
                     {
-                        "type": "mass",
-                        "maxTicks": 21,
-                        "cleansable": false,
-                        "radius": 0.0125,
-                        "restrictCollideWith": 65334
+                        "type": "burn",
+                        "hitInterval": 1,
+                        "maxTicks": 1,
+                        "packet": {
+                            "source": "phys",
+                            "lifeSteal": 0,
+                            "damage": 2.5
+                        }
                     }
                 ],
                 "behaviours": [
                     {
-                        "type": "strafe"
-                    },
-                    {
-                        "type": "spawn",
-                        "trigger": {
-                            "afterTicks": 20
-                        },
-                        "expire": true,
-                        "projectile": {
-                            "density": 30,
-                            "radius": 0.04,
-                            "selfPassthrough": true,
-                            "speed": 0,
-                            "maxTicks": 15,
-                            "sense": 1,
-                            "hitInterval": 5,
-                            "collideWith": 0,
-                            "damage": 0,
-                            "lifeSteal": 0,
-                            "expireOn": 0,
-                            "categories": 2,
-                            "sound": "fireball",
-                            "soundHit": "standard",
-                            "color": "#469990",
-                            "buffs": [
-                                {
-                                    "type": "burn",
-                                    "hitInterval": 1,
-                                    "maxTicks": 1,
-                                    "packet": {
-                                        "source": "phys",
-                                        "lifeSteal": 0,
-                                        "damage": 5
-                                    }
-                                },
-                                {
-                                    "type": "mass",
-                                    "maxTicks": 120,
-                                    "radius": 0.0125,
-                                    "sense": 128
-                                },
-                                {
-                                    "type": "armor",
-                                    "maxTicks": 80,
-                                    "against": 3,
-                                    "source": "phys",
-                                    "flat": -3
-                                }
-                            ],
-                            "behaviours": [
-                                {
-                                    "type": "attract",
-                                    "attractLike": 2,
-                                    "against": 12,
-                                    "categories": 1,
-                                    "radius": 0.04,
-                                    "accelerationPerTick": 0.09
-                                }
-                            ],
-                            "renderers": [
-                                {
-                                    "type": "projectile",
-                                    "color": "#46999011",
-                                    "ticks": 40
-                                }
-                            ]
-                        }
+                        "type": "attract",
+                        "attractLike": 2,
+                        "against": 12,
+                        "categories": 1,
+                        "radius": 0.14,
+                        "accelerationPerTick": -0.02
                     }
                 ],
-                "renderers": []
+                "renderers": [
+                    {
+                        "type": "reticule",
+                        "radius": 0.2,
+                        "shrinkTicks": 40,
+                        "grow": true,
+                        "fade": true
+                    }
+                ]
             }
         },
         "sag": {
@@ -15369,7 +15270,7 @@
         },
         "tho2": {
             "id": "tho2",
-            "description": "Deal 20 physical damage. On hit, vision will be obscured and Winter's Elegy will have a lower cooldown.",
+            "description": "Deal 20 physical damage. Increase mental accumulation. On hit, vision will be obscured and Winter's Elegy will have a lower cooldown.",
             "action": "projectile",
             "color": "#030",
             "icon": "waveStrike",
@@ -15382,6 +15283,11 @@
                     "icon": "fas fa-address-card",
                     "title": "Physical Damage",
                     "text": "Damage * Buffs - Defense"
+                },
+                {
+                    "icon": "far fa-sad-tear",
+                    "title": "Mental Accumulation",
+                    "text": "Reducible by certain skills; when accumulated, apply Breakdown for 5 seconds."
                 }
             ],
             "projectile": {
@@ -15391,7 +15297,7 @@
                 "maxTicks": 40,
                 "damage": 0,
                 "lifeSteal": 0,
-                "categories": 2,
+                "categories": 34,
                 "sound": "fireball",
                 "soundHit": "standard",
                 "color": "#030",
@@ -15425,7 +15331,7 @@
                             "density": 0.01,
                             "radius": 0.03,
                             "speed": 0,
-                            "maxTicks": 20,
+                            "maxTicks": 60,
                             "damage": 0,
                             "lifeSteal": 0,
                             "expireOn": 0,
@@ -15452,14 +15358,53 @@
                                 {
                                     "type": "swirl",
                                     "color": "#fffa",
-                                    "radius": 0.2,
-                                    "ticks": 120,
-                                    "loopTicks": 120,
-                                    "numParticles": 4,
-                                    "particleRadius": 0.2,
-                                    "light": 1,
+                                    "radius": 0.1,
+                                    "ticks": 20,
+                                    "loopTicks": 20,
+                                    "shine": 0,
+                                    "numParticles": 2,
+                                    "particleRadius": 0.1,
                                     "smoke": {
-                                        "isotropicSpeed": 0.6
+                                        "isotropicSpeed": 1
+                                    }
+                                },
+                                {
+                                    "type": "swirl",
+                                    "color": "#abaa",
+                                    "radius": 0.15,
+                                    "ticks": 20,
+                                    "loopTicks": 20,
+                                    "shine": 0,
+                                    "numParticles": 2,
+                                    "particleRadius": 0.1,
+                                    "smoke": {
+                                        "isotropicSpeed": 1
+                                    }
+                                },
+                                {
+                                    "type": "swirl",
+                                    "color": "#575a",
+                                    "radius": 0.2,
+                                    "ticks": 20,
+                                    "loopTicks": 20,
+                                    "shine": 0,
+                                    "numParticles": 2,
+                                    "particleRadius": 0.1,
+                                    "smoke": {
+                                        "isotropicSpeed": 1
+                                    }
+                                },
+                                {
+                                    "type": "swirl",
+                                    "color": "#030a",
+                                    "radius": 0.25,
+                                    "ticks": 20,
+                                    "loopTicks": 20,
+                                    "shine": 0,
+                                    "numParticles": 2,
+                                    "particleRadius": 0.1,
+                                    "smoke": {
+                                        "isotropicSpeed": 1
                                     }
                                 }
                             ]
@@ -15678,7 +15623,7 @@
         },
         "dou1": {
             "id": "dou1",
-            "description": "Deal 20 physical damage in a wide area which will bind.",
+            "description": "Deal 20 physical damage which will bind.",
             "action": "projectile",
             "color": "#911eb4",
             "name": "Shellshock",
@@ -15903,7 +15848,7 @@
         },
         "dou3": {
             "id": "dou3",
-            "description": "Deal 4 instances of 20 physical damage which will bind.",
+            "description": "Deal 15 physical damage which will bind.",
             "action": "spray",
             "jitterRatio": 0.7,
             "numProjectilesPerTick": 4,
@@ -15983,7 +15928,7 @@
                                         "packet": {
                                             "source": "phys",
                                             "lifeSteal": 0,
-                                            "damage": 20
+                                            "damage": 15
                                         }
                                     },
                                     {
@@ -16047,7 +15992,7 @@
         "wed": {
             "id": "wed",
             "name": "Nanofiber",
-            "description": "Arts Burst with physical damage and turrets.",
+            "description": "Arts Burst with mental accumulation negation and turrets.",
             "passive": true,
             "untargeted": true,
             "cooldown": 1,
@@ -16325,7 +16270,7 @@
         },
         "wed3": {
             "id": "wed3",
-            "description": "Deal Arts damage. Turrets will also activate the blast. Targets will take 15 Arts damage and incur Breakdown.",
+            "description": "Deal Arts damage. Turrets will also activate the blast. Reduce mental accumulation. Targets will incur Breakdown.",
             "action": "projectile",
             "color": "#f58231",
             "icon": "teleport",
@@ -16340,14 +16285,9 @@
                     "text": "Damage * (1 - Resistance) * Buffs"
                 },
                 {
-                    "icon": "fas fa-address-card",
-                    "title": "True Damage",
-                    "text": "Damage * Buffs"
-                },
-                {
-                    "icon": "fas fa-address-card",
-                    "title": "Mental Damage",
-                    "text": "Upon reaching 10 stacks, bind and breakdown"
+                    "icon": "far fa-sad-tear",
+                    "title": "Mental Accumulation",
+                    "text": "Reducible by certain skills; when accumulated, apply Breakdown for 5 seconds."
                 }
             ],
             "projectile": {
@@ -16358,7 +16298,7 @@
                 "maxTicks": 30,
                 "damage": 0,
                 "lifeSteal": 0,
-                "categories": 2,
+                "categories": 66,
                 "sound": "fireball",
                 "soundHit": "standard",
                 "color": "#f58231",
@@ -16446,14 +16386,51 @@
                                         "categories": 64,
                                         "buffs": [
                                             {
-                                                "type": "burn",
-                                                "hitInterval": 1,
-                                                "maxTicks": 1,
-                                                "packet": {
-                                                    "source": "arts",
-                                                    "lifeSteal": 0,
-                                                    "damage": 15
+                                                "type": "lifeSteal",
+                                                "against": 15,
+                                                "stack": "breakdown",
+                                                "source": "heal",
+                                                "damageMultiplier": 0,
+                                                "maxTicks": 120,
+                                                "render": {
+                                                    "color": "#aaa4",
+                                                    "particleRadius": 0.015,
+                                                    "emissionRadiusFactor": 0.5,
+                                                    "ticks": 10,
+                                                    "light": 1,
+                                                    "invisible": true
                                                 }
+                                            },
+                                            {
+                                                "type": "lifeSteal",
+                                                "against": 15,
+                                                "stack": "breakdown",
+                                                "source": "phys",
+                                                "damageMultiplier": 0.8,
+                                                "maxTicks": 120
+                                            },
+                                            {
+                                                "type": "lifeSteal",
+                                                "against": 15,
+                                                "stack": "breakdown",
+                                                "source": "arts",
+                                                "damageMultiplier": 0.8,
+                                                "maxTicks": 120
+                                            },
+                                            {
+                                                "type": "lifeSteal",
+                                                "against": 15,
+                                                "stack": "breakdown",
+                                                "source": "ceobe",
+                                                "damageMultiplier": 0.8,
+                                                "maxTicks": 120
+                                            },
+                                            {
+                                                "type": "mass",
+                                                "radius": 0.0125,
+                                                "cleansable": false,
+                                                "maxTicks": 120,
+                                                "sense": 64
                                             }
                                         ],
                                         "behaviours": [],
@@ -16497,7 +16474,7 @@
         "test": {
             "id": "test",
             "name": "Breakdown",
-            "description": "In a crisis, deal 20% less Arts and Physical damage; heal 100% less.",
+            "description": "In a crisis, deal 20% less Arts and physical damage; heal 100% less. Continously decrease mental accumulation.",
             "passive": true,
             "untargeted": true,
             "cooldown": 1,
@@ -16918,7 +16895,7 @@
                                 "buffs": [
                                     {
                                         "type": "cooldown",
-                                        "maxTicks": 10,
+                                        "maxTicks": 50,
                                         "color": "#cff",
                                         "minCooldown": 50
                                     }
@@ -17001,7 +16978,7 @@
                                 "renderers": [
                                     {
                                         "type": "reticule",
-                                        "minRadius": 0.045,
+                                        "minRadius": 0.048,
                                         "radius": 0.05,
                                         "arc": {
                                             "type": "fixed",
@@ -17075,7 +17052,7 @@
                                             "renderers": [
                                                 {
                                                     "type": "reticule",
-                                                    "minRadius": 0.045,
+                                                    "minRadius": 0.048,
                                                     "radius": 0.05,
                                                     "arc": {
                                                         "type": "fixed",
@@ -17274,7 +17251,7 @@
                                             "renderers": [
                                                 {
                                                     "type": "reticule",
-                                                    "minRadius": 0.045,
+                                                    "minRadius": 0.048,
                                                     "radius": 0.05,
                                                     "arc": {
                                                         "type": "fixed",
@@ -17299,10 +17276,14 @@
                                         },
                                         {
                                             "type": "spawn",
-                                            "trigger": {
-                                                "expire": true
-                                            },
+                                            "triggers": [
+                                                {
+                                                    "type": "interval",
+                                                    "triggerInterval": 10
+                                                }
+                                            ],
                                             "note": "payoff",
+                                            "maxTriggers": 5,
                                             "projectile": {
                                                 "density": 0.001,
                                                 "attractable": false,
@@ -17325,15 +17306,15 @@
                                                         "renderers": [
                                                             {
                                                                 "type": "reticule",
-                                                                "minRadius": 0.045,
+                                                                "minRadius": 0.048,
                                                                 "radius": 0.05,
                                                                 "shrinkTicks": 30,
                                                                 "fade": true,
                                                                 "easing": [
                                                                     1,
-                                                                    0.17,
+                                                                    0.97,
                                                                     0.9,
-                                                                    0
+                                                                    1
                                                                 ],
                                                                 "color": "#aaa"
                                                             }
@@ -18440,13 +18421,12 @@
             "cred": "https://game-icons.net/1x1/delapouite/lunar-module.html"
         },
         "halo": {
-            "id": "halo",
             "path": "M260.72 29.094c-54.533 0-98.97 21.704-98.97 48.312 0 26.61 44.437 48.28 98.97 48.28 54.53 0 98.967-21.67 98.967-48.28S315.25 29.094 260.72 29.094zm0 13.25c40.07 0 71.81 15.508 71.81 35.062s-31.74 35.47-71.81 35.47c-40.073 0-72.69-15.916-72.69-35.47 0-19.552 32.617-35.064 72.69-35.062zM86.53 57.187c-13.242-.094-32.234 14.59-42.31 37.688-43.3 99.244-9.583 359.695 87.874 351.97-22.002-50.492-43.8-107.983-56.72-168.75 26.337 72.494 72.33 135.58 117.845 120.186-32.017-40.185-66.048-87.265-90.032-140.342 35.016 59.175 85.37 105.853 123.03 85.5-29.742-26.583-61.568-57.524-88.812-93.25 39.647 37.38 87.092 61.34 112.25 37.75-47.69-21.07-94.37-53.67-125.062-89.75-16.312-19.176-28.195-39.39-32.72-60-2.26-10.306-2.508-20.796-.468-30.938.02-.095.043-.186.063-.28.007-.044.022-.083.03-.126 4.05-21.265 15.043-35.413 4.5-45.97-2.484-2.487-5.76-3.66-9.47-3.687zm347.658 0c-3.71.027-6.954 1.2-9.438 3.688-8.176 8.186-3.416 18.564 1.03 32.72 6.153 14.187 7.144 29.566 3.845 44.593-4.524 20.61-16.44 40.824-32.75 60-30.798 36.206-77.67 68.907-125.53 89.968 25.22 23.208 72.482-.71 112-37.97-27.245 35.728-59.07 66.67-88.814 93.25 37.662 20.355 88.016-26.323 123.033-85.498-23.985 53.077-58.016 100.157-90.032 140.343 45.515 15.395 91.478-47.69 117.814-120.186-12.918 60.768-34.686 118.26-56.688 168.75 97.457 7.726 131.142-252.725 87.844-351.97-10.077-23.097-29.07-37.78-42.313-37.686zm-22.22 73.97c-100.397 68.228-200.733 82.462-301.25 5.468 4.02 15.655 13.89 32.733 28.126 49.47 28.922 34 75.48 66.378 121.906 86.31 46.426-19.932 92.984-52.31 121.906-86.31 14.98-17.613 25.138-35.594 28.72-51.907.223-1.02.416-2.027.593-3.032z",
             "credit": "https://game-icons.net/lorc/originals/angel-outfit.html"
         },
         "pipe": {
-            "path": "M210.5 46.8v99l12.5-11.5V46.8zm78.5 0v87.5l12.5 11.5v-99zm-196.41 11v275.9l20.81-6.3V57.8zm306.01 0v269.6l20.8 6.3V57.8zm-208.5 3.5v103.1l12.5-11.4V61.3zm119.3 0V153l12.5 11.4V61.3zM168.7 75.8V184l12.5-11.5V75.8zm162.1 0v96.7l12.5 11.5V75.8zm-268.21 12v255.1l20.84-6.4V87.8zm366.01 0v248.7l20.8 6.4V87.8zm-281.3 2.5v113.3l12.5-11.5V90.3zm204.9 0v101.8l12.5 11.5V90.3zM32.59 117.8V352l20.84-6.3V117.8zm426.01 0v227.9l20.8 6.3V117.8zm-213 50v124.8c6.9-.3 13.9-.3 20.8 0V167.8zm-30 30v97.3c6.9-.9 13.9-1.6 20.8-2.1v-95.2zm60 0V293c6.9.5 13.9 1.2 20.8 2.1v-97.3zm-90 30v72.9c6.9-1.7 13.9-3.1 20.8-4.2v-68.7zm120 0v68.7c6.9 1.1 13.9 2.5 20.8 4.1v-72.8zm-141.4 19-32.2 28L142 481h22.2zm183.1 0V481h22.2l10-206.2zm-101.7 62.5v26.4h20.8v-26.5c-7.1-.2-14.1-.1-20.8.1zm-9.2.4c-6.9.5-13.9 1.3-20.8 2.3v23.7h20.8zm39.2 0v26h20.8v-23.8c-6.9-1-13.9-1.7-20.8-2.2zm-69.2 3.7c-6.9 1.2-13.9 2.7-20.8 4.4v17.9h20.8zm99.2 0v22.3h20.8v-17.9c-6.9-1.7-13.9-3.2-20.8-4.4zm-192.2 31.4-20.81 6.3V418h20.81zm285.2 0V418h20.8v-66.9zm-315.17 9.1-20.84 6.4V418h20.84zm345.17 0V418h20.8v-57.7zm-245.5 4.9 2.5 122.2h24.3v-35h92.2v35h24.3l2.5-122.2zm-129.67 4.3-20.84 6.3V418h20.84zm405.17 0V418h20.8v-48.6zm-230.8 8.7h56.4v16.1H296V404h-80v-16.1h11.8zM209.2 417h93.6v16h-93.6zm17.4 46v18h58.8v-18z",
-            "cred": "https://game-icons.net/1x1/caro-asercion/pipe-organ.html"
+            "path": "M38.643 17.275L32.215 59.47c20.354 23.085 48.127 40.682 79.195 56-29.677-4.055-58.635-12.142-84.64-24.868-.292 8.613-.584 26.252.896 35.58 23.024 8.994 48.88 14.026 75.95 16.728-23.698 5.377-47.716 7.58-71.425 6.95 2.665 9.36 7.325 22.24 11.26 31.675 22.547-1.977 45.912-7.504 69.36-15.47-18.785 14.27-39.05 26.146-60.185 35.322l28.877 30.056 17.144-9.898-5.978 22.312c6.788 6.61 20.498 15.434 27.56 20.623l13.268-11.662-.338 20.2c19.91 13.99 41.056 12.083 61.15 1.718-.804 6.438-1.308 13.29-1.482 20.56C132.47 314.7 66.666 320.958 70.59 348.222l34.553 6.947-34.108 18.04c1.503 7.398 3.84 15.003 7.73 22.677L120.1 379.56 92.17 416.226c4.726 6.13 14.61 14.823 20.537 20.515l39.47-46.24-17.962 63.475c6.238 4.326 19.387 9.33 26.273 12.87l43.313-71.076-14.138 80.248c17.225 3.487 20.708 4.81 39.82 3.19l18.186-75.66 20.297 71.852c7.333-2.51 23.21-9.526 29.976-12.664l-11.794-59.3 35.372 45.14c7.232-5.076 18.943-11.587 24.316-17.328l-17.994-37.326 31.973 18.19c25.568-17.19-44.333-57.458-86.944-100.22 6.416-8.725 11.636-17.086 15.786-25.042 19.45 27.668 44.75 39.74 75.84 29.93l-1.176-21.815 16.002 14.943c7.52-4.34 15.072-10.137 22.48-16.166l-6.99-19.133 18.694 8.745c12.732-6.638 22.917-17.1 33.08-27.59-16.19-12.562-32.92-27.903-47.49-40.242 17.74 9.162 38.718 17.52 56.892 23.95 4.27-7.49 12.045-21.063 15.463-28.7-19.626-4.04-39.435-11.263-58.413-20.58 23.383 2.56 45.728 3.05 66.367-1.138 2.805-8.642 9.82-22.678 11.123-30.996-23.616 6.897-49.242 8.78-74.923 7.03 28.832-9.016 55.294-21.066 75.56-39.81L485.69 93c-84.44 76.087-173.95 30.858-210.133 83.916-5.043-1.298-10.115-1.43-14.932-.56-14.7-80.695-139.033-53.424-221.982-159.083zM293 226.155l-9.643 45.806-23.623-44.347c10.196 4.382 20.545 8.023 33.266-1.457z",
+            "cred": "https://game-icons.net/1x1/lorc/dove.html"
         }
     }
 }

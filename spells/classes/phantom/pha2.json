@@ -1,6 +1,6 @@
 {
 	"id": "pha2",
-	"description": "Deal 5 physical damage which will shred 3 defense per hit.",
+	"description": "Reduce defense by 6. Increase mental accumulation.",
 	"action": "projectile",
 	"color": "#469990",
 	"icon": "deadlyStrike",
@@ -13,6 +13,11 @@
 			"icon": "fas fa-address-card",
 			"title": "Physical Damage",
 			"text": "Damage * Buffs - Defense"
+		},		
+		{
+			"icon": "far fa-sad-tear",
+			"title": "Mental Accumulation",
+			"text": "Reducible by certain skills; when accumulated, apply Breakdown for 5 seconds."
 		}
 	],
 	"projectile": "pha2"

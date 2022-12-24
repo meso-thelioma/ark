@@ -6,7 +6,7 @@
 	"maxTicks": 30,
 	"damage": 0,
 	"lifeSteal": 0,
-	"categories": 2,
+	"categories": 66,
 	"sound": "fireball",
 	"soundHit": "standard",
 	"color": "#f58231",
@@ -94,14 +94,51 @@
 							"categories": 64,
 							"buffs": [
 								{
-									"type": "burn",
-									"hitInterval": 1,
-									"maxTicks": 1,
-									"packet": {
-										"source": "arts",
-										"lifeSteal": 0,
-										"damage": 15
+									"type": "lifeSteal",
+									"against": 15,
+									"stack": "breakdown",
+									"source": "heal",
+									"damageMultiplier": 0,
+									"maxTicks": 120,
+									"render": {
+										"color": "#aaa4",
+										"particleRadius": 0.015,
+										"emissionRadiusFactor": 0.5,
+										"ticks": 10,
+										"light": 1,
+										"invisible": true
 									}
+								},
+								{
+									"type": "lifeSteal",
+									"against": 15,
+									"stack": "breakdown",
+									"source": "phys",
+									"damageMultiplier": 0.8,
+									"maxTicks": 120
+								},
+								{
+									"type": "lifeSteal",
+									"against": 15,
+									"stack": "breakdown",
+									"source": "arts",
+									"damageMultiplier": 0.8,
+									"maxTicks": 120
+								},
+								{
+									"type": "lifeSteal",
+									"against": 15,
+									"stack": "breakdown",
+									"source": "ceobe",
+									"damageMultiplier": 0.8,
+									"maxTicks": 120
+								},
+								{
+									"type": "mass",
+									"radius": 0.0125,
+									"cleansable": false,
+									"maxTicks": 120,
+									"sense": 64
 								}
 							],
 							"behaviours": [],

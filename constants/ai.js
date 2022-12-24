@@ -13,7 +13,7 @@ var HardReactionMilliseconds = 600;
 var EasyReactionMilliseconds = 3000;
 var ReactionMillisecondsLookup = {
   // Change the reaction time on certain spells
-  retarget: 200,
+  retarget: 200
 };
 
 var alreadyChosenSpells = false;
@@ -38,7 +38,6 @@ function act(input) {
     // Either we're dead, or everyone else is, nothing to do
     return null;
   }
-
   var action = null;
   if (state.started) {
     action =
@@ -109,15 +108,16 @@ function chooseSpells(settings, heroId) {
     "mud",
     "ska",
     "pal",
-    "che"
+    "che",
     "fin"
   ];
 
   var chosenClass = classList[Math.floor(Math.random() * classList.length)]
-  spells["a"] = (chosenClass);
-  spells["q"] = (chosenClass + "1");
-  spells["w"] = (chosenClass + "2");
-  spells["e"] = (chosenClass + "3");
+
+  spells.a = chosenClass;
+  spells.q = (chosenClass + "1");
+  spells.w = (chosenClass + "2");
+  spells.e = (chosenClass + "3");
 
   // Want to test a particular spell? Uncomment and edit the lines below
   // spells["e"] = "saber";

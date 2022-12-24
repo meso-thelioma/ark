@@ -1,6 +1,6 @@
 {
 	"id": "tho2",
-	"description": "Deal 20 physical damage. On hit, vision will be obscured and Winter's Elegy will have a lower cooldown.",
+	"description": "Deal 20 physical damage. Increase mental accumulation. On hit, vision will be obscured and Winter's Elegy will have a lower cooldown.",
 	"action": "projectile",
 	"color": "#030",
 	"icon": "waveStrike",
@@ -13,6 +13,11 @@
 			"icon": "fas fa-address-card",
 			"title": "Physical Damage",
 			"text": "Damage * Buffs - Defense"
+		},
+		{
+			"icon": "far fa-sad-tear",
+			"title": "Mental Accumulation",
+			"text": "Reducible by certain skills; when accumulated, apply Breakdown for 5 seconds."
 		}
 	],
 	"projectile": "tho2"

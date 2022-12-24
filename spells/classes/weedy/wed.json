@@ -1,7 +1,7 @@
 {
 	"id": "wed",
 	"name": "Nanofiber",
-	"description": "Arts Burst with physical damage and turrets.",
+	"description": "Arts Burst with mental accumulation negation and turrets.",
 	"passive": true,
 	"untargeted": true,
 	"cooldown": 1,

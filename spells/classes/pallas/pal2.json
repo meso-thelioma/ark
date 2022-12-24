@@ -1,7 +1,7 @@
 {
 	"id": "pal2",
 	"name": "Lunar Hysterics",
-	"description": "Heal nearby allies 9 health. Cooldown will be lowered on hit.",
+	"description": "Heal nearby allies 9 health. Increase mental accumulation. Cooldown will be lowered on hit.",
 	"action": "projectile",
 	"icon": "bodySwapping",
 	"color": "#afc",
@@ -13,6 +13,11 @@
 			"icon": "fas fa-address-card",
 			"title": "Healing",
 			"text": "Heal * Buffs"
+		},
+		{
+			"icon": "far fa-sad-tear",
+			"title": "Mental Accumulation",
+			"text": "Reducible by certain skills; when accumulated, apply Breakdown for 5 seconds."
 		}
 	],
 	"projectile": "pal2"
