@@ -17153,7 +17153,7 @@
                                 "renderers": [
                                     {
                                         "type": "reticule",
-                                        "minRadius": 0.045,
+                                        "minRadius": 0.048,
                                         "radius": 0.05,
                                         "arc": {
                                             "type": "fixed",
@@ -17201,7 +17201,7 @@
                                             "renderers": [
                                                 {
                                                     "type": "reticule",
-                                                    "minRadius": 0.045,
+                                                    "minRadius": 0.048,
                                                     "radius": 0.05,
                                                     "arc": {
                                                         "type": "fixed",
