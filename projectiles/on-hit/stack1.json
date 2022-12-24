@@ -1,0 +1,135 @@
+{
+	"density": 1e-14,
+	"radius": 0.01,
+	"speed": 3,
+	"maxTicks": 1200,
+	"damage": 0,
+	"expireAgainstObjects": 1,
+	"expireAgainstHeroes": 0,
+	"collideWith": 8272,
+	"minTicks": 4,
+	"expireOn": 1,
+	"lifeSteal": 0,
+	"categories": 18,
+	"sound": "fireball",
+	"soundHit": "standard",
+	"color": "#f00",
+	"buffs": [],
+	"projectileBuffs": [
+		{
+			"type": "mass",
+			"radius": 0.0125,
+			"maxTicks": 1200,
+			"cleansable": false,
+			"renderers": [
+				{
+					"type": "reticule",
+					"minRadius": 0.045,
+					"radius": 0.05,
+					"arc": {
+						"type": "fixed",
+						"startAngleInRevs": 0,
+						"endAngleInRevs": 0.334
+					},
+					"color": "#aaa"
+				}
+			]
+		}
+	],
+	"behaviours": [
+		{
+			"type": "strafe"
+		},
+		{
+			"type": "expire",
+			"note": "expire on 64",
+			"triggers": [
+				{
+					"type": "collideWith",
+					"collideWith": 64,
+					"against": 1
+				}
+			]
+		},
+		{
+			"type": "homing",
+			"targetType": "self",
+			"triggers": [
+				{
+					"type": "afterTicks",
+					"afterTicks": 5
+				}
+			],
+			"maxTurnProportion": 0.9
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "collideWith",
+					"collideWith": 16,
+					"against": 1
+				}
+			],
+			"expire": true,
+			"note": "after 2 stacks collide, spawn a trigger",
+			"projectile": {
+				"density": 1e-14,
+				"radius": 0.01,
+				"speed": 3,
+				"maxTicks": 40,
+				"attractable": false,
+				"damage": 0,
+				"expireAgainstObjects": 0,
+				"expireAgainstHeroes": 1,
+				"collideWith": 1,
+				"minTicks": 4,
+				"sensor": true,
+				"expireOn": 1,
+				"lifeSteal": 0,
+				"categories": 18,
+				"sound": "fireball",
+				"projectileBuffs": [
+					{
+						"type": "mass",
+						"radius": 0.0125,
+						"maxTicks": 1200,
+						"cleansable": false,
+						"renderers": [
+							{
+								"type": "reticule",
+								"minRadius": 0.045,
+								"radius": 0.05,
+								"arc": {
+									"type": "fixed",
+									"startAngleInRevs": 0,
+									"endAngleInRevs": 0.334
+								},
+								"color": "#aaa"
+							}
+						]
+					}
+				],
+				"soundHit": "standard",
+				"color": "#ff0",
+				"buffs": [],
+				"behaviours": [
+					{
+						"type": "strafe"
+					},
+					{
+						"type": "homing",
+						"targetType": "self",
+						"trigger": {
+							"afterTicks": 5
+						}
+					}
+				],
+				"renderers": [
+				]
+			}
+		}
+	],
+	"renderers": [
+	]
+}

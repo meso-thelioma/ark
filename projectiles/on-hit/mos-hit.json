@@ -1,0 +1,103 @@
+{
+	"density": 0.001,
+	"attractable": false,
+	"radius": 0.02,
+	"speed": 1,
+	"maxTicks": 6000,
+	"damage": 0,
+	"collideWith": 0,
+	"sense": 2,
+	"expireOn": 0,
+	"lifeSteal": 0,
+	"sound": "fireball",
+	"categories": 2,
+	"projectileBuffs": [],
+	"behaviours": [
+		{
+			"type": "strafe"
+		},
+		{
+			"type": "homing",
+			"targetType": "self",
+			"trigger": {
+				"afterTicks": 10
+			}
+		},
+		{
+			"type": "spawn",
+			"expire": true,
+			"maxTriggers": 1,
+			"triggers": [
+				{
+					"type": "health",
+					"health": 20,
+					"persist": true
+				}
+			],
+			"projectile": {
+				"density": 0.01,
+				"radius": 0.003,
+				"collideWith": 0,
+				"expireOn": 0,
+				"speed": 0,
+				"maxTicks": 120,
+				"damage": 0,
+				"lifeSteal": 0,
+				"categories": 2,
+				"sound": "fireball",
+				"soundHit": "standard",
+				"color": "#aaa",
+				"behaviours": [
+					{
+						"type": "aura",
+						"against": 15,
+						"radius": 2,
+						"tickInterval": 1,
+						"maxHits": 1,
+						"packet": {
+							"damage": 10,
+							"source": "arts",
+							"noHit": true,
+							"lifeSteal": 0
+						},
+						"buffs": []
+					}
+				],
+				"buffs": [],
+				"renderers": [
+					{
+						"type": "reticule",
+						"radius": 0.12,
+						"minRadius": 0.119,
+						"shrinkTicks": 120,
+						"grow": true,
+						"color": "#4363d8",
+						"fade": true
+					},
+					{
+						"type": "reticule",
+						"radius": 0.42,
+						"minRadius": 0.419,
+						"startingTicks": 20,
+						"shrinkTicks": 20,
+						"grow": true,
+						"color": "#4363d8",
+						"fade": true
+					},
+					{
+						"type": "reticule",
+						"radius": 0.32,
+						"minRadius": 0.319,
+						"startingTicks": 60,
+						"shrinkTicks": 70,
+						"grow": true,
+						"color": "#4363d8",
+						"fade": true
+					}
+				]
+			}
+		}
+	],
+	"color": "#aaa1",
+	"renderers": []
+}

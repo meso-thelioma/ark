@@ -21,31 +21,7 @@
 		{
 			"type": "armor",
 			"passive": true,
-			"source": "tier1",
-			"proportion": -0.35
-		},
-		{
-			"type": "armor",
-			"passive": true,
-			"source": "tier2",
-			"proportion": -0.35
-		},
-		{
-			"type": "armor",
-			"passive": true,
-			"source": "tier3",
-			"proportion": -0.35
-		},
-		{
-			"type": "armor",
-			"passive": true,
-			"source": "tier4",
-			"proportion": -0.35
-		},
-		{
-			"type": "armor",
-			"passive": true,
-			"source": "tier5",
+			"source": "phys",
 			"proportion": -0.35
 		},
 		{

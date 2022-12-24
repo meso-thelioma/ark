@@ -7,8 +7,7 @@
 	"static": true,
 	"undamageable": true,
 	"strike": {
-		"ticks": 6,
-		"flash": true
+		"ticks": 6
 	},
 	"render": [
 		{
