@@ -1,5 +1,5 @@
 {
-	"density": 50,
+	"density": 1,
 	"radius": 0.003,
 	"speed": 0.1,
 	"collideWith": 65527,

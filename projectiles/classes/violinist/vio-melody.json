@@ -1,0 +1,88 @@
+{
+	"density": 30,
+	"radius": 0.009,
+	"speed": 0,
+	"maxTicks": 12000,
+	"damage": 0,
+	"categories": 2,
+	"lifeSteal": 0,
+	"sound": "fireball",
+	"expireOn": 0,
+	"expireAgainstObjects": 1,
+	"soundHit": "standard",
+	"color": "#45322E",
+	"buffs": [],
+	"behaviours": [					
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "interval",
+					"triggerInterval": 60
+				}
+			],
+			"requireParent": true,
+			"projectile": "vio-melody-pulse"
+		},					
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "collideWith",
+					"collideWith": 8192,
+					"against": 1,
+					"maxHits": 20000
+				}
+			],
+			"projectile": "vio-melody-triplet"
+		},			
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "collideWith",
+					"collideWith": 16384,
+					"against": 1,
+					"maxHits": 20000
+				}
+			],
+			"projectile": "vio-melody-sustain"
+		},	
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "interval",
+					"triggerInterval": 60,
+					"offset": -10
+				}
+			],
+			"requireParent": true,
+			"projectile": "vio-melody-pulse-open"
+		},	
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "interval",
+					"triggerInterval": 60,
+					"offset": 10
+				}
+			],
+			"requireParent": true,
+			"projectile": "vio-melody-pulse-close"
+		}
+	],
+	"renderers": [
+		{
+			"type": "projectile",
+			"ticks": 10
+		},
+		{
+			"type": "reticule",
+			"radius": 0.04,
+			"color": "#45322E22",
+			"minRadius": 0.039
+		}
+	]
+}

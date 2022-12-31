@@ -4,7 +4,7 @@
 	"action": "projectile",
 	"color": "#66002f",
 	"icon": "crossedSlashes",
-	"name": "Eternal Afterglow",
+	"name": "Kafkaesque",
 	"maxAngleDiffInRevs": 0.01,
 	"cooldown": 90,
 	"throttle": true,

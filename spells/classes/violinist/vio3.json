@@ -1,0 +1,14 @@
+{
+	"id": "vio3",
+	"description": "Continously slow.",	
+	"action": "projectile",
+	"icon": "violin",
+	"color": "#45322E",
+	"name": "Sostenuto",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 30,
+	"throttle": true,
+	"effects": [],
+	"projectile": "vio3",	
+	"buffs": []
+}

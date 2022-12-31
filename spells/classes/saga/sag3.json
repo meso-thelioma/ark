@@ -4,7 +4,7 @@
 	"action": "projectile",
 	"color": "#66002f",
 	"icon": "crossedSlashes",
-	"name": "Radiance",
+	"name": "Dogra Magra",
 	"maxAngleDiffInRevs": 0.01,
 	"cooldown": 1800,
 	"throttle": true,

@@ -180,7 +180,8 @@
 						"sag3",
 						"tho3",
 						"mer3",
-						"fin3"
+						"fin3",
+						"vio3"
 					],
 					"render": {
 						"color": "#3cb44b11",

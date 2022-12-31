@@ -1,0 +1,26 @@
+{
+	"density": 0.001,
+	"attractable": false,
+	"radius": 2,
+	"speed": 0,
+	"maxTicks": 1,
+	"damage": 0,
+	"sensor": true,
+	"expireOn": 0,
+	"categories": 16384,
+	"lifeSteal": 0,
+	"buffs": [],
+	"projectileBuffs": [				
+		{
+			"type": "cooldown",
+			"hitInterval": 1,
+			"against": 1,
+			"cleansable": false,
+			"maxTicks": 40,
+			"minCooldown": 40
+		}
+	],
+	"behaviours": [],
+	"color": "#aaa1",
+	"renderers": []
+}

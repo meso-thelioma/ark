@@ -1,0 +1,44 @@
+{
+	"density": 30,
+	"radius": 0.04,
+	"selfPassthrough": true,
+	"speed": 0,
+	"maxTicks": 60,
+	"expireOn": 0,
+	"sensor": true,
+	"hitInterval": 20, 
+	"damage": 20,
+	"lifeSteal": 0,
+	"categories": 2,
+	"buffs": [
+		{
+			"type": "movement",
+			"movementProportion": 0.5,
+			"maxTicks": 20,
+			"render": {
+				"color": "#45322E",
+				"particleRadius": 0.0025,
+				"emissionRadiusFactor": 1,
+				"ticks": 10,
+				"light": 1,
+				"invisible": true
+			}
+		}	
+	],
+	"sound": "fireball",
+	"soundHit": "standard",
+	"color": "#45322E",
+	"behaviours": [],
+	"renderers": [
+		{
+			"type": "swirl",
+			"color": "#45322E",
+			"particleRadius": 0.0005,
+			"numParticles": 4,
+			"invisible": true,
+			"radius": 0.04,
+			"loopTicks": 60,
+			"ticks": 20
+		}
+	]
+}

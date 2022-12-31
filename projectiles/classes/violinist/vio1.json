@@ -1,0 +1,38 @@
+{
+	"density": 0.001,
+	"attractable": false,
+	"radius": 0.01,
+	"speed": 0,
+	"spawnAtCursor": true,
+	"maxTicks": 1,
+	"damage": 0,
+	"collideWith": 0,
+	"expireOn": 0,
+	"sense": 0,
+	"categories": 2,
+	"lifeSteal": 0,
+	"buffs": [],
+	"projectileBuffs": [				
+		{
+			"type": "cooldown",
+			"hitInterval": 1,
+			"against": 1,
+			"cleansable": false,
+			"maxTicks": 40,
+			"minCooldown": 40
+		}
+	],
+	"behaviours": [
+		{
+			"type": "attract",
+			"collideLike": 2,
+			"categories": 2,
+			"against": 1,
+			"radius": 0.8,
+			"accelerationPerTick": 0.1,
+			"clampSpeed": 0.4
+		}
+	],
+	"color": "#aaa1",
+	"renderers": []
+}

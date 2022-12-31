@@ -1,0 +1,49 @@
+{
+	"density": 30,
+	"radius": 0.04,
+	"selfPassthrough": true,
+	"speed": 0,
+	"maxTicks": 1,
+	"expireOn": 0,
+	"sensor": true,
+	"damage": 0,
+	"lifeSteal": 0,
+	"categories": 2,
+	"sound": "fireball",
+	"soundHit": "standard",
+	"color": "#45322E",
+	"behaviours": [		
+		{
+			"type": "aura",
+			"against": 1,
+			"radius": 2,
+			"tickInterval": 1,
+			"packet": {
+				"damage": 0,
+				"noHit": true,
+				"lifeSteal": 0
+			},	
+			"buffs": [
+				{
+					"type": "cooldown",
+					"hitInterval": 1,
+					"against": 1,
+					"cleansable": false,
+					"maxTicks": 20,
+					"maxCooldown": 60
+				}
+			]
+		}
+	],
+	"renderers": [
+		{
+			"type": "reticule",
+			"radius": 0.04,
+			"light": null,
+			"shine": 0,
+			"shrinkTicks": 40,
+			"grow": true,
+			"fade": true
+		}
+	]
+}

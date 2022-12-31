@@ -1,0 +1,19 @@
+{
+	"id": "vio1",
+	"description": "Reposition the melody.",
+	"action": "projectile",
+	"icon": "violin",
+	"color": "#45322E",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 30,
+	"throttle": true,
+	"name": "Mesforzando",
+	"effects": [
+		{
+			"icon": "fas fa-address-card",
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
+		}
+	],
+	"projectile": "vio1"
+}

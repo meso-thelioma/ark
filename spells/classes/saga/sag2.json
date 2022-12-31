@@ -4,7 +4,7 @@
 	"action": "projectile",
 	"color": "#66002f",
 	"icon": "crossedSlashes",
-	"name": "Cloud-parting Light",
+	"name": "Through the Looking-Glass",
 	"maxAngleDiffInRevs": 0.01,
 	"cooldown": 780,
 	"throttle": true,

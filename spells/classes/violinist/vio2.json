@@ -1,0 +1,19 @@
+{
+	"id": "vio2",
+	"description": "Create a triplet. Deal 1 physical damage per note.",
+	"action": "projectile",
+	"icon": "violin",
+	"color": "#45322E",	
+	"name": "Pizzicato",
+	"maxAngleDiffInRevs": 0.01,
+	"cooldown": 30,
+	"throttle": true,
+	"effects": [		
+		{
+			"icon": "fas fa-address-card",
+			"title": "Physical Damage",
+			"text": "Damage * Buffs - Defense"
+		}
+	],
+	"projectile": "vio2"
+}
