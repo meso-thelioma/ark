@@ -1,6 +1,6 @@
 {
 	"id": "vio2",
-	"description": "Create a triplet. Deal 1 physical damage per note.",
+	"description": "Create a triplet. Deal 4 physical damage per note.",
 	"action": "projectile",
 	"icon": "violin",
 	"color": "#45322E",	
