@@ -65,6 +65,39 @@
 				],
 				"projectileBuffs": []
 			}
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "collideWith",
+					"collideWith": 512,
+					"against": 1
+				},
+				{
+					"type": "collideWith",
+					"collideWith": 1,
+					"against": 3
+				}
+			],
+			"projectile": {
+				"density": 0.001,
+				"attractable": false,
+				"radius": 1,
+				"speed": 0,
+				"maxTicks": 1,
+				"damage": 0,
+				"sensor": true,
+				"expireOn": 0,
+				"sound": "fireball",
+				"categories": 8198,
+				"lifeSteal": 0,
+				"projectileBuffs": [],
+				"behaviours": [],
+				"color": "#aaa1",
+				"renderers": []
+			}
+
 		}
 	],
 	"buffs": [
@@ -76,7 +109,7 @@
 			"packet": {
 				"source": "heal",
 				"lifeSteal": 0,
-				"damage": -20
+				"damage": -12
 			}
 		}
 	],

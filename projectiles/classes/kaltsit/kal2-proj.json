@@ -16,9 +16,9 @@
 			"hitInterval": 1,
 			"maxTicks": 1,
 			"packet": {
-				"source": "phys",
+				"source": "true",
 				"lifeSteal": 0,
-				"damage": 10
+				"damage": 8
 			}
 		}
 	],

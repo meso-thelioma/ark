@@ -1,6 +1,6 @@
 {
 	"id": "kal1",
-	"description": "Heal 20 health. On collision with Cataract, heal 10 health.",
+	"description": "Heal 12 health. On collision with Cataract, heal 10 health.",
 	"action": "projectile",
 	"color": "#f032e6",
 	"icon": "burningEye",

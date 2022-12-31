@@ -1,6 +1,6 @@
 {
 	"id": "kal2",
-	"description": "Summon Cataract. The summon will deal 10 physical damage every second.",
+	"description": "Summon Cataract. The summon will deal 10 physical damage on healing.",
 	"action": "projectile",
 	"color": "#f032e6",
 	"icon": "burningEye",
