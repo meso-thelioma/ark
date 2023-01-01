@@ -25,7 +25,7 @@
 		},
 		{
 			"type": "spawn",
-			"trigger": [
+			"triggers": [
 				{
 					"type": "interval",
 					"triggerInterval": 4

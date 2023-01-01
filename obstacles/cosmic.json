@@ -1,8 +1,7 @@
 {
 	"id": "cosmic",
-	"health": 600,
+	"health": 10,
 	"collideWith": 1,
-	"sensor": true,
 	"static": true,
 	"strike": {
 		"ticks": 15,
@@ -29,18 +28,22 @@
 	],
 	"buffs": [
 		{
-			"type": "cooldown",
-			"maxTicks": 12000,
-			"collideWith": 1,
+			"type": "movement",
+			"maxTicks": 900,
 			"cleansable": false,
-			"cooldownRateModifier": 0.05,
-			"render": {
-				"color": "rgba(255,255,255,1)",
-				"alpha": 0.01,
-				"ticks": 10,
-				"emissionRadiusFactor": 0,
-				"particleRadius": 0.0125
-			}
+			"movementProportion": 0
+		},
+		{
+			"type": "cooldown",
+			"cleansable": false,
+			"maxTicks": 900,
+			"minCooldown": 90
+		},
+		{
+			"type": "mass",
+			"maxTicks": 900,
+			"cleansable": false,
+			"radius": 0.0125
 		}
 	]
 }

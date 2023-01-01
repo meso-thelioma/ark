@@ -156,6 +156,21 @@
 			],
 			"note": "stack 2",
 			"projectile": "stack2"
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "collideWith",
+					"triggerInterval": 1,
+					"maxHits": 1,
+					"collideWith": 8,
+					"collideTypes": "cosmic"
+				}
+			],			
+			"numProjectiles": 4,
+			"spread": 0.75,
+			"projectile": "bullethell"
 		}
 	]
 }

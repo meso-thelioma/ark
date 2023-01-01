@@ -17,7 +17,7 @@
 			"type": "armor",
 			"maxTicks": 3,
 			"source": "phys",
-			"flat": -6,
+			"flat": -3,
 			"maxReduction": 0
 		}
 	],

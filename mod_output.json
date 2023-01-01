@@ -227,12 +227,12 @@
         "Density": 0.72,
         "AngularDamping": 100,
         "Damping": 3,
-        "DamageMitigationTicks": 300,
+        "DamageMitigationTicks": 1,
         "LifeStealMitigationPerOpponent": 0,
         "CooldownMitigationPerOpponent": 0,
         "MaxMitigationBonuses": 0,
         "MaxCooldownWaitTicks": 1,
-        "ThrottleTicks": 0,
+        "ThrottleTicks": 12,
         "MaxHealth": 100,
         "SeparationImpulsePerTick": 0.01,
         "RevolutionsPerTick": 1
@@ -259,7 +259,7 @@
     "Tips": [
         "Resistance is a percentage applied to Arts damage, reducing damage taken.",
         "Defense is a flat reduction applied to Physical damage, reducing damage taken.",
-        "Hide in bushes and strike for an attack!"
+        "Hide and strike for an attack!"
     ],
     "Visuals": {
         "Background": "#000",
@@ -357,7 +357,7 @@
         ]
     },
     "World": {
-        "InitialRadius": 0.4,
+        "InitialRadius": 0.6,
         "HeroLayoutProportion": 0.625,
         "HeroResetProportion": 0.625,
         "LavaDamageInterval": 20,
@@ -376,15 +376,12 @@
         "SlopSpeed": 0.001,
         "SwatchHealth": 100,
         "BotName": "AcolyteBot",
-        "DefaultGameStartMessage": "Yellow grants 30% physical resistance. Blue grants 30% Arts resistance. You can shoot over walls if you're near them.",
+        "DefaultGameStartMessage": "Resistance is percentage based. Defense is a flat penalty. You can shoot over walls if you're near them. The center, when unlocked, creates a bullet-hell.",
         "SlopRadius": 0.05,
         "SwapDistanceReduction": 0.01,
         "MaxLifeSteal": 100,
         "Layouts": [
-            "circle",
-            "circle2",
-            "circle3",
-            "circle4"
+            "circle"
         ]
     },
     "Spells": {
@@ -9075,7 +9072,7 @@
         },
         "pha2": {
             "id": "pha2",
-            "description": "Repel targets. Reduce defense by 6. Increase mental accumulation.",
+            "description": "Repel targets. Reduce defense by 3. Increase mental accumulation.",
             "action": "projectile",
             "color": "#469990",
             "icon": "deadlyStrike",
@@ -9114,7 +9111,7 @@
                         "type": "armor",
                         "maxTicks": 3,
                         "source": "phys",
-                        "flat": -6,
+                        "flat": -3,
                         "maxReduction": 0
                     }
                 ],
@@ -9184,7 +9181,7 @@
                     },
                     {
                         "type": "spawn",
-                        "trigger": [
+                        "triggers": [
                             {
                                 "type": "interval",
                                 "triggerInterval": 4
@@ -14750,23 +14747,19 @@
                         "buffs": [],
                         "projectileBuffs": [
                             {
-                                "type": "mass",
-                                "radius": 0.0125,
-                                "maxTicks": 1200,
+                                "type": "lifeSteal",
+                                "damageMultiplier": 1,
                                 "cleansable": false,
-                                "renderers": [
-                                    {
-                                        "type": "reticule",
-                                        "minRadius": 0.048,
-                                        "radius": 0.05,
-                                        "arc": {
-                                            "type": "fixed",
-                                            "startAngleInRevs": 0,
-                                            "endAngleInRevs": 0.334
-                                        },
-                                        "color": "#aaa"
-                                    }
-                                ]
+                                "maxTicks": 1200,
+                                "render": {
+                                    "color": "#aaa",
+                                    "particleRadius": 0.001,
+                                    "emissionRadiusFactor": 2,
+                                    "ticks": 10,
+                                    "light": 1,
+                                    "invisible": true
+                                },
+                                "against": 1
                             }
                         ],
                         "behaviours": [
@@ -14830,15 +14823,19 @@
                                             "cleansable": false,
                                             "renderers": [
                                                 {
-                                                    "type": "reticule",
-                                                    "minRadius": 0.048,
-                                                    "radius": 0.05,
-                                                    "arc": {
-                                                        "type": "fixed",
-                                                        "startAngleInRevs": 0,
-                                                        "endAngleInRevs": 0.334
+                                                    "type": "lifeSteal",
+                                                    "damageMultiplier": 1,
+                                                    "cleansable": false,
+                                                    "maxTicks": 1200,
+                                                    "render": {
+                                                        "color": "#aaa",
+                                                        "particleRadius": 0.001,
+                                                        "emissionRadiusFactor": 1.5,
+                                                        "ticks": 10,
+                                                        "light": 1,
+                                                        "invisible": true
                                                     },
-                                                    "color": "#aaa"
+                                                    "against": 1
                                                 }
                                             ]
                                         }
@@ -14896,23 +14893,19 @@
                         "buffs": [],
                         "projectileBuffs": [
                             {
-                                "type": "mass",
-                                "radius": 0.0125,
-                                "maxTicks": 1200,
+                                "type": "lifeSteal",
+                                "damageMultiplier": 1,
                                 "cleansable": false,
-                                "renderers": [
-                                    {
-                                        "type": "reticule",
-                                        "minRadius": 0.048,
-                                        "radius": 0.05,
-                                        "arc": {
-                                            "type": "fixed",
-                                            "startAngleInRevs": 0,
-                                            "endAngleInRevs": 0.66
-                                        },
-                                        "color": "#aaa"
-                                    }
-                                ]
+                                "maxTicks": 1200,
+                                "render": {
+                                    "color": "#aaa",
+                                    "particleRadius": 0.001,
+                                    "emissionRadiusFactor": 1.5,
+                                    "ticks": 10,
+                                    "light": 1,
+                                    "invisible": true
+                                },
+                                "against": 1
                             }
                         ],
                         "behaviours": [
@@ -14950,15 +14943,19 @@
                                             "cleansable": false,
                                             "renderers": [
                                                 {
-                                                    "type": "reticule",
-                                                    "minRadius": 0.048,
-                                                    "radius": 0.05,
-                                                    "arc": {
-                                                        "type": "fixed",
-                                                        "startAngleInRevs": 0,
-                                                        "endAngleInRevs": 0.334
+                                                    "type": "lifeSteal",
+                                                    "damageMultiplier": 1,
+                                                    "cleansable": false,
+                                                    "maxTicks": 1200,
+                                                    "render": {
+                                                        "color": "#aaa",
+                                                        "particleRadius": 0.001,
+                                                        "emissionRadiusFactor": 2,
+                                                        "ticks": 10,
+                                                        "light": 1,
+                                                        "invisible": true
                                                     },
-                                                    "color": "#aaa"
+                                                    "against": 1
                                                 }
                                             ]
                                         }
@@ -15023,23 +15020,20 @@
                                     "buffs": [],
                                     "projectileBuffs": [
                                         {
-                                            "type": "mass",
-                                            "radius": 0.0125,
-                                            "maxTicks": 1200,
+                                            "type": "lifeSteal",
+                                            "damageMultiplier": 1,
+                                            "stack": "dead",
                                             "cleansable": false,
-                                            "renderers": [
-                                                {
-                                                    "type": "reticule",
-                                                    "minRadius": 0.048,
-                                                    "radius": 0.05,
-                                                    "arc": {
-                                                        "type": "fixed",
-                                                        "startAngleInRevs": 0,
-                                                        "endAngleInRevs": 1
-                                                    },
-                                                    "color": "#aaa"
-                                                }
-                                            ]
+                                            "maxTicks": 1200,
+                                            "render": {
+                                                "color": "#aaa",
+                                                "particleRadius": 0.001,
+                                                "emissionRadiusFactor": 1,
+                                                "ticks": 10,
+                                                "light": 1,
+                                                "invisible": true
+                                            },
+                                            "against": 1
                                         }
                                     ],
                                     "behaviours": [
@@ -15172,6 +15166,185 @@
                         ],
                         "renderers": []
                     }
+                },
+                {
+                    "type": "spawn",
+                    "triggers": [
+                        {
+                            "type": "collideWith",
+                            "triggerInterval": 1,
+                            "maxHits": 1,
+                            "collideWith": 8,
+                            "collideTypes": "cosmic"
+                        }
+                    ],
+                    "numProjectiles": 4,
+                    "spread": 0.75,
+                    "projectile": {
+                        "density": 22,
+                        "radius": 0.01,
+                        "speed": 0.2,
+                        "maxTicks": 900,
+                        "damage": 5,
+                        "expireAgainstObjects": 1,
+                        "lifeSteal": 0,
+                        "categories": 6,
+                        "sound": null,
+                        "soundHit": null,
+                        "color": "#aaa",
+                        "renderers": [
+                            {
+                                "type": "projectile",
+                                "ticks": 1
+                            }
+                        ],
+                        "projectileBuffs": [],
+                        "sensor": true,
+                        "expireOn": 96,
+                        "destructible": {
+                            "against": 15
+                        },
+                        "behaviours": [
+                            {
+                                "type": "homing",
+                                "targetType": "self",
+                                "maxTurnProportion": -1
+                            },
+                            {
+                                "type": "spawn",
+                                "triggers": [
+                                    {
+                                        "type": "interval",
+                                        "triggerInterval": 3
+                                    }
+                                ],
+                                "numProjectiles": 1,
+                                "spread": 0.8,
+                                "requireParent": true,
+                                "projectile": {
+                                    "density": 22,
+                                    "radius": 0.01,
+                                    "speed": 0.1,
+                                    "sensor": true,
+                                    "maxTicks": 480,
+                                    "damage": 5,
+                                    "lifeSteal": 0,
+                                    "categories": 6,
+                                    "expireAgainstObjects": 1,
+                                    "sound": null,
+                                    "destructible": {
+                                        "against": 15
+                                    },
+                                    "soundHit": null,
+                                    "color": "#aaa",
+                                    "behaviours": [
+                                        {
+                                            "type": "expire",
+                                            "triggers": [
+                                                {
+                                                    "type": "collideWith",
+                                                    "collideWith": 96
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "renderers": [
+                                        {
+                                            "type": "projectile",
+                                            "ticks": 1
+                                        }
+                                    ],
+                                    "expireOn": 96
+                                }
+                            },
+                            {
+                                "type": "spawn",
+                                "triggers": [
+                                    {
+                                        "type": "interval",
+                                        "triggerInterval": 120
+                                    }
+                                ],
+                                "numProjectiles": 10,
+                                "spread": 0.9,
+                                "requireParent": true,
+                                "projectile": {
+                                    "density": 22,
+                                    "radius": 0.01,
+                                    "speed": 0.2,
+                                    "sensor": true,
+                                    "maxTicks": 480,
+                                    "damage": 5,
+                                    "expireAgainstObjects": 1,
+                                    "lifeSteal": 0,
+                                    "categories": 6,
+                                    "sound": null,
+                                    "destructible": {
+                                        "against": 15
+                                    },
+                                    "soundHit": null,
+                                    "color": "#aaa",
+                                    "behaviours": [
+                                        {
+                                            "type": "expire",
+                                            "triggers": [
+                                                {
+                                                    "type": "collideWith",
+                                                    "collideWith": 96
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "renderers": [
+                                        {
+                                            "type": "projectile",
+                                            "ticks": 1
+                                        }
+                                    ],
+                                    "expireOn": 96
+                                }
+                            },
+                            {
+                                "type": "spawn",
+                                "triggers": [
+                                    {
+                                        "type": "afterTicks",
+                                        "afterTicks": 900
+                                    }
+                                ],
+                                "requireParent": true,
+                                "projectile": {
+                                    "density": 0.001,
+                                    "attractable": false,
+                                    "radius": 2,
+                                    "speed": 0,
+                                    "maxTicks": 40,
+                                    "damage": 0,
+                                    "expireOn": 0,
+                                    "expireAgainstObjects": 1,
+                                    "destroying": true,
+                                    "categories": 38,
+                                    "lifeSteal": 0,
+                                    "sensor": true,
+                                    "buffs": [],
+                                    "projectileBuffs": [],
+                                    "behaviours": [],
+                                    "color": "#aaa",
+                                    "renderers": [
+                                        {
+                                            "type": "reticule",
+                                            "radius": 2,
+                                            "light": null,
+                                            "shine": 0,
+                                            "shrinkTicks": 40,
+                                            "grow": true,
+                                            "fade": true
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
                 }
             ]
         }
@@ -15183,384 +15356,48 @@
             "background": "#222",
             "obstacles": [
                 {
-                    "type": "inward",
-                    "numObstacles": 4,
-                    "layoutRadius": 0.82,
-                    "layoutAngleOffsetInRevs": 0.125,
-                    "numPoints": 4,
-                    "extent": 0.12,
-                    "orientationAngleOffsetInRevs": 0,
-                    "angularWidthInRevs": 0.25
-                },
-                {
-                    "type": "inward",
-                    "numObstacles": 4,
-                    "layoutRadius": 0.42,
-                    "layoutAngleOffsetInRevs": 0.125,
-                    "numPoints": 4,
-                    "extent": 0.12,
-                    "orientationAngleOffsetInRevs": 0,
-                    "angularWidthInRevs": 0.25
-                },
-                {
-                    "type": "fast",
-                    "layoutRadius": 0.34,
-                    "numObstacles": 1,
-                    "layoutAngleOffsetInRevs": 0.75,
-                    "numPoints": 4,
-                    "extent": 0.08
-                },
-                {
-                    "type": "slow",
-                    "layoutRadius": 0.34,
-                    "numObstacles": 1,
-                    "layoutAngleOffsetInRevs": 0.25,
-                    "numPoints": 4,
-                    "extent": 0.08
-                },
-                {
                     "type": "left",
-                    "layoutRadius": 0.12,
-                    "numObstacles": 2,
-                    "layoutAngleOffsetInRevs": 0.125,
-                    "numPoints": 4,
-                    "extent": 0.003,
-                    "angularWidthInRevs": 0.08
-                },
-                {
-                    "type": "vanish2",
-                    "layoutRadius": 0.09,
-                    "numObstacles": 2,
-                    "layoutAngleOffsetInRevs": 0.375,
-                    "numPoints": 4,
-                    "extent": 0.08
-                },
-                {
-                    "type": "a",
-                    "numObstacles": 4,
                     "layoutRadius": 0.3,
-                    "layoutAngleOffsetInRevs": 0.125,
-                    "numPoints": 4,
-                    "extent": 0.0025,
-                    "orientationAngleOffsetInRevs": 0,
-                    "angularWidthInRevs": 0.25
-                },
-                {
-                    "type": "forcefield",
-                    "numObstacles": 2,
-                    "layoutRadius": 0.18,
-                    "layoutAngleOffsetInRevs": 0.125,
-                    "numPoints": 4,
-                    "extent": 0.0015,
-                    "orientationAngleOffsetInRevs": 0.1,
-                    "angularWidthInRevs": 0.25
-                },
-                {
-                    "type": "forcefield1",
-                    "numObstacles": 1,
-                    "layoutRadius": 0,
-                    "layoutAngleOffsetInRevs": 0.5,
-                    "numPoints": 4,
-                    "extent": 0.05
-                },
-                {
-                    "type": "cosmic",
-                    "numObstacles": 1,
-                    "layoutRadius": 0,
-                    "layoutAngleOffsetInRevs": 0.5,
-                    "numPoints": 4,
-                    "extent": 0.035
-                }
-            ],
-            "numPoints": 4
-        },
-        "circle2": {
-            "id": "circle2",
-            "color": "#555",
-            "background": "#222",
-            "obstacles": [
-                {
-                    "type": "inward",
                     "numObstacles": 4,
-                    "layoutRadius": 0.82,
                     "layoutAngleOffsetInRevs": 0.125,
-                    "numPoints": 4,
-                    "extent": 0.12,
-                    "orientationAngleOffsetInRevs": 0,
-                    "angularWidthInRevs": 0.25
-                },
-                {
-                    "type": "inward",
-                    "numObstacles": 4,
-                    "layoutRadius": 0.42,
-                    "layoutAngleOffsetInRevs": 0.125,
-                    "numPoints": 4,
-                    "extent": 0.12,
-                    "orientationAngleOffsetInRevs": 0,
-                    "angularWidthInRevs": 0.25
-                },
-                {
-                    "type": "fast",
-                    "layoutRadius": 0.34,
-                    "numObstacles": 1,
-                    "layoutAngleOffsetInRevs": 0.5,
-                    "numPoints": 4,
-                    "extent": 0.08
-                },
-                {
-                    "type": "slow",
-                    "layoutRadius": 0.34,
-                    "numObstacles": 1,
-                    "layoutAngleOffsetInRevs": 0,
-                    "numPoints": 4,
-                    "extent": 0.08
-                },
-                {
-                    "type": "vanish2",
-                    "layoutRadius": 0.1,
-                    "numObstacles": 2,
-                    "numPoints": 4,
-                    "extent": 0.07
-                },
-                {
-                    "type": "left",
-                    "layoutRadius": 0.12,
-                    "numObstacles": 2,
-                    "layoutAngleOffsetInRevs": 0.25,
-                    "numPoints": 4,
-                    "extent": 0.003,
-                    "angularWidthInRevs": 0.08
-                },
-                {
-                    "type": "a",
-                    "numObstacles": 4,
-                    "layoutRadius": 0.3,
-                    "layoutAngleOffsetInRevs": 0.125,
-                    "numPoints": 4,
-                    "extent": 0.0025,
-                    "orientationAngleOffsetInRevs": 0,
-                    "angularWidthInRevs": 0.25
-                },
-                {
-                    "type": "forcefield",
-                    "numObstacles": 2,
-                    "layoutRadius": 0.18,
-                    "layoutAngleOffsetInRevs": 0.375,
-                    "numPoints": 4,
-                    "extent": 0.0015,
-                    "orientationAngleOffsetInRevs": 0.25,
-                    "angularWidthInRevs": 0.08
-                },
-                {
-                    "type": "forcefield",
-                    "numObstacles": 2,
-                    "layoutRadius": 0.13,
-                    "layoutAngleOffsetInRevs": 0.06,
-                    "numPoints": 4,
-                    "extent": 0.0015,
-                    "orientationAngleOffsetInRevs": 0.5655,
-                    "angularWidthInRevs": 0.12
-                },
-                {
-                    "type": "forcefield1",
-                    "numObstacles": 1,
-                    "layoutRadius": 0,
-                    "layoutAngleOffsetInRevs": 0.5,
-                    "numPoints": 4,
-                    "extent": 0.05
-                },
-                {
-                    "type": "cosmic",
-                    "numObstacles": 1,
-                    "layoutRadius": 0,
-                    "layoutAngleOffsetInRevs": 0.5,
-                    "numPoints": 4,
-                    "extent": 0.035
-                }
-            ],
-            "numPoints": 4
-        },
-        "circle3": {
-            "id": "circle3",
-            "color": "#555",
-            "background": "#222",
-            "obstacles": [
-                {
-                    "type": "inward",
-                    "numObstacles": 4,
-                    "layoutRadius": 0.82,
-                    "layoutAngleOffsetInRevs": 0.125,
-                    "numPoints": 4,
-                    "extent": 0.12,
-                    "orientationAngleOffsetInRevs": 0,
-                    "angularWidthInRevs": 0.25
-                },
-                {
-                    "type": "inward",
-                    "numObstacles": 4,
-                    "layoutRadius": 0.42,
-                    "layoutAngleOffsetInRevs": 0.125,
-                    "numPoints": 4,
-                    "extent": 0.12,
-                    "orientationAngleOffsetInRevs": 0,
-                    "angularWidthInRevs": 0.25
-                },
-                {
-                    "type": "slow",
-                    "layoutRadius": 0.34,
-                    "numObstacles": 1,
-                    "layoutAngleOffsetInRevs": 0.75,
-                    "numPoints": 4,
-                    "extent": 0.08
-                },
-                {
-                    "type": "fast",
-                    "layoutRadius": 0.34,
-                    "numObstacles": 1,
-                    "layoutAngleOffsetInRevs": 0.25,
-                    "numPoints": 4,
-                    "extent": 0.08
-                },
-                {
-                    "type": "vanish2",
-                    "layoutRadius": 0.12,
-                    "numObstacles": 2,
-                    "layoutAngleOffsetInRevs": 0.125,
-                    "numPoints": 4,
-                    "extent": 0.05,
-                    "angularWidthInRevs": 0.25
-                },
-                {
-                    "type": "a",
-                    "numObstacles": 4,
-                    "layoutRadius": 0.3,
-                    "layoutAngleOffsetInRevs": 0.125,
-                    "numPoints": 4,
-                    "extent": 0.0025,
-                    "orientationAngleOffsetInRevs": 0,
-                    "angularWidthInRevs": 0.25
-                },
-                {
-                    "type": "left",
-                    "layoutRadius": 0.12,
-                    "numObstacles": 2,
-                    "layoutAngleOffsetInRevs": 0.375,
-                    "numPoints": 4,
-                    "extent": 0.003,
-                    "angularWidthInRevs": 0.08
-                },
-                {
-                    "type": "forcefield",
-                    "numObstacles": 2,
-                    "layoutRadius": 0.25,
-                    "layoutAngleOffsetInRevs": 0.125,
-                    "numPoints": 4,
-                    "extent": 0.0015,
-                    "angularWidthInRevs": 0.1
-                },
-                {
-                    "type": "forcefield",
-                    "numObstacles": 2,
-                    "layoutRadius": 0.15,
-                    "layoutAngleOffsetInRevs": 0.375,
-                    "numPoints": 4,
-                    "extent": 0.0015,
-                    "angularWidthInRevs": 0.1
-                },
-                {
-                    "type": "forcefield1",
-                    "numObstacles": 1,
-                    "layoutRadius": 0,
-                    "layoutAngleOffsetInRevs": 0.5,
-                    "numPoints": 4,
-                    "extent": 0.05
-                },
-                {
-                    "type": "cosmic",
-                    "numObstacles": 1,
-                    "layoutRadius": 0,
-                    "layoutAngleOffsetInRevs": 0.5,
-                    "numPoints": 4,
-                    "extent": 0.035
-                }
-            ],
-            "numPoints": 4
-        },
-        "circle4": {
-            "id": "circle4",
-            "color": "#555",
-            "background": "#222",
-            "obstacles": [
-                {
-                    "type": "inward",
-                    "numObstacles": 4,
-                    "layoutRadius": 0.82,
-                    "layoutAngleOffsetInRevs": 0.125,
-                    "numPoints": 4,
-                    "extent": 0.12,
-                    "orientationAngleOffsetInRevs": 0,
-                    "angularWidthInRevs": 0.25
-                },
-                {
-                    "type": "inward",
-                    "numObstacles": 4,
-                    "layoutRadius": 0.42,
-                    "layoutAngleOffsetInRevs": 0.125,
-                    "numPoints": 4,
-                    "extent": 0.12,
-                    "orientationAngleOffsetInRevs": 0,
-                    "angularWidthInRevs": 0.25
-                },
-                {
-                    "type": "slow",
-                    "layoutRadius": 0.34,
-                    "numObstacles": 1,
-                    "layoutAngleOffsetInRevs": 0.5,
-                    "numPoints": 4,
-                    "extent": 0.08
-                },
-                {
-                    "type": "fast",
-                    "layoutRadius": 0.34,
-                    "numObstacles": 1,
-                    "layoutAngleOffsetInRevs": 0,
-                    "numPoints": 4,
-                    "extent": 0.08
-                },
-                {
-                    "type": "vanish2",
-                    "layoutRadius": 0.34,
-                    "numObstacles": 4,
-                    "numPoints": 4,
-                    "extent": 0.08
-                },
-                {
-                    "type": "left",
-                    "layoutRadius": 0.12,
-                    "numObstacles": 4,
-                    "layoutAngleOffsetInRevs": 0.25,
                     "numPoints": 4,
                     "extent": 0.003,
                     "angularWidthInRevs": 0.08
                 },
                 {
                     "type": "vanish2",
-                    "layoutRadius": 0.24,
+                    "layoutRadius": 0.235,
                     "numObstacles": 4,
+                    "layoutAngleOffsetInRevs": 0.375,
                     "orientationAngleOffsetInRevs": 0.125,
-                    "layoutAngleOffsetInRevs": 0.125,
                     "numPoints": 4,
                     "extent": 0.08
                 },
                 {
+                    "type": "forcefield1",
+                    "numObstacles": 1,
+                    "layoutRadius": 0,
+                    "layoutAngleOffsetInRevs": 0.5,
+                    "numPoints": 4,
+                    "extent": 0.15
+                },
+                {
                     "type": "a",
                     "numObstacles": 4,
-                    "layoutRadius": 0.3,
+                    "layoutRadius": 0.45,
                     "layoutAngleOffsetInRevs": 0.125,
                     "numPoints": 4,
                     "extent": 0.0025,
                     "orientationAngleOffsetInRevs": 0,
-                    "angularWidthInRevs": 0.25
+                    "angularWidthInRevs": 0.15
+                },
+                {
+                    "type": "cosmic",
+                    "numObstacles": 1,
+                    "layoutRadius": 0,
+                    "layoutAngleOffsetInRevs": 0.5,
+                    "numPoints": 4,
+                    "extent": 0.005
                 },
                 {
                     "type": "forcefield",
@@ -15570,82 +15407,9 @@
                     "numPoints": 4,
                     "extent": 0.05,
                     "angularWidthInRevs": 0.005
-                },
-                {
-                    "type": "forcefield1",
-                    "numObstacles": 1,
-                    "layoutRadius": 0,
-                    "layoutAngleOffsetInRevs": 0.5,
-                    "numPoints": 4,
-                    "extent": 0.05
-                },
-                {
-                    "type": "cosmic",
-                    "numObstacles": 1,
-                    "layoutRadius": 0,
-                    "layoutAngleOffsetInRevs": 0.5,
-                    "numPoints": 4,
-                    "extent": 0.035
                 }
             ],
             "numPoints": 4
-        },
-        "cold": {
-            "$delete": true
-        },
-        "double": {
-            "$delete": true
-        },
-        "exit": {
-            "$delete": true
-        },
-        "heal": {
-            "$delete": true
-        },
-        "innerStar": {
-            "$delete": true
-        },
-        "inside5": {
-            "$delete": true
-        },
-        "mirrorhenge": {
-            "$delete": true
-        },
-        "mirrors": {
-            "$delete": true
-        },
-        "octogon": {
-            "$delete": true
-        },
-        "pepper": {
-            "$delete": true
-        },
-        "return": {
-            "$delete": true
-        },
-        "ring": {
-            "$delete": true
-        },
-        "single": {
-            "$delete": true
-        },
-        "snowflake": {
-            "$delete": true
-        },
-        "spiral": {
-            "$delete": true
-        },
-        "square": {
-            "$delete": true
-        },
-        "surrounded": {
-            "$delete": true
-        },
-        "triplet": {
-            "$delete": true
-        },
-        "tripletSwirl": {
-            "$delete": true
         }
     },
     "ObstacleTemplates": {
@@ -15699,9 +15463,8 @@
         },
         "cosmic": {
             "id": "cosmic",
-            "health": 600,
+            "health": 10,
             "collideWith": 1,
-            "sensor": true,
             "static": true,
             "strike": {
                 "ticks": 15,
@@ -15728,18 +15491,22 @@
             ],
             "buffs": [
                 {
-                    "type": "cooldown",
-                    "maxTicks": 12000,
-                    "collideWith": 1,
+                    "type": "movement",
+                    "maxTicks": 900,
                     "cleansable": false,
-                    "cooldownRateModifier": 0.05,
-                    "render": {
-                        "color": "rgba(255,255,255,1)",
-                        "alpha": 0.01,
-                        "ticks": 10,
-                        "emissionRadiusFactor": 0,
-                        "particleRadius": 0.0125
-                    }
+                    "movementProportion": 0
+                },
+                {
+                    "type": "cooldown",
+                    "cleansable": false,
+                    "maxTicks": 900,
+                    "minCooldown": 90
+                },
+                {
+                    "type": "mass",
+                    "maxTicks": 900,
+                    "cleansable": false,
+                    "radius": 0.0125
                 }
             ]
         },
@@ -15861,16 +15628,16 @@
             "render": [
                 {
                     "type": "solid",
-                    "deadColor": "rgba(64, 255, 255, 0.05)",
-                    "color": "rgba(255, 64, 64, 0.05)",
+                    "deadColor": "rgba(255, 255, 255, 0.05)",
+                    "color": "rgba(0, 0, 0, 0.05)",
                     "shadow": true,
                     "flash": false,
                     "expand": 0.003
                 },
                 {
                     "type": "solid",
-                    "color": "rgba(64, 255, 255, 0.15)",
-                    "deadColor": "rgba(255, 64, 64, 0.15)",
+                    "color": "rgba(0, 0, 0, 0.05)",
+                    "deadColor": "rgba(255, 255, 255, 0.15)",
                     "glow": 0.2,
                     "light": 0.9
                 }

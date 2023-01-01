@@ -1,5 +1,5 @@
 {
-	"InitialRadius": 0.4,
+	"InitialRadius": 0.6,
 	"HeroLayoutProportion": 0.625,
 	"HeroResetProportion": 0.625,
 	"LavaDamageInterval": 20,
@@ -18,14 +18,11 @@
 	"SlopSpeed": 0.001,
 	"SwatchHealth": 100,
 	"BotName": "AcolyteBot",
-	"DefaultGameStartMessage": "Yellow grants 30% physical resistance. Blue grants 30% Arts resistance. You can shoot over walls if you're near them.",
+	"DefaultGameStartMessage": "Resistance is percentage based. Defense is a flat penalty. You can shoot over walls if you're near them. The center, when unlocked, creates a bullet-hell.",
 	"SlopRadius": 0.05,
 	"SwapDistanceReduction": 0.01,
 	"MaxLifeSteal": 100,
 	"Layouts": [
-		"circle",
-		"circle2",
-		"circle3",
-		"circle4"
+		"circle"
 	]
 }

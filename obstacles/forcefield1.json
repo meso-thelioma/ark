@@ -13,16 +13,16 @@
 	"render": [
 		{
 			"type": "solid",
-			"deadColor": "rgba(64, 255, 255, 0.05)",
-			"color": "rgba(255, 64, 64, 0.05)",
+			"deadColor": "rgba(255, 255, 255, 0.05)",
+			"color": "rgba(0, 0, 0, 0.05)",
 			"shadow": true,
 			"flash": false,
 			"expand": 0.003
 		},
 		{
 			"type": "solid",
-			"color": "rgba(64, 255, 255, 0.15)",
-			"deadColor": "rgba(255, 64, 64, 0.15)",
+			"color": "rgba(0, 0, 0, 0.05)",
+			"deadColor": "rgba(255, 255, 255, 0.15)",
 			"glow": 0.2,
 			"light": 0.9
 		}

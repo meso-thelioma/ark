@@ -16,25 +16,21 @@
 	"color": "#0f0",
 	"buffs": [],
 	"projectileBuffs": [
-		{
-			"type": "mass",
-			"radius": 0.0125,
-			"maxTicks": 1200,
-			"cleansable": false,
-			"renderers": [
-				{
-					"type": "reticule",
-					"minRadius": 0.048,
-					"radius": 0.05,
-					"arc": {
-						"type": "fixed",
-						"startAngleInRevs": 0,
-						"endAngleInRevs": 0.66
-					},
-					"color": "#aaa"
-				}
-			]
-		}
+			{
+				"type": "lifeSteal",
+				"damageMultiplier": 1,
+				"cleansable": false,
+				"maxTicks": 1200,
+				"render": {
+					"color": "#aaa",
+					"particleRadius": 0.001,
+					"emissionRadiusFactor": 1.5,
+					"ticks": 10,
+					"light": 1,
+					"invisible": true
+				},
+				"against": 1
+			}
 	],
 	"behaviours": [
 		{
@@ -71,15 +67,19 @@
 						"cleansable": false,
 						"renderers": [
 							{
-								"type": "reticule",
-								"minRadius": 0.048,
-								"radius": 0.05,
-								"arc": {
-									"type": "fixed",
-									"startAngleInRevs": 0,
-									"endAngleInRevs": 0.334
+								"type": "lifeSteal",
+								"damageMultiplier": 1,
+								"cleansable": false,
+								"maxTicks": 1200,
+								"render": {
+									"color": "#aaa",
+									"particleRadius": 0.001,
+									"emissionRadiusFactor": 2,
+									"ticks": 10,
+									"light": 1,
+									"invisible": true
 								},
-								"color": "#aaa"
+								"against": 1
 							}
 						]
 					}
@@ -144,23 +144,20 @@
 				"buffs": [],
 				"projectileBuffs": [
 					{
-						"type": "mass",
-						"radius": 0.0125,
-						"maxTicks": 1200,
+						"type": "lifeSteal",
+						"damageMultiplier": 1,
+						"stack": "dead",
 						"cleansable": false,
-						"renderers": [
-							{
-								"type": "reticule",
-								"minRadius": 0.048,
-								"radius": 0.05,
-								"arc": {
-									"type": "fixed",
-									"startAngleInRevs": 0,
-									"endAngleInRevs": 1
-								},
-								"color": "#aaa"
-							}
-						]
+						"maxTicks": 1200,
+						"render": {
+							"color": "#aaa",
+							"particleRadius": 0.001,
+							"emissionRadiusFactor": 1,
+							"ticks": 10,
+							"light": 1,
+							"invisible": true
+						},
+						"against": 1
 					}
 				],
 				"behaviours": [
