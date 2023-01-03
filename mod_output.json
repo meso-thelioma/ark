@@ -4313,7 +4313,7 @@
                 "radius": 0.01,
                 "collideWith": 1,
                 "speed": 0.4,
-                "maxTicks": 30,
+                "maxTicks": 1200,
                 "expireOn": 2,
                 "expireAgainstObjects": 1,
                 "damage": 0,
