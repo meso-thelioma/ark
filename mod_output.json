@@ -897,7 +897,7 @@
                                         "maxTicks": 600,
                                         "damage": 0,
                                         "lifeSteal": 0,
-                                        "categories": 16,
+                                        "categories": 6,
                                         "sound": "fireball",
                                         "soundHit": "standard",
                                         "color": "#42d4f411",
@@ -922,7 +922,8 @@
                                                         "type": "collideWith",
                                                         "collideWith": 2,
                                                         "notCollideTypes": [
-                                                            "gel3"
+                                                            "gel3",
+                                                            "test"
                                                         ],
                                                         "triggerInterval": 5,
                                                         "maxHits": 1000000
@@ -3801,7 +3802,7 @@
         },
         "gol": {
             "id": "gol",
-            "name": "Springtime",
+            "name": "Confectioner",
             "description": "Arts Burst with flexible damage.",
             "passive": true,
             "untargeted": true,
@@ -3894,7 +3895,7 @@
             "action": "focus",
             "color": "#fabed4",
             "icon": "andromedaChain",
-            "name": "Eluding Sun",
+            "name": "Devil's Food",
             "maxAngleDiffInRevs": 0.01,
             "throttle": true,
             "effects": [
@@ -4145,20 +4146,14 @@
         },
         "gol2": {
             "id": "gol2",
-            "description": "Backstep. If a projectile would have collided, cast a flower that continously lowers Gladiolus cooldown.",
+            "description": "Backstep. If a projectile would have collided, stop projectiles and targets.",
             "action": "projectile",
             "color": "#fabed4",
             "icon": "andromedaChain",
-            "name": "Forget Me Not",
+            "name": "Black Forest",
             "maxAngleDiffInRevs": 0.01,
             "cooldown": 300,
-            "effects": [
-                {
-                    "icon": "fas fa-address-card",
-                    "title": "Arts Damage",
-                    "text": "Damage * (1 - Resistance) * Buffs"
-                }
-            ],
+            "effects": [],
             "throttle": true,
             "recoil": 0.35,
             "projectile": {
@@ -4203,39 +4198,63 @@
                         "triggers": [
                             {
                                 "type": "collideWith",
-                                "collideWith": 57142,
+                                "collideWith": 57342,
                                 "against": 14
                             }
                         ],
                         "expire": true,
                         "projectile": {
                             "density": 1,
-                            "radius": 0.008,
-                            "speed": 0.05,
-                            "maxTicks": 2400,
+                            "radius": 0.0146,
+                            "speed": 0,
+                            "maxTicks": 30,
                             "damage": 0,
                             "lifeSteal": 0,
                             "categories": 2,
+                            "sensor": true,
                             "sound": "fireball",
-                            "expireOn": 8192,
+                            "expireOn": 0,
                             "soundHit": "standard",
-                            "expireAgainstObjects": 1,
                             "minTicks": 30,
                             "color": "#fabed4",
                             "buffs": [],
-                            "projectileBuffs": [
-                                {
-                                    "type": "cooldown",
-                                    "cleansable": false,
-                                    "maxTicks": 48000,
-                                    "cooldownRateModifier": 0.5,
-                                    "spellId": "gol3"
-                                }
-                            ],
+                            "projectileBuffs": [],
                             "behaviours": [
                                 {
-                                    "type": "homing",
-                                    "targetType": "close"
+                                    "type": "aura",
+                                    "against": 14,
+                                    "radius": 0.1,
+                                    "tickInterval": 1,
+                                    "packet": {
+                                        "damage": 0,
+                                        "noHit": true,
+                                        "lifeSteal": 0
+                                    },
+                                    "buffs": [
+                                        {
+                                            "type": "movement",
+                                            "against": 12,
+                                            "maxTicks": 1,
+                                            "render": {
+                                                "color": "#fabed422",
+                                                "particleRadius": 0.015,
+                                                "emissionRadiusFactor": 0,
+                                                "ticks": 10,
+                                                "light": 1,
+                                                "invisible": true
+                                            },
+                                            "movementProportion": 0
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "attract",
+                                    "collideLike": 65535,
+                                    "categories": 65535,
+                                    "against": 14,
+                                    "radius": 0.1,
+                                    "accelerationPerTick": 0,
+                                    "clampSpeed": 1e-08
                                 }
                             ],
                             "renderers": [
@@ -4249,7 +4268,7 @@
                                     "ticks": 1,
                                     "loopTicks": 120,
                                     "numParticles": 3,
-                                    "radius": 0.007,
+                                    "radius": 0.1,
                                     "particleRadius": 0.002
                                 }
                             ]
@@ -4267,11 +4286,11 @@
         },
         "gol3": {
             "id": "gol3",
-            "description": "If the caster's flowers are hit, deal 16 Arts damage. All skills will have its cooldown reset if the caster hits a drone.",
+            "description": "Deal 30 Arts damage; the target will heal a non-stacking 1 health per second.",
             "action": "projectile",
             "color": "#fabed4",
             "icon": "andromedaChain",
-            "name": "Gladiolus",
+            "name": "What Baking Can Do",
             "maxAngleDiffInRevs": 0.01,
             "cooldown": 600,
             "throttle": true,
@@ -4281,87 +4300,57 @@
                     "icon": "fas fa-address-card",
                     "title": "Arts Damage",
                     "text": "Damage * (1 - Resistance) * Buffs"
+                },
+                {
+                    "icon": "fas fa-address-card",
+                    "title": "Healing",
+                    "text": "Heal * Buffs"
                 }
             ],
             "buffs": [],
             "projectile": {
                 "density": 0.01,
                 "radius": 0.01,
-                "collideWith": 2,
-                "speed": 0.9,
+                "collideWith": 1,
+                "speed": 0.4,
                 "maxTicks": 30,
                 "expireOn": 2,
                 "expireAgainstObjects": 1,
                 "damage": 0,
                 "lifeSteal": 0,
-                "categories": 8195,
+                "categories": 1,
+                "speedDamping": 4,
                 "sound": "fireball",
                 "soundHit": "standard",
                 "color": "#fabed412",
                 "projectileBuffs": [],
-                "behaviours": [
+                "behaviours": [],
+                "buffs": [
                     {
-                        "type": "spawn",
-                        "triggers": [
-                            {
-                                "type": "collideWith",
-                                "collideWith": 2,
-                                "collideTypes": [
-                                    "gol2"
-                                ],
-                                "against": 1
-                            }
-                        ],
-                        "numProjectiles": 4,
-                        "spread": 0.75,
-                        "projectile": {
-                            "density": 0.5,
-                            "attractable": false,
-                            "radius": 0.06,
-                            "speed": 0,
-                            "maxTicks": 5,
-                            "damage": 0,
-                            "lifeSteal": 0.3,
-                            "categories": 6,
-                            "expireOn": 65526,
-                            "sensor": true,
-                            "sound": "fireball",
-                            "color": "#fabed4",
-                            "buffs": [
-                                {
-                                    "type": "burn",
-                                    "hitInterval": 1,
-                                    "maxTicks": 1,
-                                    "packet": {
-                                        "source": "arts",
-                                        "lifeSteal": 0,
-                                        "damage": 4
-                                    }
-                                }
-                            ],
-                            "projectileBuffs": [
-                                {
-                                    "type": "cooldown",
-                                    "owner": true,
-                                    "maxCooldown": 1,
-                                    "color": "#fabed4"
-                                }
-                            ],
-                            "renderers": [
-                                {
-                                    "type": "projectile",
-                                    "ticks": 10,
-                                    "glow": 0.2,
-                                    "bloom": 0.005,
-                                    "vanish": 1,
-                                    "light": 0.4
-                                }
-                            ],
-                            "behaviours": []
+                        "type": "burn",
+                        "hitInterval": 1,
+                        "against": 15,
+                        "maxTicks": 1,
+                        "packet": {
+                            "source": "arts",
+                            "lifeSteal": 0,
+                            "damage": 30
+                        }
+                    },
+                    {
+                        "type": "burn",
+                        "stack": "eyjaheal",
+                        "maxStacks": 1,
+                        "hitInterval": 6,
+                        "cleansable": false,
+                        "maxTicks": 2400,
+                        "packet": {
+                            "source": "heal",
+                            "lifeSteal": 0,
+                            "damage": -0.1
                         }
                     }
                 ],
-                "buffs": [],
                 "renderers": [
                     {
                         "type": "projectile",
@@ -9027,7 +9016,7 @@
                 "density": 2,
                 "radius": 0.003,
                 "speed": 0.9,
-                "maxTicks": 10,
+                "maxTicks": 30,
                 "damage": 0,
                 "lifeSteal": 0,
                 "categories": 2,
@@ -9054,6 +9043,13 @@
                             "afterTicks": 1
                         },
                         "collideWith": 65535
+                    },
+                    {
+                        "type": "homing",
+                        "targetType": "self",
+                        "trigger": {
+                            "afterTicks": 10
+                        }
                     }
                 ],
                 "renderers": [
@@ -15227,7 +15223,7 @@
                                     "speed": 0.1,
                                     "sensor": true,
                                     "maxTicks": 480,
-                                    "damage": 5,
+                                    "damage": 10,
                                     "lifeSteal": 0,
                                     "categories": 6,
                                     "expireAgainstObjects": 1,
@@ -15270,11 +15266,11 @@
                                 "requireParent": true,
                                 "projectile": {
                                     "density": 22,
-                                    "radius": 0.01,
+                                    "radius": 0.018,
                                     "speed": 0.2,
                                     "sensor": true,
                                     "maxTicks": 480,
-                                    "damage": 5,
+                                    "damage": 10,
                                     "expireAgainstObjects": 1,
                                     "lifeSteal": 0,
                                     "categories": 6,

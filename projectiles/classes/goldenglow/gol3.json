@@ -1,81 +1,46 @@
 {
 	"density": 0.01,
 	"radius": 0.01,
-	"collideWith": 2,
-	"speed": 0.9,
+	"collideWith": 1,
+	"speed": 0.4,
 	"maxTicks": 30,
 	"expireOn": 2,
 	"expireAgainstObjects": 1,
 	"damage": 0,
 	"lifeSteal": 0,
-	"categories": 8195,
+	"categories": 1,
+	"speedDamping": 4,
 	"sound": "fireball",
 	"soundHit": "standard",
 	"color": "#fabed412",
 	"projectileBuffs": [],
-	"behaviours": [
+	"behaviours": [],
+	"buffs": [
 		{
-			"type": "spawn",
-			"triggers": [
-				{
-					"type": "collideWith",
-					"collideWith": 2,
-					"collideTypes": [
-						"gol2"
-					],
-					"against": 1
-				}
-			],
-			"numProjectiles": 4,
-			"spread": 0.75,
-			"projectile": {
-				"density": 0.5,
-				"attractable": false,
-				"radius": 0.06,
-				"speed": 0,
-				"maxTicks": 5,
-				"damage": 0,
-				"lifeSteal": 0.3,
-				"categories": 6,
-				"expireOn": 65526,
-				"sensor": true,
-				"sound": "fireball",
-				"color": "#fabed4",
-				"buffs": [
-					{
-						"type": "burn",
-						"hitInterval": 1,
-						"maxTicks": 1,
-						"packet": {
-							"source": "arts",
-							"lifeSteal": 0,
-							"damage": 4
-						}
-					}
-				],
-				"projectileBuffs": [		
-					{
-						"type": "cooldown",
-						"owner": true,
-						"maxCooldown": 1,
-						"color": "#fabed4"
-					}
-				],
-				"renderers": [
-					{
-						"type": "projectile",
-						"ticks": 10,
-						"glow": 0.2,
-						"bloom": 0.005,
-						"vanish": 1,
-						"light": 0.4
-					}
-				],
-				"behaviours": []
+			"type": "burn",
+			"hitInterval": 1,
+			"against": 15,
+			"maxTicks": 1,
+			"packet": {
+				"source": "arts",
+				"lifeSteal": 0,
+				"damage": 30
+			}
+		},
+		{
+			"type": "burn",
+			"stack": "eyjaheal",
+			"maxStacks": 1,
+			"hitInterval": 6,
+			"cleansable": false,
+			"maxTicks": 2400,
+			"packet": {
+				"source": "heal",
+				"lifeSteal": 0,
+				"damage": -0.1
 			}
 		}
 	],
-	"buffs": [],
 	"renderers": [
 		{
 			"type": "projectile",

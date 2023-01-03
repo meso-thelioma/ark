@@ -1,19 +1,13 @@
 {
 	"id": "gol2",	
-	"description": "Backstep. If a projectile would have collided, cast a flower that continously lowers Gladiolus cooldown.",
+	"description": "Backstep. If a projectile would have collided, stop projectiles and targets.",
 	"action": "projectile",
 	"color": "#fabed4",
 	"icon": "andromedaChain",
-	"name": "Forget Me Not",
+	"name": "Black Forest",
 	"maxAngleDiffInRevs": 0.01,
 	"cooldown": 300,
-	"effects": [
-		{
-			"icon": "fas fa-address-card",
-			"title": "Arts Damage",
-			"text": "Damage * (1 - Resistance) * Buffs"
-		}
-	],
+	"effects": [],
 	"throttle": true,
 	"recoil": 0.35,
 	"projectile": "gol2-drone"

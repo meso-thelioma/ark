@@ -107,7 +107,7 @@
 							"maxTicks": 600,
 							"damage": 0,
 							"lifeSteal": 0,
-							"categories": 16,
+							"categories": 6,
 							"sound": "fireball",
 							"soundHit": "standard",
 							"color": "#42d4f411",
@@ -132,7 +132,8 @@
 											"type": "collideWith",
 											"collideWith": 2,
 											"notCollideTypes": [
-												"gel3"
+												"gel3",
+												"test"
 											],
 											"triggerInterval": 5,
 											"maxHits": 1000000

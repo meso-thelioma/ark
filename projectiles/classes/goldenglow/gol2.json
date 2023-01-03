@@ -1,31 +1,55 @@
 {
 	"density": 1,
-	"radius": 0.008,
-	"speed": 0.05,
-	"maxTicks": 2400,
+	"radius": 0.0146,
+	"speed": 0,
+	"maxTicks": 30,
 	"damage": 0,
 	"lifeSteal": 0,
 	"categories": 2,
+	"sensor": true,
 	"sound": "fireball",
-	"expireOn": 8192,
+	"expireOn": 0,
 	"soundHit": "standard",
-	"expireAgainstObjects": 1,
 	"minTicks": 30,
 	"color": "#fabed4",
 	"buffs": [],
-	"projectileBuffs": [
-		{
-			"type": "cooldown",
-			"cleansable": false,
-			"maxTicks": 48000,
-			"cooldownRateModifier": 0.5,
-			"spellId": "gol3"
-		}
-	],
+	"projectileBuffs": [],
 	"behaviours": [
 		{
-			"type": "homing",
-			"targetType": "close"
+			"type": "aura",
+			"against": 14,
+			"radius": 0.1,
+			"tickInterval": 1,
+			"packet": {
+				"damage": 0,
+				"noHit": true,
+				"lifeSteal": 0
+			},
+			"buffs": [
+				{
+					"type": "movement",
+					"against": 12,
+					"maxTicks": 1,
+					"render": {
+						"color": "#fabed422",
+						"particleRadius": 0.015,
+						"emissionRadiusFactor": 0,
+						"ticks": 10,
+						"light": 1,
+						"invisible": true
+					},
+					"movementProportion": 0
+				}
+			]
+		},		
+		{
+			"type": "attract",
+			"collideLike": 65535,
+			"categories": 65535,
+			"against": 14,
+			"radius": 0.1,
+			"accelerationPerTick": 0,
+			"clampSpeed": 0.00000001
 		}
 	],
 	"renderers": [
@@ -39,7 +63,7 @@
 			"ticks": 1,
 			"loopTicks": 120,
 			"numParticles": 3,
-			"radius": 0.007,
+			"radius": 0.1,
 			"particleRadius": 0.002
 		}
 	]

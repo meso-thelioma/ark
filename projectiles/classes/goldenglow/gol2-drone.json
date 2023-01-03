@@ -40,7 +40,7 @@
 			"triggers": [
 				{
 					"type": "collideWith",
-					"collideWith": 57142,
+					"collideWith": 57342,
 					"against": 14
 				}
 			],

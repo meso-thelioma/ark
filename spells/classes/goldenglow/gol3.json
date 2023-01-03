@@ -1,10 +1,10 @@
 {
 	"id": "gol3",
-	"description": "If the caster's flowers are hit, deal 16 Arts damage. All skills will have its cooldown reset if the caster hits a drone.",
+	"description": "Deal 30 Arts damage; the target will heal a non-stacking 1 health per second.",
 	"action": "projectile",
 	"color": "#fabed4",
 	"icon": "andromedaChain",
-	"name": "Gladiolus",
+	"name": "What Baking Can Do",
 	"maxAngleDiffInRevs": 0.01,
 	"cooldown": 600,	
 	"throttle": true,
@@ -14,6 +14,11 @@
 			"icon": "fas fa-address-card",
 			"title": "Arts Damage",
 			"text": "Damage * (1 - Resistance) * Buffs"
+		},
+		{
+			"icon": "fas fa-address-card",
+			"title": "Healing",
+			"text": "Heal * Buffs"
 		}
 	],
 	"buffs": [],
