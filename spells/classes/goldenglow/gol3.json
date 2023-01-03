@@ -8,7 +8,7 @@
 	"maxAngleDiffInRevs": 0.01,
 	"cooldown": 600,	
 	"throttle": true,
-	"recoil": -0.15,
+	"recoil": -0.5,
 	"effects": [
 		{
 			"icon": "fas fa-address-card",

@@ -4294,7 +4294,7 @@
             "maxAngleDiffInRevs": 0.01,
             "cooldown": 600,
             "throttle": true,
-            "recoil": -0.15,
+            "recoil": -0.5,
             "effects": [
                 {
                     "icon": "fas fa-address-card",
@@ -4312,46 +4312,84 @@
                 "density": 0.01,
                 "radius": 0.01,
                 "collideWith": 1,
-                "speed": 0.4,
+                "speed": 0,
                 "maxTicks": 1200,
-                "expireOn": 2,
-                "expireAgainstObjects": 1,
+                "expireOn": 1,
                 "damage": 0,
                 "lifeSteal": 0,
+                "minTicks": 5,
                 "categories": 1,
-                "speedDamping": 4,
                 "sound": "fireball",
                 "soundHit": "standard",
                 "color": "#fabed412",
                 "projectileBuffs": [],
-                "behaviours": [],
-                "buffs": [
+                "behaviours": [
                     {
-                        "type": "burn",
-                        "hitInterval": 1,
+                        "type": "aura",
+                        "radius": 0.012,
                         "against": 15,
-                        "maxTicks": 1,
                         "packet": {
-                            "source": "arts",
-                            "lifeSteal": 0,
-                            "damage": 30
-                        }
+                            "noHit": true,
+                            "damage": 0
+                        },
+                        "trigger": {
+                            "afterTicks": 5
+                        },
+                        "tickInterval": 1,
+                        "buffs": [
+                            {
+                                "type": "burn",
+                                "cleansable": false,
+                                "stack": "eyjadmg",
+                                "maxStacks": 1,
+                                "hitInterval": 1,
+                                "against": 15,
+                                "maxTicks": 10,
+                                "packet": {
+                                    "source": "arts",
+                                    "lifeSteal": 0,
+                                    "noHit": true,
+                                    "damage": 3
+                                }
+                            },
+                            {
+                                "type": "burn",
+                                "stack": "eyjaheal",
+                                "maxStacks": 1,
+                                "hitInterval": 6,
+                                "cleansable": false,
+                                "maxTicks": 2400,
+                                "packet": {
+                                    "source": "heal",
+                                    "lifeSteal": 0,
+                                    "noHit": true,
+                                    "damage": -0.1
+                                }
+                            }
+                        ]
                     },
                     {
-                        "type": "burn",
-                        "stack": "eyjaheal",
-                        "maxStacks": 1,
-                        "hitInterval": 6,
-                        "cleansable": false,
-                        "maxTicks": 2400,
-                        "packet": {
-                            "source": "heal",
-                            "lifeSteal": 0,
-                            "damage": -0.1
-                        }
+                        "type": "attract",
+                        "attractLike": 1,
+                        "trigger": {
+                            "afterTicks": 5
+                        },
+                        "against": 1,
+                        "categories": 1,
+                        "radius": 0.012,
+                        "accelerationPerTick": 0.02
                     }
                 ],
                 "renderers": [
+                    {
+                        "type": "reticule",
+                        "minRadius": 0.0495,
+                        "radius": 0.05,
+                        "fade": true,
+                        "shrinkTicks": 10,
+                        "startingTicks": 10,
+                        "color": "#fabed444"
+                    },
                     {
                         "type": "projectile",
                         "intermediateInterpolations": 1,
