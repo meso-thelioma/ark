@@ -15277,7 +15277,8 @@
                                             "triggers": [
                                                 {
                                                     "type": "collideWith",
-                                                    "collideWith": 96
+                                                    "collideWith": 96,
+                                                    "against": 1
                                                 }
                                             ]
                                         }
@@ -15324,7 +15325,8 @@
                                             "triggers": [
                                                 {
                                                     "type": "collideWith",
-                                                    "collideWith": 96
+                                                    "collideWith": 96,
+                                                    "against": 1
                                                 }
                                             ]
                                         }
