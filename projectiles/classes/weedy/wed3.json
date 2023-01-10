@@ -92,7 +92,17 @@
 							"expireOn": 0,
 							"lifeSteal": 0,
 							"categories": 64,
-							"buffs": [
+							"buffs": [		
+								{
+									"type": "burn",
+									"hitInterval": 1,
+									"maxTicks": 1,
+									"packet": {
+										"source": "arts",
+										"lifeSteal": 0,
+										"damage": 12
+									}
+								},
 								{
 									"type": "lifeSteal",
 									"against": 15,

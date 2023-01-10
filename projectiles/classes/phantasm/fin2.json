@@ -1,49 +1,71 @@
 {
-	"density": 0.5,
-	"radius": 0.003,
-	"speed": 0.1,
-	"maxTicks": 90,
+	"density": 0.0001,
+	"radius": 0.0015,
+	"speed": 4,
+	"maxTicks": 1,
 	"damage": 0,
-	"speedDamping": -5,
+	"categories": 6,
+	"ccd": true,
 	"collideWith": 0,
-	"lifeSteal": 0,
-	"categories": 34,
-	"sound": "fireball",
-	"soundHit": "standard",
+	"sound": null,
 	"color": "#8a8",
-	"buffs": [
+	"behaviours": [
 		{
-			"type": "burn",
-			"hitInterval": 1,
-			"maxTicks": 1,
-			"packet": {
-				"source": "phys",
+			"type": "spawn",
+			"numProjectiles": 3,
+			"spread": 0.013,
+			"projectile": {
+				"density": 0.0001,
+				"radius": 0.0015,
+				"speed": 0.1,
+				"speedDamping": -9,
+				"maxTicks": 40,
+				"damage": 0,
+				"categories": 6,
+				"ccd": true,
+				"sound": null,
+				"color": "#8a8",
+				"behaviours": [
+					{
+						"type": "homing",
+						"targetType": "self",
+						"maxTurnProportion": 0.04
+					},
+					{
+						"type": "strafe"
+					}
+				],
+				"sensor": true,
+				"expireOn": 65526,
+				"attractable": false,
+				"renderers": [
+					{
+						"type": "ray",
+						"ticks": 10,
+						"smoke": 0.05,
+						"shine": -1
+					}
+				],
 				"lifeSteal": 0,
-				"damage": 8
+				"soundHit": "standard",
+				"buffs": [
+					{
+						"type": "burn",
+						"hitInterval": 1,
+						"maxTicks": 1,
+						"packet": {
+							"source": "arts",
+							"lifeSteal": 0,
+							"damage": 4
+						}
+					}
+				]
 			}
 		}
 	],
-	"behaviours": [
-		{
-			"type": "updateCollideWith",
-			"trigger": {
-				"afterTicks": 1
-			},
-			"collideWith": 65535
-		}
-	],
-	"renderers": [
-		{
-			"type": "ray",
-			"color": "#8a8",
-			"ticks": 10,
-			"shine": -1
-		},
-		{
-			"type": "strike",
-			"ticks": 30,
-			"flash": true,
-			"numParticles": 5
-		}
-	]
+	"attractable": false,
+	"renderers": [],
+	"lifeSteal": 0,
+	"soundHit": "standard",
+	"buffs": []
 }

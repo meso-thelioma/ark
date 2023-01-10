@@ -1,6 +1,6 @@
 {
 	"id": "fin3",
-	"description": "Continously bind Breakdown targets.",
+	"description": "Slow. Continously attract targets with Breakdown.",
 	"action": "projectile",
 	"color": "#88a",
 	"name": "Blood on the Painted",

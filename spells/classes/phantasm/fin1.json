@@ -1,6 +1,6 @@
 {
 	"id": "fin1",
-	"description": "Deal 8 physical damage. Deal 12 Arts damage to targets with Breakdown.",
+	"description": "Deal 8 Arts damage. Deal an additional hit in a trail. Reduce mental accumulation and slow targets.",
 	"action": "projectile",
 	"color": "#a88",
 	"name": "Curious and Unhallowed",
@@ -18,6 +18,11 @@
 			"icon": "fas fa-address-card",
 			"title": "Arts Damage",
 			"text": "Damage * (1 - Resistance) * Buffs"
+		},
+		{
+			"icon": "far fa-sad-tear",
+			"title": "Mental Accumulation",
+			"text": "Reducible by certain skills; when accumulated, apply Breakdown for 5 seconds."
 		}
 	],
 	"projectile": "fin1"

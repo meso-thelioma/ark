@@ -1,14 +1,17 @@
 {
 	"id": "fin2",
-	"description": "Deal 8 physical damage and increase mental accumulation.",
-	"action": "projectile",
+	"description": "Deal up to 84 Arts damage.",
+	"action": "spray",
 	"color": "#8a8",
 	"name": "I love making, I love doing",
 	"icon": "pipe",
 	"maxAngleDiffInRevs": 0.01,
 	"cooldown": 450,
-	"chargeTicks": 5,
-	"recoil": 0.5,
+	"intervalTicks": 1,
+	"lengthTicks": 7,
+	"recoil": -0.1,
+	"numProjectilesPerTick": 1,
+	"jitterRatio": 0.2,
 	"throttle": true,
 	"effects": [
 		{

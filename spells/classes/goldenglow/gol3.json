@@ -1,6 +1,6 @@
 {
 	"id": "gol3",
-	"description": "Deal 30 Arts damage; the target will heal a non-stacking 1 health per second.",
+	"description": "Deal continous Arts damage; nearby targets will be attracted. Heal 3 health.",
 	"action": "projectile",
 	"color": "#fabed4",
 	"icon": "andromedaChain",
@@ -20,7 +20,20 @@
 			"title": "Healing",
 			"text": "Heal * Buffs"
 		}
+	],	
+	"buffs": [
+		{
+			"type": "burn",
+			"cleansable": false,
+			"hitInterval": 1,
+			"maxTicks": 1,
+			"packet": {
+				"source": "heal",
+				"lifeSteal": 0,
+				"noHit": true,
+				"damage": -3
+			}
+		}
 	],
-	"buffs": [],
 	"projectile": "gol3"
 }
