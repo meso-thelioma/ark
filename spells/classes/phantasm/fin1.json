@@ -1,6 +1,6 @@
 {
 	"id": "fin1",
-	"description": "Deal 8 Arts damage. Deal an additional hit in a trail. Reduce mental accumulation and slow targets.",
+	"description": "Deal 8 physical damage. Deal an additional hit in a trail. Reduce mental accumulation and slow targets.",
 	"action": "projectile",
 	"color": "#a88",
 	"name": "Curious and Unhallowed",
@@ -13,11 +13,6 @@
 			"icon": "fas fa-address-card",
 			"title": "Physical Damage",
 			"text": "Damage * Buffs - Defense"
-		},
-		{
-			"icon": "fas fa-address-card",
-			"title": "Arts Damage",
-			"text": "Damage * (1 - Resistance) * Buffs"
 		},
 		{
 			"icon": "far fa-sad-tear",

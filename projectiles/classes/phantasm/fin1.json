@@ -25,11 +25,13 @@
 	"behaviours": [
 		{
 			"type": "spawn",
-			"trigger": {
-				"afterTicks": 7
-			},
-			"spread": 0.5,
-			"numProjectiles": 2,
+			"triggers": [
+				{
+					"type": "interval",
+					"triggerInterval": 7,
+					"offset": 7
+				}
+			],
 			"projectile": "fin1-subproj"
 		},
 		{

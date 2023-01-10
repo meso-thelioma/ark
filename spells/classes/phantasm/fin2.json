@@ -1,6 +1,6 @@
 {
 	"id": "fin2",
-	"description": "Deal up to 84 Arts damage.",
+	"description": "Deal up to 21 Arts damage.",
 	"action": "spray",
 	"color": "#8a8",
 	"name": "I love making, I love doing",
@@ -13,16 +13,11 @@
 	"numProjectilesPerTick": 1,
 	"jitterRatio": 0.2,
 	"throttle": true,
-	"effects": [
+	"effects": [	
 		{
 			"icon": "fas fa-address-card",
-			"title": "Physical Damage",
-			"text": "Damage * Buffs - Defense"
-		},		
-		{
-			"icon": "far fa-sad-tear",
-			"title": "Mental Accumulation",
-			"text": "Reducible by certain skills; when accumulated, apply Breakdown for 5 seconds."
+			"title": "Arts Damage",
+			"text": "Damage * (1 - Resistance) * Buffs"
 		}
 	],
 	"projectile": "fin2"

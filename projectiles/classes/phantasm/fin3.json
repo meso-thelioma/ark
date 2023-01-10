@@ -117,8 +117,8 @@
 						"type": "spawn",
 						"triggers": [
 							{
-								"type": "interval",
-								"triggerInterval": 5
+								"type": "afterTicks",
+								"afterTicks": 25
 							}
 						],
 						"numProjectiles": 2,

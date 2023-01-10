@@ -8591,7 +8591,7 @@
         },
         "fin1": {
             "id": "fin1",
-            "description": "Deal 8 Arts damage. Deal an additional hit in a trail. Reduce mental accumulation and slow targets.",
+            "description": "Deal 8 physical damage. Deal an additional hit in a trail. Reduce mental accumulation and slow targets.",
             "action": "projectile",
             "color": "#a88",
             "name": "Curious and Unhallowed",
@@ -8604,11 +8604,6 @@
                     "icon": "fas fa-address-card",
                     "title": "Physical Damage",
                     "text": "Damage * Buffs - Defense"
-                },
-                {
-                    "icon": "fas fa-address-card",
-                    "title": "Arts Damage",
-                    "text": "Damage * (1 - Resistance) * Buffs"
                 },
                 {
                     "icon": "far fa-sad-tear",
@@ -8643,11 +8638,13 @@
                 "behaviours": [
                     {
                         "type": "spawn",
-                        "trigger": {
-                            "afterTicks": 7
-                        },
-                        "spread": 0.5,
-                        "numProjectiles": 2,
+                        "triggers": [
+                            {
+                                "type": "interval",
+                                "triggerInterval": 7,
+                                "offset": 7
+                            }
+                        ],
                         "projectile": {
                             "density": 0.01,
                             "radius": 0.003,
@@ -8770,7 +8767,7 @@
         },
         "fin2": {
             "id": "fin2",
-            "description": "Deal up to 84 Arts damage.",
+            "description": "Deal up to 21 Arts damage.",
             "action": "spray",
             "color": "#8a8",
             "name": "I love making, I love doing",
@@ -8786,13 +8783,8 @@
             "effects": [
                 {
                     "icon": "fas fa-address-card",
-                    "title": "Physical Damage",
-                    "text": "Damage * Buffs - Defense"
-                },
-                {
-                    "icon": "far fa-sad-tear",
-                    "title": "Mental Accumulation",
-                    "text": "Reducible by certain skills; when accumulated, apply Breakdown for 5 seconds."
+                    "title": "Arts Damage",
+                    "text": "Damage * (1 - Resistance) * Buffs"
                 }
             ],
             "projectile": {
@@ -8853,7 +8845,7 @@
                                     "packet": {
                                         "source": "arts",
                                         "lifeSteal": 0,
-                                        "damage": 4
+                                        "damage": 1
                                     }
                                 }
                             ]
@@ -9003,8 +8995,8 @@
                                     "type": "spawn",
                                     "triggers": [
                                         {
-                                            "type": "interval",
-                                            "triggerInterval": 5
+                                            "type": "afterTicks",
+                                            "afterTicks": 25
                                         }
                                     ],
                                     "numProjectiles": 2,
