@@ -1,5 +1,6 @@
 {
 	"basedOn": "fin1",
 	"speed": 0,
+	"maxTicks": 30,
 	"behaviours": []
 }
