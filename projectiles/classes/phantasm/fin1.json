@@ -32,6 +32,7 @@
 					"offset": 7
 				}
 			],
+			"requireParent": true,
 			"projectile": "fin1-subproj"
 		},
 		{

@@ -1,6 +1,6 @@
 {
 	"id": "kal3",
-	"description": "For five seconds, heal significantly less; At the end of the duration, 20 true damage will be taken per target left alive. Astigmatism will have a significantly lower cooldown.",
+	"description": "For five seconds, heal significantly less; At the end of the duration, true damage will be taken per target left alive. Astigmatism will have a significantly lower cooldown.",
 	"action": "projectile",
 	"color": "#f032e6",
 	"name": "Blurred Vision",
