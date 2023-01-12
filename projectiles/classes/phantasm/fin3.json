@@ -26,7 +26,7 @@
 		}
 	],
 	"shieldTakesOwnership": false,
-	"categories": 2,
+	"categories": 6,
 	"sound": "fireball",
 	"color": "#88a",
 	"renderers": [
