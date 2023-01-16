@@ -3,10 +3,9 @@
 	"attractable": false,
 	"radius": 0.1,
 	"speed": 0,
-	"sensor": true,
+	"collideWith": 0,
 	"spawnAtCursor": true,
 	"expireOn": 0,
-	"hitInterval": 40,
 	"maxTicks": 180,
 	"damage": 0,
 	"buffs": [
@@ -37,7 +36,33 @@
 		}
 	],
 	"lifeSteal": 0,
-	"behaviours": [
+	"behaviours": [		
+		{
+			"type": "aura",
+			"radius": 0.1,
+			"against": 12,
+			"tickInterval": 25,
+			"packet": {
+				"damage": 0,
+				"noHit": true,
+				"lifeSteal": 0
+			},	
+			"buffs": [
+				{
+					"type": "movement",
+					"movementProportion": 0.5,
+					"maxTicks": 25,
+					"render": {
+						"color": "#88a",
+						"particleRadius": 0.0025,
+						"emissionRadiusFactor": 1,
+						"ticks": 10,
+						"light": 1,
+						"invisible": true
+					}
+				}
+			]
+		},
 		{
 			"type": "attract",
 			"collideLike": 64,

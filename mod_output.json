@@ -8878,10 +8878,9 @@
                 "attractable": false,
                 "radius": 0.1,
                 "speed": 0,
-                "sensor": true,
+                "collideWith": 0,
                 "spawnAtCursor": true,
                 "expireOn": 0,
-                "hitInterval": 40,
                 "maxTicks": 180,
                 "damage": 0,
                 "buffs": [
@@ -8913,6 +8912,32 @@
                 ],
                 "lifeSteal": 0,
                 "behaviours": [
+                    {
+                        "type": "aura",
+                        "radius": 0.1,
+                        "against": 12,
+                        "tickInterval": 25,
+                        "packet": {
+                            "damage": 0,
+                            "noHit": true,
+                            "lifeSteal": 0
+                        },
+                        "buffs": [
+                            {
+                                "type": "movement",
+                                "movementProportion": 0.5,
+                                "maxTicks": 25,
+                                "render": {
+                                    "color": "#88a",
+                                    "particleRadius": 0.0025,
+                                    "emissionRadiusFactor": 1,
+                                    "ticks": 10,
+                                    "light": 1,
+                                    "invisible": true
+                                }
+                            }
+                        ]
+                    },
                     {
                         "type": "attract",
                         "collideLike": 64,
@@ -9224,6 +9249,7 @@
                 "selfPassthrough": true,
                 "speed": 0,
                 "maxTicks": 10,
+                "attractable": false,
                 "expireOn": 0,
                 "sensor": true,
                 "damage": 0,
@@ -15884,7 +15910,7 @@
             ],
             "conveyor": {
                 "lateralSpeed": 0,
-                "radialSpeed": -20
+                "radialSpeed": -25
             },
             "selfDamage": 10,
             "hitInterval": 20,

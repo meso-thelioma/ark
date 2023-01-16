@@ -4,6 +4,7 @@
 	"selfPassthrough": true,
 	"speed": 0,
 	"maxTicks": 10,
+	"attractable": false,
 	"expireOn": 0,
 	"sensor": true,
 	"damage": 0,
