@@ -41,7 +41,7 @@
 					"against": 15,
 					"source": "burning",
 					"maxTicks": 365,
-					"proportion": 0.15,
+					"proportion": 0.1,
 					"render": {
 						"color": "#88a",
 						"particleRadius": 0.0025,

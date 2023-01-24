@@ -1,6 +1,6 @@
 {
 	"id": "fin2",
-	"description": "Gain a speed debuff. Deal 21 Arts damage.",
+	"description": "Slow down. Deal 30 Arts damage.",
 	"action": "projectile",
 	"color": "#8a8",
 	"name": "I love making, I love doing",

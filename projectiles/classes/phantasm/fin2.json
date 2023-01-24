@@ -103,7 +103,7 @@
 						"packet": {
 							"source": "arts",
 							"lifeSteal": 0,
-							"damage": 21
+							"damage": 35
 						}
 					}
 				],
@@ -119,13 +119,20 @@
 					{
 						"type": "ray",
 						"color": "#8a8",
-						"ticks": 40
+						"ticks": 40,
+						"shine": -1
 					},
 					{
 						"type": "strike",
 						"ticks": 30,
 						"flash": true,
 						"numParticles": 5
+					},		
+					{
+						"type": "projectile",
+						"ticks": 25,
+						"light": 0.01,
+						"shine": -1
 					}
 				]
 			}
