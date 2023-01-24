@@ -1,53 +1,100 @@
 {
 	"density": 0.0001,
 	"radius": 0.0015,
-	"speed": 4,
-	"maxTicks": 1,
+	"speed": 0,
+	"maxTicks": 240,
 	"damage": 0,
 	"categories": 6,
 	"ccd": true,
 	"collideWith": 0,
+	"expireOn": 0,
 	"sound": null,
 	"color": "#8a8",
+	"projectileBuffs": [
+		{
+			"type": "movement",
+			"movementProportion": 0.1,
+			"maxTicks": 240,
+			"render": {
+				"color": "#8a8",
+				"particleRadius": 0.0025,
+				"emissionRadiusFactor": 1,
+				"ticks": 10,
+				"light": 1,
+				"invisible": true
+			}
+		}	
+	],
 	"behaviours": [
 		{
+			"type": "strafe"
+		},
+		{
 			"type": "spawn",
-			"numProjectiles": 3,
-			"spread": 0.013,
+			"triggers": [
+				{
+					"type": "interval",
+					"triggerInterval": 1
+				}
+			],
+			"maxTriggers": 240,
 			"projectile": {
 				"density": 0.0001,
 				"radius": 0.0015,
-				"speed": 0.1,
-				"speedDamping": -9,
-				"maxTicks": 40,
+				"speed": 600,
+				"maxTicks": 1,
 				"damage": 0,
 				"categories": 6,
+				"collideWith": 0,
 				"ccd": true,
 				"sound": null,
 				"color": "#8a8",
 				"behaviours": [
 					{
 						"type": "homing",
-						"targetType": "self",
-						"maxTurnProportion": 0.04
-					},
-					{
-						"type": "strafe"
+						"targetType": "follow",
+						"redirect": true
 					}
 				],
 				"sensor": true,
-				"expireOn": 65526,
+				"expireOn": 0,
 				"attractable": false,
 				"renderers": [
 					{
-						"type": "ray",
-						"ticks": 10,
-						"smoke": 0.05,
-						"shine": -1
+						"type": "link",
+						"color": "#8a83",
+						"width": 0.0015,
+						"glow": 0.4,
+						"bloom": 0.005,
+						"shadow": 0.5,
+						"shine": 0,
+						"light": true
 					}
 				],
 				"lifeSteal": 0,
 				"soundHit": "standard",
+				"buffs": []
+			}
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "expire"
+				}
+			],
+			"projectile": {
+				"density": 0.001,
+				"radius": 0.003,
+				"selfPassthrough": true,
+				"speed": 5,
+				"maxTicks": 30,
+				"damage": 0,
+				"lifeSteal": 0,
+				"categories": 2,
+				"sound": "fireball",
+				"soundHit": "standard",
+				"color": "#8a8",
 				"buffs": [
 					{
 						"type": "burn",
@@ -56,15 +103,47 @@
 						"packet": {
 							"source": "arts",
 							"lifeSteal": 0,
-							"damage": 1
+							"damage": 21
 						}
+					}
+				],
+				"collideWith": 1,
+				"behaviours": [
+					{
+						"type": "homing",
+						"redirect": true,
+						"targetType": "follow"
+					}
+				],
+				"renderers": [
+					{
+						"type": "ray",
+						"color": "#8a8",
+						"ticks": 40
+					},
+					{
+						"type": "strike",
+						"ticks": 30,
+						"flash": true,
+						"numParticles": 5
 					}
 				]
 			}
 		}
 	],
 	"attractable": false,
-	"renderers": [],
+	"renderers": [
+		{
+			"type": "reticule",
+			"minRadius": 0.1495,
+			"radius": 0.15,
+			"color": "#8a82",
+			"arc": {
+				"type": "dynamic",
+				"ticks": 240
+			}
+		}
+	],
 	"lifeSteal": 0,
 	"soundHit": "standard",
 	"buffs": []

@@ -1,7 +1,7 @@
 {
 	"id": "fin",
 	"name": "Phantasm",
-	"description": "Specialist with mental accumulation.",
+	"description": "Specialist with global range.",
 	"passive": true,
 	"untargeted": true,
 	"cooldown": 1,
@@ -14,7 +14,7 @@
 		{
 			"icon": "far fa-sad-tear",
 			"title": "Memory",
-			"text": "..."
+			"text": "Forgetting the boardwalk upon which the ocean of stars rests at your feet."
 		}
 	],
 	"buffs": [

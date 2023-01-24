@@ -3,27 +3,13 @@
 	"attractable": false,
 	"radius": 0.1,
 	"speed": 0,
+	"sensor": true,
 	"collideWith": 0,
 	"spawnAtCursor": true,
 	"expireOn": 0,
-	"maxTicks": 180,
+	"maxTicks": 360,
 	"damage": 0,
-	"buffs": [
-		{
-			"type": "movement",
-			"movementProportion": 0.9,
-			"stack": "final",
-			"maxTicks": 40,
-			"render": {
-				"color": "#88a",
-				"particleRadius": 0.0025,
-				"emissionRadiusFactor": 1,
-				"ticks": 10,
-				"light": 1,
-				"invisible": true
-			}
-		}
-	],
+	"buffs": [],
 	"shieldTakesOwnership": false,
 	"categories": 6,
 	"sound": "fireball",
@@ -40,8 +26,8 @@
 		{
 			"type": "aura",
 			"radius": 0.1,
-			"against": 12,
-			"tickInterval": 25,
+			"against": 15,
+			"tickInterval": 15,
 			"packet": {
 				"damage": 0,
 				"noHit": true,
@@ -49,9 +35,13 @@
 			},	
 			"buffs": [
 				{
-					"type": "movement",
-					"movementProportion": 0.5,
-					"maxTicks": 25,
+					"type": "armor",
+					"stack": "talulah",
+					"maxStacks": 12,
+					"against": 15,
+					"source": "burning",
+					"maxTicks": 365,
+					"proportion": 0.15,
 					"render": {
 						"color": "#88a",
 						"particleRadius": 0.0025,
@@ -60,32 +50,19 @@
 						"light": 1,
 						"invisible": true
 					}
+				},
+				{
+					"type": "burn",
+					"hitInterval": 1,
+					"maxTicks": 1,
+					"against": 15,
+					"packet": {
+						"source": "burning",
+						"lifeSteal": 0,
+						"damage": 1
+					}
 				}
 			]
-		},
-		{
-			"type": "attract",
-			"collideLike": 64,
-			"categories": 1,
-			"against": 14,
-			"radius": 2,
-			"accelerationPerTick": 0.0045
-		},		
-		{
-			"type": "attract",
-			"collideLike": 64,
-			"categories": 1,
-			"against": 14,
-			"radius": 0.13,
-			"accelerationPerTick": 0.1
-		},		
-		{
-			"type": "attract",
-			"collideLike": 64,
-			"categories": 1,
-			"against": 14,
-			"radius": 0.1,
-			"accelerationPerTick": -0.1
 		},
 		{
 			"type": "partial",
@@ -108,7 +85,7 @@
 			"triggers": [
 				{
 					"type": "interval",
-					"triggerInterval": 25
+					"triggerInterval": 15
 				}
 			],
 			"requireParent": true,

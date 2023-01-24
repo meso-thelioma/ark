@@ -1,23 +1,18 @@
 {
 	"id": "fin1",
-	"description": "Deal 8 physical damage. Deal an additional hit in a trail. Reduce mental accumulation and slow targets.",
+	"description": "Deal 8 physical damage.",
 	"action": "projectile",
 	"color": "#a88",
 	"name": "Curious and Unhallowed",
 	"icon": "pipe",
 	"maxAngleDiffInRevs": 0.01,
-	"cooldown": 120,
+	"cooldown": 300,
 	"throttle": true,
 	"effects": [
 		{
 			"icon": "fas fa-address-card",
 			"title": "Physical Damage",
 			"text": "Damage * Buffs - Defense"
-		},
-		{
-			"icon": "far fa-sad-tear",
-			"title": "Mental Accumulation",
-			"text": "Reducible by certain skills; when accumulated, apply Breakdown for 5 seconds."
 		}
 	],
 	"projectile": "fin1"

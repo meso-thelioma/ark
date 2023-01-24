@@ -1,17 +1,12 @@
 {
 	"id": "fin2",
-	"description": "Deal up to 21 Arts damage.",
-	"action": "spray",
+	"description": "Gain a speed debuff. Deal 21 Arts damage.",
+	"action": "projectile",
 	"color": "#8a8",
 	"name": "I love making, I love doing",
 	"icon": "pipe",
 	"maxAngleDiffInRevs": 0.01,
 	"cooldown": 450,
-	"intervalTicks": 1,
-	"lengthTicks": 7,
-	"recoil": -0.1,
-	"numProjectilesPerTick": 1,
-	"jitterRatio": 0.2,
 	"throttle": true,
 	"effects": [	
 		{

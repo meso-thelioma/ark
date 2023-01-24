@@ -1,6 +1,6 @@
 {
 	"id": "fin3",
-	"description": "Slow. Continously attract targets with Breakdown.",
+	"description": "Deal increasing true damage.",
 	"action": "projectile",
 	"color": "#88a",
 	"name": "Blood on the Painted",
@@ -10,9 +10,9 @@
 	"throttle": true,
 	"effects": [
 		{
-			"icon": "far fa-sad-tear",
-			"title": "Mental Accumulation",
-			"text": "Reducible by certain skills; when accumulated, apply Breakdown for 5 seconds."
+			"icon": "fas fa-address-card",
+			"title": "True Damage",
+			"text": "Damage * Buffs"
 		}
 	],
 	"projectile": "fin3"

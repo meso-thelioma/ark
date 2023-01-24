@@ -1,0 +1,52 @@
+{
+	"basedOn": "fin1-main",
+	"speed": -0.9,
+	"behaviours": [
+		{
+			"triggers": [
+				{
+					"type": "expire"
+				}
+			],
+			"type": "spawn",
+			"projectile": {
+				"density": 0.001,
+				"attractable": false,
+				"radius": 2,
+				"speed": 0,
+				"maxTicks": 2,
+				"damage": 0,
+				"expireOn": 0,
+				"categories": 70,
+				"lifeSteal": 0,
+				"buffs": [],
+				"projectileBuffs": [],
+				"behaviours": [],
+				"color": "#aaa1",
+				"renderers": []
+			}
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "interval",
+					"triggerInterval": 4
+				}
+			],
+			"requireParent": true,
+			"projectile": "fin1-subproj"
+		},
+		{
+			"type": "homing",
+			"trigger": {
+				"afterTicks": 1
+			},
+			"targetType": "follow",
+			"maxTurnProportion": 0,
+			"newSpeed": 0.9,
+			"redirect": true
+		}
+	],
+	"renderers": []
+}
