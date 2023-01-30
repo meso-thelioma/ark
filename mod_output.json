@@ -6326,13 +6326,13 @@
         },
         "lin2": {
             "id": "lin2",
-            "description": "Create an Ephemeral Echo which will copy attacks.",
+            "description": "Create an Ephemeral Echo which will copy attacks and be destroyed on contact.",
             "action": "projectile",
             "color": "#007",
             "name": "Reflection, The Rain",
             "icon": "dna1",
             "maxAngleDiffInRevs": 0.01,
-            "cooldown": 600,
+            "cooldown": 450,
             "throttle": true,
             "effects": [],
             "projectile": {
@@ -6344,7 +6344,7 @@
                 "lifeSteal": 0,
                 "categories": 2,
                 "sound": "fireball",
-                "expireOn": 0,
+                "expireOn": 1,
                 "soundHit": "standard",
                 "expireAgainstObjects": 12,
                 "color": "#007",
@@ -6582,7 +6582,7 @@
             "name": "Reflection, The Downpour",
             "icon": "dna1",
             "maxAngleDiffInRevs": 0.01,
-            "cooldown": 1800,
+            "cooldown": 900,
             "throttle": true,
             "effects": [
                 {

@@ -7,7 +7,7 @@
 	"lifeSteal": 0,
 	"categories": 2,
 	"sound": "fireball",
-	"expireOn": 0,
+	"expireOn": 1,
 	"soundHit": "standard",
 	"expireAgainstObjects": 12,
 	"color": "#007",

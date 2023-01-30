@@ -6,7 +6,7 @@
 	"name": "Reflection, The Downpour",
 	"icon": "dna1",
 	"maxAngleDiffInRevs": 0.01,
-	"cooldown": 1800,
+	"cooldown": 900,
 	"throttle": true,
 	"effects": [
 		{
