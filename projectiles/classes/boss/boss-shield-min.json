@@ -1,0 +1,83 @@
+{
+	"basedOn": "boss-shield",
+	"categories": 7,
+	"maxTicks": 10,
+	"projectileBuffs": [
+		{
+			"type": "lifeSteal",
+			"damageMultiplier": 1,
+			"stack": "night",
+			"maxTicks": 10,
+			"cleansable": false,
+			"render": {
+				"color": "#bfef4511",
+				"particleRadius": 0.0125,
+				"emissionRadiusFactor": 0,
+				"ticks": 10,
+				"light": 1,
+				"invisible": true
+			},
+			"against": 3
+		}
+	],
+	"behaviours": [
+		{
+			"type": "strafe"
+		},
+		{
+			"type": "homing",
+			"targetType": "self"
+		},
+		{
+			"type": "spawn",
+			"trigger": {
+				"collideWith": 57142,
+				"against": 14
+			},
+			"expire": true,
+			"projectile": {
+				"density": 0.01,
+				"radius": 0.2,
+				"speed": 0,
+				"maxTicks": 12,
+				"collideWith": 1,
+				"expireOn": 0,
+				"sensor": true,
+				"damage": 5,
+				"lifeSteal": 0,
+				"categories": 2,
+				"sound": "fireball",
+				"soundHit": "standard",
+				"color": "#ffe119",
+				"behaviours": [
+					{
+						"type": "strafe"
+					},
+					{
+						"type": "homing",
+						"targetType": "self"
+					},
+					{
+						"type": "aura",
+						"against": 1,
+						"radius": 2,
+						"tickInterval": 1,
+						"packet": {
+							"damage": 0,
+							"noHit": true,
+							"lifeSteal": 0
+						},	
+						"buffs": []
+					}
+				],
+				"renderers": [
+					{
+						"type": "projectile",
+						"color": "#bfef4511",
+						"ticks": 40
+					}
+				]
+			}
+		}
+	]
+}

@@ -162,15 +162,13 @@
 			"triggers": [
 				{
 					"type": "collideWith",
-					"triggerInterval": 1,
-					"maxHits": 1,
-					"collideWith": 8,
-					"collideTypes": "cosmic"
+					"triggerInterval": 120,
+					"maxHits": 1000000000000,
+					"collideWith": 8192,
+					"collideTypes": "bos"
 				}
 			],			
-			"numProjectiles": 4,
-			"spread": 0.75,
-			"projectile": "bullethell"
+			"projectile": "finalphase"
 		}
 	]
 }

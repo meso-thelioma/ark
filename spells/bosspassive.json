@@ -1,0 +1,113 @@
+{
+	"id": "bos",
+	"name": "GOOGLE DOC",
+	"description": "The accumulation of light at the summit of creation.",
+	"passive": true,
+	"untargeted": true,
+	"cooldown": 1,
+	"effects": [
+		{
+			"icon": "far fa-sad-tear",
+			"title": "Passive",
+			"text": "Take less damage. Drain health. Targets take more damage."
+		}
+	],	
+	"buffs": [			
+		{
+			"type": "burn",
+			"passive": true,
+			"hitInterval": 12,	
+			"render": {
+				"color": "#8002",
+				"particleRadius": 0.0125,
+				"emissionRadiusFactor": 2,
+				"ticks": 10,
+				"light": 1,
+				"invisible": true
+			},
+			"packet": {
+				"damage": 0.1,
+				"noHit": true
+			}
+		},	
+		{
+			"type": "armor",
+			"passive": true,
+			"proportion": -0.2
+		},
+		{
+			"type": "mass",
+			"passive": true,
+			"radius": 0.0125,
+			"restrictCollideWith": 65343
+		},
+		{
+			"type": "cooldown",
+			"passive": true,
+			"cooldownRateModifier": -2,
+			"notSpellIds": [
+				"bos1",
+				"bos2",
+				"bos3"
+			]
+		}
+	],
+	"loadout": {
+		"q": "bos1",
+		"w": "bos2",
+		"e": "bos3"
+	},
+	"icon": "",
+	"color": "#0000",
+	"action": "buff",
+	"behaviours": [
+		{
+			"type": "spawn",
+			"projectile": "boss-arm" 
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "health",
+					"health": 80,
+					"comparison": "<="
+				}	
+			],
+			"projectile": "boss-supdps" 
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "health",
+					"health": 60,
+					"comparison": "<="
+				}	
+			],
+			"projectile": "boss-burphy" 
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "health",
+					"health": 40,
+					"comparison": "<="
+				}	
+			],
+			"projectile": "boss-healsup" 
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "health",
+					"health": 20,
+					"comparison": "<="
+				}	
+			],
+			"projectile": "boss-dps" 
+		}
+	]
+}

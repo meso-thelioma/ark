@@ -1,0 +1,43 @@
+{
+	"basedOn": "boss-arm",
+	"projectileBuffs": [
+		{
+			"type": "cooldown",
+			"maxTicks": 300000000000000000000000000,
+			"cleansable": false,
+			"cooldownRateModifier": 0.5,
+			"render": {
+				"color": "#afc1",
+				"particleRadius": 0.015,
+				"emissionRadiusFactor": 1,
+				"ticks": 10,
+				"light": 1,
+				"invisible": true
+			}
+		}
+	],
+	"behaviours": [
+		{
+			"type": "strafe"
+		},
+		{
+			"type": "homing",
+			"targetType": "self",
+			"trigger": {
+				"afterTicks": 10
+			}
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "interval",
+					"triggerInterval": 600
+				}
+			],
+			"projectile": "boss-shield"
+		}
+	],
+	"color": "#aaa1",
+	"renderers": []
+}

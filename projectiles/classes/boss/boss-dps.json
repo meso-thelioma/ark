@@ -1,0 +1,44 @@
+{
+	"basedOn": "boss-arm",
+	"speed": 0,
+	"radius": 2,
+	"behaviours": [
+		{
+			"type": "aura",
+			"radius": 2,
+			"against": 1,
+			"tickInterval": 12,
+			"packet": {
+				"damage": 0,
+				"noHit": true,
+				"lifeSteal": 0
+			},	
+			"buffs": [
+				{
+					"type": "cooldown",
+					"cleansable": false,
+					"maxTicks": 12,
+					"color": "#030"
+				},
+				{
+					"type": "lifeSteal",
+					"cleansable": false,
+					"maxTicks": 12,
+					"render": {
+						"color": "#aaa2",
+						"particleRadius": 0.0125,
+						"emissionRadiusFactor": 0,
+						"ticks": 10,
+						"light": 1,
+						"invisible": true
+					},
+					"against": 1
+				}
+			]
+		}
+	],
+	"color": "#469990",
+	"sense": 1,
+	"categories": 8198,
+	"renderers": []
+}

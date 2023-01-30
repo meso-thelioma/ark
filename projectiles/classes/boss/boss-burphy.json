@@ -1,0 +1,113 @@
+{
+	"basedOn": "boss-arm",
+	"behaviours": [
+		{
+			"type": "strafe"
+		},
+		{
+			"type": "homing",
+			"targetType": "self",
+			"trigger": {
+				"afterTicks": 10
+			}
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "interval",
+					"triggerInterval": 60
+				}
+			],
+			"projectile": "boss-dodge"
+		},
+		{
+			"type": "aura",
+			"radius": 0.2,
+			"against": 14,
+			"tickInterval": 10,
+			"packet": {
+				"damage": 0,
+				"noHit": true,
+				"lifeSteal": 0
+			},
+			"buffs": [
+				{
+					"type": "lifeSteal",
+					"against": 15,
+					"stack": "breakdown",
+					"source": "heal",
+					"damageMultiplier": 0,
+					"maxTicks": 30,
+					"render": {
+						"color": "#aaa4",
+						"particleRadius": 0.015,
+						"emissionRadiusFactor": 0.5,
+						"ticks": 10,
+						"light": 1,
+						"invisible": true
+					}
+				},
+				{
+					"type": "lifeSteal",
+					"against": 15,
+					"stack": "breakdown",
+					"source": "phys",
+					"damageMultiplier": 0.8,
+					"maxTicks": 30
+				},
+				{
+					"type": "lifeSteal",
+					"against": 15,
+					"stack": "breakdown",
+					"source": "arts",
+					"damageMultiplier": 0.8,
+					"maxTicks": 30
+				},
+				{
+					"type": "lifeSteal",
+					"against": 15,
+					"stack": "breakdown",
+					"source": "ceobe",
+					"damageMultiplier": 0.8,
+					"maxTicks": 30
+				},
+				{
+					"type": "mass",
+					"radius": 0.0125,
+					"cleansable": false,
+					"maxTicks": 30,
+					"sense": 64
+				}
+			]
+		}
+	],
+	"color": "#469990",
+	"sensor": true,
+	"categories": 16,	
+	"projectileBuffs": [
+		{
+			"type": "lifeSteal",
+			"cleansable": false,
+			"damageMultiplier": 1,
+			"maxTicks": 300000000000000000000000000,
+			"renderers": [
+				{
+					"type": "swirl",
+					"color": "#46999011",
+					"ticks": 10,
+					"loopTicks": 300,
+					"numParticles": 5,
+					"radius": 0.2,
+					"particleRadius": 0.002
+				},
+				{
+					"type": "reticule",
+					"radius": 0.2,
+					"color": "#46999022"
+				}
+			]
+		}
+	],
+	"renderers": []
+}

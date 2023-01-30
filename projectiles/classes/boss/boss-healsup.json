@@ -1,0 +1,38 @@
+{
+	"basedOn": "boss-arm",
+	"behaviours": [
+		{
+			"type": "strafe"
+		},
+		{
+			"type": "homing",
+			"targetType": "self",
+			"trigger": {
+				"afterTicks": 10
+			}
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "interval",
+					"triggerInterval": 300
+				}
+			],
+			"projectile": "boss-cleanse"
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "interval",
+					"triggerInterval": 10
+				}
+			],
+			"projectile": "boss-shield-min"
+		}
+	],
+	"color": "#469990",
+	"projectileBuffs": [],
+	"renderers": []
+}

@@ -38,23 +38,6 @@
 			"extent": 0.0025,
 			"orientationAngleOffsetInRevs": 0,
 			"angularWidthInRevs": 0.15
-		},
-		{
-			"type": "cosmic",
-			"numObstacles": 1,
-			"layoutRadius": 0,
-			"layoutAngleOffsetInRevs": 0.5,
-			"numPoints": 4,
-			"extent": 0.005
-		},
-		{
-			"type": "forcefield",
-			"numObstacles": 4,
-			"layoutRadius": 0.2,
-			"layoutAngleOffsetInRevs": 0.5,
-			"numPoints": 4,
-			"extent": 0.05,
-			"angularWidthInRevs": 0.005
 		}
 	],
 	"numPoints": 4
