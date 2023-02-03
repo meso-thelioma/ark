@@ -63,7 +63,109 @@
 	"behaviours": [
 		{
 			"type": "spawn",
-			"projectile": "boss-arm" 
+			"projectile": "boss-immortal"
+		},		
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "health",
+					"health": 80,
+					"comparison": "<="
+				}	
+			],
+			"projectile": "boss-immortal-1"
+		},		
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "health",
+					"health": 60,
+					"comparison": "<="
+				}	
+			],
+			"projectile": "boss-immortal-2"
+		},		
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "health",
+					"health": 40,
+					"comparison": "<="
+				}	
+			],
+			"projectile": "boss-immortal-3"
+		},		
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "health",
+					"health": 20,
+					"comparison": "<="
+				}	
+			],
+			"projectile": "boss-immortal-4"
+		},		
+		{
+			"type": "spawn",
+			"projectile": "boss-arm",
+			"buffs": [
+				{
+					"type": "armor",
+					"cleansable": false,
+					"maxTicks": 300000000000,
+					"renderers": [
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#f58231aa",
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 110,
+							"numParticles": 1
+						},
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#800a",
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 120,
+							"numParticles": 1
+						},
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#fabed4aa",
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 130,
+							"numParticles": 1
+						},
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#fff3",
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 140,
+							"numParticles": 1
+						},
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#52fa",
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 150,
+							"numParticles": 1
+						}
+					]  
+				}
+			]
 		},
 		{
 			"type": "spawn",
@@ -74,7 +176,61 @@
 					"comparison": "<="
 				}	
 			],
-			"projectile": "boss-supdps" 
+			"projectile": "boss-supdps",
+			"buffs": [
+				{
+					"type": "armor",
+					"cleansable": false,
+					"maxTicks": 300000000000,
+					"renderers": [
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#42d4f4aa",
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 160,
+							"numParticles": 1
+						},
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#CEFFFFaa",
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 170,
+							"numParticles": 1
+						},
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#ffe119aa",
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 180,
+							"numParticles": 1
+						},
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#afca",
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 190,
+							"numParticles": 1
+						},
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#dcbeff",
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 200,
+							"numParticles": 1
+						}
+					]  
+				}
+			]
 		},
 		{
 			"type": "spawn",
@@ -85,7 +241,61 @@
 					"comparison": "<="
 				}	
 			],
-			"projectile": "boss-burphy" 
+			"projectile": "boss-burphy",
+			"buffs": [
+				{
+					"type": "armor",
+					"cleansable": false,
+					"maxTicks": 300000000000,
+					"renderers": [
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#3cb44baa",
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 210,
+							"numParticles": 1
+						},
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#007a",
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 220,
+							"numParticles": 1
+						},
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#469990aa",
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 230,
+							"numParticles": 1
+						},
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#66002faa",
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 240,
+							"numParticles": 1
+						},
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#911eb4",
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 250,
+							"numParticles": 1
+						}
+					]  
+				}
+			]
 		},
 		{
 			"type": "spawn",
@@ -96,7 +306,62 @@
 					"comparison": "<="
 				}	
 			],
-			"projectile": "boss-healsup" 
+			"projectile": "boss-healsup",
+			"buffs": [
+				{
+					"type": "armor",
+					"cleansable": false,
+					"maxTicks": 300000000000,
+					"renderers": [
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#880a",
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 260,
+							"numParticles": 1
+						},
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#446a",
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 270,
+							"numParticles": 1
+						},
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#bfef45aa",
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 280,
+							"numParticles": 1
+						},
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#000a",
+							"light": null,
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 290,
+							"numParticles": 1
+						},
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#4363d8aa",
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 300,
+							"numParticles": 1
+						}
+					]  
+				}
+			] 
 		},
 		{
 			"type": "spawn",
@@ -107,7 +372,62 @@
 					"comparison": "<="
 				}	
 			],
-			"projectile": "boss-dps" 
+			"projectile": "boss-dps",
+			"buffs": [
+				{
+					"type": "armor",
+					"cleansable": false,
+					"maxTicks": 300000000000,
+					"renderers": [
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#e6194baa",
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 310,
+							"numParticles": 1
+						},
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#aaaa",
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 320,
+							"numParticles": 1
+						},
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#ffd8b1aa",
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 330,
+							"numParticles": 1
+						},
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#f032e6aa",
+							"light": null,
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 340,
+							"numParticles": 1
+						},
+						{
+							"type": "swirl",
+							"ticks": 30,
+							"color": "#030a",
+							"radius": 0.2,
+							"particleRadius": 0.004,
+							"loopTicks": 350,
+							"numParticles": 1
+						}
+					]  
+				}
+			] 
 		}
 	]
 }

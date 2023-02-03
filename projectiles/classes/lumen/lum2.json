@@ -39,7 +39,7 @@
 		{
 			"type": "homing",			
 			"trigger": {
-				"afterTicks":2
+				"afterTicks": 2
 			},
 			"targetType": "self"
 		},

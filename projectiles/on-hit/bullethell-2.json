@@ -81,6 +81,109 @@
 			"type": "spawn",
 			"triggers": [
 				{
+					"type": "interval",
+					"triggerInterval": 120
+				}
+			],
+			"numProjectiles": 10,
+			"spread": 0.9,
+			"requireParent": true,
+			"projectile": {
+				"density": 22,
+				"radius": 0.018,
+				"speed": 0.2,
+				"sensor": true,
+				"attractable": false,
+				"maxTicks": 480,
+				"damage": 10,
+				"expireAgainstObjects": 1,
+				"lifeSteal": 0,
+				"categories": 6,
+				"sound": null,
+				"destructible": {
+					"against": 15
+				},
+				"soundHit": null,
+				"color": "#45322E",
+				"behaviours": [
+					{
+						"type": "expire",
+						"triggers": [
+							{
+								"type": "collideWith",
+								"collideWith": 96,
+								"against": 1
+							}
+						]
+					}
+				],
+				"renderers": [
+					{
+						"type": "projectile",
+						"ticks": 1
+					}
+				],
+				"expireOn": 96
+			}
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "interval",
+					"triggerInterval": 30
+				}
+			],
+			"numProjectiles": 4,
+			"spread": 0.75,
+			"requireParent": true,
+			"projectile": {
+				"density": 22,
+				"radius": 0.0025,
+				"speed": 0.3,
+				"sensor": true,
+				"attractable": false,
+				"maxTicks": 480,
+				"damage": 10,
+				"expireAgainstObjects": 1,
+				"lifeSteal": 0,
+				"categories": 6,
+				"sound": null,
+				"destructible": {
+					"against": 15
+				},
+				"soundHit": null,
+				"color": "#45322E",
+				"behaviours": [
+					{
+						"type": "expire",
+						"triggers": [
+							{
+								"type": "collideWith",
+								"collideWith": 96,
+								"against": 1
+							}
+						]
+					},
+					{
+						"type": "homing",
+						"targetType": "closestEnemy",
+						"maxTurnProportion": 0.01
+					}
+				],
+				"renderers": [
+					{
+						"type": "projectile",
+						"ticks": 1
+					}
+				],
+				"expireOn": 96
+			}
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
 					"type": "afterTicks",
 					"afterTicks": 300
 				}
