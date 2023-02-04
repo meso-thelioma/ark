@@ -868,6 +868,7 @@
                                             },
                                             {
                                                 "type": "spawn",
+                                                "maxTriggers": 1,
                                                 "triggers": [
                                                     {
                                                         "type": "and",
@@ -1427,6 +1428,7 @@
                                             },
                                             {
                                                 "type": "spawn",
+                                                "maxTriggers": 1,
                                                 "triggers": [
                                                     {
                                                         "type": "and",
