@@ -1,0 +1,18 @@
+{
+	"id": "bos1",
+	"name": "Unbreakable Spirit",
+	"description": "The accumulation of light at the summit of creation.",
+	"cooldown": 180,
+	"chargeTicks": 20,
+	"effects": [],	
+	"buffs": [],
+	"loadout": {
+		"q": "bos1",
+		"w": "bos2",
+		"e": "bos3"
+	},
+	"icon": "",
+	"color": "#0000",
+	"action": "projectile",
+	"projectile": "bos1"
+}

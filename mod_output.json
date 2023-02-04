@@ -126,6 +126,9 @@
                 [
                     "fin1",
                     "vio1"
+                ],
+                [
+                    "bos1"
                 ]
             ],
             "w": [
@@ -388,6 +391,1159 @@
         ]
     },
     "Spells": {
+        "bos1": {
+            "id": "bos1",
+            "name": "Unbreakable Spirit",
+            "description": "The accumulation of light at the summit of creation.",
+            "cooldown": 180,
+            "chargeTicks": 20,
+            "effects": [],
+            "buffs": [],
+            "loadout": {
+                "q": "bos1",
+                "w": "bos2",
+                "e": "bos3"
+            },
+            "icon": "",
+            "color": "#0000",
+            "action": "projectile",
+            "projectile": {
+                "density": 0.01,
+                "radius": 0.003,
+                "speed": 0,
+                "maxTicks": 30,
+                "expireAgainstObjects": 14,
+                "damage": 0,
+                "collideWith": 0,
+                "lifeSteal": 0,
+                "categories": 2,
+                "sound": "fireball",
+                "soundHit": "standard",
+                "color": "#a88",
+                "buffs": [],
+                "behaviours": [
+                    {
+                        "type": "spawn",
+                        "projectile": {
+                            "density": 0.01,
+                            "radius": 0.003,
+                            "speed": 0.9,
+                            "maxTicks": 50,
+                            "expireAgainstObjects": 14,
+                            "damage": 0,
+                            "collideWith": 0,
+                            "lifeSteal": 0,
+                            "categories": 2,
+                            "sound": "fireball",
+                            "soundHit": "standard",
+                            "color": "#a88",
+                            "buffs": [],
+                            "behaviours": [
+                                {
+                                    "type": "spawn",
+                                    "triggers": [
+                                        {
+                                            "type": "expire"
+                                        }
+                                    ],
+                                    "projectile": {
+                                        "density": 0.001,
+                                        "attractable": false,
+                                        "radius": 2,
+                                        "speed": 0,
+                                        "maxTicks": 2,
+                                        "damage": 0,
+                                        "expireOn": 0,
+                                        "categories": 70,
+                                        "lifeSteal": 0,
+                                        "buffs": [],
+                                        "projectileBuffs": [],
+                                        "behaviours": [],
+                                        "color": "#aaa1",
+                                        "renderers": []
+                                    }
+                                },
+                                {
+                                    "type": "spawn",
+                                    "triggers": [
+                                        {
+                                            "type": "interval",
+                                            "triggerInterval": 3
+                                        }
+                                    ],
+                                    "requireParent": true,
+                                    "projectile": {
+                                        "density": 0.01,
+                                        "radius": 0.003,
+                                        "speed": 0,
+                                        "maxTicks": 190,
+                                        "damage": 0,
+                                        "sensor": true,
+                                        "expireOn": 0,
+                                        "lifeSteal": 0,
+                                        "categories": 6,
+                                        "sound": "fireball",
+                                        "soundHit": "standard",
+                                        "color": "#a88",
+                                        "buffs": [],
+                                        "behaviours": [
+                                            {
+                                                "type": "spawn",
+                                                "triggers": [
+                                                    {
+                                                        "type": "and",
+                                                        "triggers": [
+                                                            {
+                                                                "type": "collideWith",
+                                                                "collideWith": 64,
+                                                                "collideTypes": [
+                                                                    "bos1"
+                                                                ]
+                                                            },
+                                                            {
+                                                                "type": "health",
+                                                                "health": 40,
+                                                                "comparison": ">"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "numProjectiles": 2,
+                                                "spread": 0.5,
+                                                "expire": true,
+                                                "projectile": {
+                                                    "density": 0.01,
+                                                    "radius": 0.003,
+                                                    "speed": 1.2,
+                                                    "maxTicks": 90,
+                                                    "damage": 0,
+                                                    "expireOn": 0,
+                                                    "sensor": true,
+                                                    "lifeSteal": 0,
+                                                    "categories": 2,
+                                                    "sound": "fireball",
+                                                    "soundHit": "standard",
+                                                    "color": "#f58231",
+                                                    "buffs": [
+                                                        {
+                                                            "type": "burn",
+                                                            "hitInterval": 1,
+                                                            "maxTicks": 1,
+                                                            "packet": {
+                                                                "source": "arts",
+                                                                "lifeSteal": 0,
+                                                                "damage": 8
+                                                            }
+                                                        }
+                                                    ],
+                                                    "behaviours": [
+                                                        {
+                                                            "type": "spawn",
+                                                            "triggers": [
+                                                                {
+                                                                    "type": "and",
+                                                                    "triggers": [
+                                                                        {
+                                                                            "type": "collideWith",
+                                                                            "collideWith": 1,
+                                                                            "maxHits": 20000,
+                                                                            "triggerInterval": 1
+                                                                        },
+                                                                        {
+                                                                            "type": "health",
+                                                                            "health": 60,
+                                                                            "comparison": "<="
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "projectile": {
+                                                                "density": 30,
+                                                                "radius": 0.065,
+                                                                "selfPassthrough": true,
+                                                                "speed": 0,
+                                                                "maxTicks": 10,
+                                                                "sense": 1,
+                                                                "collideWith": 0,
+                                                                "expireOn": 0,
+                                                                "damage": 0,
+                                                                "lifeSteal": 0,
+                                                                "categories": 2,
+                                                                "sound": "fireball",
+                                                                "soundHit": "standard",
+                                                                "color": "#007",
+                                                                "buffs": [
+                                                                    {
+                                                                        "type": "burn",
+                                                                        "hitInterval": 1,
+                                                                        "maxTicks": 1,
+                                                                        "packet": {
+                                                                            "source": "arts",
+                                                                            "lifeSteal": 0,
+                                                                            "damage": 4,
+                                                                            "against": 14
+                                                                        }
+                                                                    }
+                                                                ],
+                                                                "behaviours": [],
+                                                                "renderers": [
+                                                                    {
+                                                                        "type": "projectile",
+                                                                        "color": "#0072",
+                                                                        "ticks": 40
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    ],
+                                                    "renderers": [
+                                                        {
+                                                            "type": "projectile",
+                                                            "color": "#f58231",
+                                                            "ticks": 10
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "type": "spawn",
+                                                "triggers": [
+                                                    {
+                                                        "type": "and",
+                                                        "triggers": [
+                                                            {
+                                                                "type": "collideWith",
+                                                                "collideWith": 64,
+                                                                "collideTypes": [
+                                                                    "bos1"
+                                                                ]
+                                                            },
+                                                            {
+                                                                "type": "health",
+                                                                "health": 40,
+                                                                "comparison": "<="
+                                                            },
+                                                            {
+                                                                "type": "health",
+                                                                "health": 20,
+                                                                "comparison": ">"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "numProjectiles": 2,
+                                                "spread": 0.5,
+                                                "expire": true,
+                                                "projectile": {
+                                                    "density": 0.01,
+                                                    "radius": 0.003,
+                                                    "speed": 1.2,
+                                                    "maxTicks": 90,
+                                                    "damage": 0,
+                                                    "expireOn": 0,
+                                                    "sensor": true,
+                                                    "lifeSteal": 0,
+                                                    "categories": 2,
+                                                    "sound": "fireball",
+                                                    "soundHit": "standard",
+                                                    "color": "#f58231",
+                                                    "buffs": [
+                                                        {
+                                                            "type": "burn",
+                                                            "hitInterval": 1,
+                                                            "maxTicks": 1,
+                                                            "packet": {
+                                                                "source": "arts",
+                                                                "lifeSteal": 0,
+                                                                "damage": 8
+                                                            }
+                                                        }
+                                                    ],
+                                                    "behaviours": [
+                                                        {
+                                                            "type": "spawn",
+                                                            "triggers": [
+                                                                {
+                                                                    "type": "collideWith",
+                                                                    "collideWith": 1,
+                                                                    "maxHits": 20000,
+                                                                    "triggerInterval": 1
+                                                                }
+                                                            ],
+                                                            "projectile": {
+                                                                "density": 30,
+                                                                "radius": 0.065,
+                                                                "selfPassthrough": true,
+                                                                "speed": 0,
+                                                                "maxTicks": 10,
+                                                                "sense": 1,
+                                                                "collideWith": 0,
+                                                                "expireOn": 0,
+                                                                "damage": 0,
+                                                                "lifeSteal": 0,
+                                                                "categories": 2,
+                                                                "sound": "fireball",
+                                                                "soundHit": "standard",
+                                                                "color": "#007",
+                                                                "buffs": [
+                                                                    {
+                                                                        "type": "burn",
+                                                                        "hitInterval": 1,
+                                                                        "maxTicks": 1,
+                                                                        "packet": {
+                                                                            "source": "arts",
+                                                                            "lifeSteal": 0,
+                                                                            "damage": 4,
+                                                                            "against": 14
+                                                                        }
+                                                                    }
+                                                                ],
+                                                                "behaviours": [],
+                                                                "renderers": [
+                                                                    {
+                                                                        "type": "projectile",
+                                                                        "color": "#0072",
+                                                                        "ticks": 40
+                                                                    }
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "homing",
+                                                            "triggers": [
+                                                                {
+                                                                    "type": "health",
+                                                                    "health": 60,
+                                                                    "comparison": "<="
+                                                                }
+                                                            ],
+                                                            "targetType": "closestEnemy",
+                                                            "maxTurnProportion": 0.03
+                                                        }
+                                                    ],
+                                                    "renderers": [
+                                                        {
+                                                            "type": "projectile",
+                                                            "color": "#f58231",
+                                                            "ticks": 10
+                                                        },
+                                                        {
+                                                            "type": "swirl",
+                                                            "ticks": 13,
+                                                            "color": "#4462",
+                                                            "radius": 0.01,
+                                                            "particleRadius": 0.001,
+                                                            "loopTicks": 120,
+                                                            "numParticles": 2
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "type": "spawn",
+                                                "triggers": [
+                                                    {
+                                                        "type": "and",
+                                                        "triggers": [
+                                                            {
+                                                                "type": "collideWith",
+                                                                "collideWith": 64,
+                                                                "collideTypes": [
+                                                                    "bos1"
+                                                                ]
+                                                            },
+                                                            {
+                                                                "type": "health",
+                                                                "health": 20,
+                                                                "comparison": "<="
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "numProjectiles": 4,
+                                                "spread": 0.75,
+                                                "expire": true,
+                                                "projectile": {
+                                                    "density": 0.01,
+                                                    "radius": 0.003,
+                                                    "speed": 1.2,
+                                                    "maxTicks": 90,
+                                                    "damage": 0,
+                                                    "expireOn": 0,
+                                                    "sensor": true,
+                                                    "lifeSteal": 0,
+                                                    "categories": 2,
+                                                    "sound": "fireball",
+                                                    "soundHit": "standard",
+                                                    "color": "#f58231",
+                                                    "buffs": [
+                                                        {
+                                                            "type": "burn",
+                                                            "hitInterval": 1,
+                                                            "maxTicks": 1,
+                                                            "packet": {
+                                                                "lifeSteal": 0,
+                                                                "damage": 8
+                                                            }
+                                                        }
+                                                    ],
+                                                    "behaviours": [
+                                                        {
+                                                            "type": "spawn",
+                                                            "triggers": [
+                                                                {
+                                                                    "type": "collideWith",
+                                                                    "collideWith": 1,
+                                                                    "maxHits": 20000,
+                                                                    "triggerInterval": 1
+                                                                }
+                                                            ],
+                                                            "projectile": {
+                                                                "density": 30,
+                                                                "radius": 0.065,
+                                                                "selfPassthrough": true,
+                                                                "speed": 0,
+                                                                "maxTicks": 10,
+                                                                "sense": 1,
+                                                                "collideWith": 0,
+                                                                "expireOn": 0,
+                                                                "damage": 0,
+                                                                "lifeSteal": 0,
+                                                                "categories": 2,
+                                                                "sound": "fireball",
+                                                                "soundHit": "standard",
+                                                                "color": "#007",
+                                                                "buffs": [
+                                                                    {
+                                                                        "type": "burn",
+                                                                        "hitInterval": 1,
+                                                                        "maxTicks": 1,
+                                                                        "packet": {
+                                                                            "source": "arts",
+                                                                            "lifeSteal": 0,
+                                                                            "damage": 4,
+                                                                            "against": 14
+                                                                        }
+                                                                    }
+                                                                ],
+                                                                "behaviours": [],
+                                                                "renderers": [
+                                                                    {
+                                                                        "type": "projectile",
+                                                                        "color": "#0072",
+                                                                        "ticks": 40
+                                                                    }
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "homing",
+                                                            "targetType": "closestEnemy",
+                                                            "maxTurnProportion": 0.03
+                                                        }
+                                                    ],
+                                                    "renderers": [
+                                                        {
+                                                            "type": "projectile",
+                                                            "color": "#f58231",
+                                                            "ticks": 10
+                                                        },
+                                                        {
+                                                            "type": "swirl",
+                                                            "ticks": 13,
+                                                            "color": "#4462",
+                                                            "radius": 0.01,
+                                                            "particleRadius": 0.001,
+                                                            "loopTicks": 120,
+                                                            "numParticles": 2
+                                                        },
+                                                        {
+                                                            "type": "ray",
+                                                            "color": "#f032e6",
+                                                            "radiusMultiplier": 0.3,
+                                                            "ticks": 20
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "type": "spawn",
+                                                "triggers": [
+                                                    {
+                                                        "type": "and",
+                                                        "triggers": [
+                                                            {
+                                                                "type": "afterTicks",
+                                                                "afterTicks": 5
+                                                            },
+                                                            {
+                                                                "type": "health",
+                                                                "health": 80,
+                                                                "comparison": "<="
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "projectile": {
+                                                    "density": 0.01,
+                                                    "radius": 0.03,
+                                                    "speed": 0,
+                                                    "maxTicks": 30,
+                                                    "collideWith": 8192,
+                                                    "sense": 57143,
+                                                    "damage": 0,
+                                                    "expireOn": 0,
+                                                    "lifeSteal": 0,
+                                                    "categories": 2,
+                                                    "sound": "fireball",
+                                                    "soundHit": "standard",
+                                                    "color": "#dcbeff",
+                                                    "behaviours": [
+                                                        {
+                                                            "type": "spawn",
+                                                            "trigger": {
+                                                                "collideWith": 3,
+                                                                "against": 12
+                                                            },
+                                                            "expire": true,
+                                                            "projectile": {
+                                                                "density": 30,
+                                                                "radius": 0.03,
+                                                                "selfPassthrough": true,
+                                                                "speed": 0,
+                                                                "maxTicks": 10,
+                                                                "sense": 1,
+                                                                "expireOn": 0,
+                                                                "collideWith": 0,
+                                                                "damage": 0,
+                                                                "lifeSteal": 0,
+                                                                "categories": 2,
+                                                                "sound": "fireball",
+                                                                "soundHit": "standard",
+                                                                "color": "#dcbeff",
+                                                                "buffs": [
+                                                                    {
+                                                                        "type": "burn",
+                                                                        "hitInterval": 1,
+                                                                        "maxTicks": 1,
+                                                                        "packet": {
+                                                                            "lifeSteal": 0,
+                                                                            "damage": 3
+                                                                        }
+                                                                    }
+                                                                ],
+                                                                "behaviours": [],
+                                                                "renderers": [
+                                                                    {
+                                                                        "type": "projectile",
+                                                                        "color": "#dcbeff11",
+                                                                        "ticks": 40
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    ],
+                                                    "renderers": [
+                                                        {
+                                                            "type": "swirl",
+                                                            "ticks": 20,
+                                                            "color": "#dcbeff22",
+                                                            "radius": 0.03,
+                                                            "particleRadius": 0.001,
+                                                            "loopTicks": 120,
+                                                            "numParticles": 8
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ],
+                                        "renderers": [
+                                            {
+                                                "type": "projectile",
+                                                "color": "#a88",
+                                                "ticks": 10,
+                                                "shine": -1
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "homing",
+                                    "trigger": {
+                                        "afterTicks": 1
+                                    },
+                                    "targetType": "follow",
+                                    "maxTurnProportion": 0,
+                                    "newSpeed": 0.9,
+                                    "redirect": true
+                                }
+                            ],
+                            "renderers": []
+                        }
+                    },
+                    {
+                        "type": "spawn",
+                        "projectile": {
+                            "density": 0.01,
+                            "radius": 0.003,
+                            "speed": -0.9,
+                            "maxTicks": 50,
+                            "expireAgainstObjects": 14,
+                            "damage": 0,
+                            "collideWith": 0,
+                            "lifeSteal": 0,
+                            "categories": 2,
+                            "sound": "fireball",
+                            "soundHit": "standard",
+                            "color": "#a88",
+                            "buffs": [],
+                            "behaviours": [
+                                {
+                                    "type": "spawn",
+                                    "triggers": [
+                                        {
+                                            "type": "expire"
+                                        }
+                                    ],
+                                    "projectile": {
+                                        "density": 0.001,
+                                        "attractable": false,
+                                        "radius": 2,
+                                        "speed": 0,
+                                        "maxTicks": 2,
+                                        "damage": 0,
+                                        "expireOn": 0,
+                                        "categories": 70,
+                                        "lifeSteal": 0,
+                                        "buffs": [],
+                                        "projectileBuffs": [],
+                                        "behaviours": [],
+                                        "color": "#aaa1",
+                                        "renderers": []
+                                    }
+                                },
+                                {
+                                    "type": "spawn",
+                                    "triggers": [
+                                        {
+                                            "type": "interval",
+                                            "triggerInterval": 3
+                                        }
+                                    ],
+                                    "requireParent": true,
+                                    "projectile": {
+                                        "density": 0.01,
+                                        "radius": 0.003,
+                                        "speed": 0,
+                                        "maxTicks": 190,
+                                        "damage": 0,
+                                        "sensor": true,
+                                        "expireOn": 0,
+                                        "lifeSteal": 0,
+                                        "categories": 6,
+                                        "sound": "fireball",
+                                        "soundHit": "standard",
+                                        "color": "#a88",
+                                        "buffs": [],
+                                        "behaviours": [
+                                            {
+                                                "type": "spawn",
+                                                "triggers": [
+                                                    {
+                                                        "type": "and",
+                                                        "triggers": [
+                                                            {
+                                                                "type": "collideWith",
+                                                                "collideWith": 64,
+                                                                "collideTypes": [
+                                                                    "bos1"
+                                                                ]
+                                                            },
+                                                            {
+                                                                "type": "health",
+                                                                "health": 40,
+                                                                "comparison": ">"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "numProjectiles": 2,
+                                                "spread": 0.5,
+                                                "expire": true,
+                                                "projectile": {
+                                                    "density": 0.01,
+                                                    "radius": 0.003,
+                                                    "speed": 1.2,
+                                                    "maxTicks": 90,
+                                                    "damage": 0,
+                                                    "expireOn": 0,
+                                                    "sensor": true,
+                                                    "lifeSteal": 0,
+                                                    "categories": 2,
+                                                    "sound": "fireball",
+                                                    "soundHit": "standard",
+                                                    "color": "#f58231",
+                                                    "buffs": [
+                                                        {
+                                                            "type": "burn",
+                                                            "hitInterval": 1,
+                                                            "maxTicks": 1,
+                                                            "packet": {
+                                                                "source": "arts",
+                                                                "lifeSteal": 0,
+                                                                "damage": 8
+                                                            }
+                                                        }
+                                                    ],
+                                                    "behaviours": [
+                                                        {
+                                                            "type": "spawn",
+                                                            "triggers": [
+                                                                {
+                                                                    "type": "and",
+                                                                    "triggers": [
+                                                                        {
+                                                                            "type": "collideWith",
+                                                                            "collideWith": 1,
+                                                                            "maxHits": 20000,
+                                                                            "triggerInterval": 1
+                                                                        },
+                                                                        {
+                                                                            "type": "health",
+                                                                            "health": 60,
+                                                                            "comparison": "<="
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "projectile": {
+                                                                "density": 30,
+                                                                "radius": 0.065,
+                                                                "selfPassthrough": true,
+                                                                "speed": 0,
+                                                                "maxTicks": 10,
+                                                                "sense": 1,
+                                                                "collideWith": 0,
+                                                                "expireOn": 0,
+                                                                "damage": 0,
+                                                                "lifeSteal": 0,
+                                                                "categories": 2,
+                                                                "sound": "fireball",
+                                                                "soundHit": "standard",
+                                                                "color": "#007",
+                                                                "buffs": [
+                                                                    {
+                                                                        "type": "burn",
+                                                                        "hitInterval": 1,
+                                                                        "maxTicks": 1,
+                                                                        "packet": {
+                                                                            "source": "arts",
+                                                                            "lifeSteal": 0,
+                                                                            "damage": 4,
+                                                                            "against": 14
+                                                                        }
+                                                                    }
+                                                                ],
+                                                                "behaviours": [],
+                                                                "renderers": [
+                                                                    {
+                                                                        "type": "projectile",
+                                                                        "color": "#0072",
+                                                                        "ticks": 40
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    ],
+                                                    "renderers": [
+                                                        {
+                                                            "type": "projectile",
+                                                            "color": "#f58231",
+                                                            "ticks": 10
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "type": "spawn",
+                                                "triggers": [
+                                                    {
+                                                        "type": "and",
+                                                        "triggers": [
+                                                            {
+                                                                "type": "collideWith",
+                                                                "collideWith": 64,
+                                                                "collideTypes": [
+                                                                    "bos1"
+                                                                ]
+                                                            },
+                                                            {
+                                                                "type": "health",
+                                                                "health": 40,
+                                                                "comparison": "<="
+                                                            },
+                                                            {
+                                                                "type": "health",
+                                                                "health": 20,
+                                                                "comparison": ">"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "numProjectiles": 2,
+                                                "spread": 0.5,
+                                                "expire": true,
+                                                "projectile": {
+                                                    "density": 0.01,
+                                                    "radius": 0.003,
+                                                    "speed": 1.2,
+                                                    "maxTicks": 90,
+                                                    "damage": 0,
+                                                    "expireOn": 0,
+                                                    "sensor": true,
+                                                    "lifeSteal": 0,
+                                                    "categories": 2,
+                                                    "sound": "fireball",
+                                                    "soundHit": "standard",
+                                                    "color": "#f58231",
+                                                    "buffs": [
+                                                        {
+                                                            "type": "burn",
+                                                            "hitInterval": 1,
+                                                            "maxTicks": 1,
+                                                            "packet": {
+                                                                "source": "arts",
+                                                                "lifeSteal": 0,
+                                                                "damage": 8
+                                                            }
+                                                        }
+                                                    ],
+                                                    "behaviours": [
+                                                        {
+                                                            "type": "spawn",
+                                                            "triggers": [
+                                                                {
+                                                                    "type": "collideWith",
+                                                                    "collideWith": 1,
+                                                                    "maxHits": 20000,
+                                                                    "triggerInterval": 1
+                                                                }
+                                                            ],
+                                                            "projectile": {
+                                                                "density": 30,
+                                                                "radius": 0.065,
+                                                                "selfPassthrough": true,
+                                                                "speed": 0,
+                                                                "maxTicks": 10,
+                                                                "sense": 1,
+                                                                "collideWith": 0,
+                                                                "expireOn": 0,
+                                                                "damage": 0,
+                                                                "lifeSteal": 0,
+                                                                "categories": 2,
+                                                                "sound": "fireball",
+                                                                "soundHit": "standard",
+                                                                "color": "#007",
+                                                                "buffs": [
+                                                                    {
+                                                                        "type": "burn",
+                                                                        "hitInterval": 1,
+                                                                        "maxTicks": 1,
+                                                                        "packet": {
+                                                                            "source": "arts",
+                                                                            "lifeSteal": 0,
+                                                                            "damage": 4,
+                                                                            "against": 14
+                                                                        }
+                                                                    }
+                                                                ],
+                                                                "behaviours": [],
+                                                                "renderers": [
+                                                                    {
+                                                                        "type": "projectile",
+                                                                        "color": "#0072",
+                                                                        "ticks": 40
+                                                                    }
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "homing",
+                                                            "triggers": [
+                                                                {
+                                                                    "type": "health",
+                                                                    "health": 60,
+                                                                    "comparison": "<="
+                                                                }
+                                                            ],
+                                                            "targetType": "closestEnemy",
+                                                            "maxTurnProportion": 0.03
+                                                        }
+                                                    ],
+                                                    "renderers": [
+                                                        {
+                                                            "type": "projectile",
+                                                            "color": "#f58231",
+                                                            "ticks": 10
+                                                        },
+                                                        {
+                                                            "type": "swirl",
+                                                            "ticks": 13,
+                                                            "color": "#4462",
+                                                            "radius": 0.01,
+                                                            "particleRadius": 0.001,
+                                                            "loopTicks": 120,
+                                                            "numParticles": 2
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "type": "spawn",
+                                                "triggers": [
+                                                    {
+                                                        "type": "and",
+                                                        "triggers": [
+                                                            {
+                                                                "type": "collideWith",
+                                                                "collideWith": 64,
+                                                                "collideTypes": [
+                                                                    "bos1"
+                                                                ]
+                                                            },
+                                                            {
+                                                                "type": "health",
+                                                                "health": 20,
+                                                                "comparison": "<="
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "numProjectiles": 4,
+                                                "spread": 0.75,
+                                                "expire": true,
+                                                "projectile": {
+                                                    "density": 0.01,
+                                                    "radius": 0.003,
+                                                    "speed": 1.2,
+                                                    "maxTicks": 90,
+                                                    "damage": 0,
+                                                    "expireOn": 0,
+                                                    "sensor": true,
+                                                    "lifeSteal": 0,
+                                                    "categories": 2,
+                                                    "sound": "fireball",
+                                                    "soundHit": "standard",
+                                                    "color": "#f58231",
+                                                    "buffs": [
+                                                        {
+                                                            "type": "burn",
+                                                            "hitInterval": 1,
+                                                            "maxTicks": 1,
+                                                            "packet": {
+                                                                "lifeSteal": 0,
+                                                                "damage": 8
+                                                            }
+                                                        }
+                                                    ],
+                                                    "behaviours": [
+                                                        {
+                                                            "type": "spawn",
+                                                            "triggers": [
+                                                                {
+                                                                    "type": "collideWith",
+                                                                    "collideWith": 1,
+                                                                    "maxHits": 20000,
+                                                                    "triggerInterval": 1
+                                                                }
+                                                            ],
+                                                            "projectile": {
+                                                                "density": 30,
+                                                                "radius": 0.065,
+                                                                "selfPassthrough": true,
+                                                                "speed": 0,
+                                                                "maxTicks": 10,
+                                                                "sense": 1,
+                                                                "collideWith": 0,
+                                                                "expireOn": 0,
+                                                                "damage": 0,
+                                                                "lifeSteal": 0,
+                                                                "categories": 2,
+                                                                "sound": "fireball",
+                                                                "soundHit": "standard",
+                                                                "color": "#007",
+                                                                "buffs": [
+                                                                    {
+                                                                        "type": "burn",
+                                                                        "hitInterval": 1,
+                                                                        "maxTicks": 1,
+                                                                        "packet": {
+                                                                            "source": "arts",
+                                                                            "lifeSteal": 0,
+                                                                            "damage": 4,
+                                                                            "against": 14
+                                                                        }
+                                                                    }
+                                                                ],
+                                                                "behaviours": [],
+                                                                "renderers": [
+                                                                    {
+                                                                        "type": "projectile",
+                                                                        "color": "#0072",
+                                                                        "ticks": 40
+                                                                    }
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "homing",
+                                                            "targetType": "closestEnemy",
+                                                            "maxTurnProportion": 0.03
+                                                        }
+                                                    ],
+                                                    "renderers": [
+                                                        {
+                                                            "type": "projectile",
+                                                            "color": "#f58231",
+                                                            "ticks": 10
+                                                        },
+                                                        {
+                                                            "type": "swirl",
+                                                            "ticks": 13,
+                                                            "color": "#4462",
+                                                            "radius": 0.01,
+                                                            "particleRadius": 0.001,
+                                                            "loopTicks": 120,
+                                                            "numParticles": 2
+                                                        },
+                                                        {
+                                                            "type": "ray",
+                                                            "color": "#f032e6",
+                                                            "radiusMultiplier": 0.3,
+                                                            "ticks": 20
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "type": "spawn",
+                                                "triggers": [
+                                                    {
+                                                        "type": "and",
+                                                        "triggers": [
+                                                            {
+                                                                "type": "afterTicks",
+                                                                "afterTicks": 5
+                                                            },
+                                                            {
+                                                                "type": "health",
+                                                                "health": 80,
+                                                                "comparison": "<="
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "projectile": {
+                                                    "density": 0.01,
+                                                    "radius": 0.03,
+                                                    "speed": 0,
+                                                    "maxTicks": 30,
+                                                    "collideWith": 8192,
+                                                    "sense": 57143,
+                                                    "damage": 0,
+                                                    "expireOn": 0,
+                                                    "lifeSteal": 0,
+                                                    "categories": 2,
+                                                    "sound": "fireball",
+                                                    "soundHit": "standard",
+                                                    "color": "#dcbeff",
+                                                    "behaviours": [
+                                                        {
+                                                            "type": "spawn",
+                                                            "trigger": {
+                                                                "collideWith": 3,
+                                                                "against": 12
+                                                            },
+                                                            "expire": true,
+                                                            "projectile": {
+                                                                "density": 30,
+                                                                "radius": 0.03,
+                                                                "selfPassthrough": true,
+                                                                "speed": 0,
+                                                                "maxTicks": 10,
+                                                                "sense": 1,
+                                                                "expireOn": 0,
+                                                                "collideWith": 0,
+                                                                "damage": 0,
+                                                                "lifeSteal": 0,
+                                                                "categories": 2,
+                                                                "sound": "fireball",
+                                                                "soundHit": "standard",
+                                                                "color": "#dcbeff",
+                                                                "buffs": [
+                                                                    {
+                                                                        "type": "burn",
+                                                                        "hitInterval": 1,
+                                                                        "maxTicks": 1,
+                                                                        "packet": {
+                                                                            "lifeSteal": 0,
+                                                                            "damage": 3
+                                                                        }
+                                                                    }
+                                                                ],
+                                                                "behaviours": [],
+                                                                "renderers": [
+                                                                    {
+                                                                        "type": "projectile",
+                                                                        "color": "#dcbeff11",
+                                                                        "ticks": 40
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    ],
+                                                    "renderers": [
+                                                        {
+                                                            "type": "swirl",
+                                                            "ticks": 20,
+                                                            "color": "#dcbeff22",
+                                                            "radius": 0.03,
+                                                            "particleRadius": 0.001,
+                                                            "loopTicks": 120,
+                                                            "numParticles": 8
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ],
+                                        "renderers": [
+                                            {
+                                                "type": "projectile",
+                                                "color": "#a88",
+                                                "ticks": 10,
+                                                "shine": -1
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "homing",
+                                    "trigger": {
+                                        "afterTicks": 1
+                                    },
+                                    "targetType": "follow",
+                                    "maxTurnProportion": 0,
+                                    "newSpeed": 0.9,
+                                    "redirect": true
+                                }
+                            ],
+                            "renderers": []
+                        }
+                    }
+                ],
+                "renderers": []
+            }
+        },
         "bosspassive": {
             "id": "bos",
             "name": "GOOGLE DOC",
@@ -3068,7 +4224,8 @@
                                                     "type": "armor",
                                                     "cleansable": false,
                                                     "maxTicks": 20,
-                                                    "proportion": -1
+                                                    "flat": 250,
+                                                    "maxReduction": 0
                                                 },
                                                 {
                                                     "type": "movement",

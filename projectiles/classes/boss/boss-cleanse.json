@@ -76,7 +76,8 @@
 					"type": "armor",
 					"cleansable": false,
 					"maxTicks": 20,
-					"proportion": -1
+					"flat": 250,
+					"maxReduction": 0
 				},
 				{
 					"type": "movement",

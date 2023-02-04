@@ -1,0 +1,128 @@
+{
+	"density": 0.01,
+	"radius": 0.003,
+	"speed": 0,
+	"maxTicks": 190,
+	"damage": 0,
+	"sensor": true,
+	"expireOn": 0,
+	"lifeSteal": 0,
+	"categories": 6,
+	"sound": "fireball",
+	"soundHit": "standard",
+	"color": "#a88",
+	"buffs": [],
+	"behaviours": [
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+				"type": "and",
+					"triggers": [
+						{
+							"type": "collideWith",
+							"collideWith": 64,
+							"collideTypes": [
+								"bos1"
+							]
+						},
+						{
+							"type": "health",
+							"health": 40,
+							"comparison": ">"
+						}
+					]
+				}
+			],
+			"numProjectiles": 2,
+			"spread": 0.5,
+			"expire": true,
+			"projectile": "bos1-subproj-ph012"
+		},		
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+				"type": "and",
+					"triggers": [
+						{
+							"type": "collideWith",
+							"collideWith": 64,
+							"collideTypes": [
+								"bos1"
+							]
+						},
+						{
+							"type": "health",
+							"health": 40,
+							"comparison": "<="
+						},
+						{
+							"type": "health",
+							"health": 20,
+							"comparison": ">"
+						}
+					]
+				}
+			],
+			"numProjectiles": 2,
+			"spread": 0.5,
+			"expire": true,
+			"projectile": "bos1-subproj-ph3"
+		},			
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+				"type": "and",
+					"triggers": [
+						{
+							"type": "collideWith",
+							"collideWith": 64,
+							"collideTypes": [
+								"bos1"
+							]
+						},
+						{
+							"type": "health",
+							"health": 20,
+							"comparison": "<="
+						}
+					]
+				}
+			],
+			"numProjectiles": 4,
+			"spread": 0.75,
+			"expire": true,
+			"projectile": "bos1-subproj-ph4"
+		},	
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "and",
+					"triggers": [
+						{
+							"type": "afterTicks",
+							"afterTicks": 5
+						},
+						{
+							"type": "health",
+							"health": 80,
+							"comparison": "<="
+						}
+					]
+				}
+			],
+			"projectile": "bos1-wineglass"
+		}
+	],
+	"renderers": [
+		{
+			"type": "projectile",
+			"color": "#a88",
+			"ticks": 10,
+			"shine": -1
+		}
+	]
+}
