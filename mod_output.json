@@ -468,7 +468,7 @@
                                     "triggers": [
                                         {
                                             "type": "interval",
-                                            "triggerInterval": 3
+                                            "triggerInterval": 7
                                         }
                                     ],
                                     "requireParent": true,
@@ -527,12 +527,21 @@
                                                     "buffs": [
                                                         {
                                                             "type": "burn",
-                                                            "hitInterval": 1,
-                                                            "maxTicks": 1,
+                                                            "hitInterval": 4,
+                                                            "render": {
+                                                                "color": "#f58231",
+                                                                "particleRadius": 0.0125,
+                                                                "emissionRadiusFactor": 0,
+                                                                "ticks": 10,
+                                                                "light": 1,
+                                                                "invisible": true
+                                                            },
+                                                            "maxTicks": 32,
                                                             "packet": {
-                                                                "source": "arts",
+                                                                "source": "phys",
                                                                 "lifeSteal": 0,
-                                                                "damage": 8
+                                                                "noHit": true,
+                                                                "damage": 1
                                                             }
                                                         }
                                                     ],
@@ -650,12 +659,21 @@
                                                     "buffs": [
                                                         {
                                                             "type": "burn",
-                                                            "hitInterval": 1,
-                                                            "maxTicks": 1,
+                                                            "hitInterval": 4,
+                                                            "render": {
+                                                                "color": "#f58231",
+                                                                "particleRadius": 0.0125,
+                                                                "emissionRadiusFactor": 0,
+                                                                "ticks": 10,
+                                                                "light": 1,
+                                                                "invisible": true
+                                                            },
+                                                            "maxTicks": 32,
                                                             "packet": {
-                                                                "source": "arts",
+                                                                "source": "phys",
                                                                 "lifeSteal": 0,
-                                                                "damage": 8
+                                                                "noHit": true,
+                                                                "damage": 1
                                                             }
                                                         }
                                                     ],
@@ -718,7 +736,8 @@
                                                                 }
                                                             ],
                                                             "targetType": "closestEnemy",
-                                                            "maxTurnProportion": 0.03
+                                                            "maxTurnProportion": 0.01,
+                                                            "maxTicks": 12
                                                         }
                                                     ],
                                                     "renderers": [
@@ -732,7 +751,7 @@
                                                             "ticks": 13,
                                                             "color": "#4462",
                                                             "radius": 0.01,
-                                                            "particleRadius": 0.001,
+                                                            "particleRadius": 0.02,
                                                             "loopTicks": 120,
                                                             "numParticles": 2
                                                         }
@@ -779,11 +798,32 @@
                                                     "buffs": [
                                                         {
                                                             "type": "burn",
-                                                            "hitInterval": 1,
-                                                            "maxTicks": 1,
+                                                            "hitInterval": 4,
+                                                            "renderers": [
+                                                                {
+                                                                    "type": "buff",
+                                                                    "color": "#f58231",
+                                                                    "particleRadius": 0.0125,
+                                                                    "emissionRadiusFactor": 0,
+                                                                    "ticks": 10,
+                                                                    "light": 1,
+                                                                    "invisible": true
+                                                                },
+                                                                {
+                                                                    "type": "buff",
+                                                                    "color": "#f032e6",
+                                                                    "particleRadius": 0.00025,
+                                                                    "emissionRadiusFactor": 1,
+                                                                    "ticks": 10,
+                                                                    "light": 1,
+                                                                    "invisible": true
+                                                                }
+                                                            ],
+                                                            "maxTicks": 32,
                                                             "packet": {
                                                                 "lifeSteal": 0,
-                                                                "damage": 8
+                                                                "noHit": true,
+                                                                "damage": 1
                                                             }
                                                         }
                                                     ],
@@ -839,7 +879,8 @@
                                                         {
                                                             "type": "homing",
                                                             "targetType": "closestEnemy",
-                                                            "maxTurnProportion": 0.03
+                                                            "maxTurnProportion": 0.01,
+                                                            "maxTicks": 12
                                                         }
                                                     ],
                                                     "renderers": [
@@ -853,7 +894,7 @@
                                                             "ticks": 13,
                                                             "color": "#4462",
                                                             "radius": 0.01,
-                                                            "particleRadius": 0.001,
+                                                            "particleRadius": 0.02,
                                                             "loopTicks": 120,
                                                             "numParticles": 2
                                                         },
@@ -885,6 +926,7 @@
                                                         ]
                                                     }
                                                 ],
+                                                "requireParent": true,
                                                 "projectile": {
                                                     "density": 0.01,
                                                     "radius": 0.03,
@@ -961,7 +1003,7 @@
                                         "renderers": [
                                             {
                                                 "type": "projectile",
-                                                "color": "#a88",
+                                                "color": "#aaa",
                                                 "ticks": 10,
                                                 "shine": -1
                                             }
@@ -1028,7 +1070,7 @@
                                     "triggers": [
                                         {
                                             "type": "interval",
-                                            "triggerInterval": 3
+                                            "triggerInterval": 7
                                         }
                                     ],
                                     "requireParent": true,
@@ -1087,12 +1129,21 @@
                                                     "buffs": [
                                                         {
                                                             "type": "burn",
-                                                            "hitInterval": 1,
-                                                            "maxTicks": 1,
+                                                            "hitInterval": 4,
+                                                            "render": {
+                                                                "color": "#f58231",
+                                                                "particleRadius": 0.0125,
+                                                                "emissionRadiusFactor": 0,
+                                                                "ticks": 10,
+                                                                "light": 1,
+                                                                "invisible": true
+                                                            },
+                                                            "maxTicks": 32,
                                                             "packet": {
-                                                                "source": "arts",
+                                                                "source": "phys",
                                                                 "lifeSteal": 0,
-                                                                "damage": 8
+                                                                "noHit": true,
+                                                                "damage": 1
                                                             }
                                                         }
                                                     ],
@@ -1210,12 +1261,21 @@
                                                     "buffs": [
                                                         {
                                                             "type": "burn",
-                                                            "hitInterval": 1,
-                                                            "maxTicks": 1,
+                                                            "hitInterval": 4,
+                                                            "render": {
+                                                                "color": "#f58231",
+                                                                "particleRadius": 0.0125,
+                                                                "emissionRadiusFactor": 0,
+                                                                "ticks": 10,
+                                                                "light": 1,
+                                                                "invisible": true
+                                                            },
+                                                            "maxTicks": 32,
                                                             "packet": {
-                                                                "source": "arts",
+                                                                "source": "phys",
                                                                 "lifeSteal": 0,
-                                                                "damage": 8
+                                                                "noHit": true,
+                                                                "damage": 1
                                                             }
                                                         }
                                                     ],
@@ -1278,7 +1338,8 @@
                                                                 }
                                                             ],
                                                             "targetType": "closestEnemy",
-                                                            "maxTurnProportion": 0.03
+                                                            "maxTurnProportion": 0.01,
+                                                            "maxTicks": 12
                                                         }
                                                     ],
                                                     "renderers": [
@@ -1292,7 +1353,7 @@
                                                             "ticks": 13,
                                                             "color": "#4462",
                                                             "radius": 0.01,
-                                                            "particleRadius": 0.001,
+                                                            "particleRadius": 0.02,
                                                             "loopTicks": 120,
                                                             "numParticles": 2
                                                         }
@@ -1339,11 +1400,32 @@
                                                     "buffs": [
                                                         {
                                                             "type": "burn",
-                                                            "hitInterval": 1,
-                                                            "maxTicks": 1,
+                                                            "hitInterval": 4,
+                                                            "renderers": [
+                                                                {
+                                                                    "type": "buff",
+                                                                    "color": "#f58231",
+                                                                    "particleRadius": 0.0125,
+                                                                    "emissionRadiusFactor": 0,
+                                                                    "ticks": 10,
+                                                                    "light": 1,
+                                                                    "invisible": true
+                                                                },
+                                                                {
+                                                                    "type": "buff",
+                                                                    "color": "#f032e6",
+                                                                    "particleRadius": 0.00025,
+                                                                    "emissionRadiusFactor": 1,
+                                                                    "ticks": 10,
+                                                                    "light": 1,
+                                                                    "invisible": true
+                                                                }
+                                                            ],
+                                                            "maxTicks": 32,
                                                             "packet": {
                                                                 "lifeSteal": 0,
-                                                                "damage": 8
+                                                                "noHit": true,
+                                                                "damage": 1
                                                             }
                                                         }
                                                     ],
@@ -1399,7 +1481,8 @@
                                                         {
                                                             "type": "homing",
                                                             "targetType": "closestEnemy",
-                                                            "maxTurnProportion": 0.03
+                                                            "maxTurnProportion": 0.01,
+                                                            "maxTicks": 12
                                                         }
                                                     ],
                                                     "renderers": [
@@ -1413,7 +1496,7 @@
                                                             "ticks": 13,
                                                             "color": "#4462",
                                                             "radius": 0.01,
-                                                            "particleRadius": 0.001,
+                                                            "particleRadius": 0.02,
                                                             "loopTicks": 120,
                                                             "numParticles": 2
                                                         },
@@ -1445,6 +1528,7 @@
                                                         ]
                                                     }
                                                 ],
+                                                "requireParent": true,
                                                 "projectile": {
                                                     "density": 0.01,
                                                     "radius": 0.03,
@@ -1521,7 +1605,7 @@
                                         "renderers": [
                                             {
                                                 "type": "projectile",
-                                                "color": "#a88",
+                                                "color": "#aaa",
                                                 "ticks": 10,
                                                 "shine": -1
                                             }

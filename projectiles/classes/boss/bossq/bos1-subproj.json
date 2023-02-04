@@ -115,13 +115,14 @@
 					]
 				}
 			],
+			"requireParent": true,
 			"projectile": "bos1-wineglass"
 		}
 	],
 	"renderers": [
 		{
 			"type": "projectile",
-			"color": "#a88",
+			"color": "#aaa",
 			"ticks": 10,
 			"shine": -1
 		}

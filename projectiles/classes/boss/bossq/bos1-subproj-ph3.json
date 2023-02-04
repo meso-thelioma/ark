@@ -59,7 +59,8 @@
 				}
 			],
 			"targetType": "closestEnemy",
-			"maxTurnProportion": 0.03
+			"maxTurnProportion": 0.01,
+			"maxTicks": 12
 		}
 	],
 	"renderers": [
@@ -73,7 +74,7 @@
 			"ticks": 13,
 			"color": "#4462",
 			"radius": 0.01,
-			"particleRadius": 0.001,
+			"particleRadius": 0.02,
 			"loopTicks": 120,
 			"numParticles": 2
 		}

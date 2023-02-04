@@ -42,7 +42,7 @@
 			"triggers": [
 				{
 					"type": "interval",
-					"triggerInterval": 3
+					"triggerInterval": 7
 				}
 			],
 			"requireParent": true,

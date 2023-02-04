@@ -14,12 +14,21 @@
 	"buffs": [
 		{
 			"type": "burn",
-			"hitInterval": 1,
-			"maxTicks": 1,
+			"hitInterval": 4,
+			"render": {
+				"color": "#f58231",
+				"particleRadius": 0.0125,
+				"emissionRadiusFactor": 0,
+				"ticks": 10,
+				"light": 1,
+				"invisible": true
+			},
+			"maxTicks": 32,
 			"packet": {
-				"source": "arts",
+				"source": "phys",
 				"lifeSteal": 0,
-				"damage": 8
+				"noHit": true,
+				"damage": 1
 			}
 		}
 	],
