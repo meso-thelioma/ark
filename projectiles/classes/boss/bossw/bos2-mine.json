@@ -49,7 +49,7 @@
 						"packet": {
 							"source": "arts",
 							"lifeSteal": 0,
-							"damage": 4
+							"damage": 2
 						}
 					}
 				],
@@ -121,7 +121,7 @@
 					"type": "lifeSteal",
 					"cleansable": false,
 					"maxTicks": 120000,
-					"damageMultiplier": 1.1
+					"damageMultiplier": 1.05
 				}
 			]
 		},
@@ -148,7 +148,7 @@
 						"invisible": true
 					},
 					"cleansable": false,
-					"cooldownRateModifier": 0.1
+					"cooldownRateModifier": 0.05
 				}
 			]
 		}
