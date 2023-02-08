@@ -402,9 +402,16 @@
             "name": "Life's Melisma",
             "description": "The accumulation of light at the summit of creation.",
             "cooldown": 360,
-            "chargeTicks": 50,
+            "chargeTicks": 10,
             "effects": [],
-            "buffs": [],
+            "buffs": [
+                {
+                    "type": "cooldown",
+                    "cleansable": false,
+                    "maxTicks": 120,
+                    "minCooldown": 120
+                }
+            ],
             "loadout": {
                 "q": "bos1",
                 "w": "bos2",
@@ -937,7 +944,7 @@
                                                     "density": 0.01,
                                                     "radius": 0.09,
                                                     "speed": 0,
-                                                    "maxTicks": 30,
+                                                    "maxTicks": 120,
                                                     "collideWith": 0,
                                                     "sense": 0,
                                                     "damage": 0,
@@ -1539,7 +1546,7 @@
                                                     "density": 0.01,
                                                     "radius": 0.09,
                                                     "speed": 0,
-                                                    "maxTicks": 30,
+                                                    "maxTicks": 120,
                                                     "collideWith": 0,
                                                     "sense": 0,
                                                     "damage": 0,
@@ -1641,9 +1648,16 @@
             "name": "Catabolism",
             "description": "The accumulation of light at the summit of creation.",
             "cooldown": 450,
-            "chargeTicks": 50,
+            "chargeTicks": 10,
             "effects": [],
-            "buffs": [],
+            "buffs": [
+                {
+                    "type": "cooldown",
+                    "cleansable": false,
+                    "maxTicks": 120,
+                    "minCooldown": 120
+                }
+            ],
             "loadout": {
                 "q": "bos1",
                 "w": "bos2",
@@ -2159,9 +2173,16 @@
             "name": "Wavering Spirit",
             "description": "The accumulation of light at the summit of creation.",
             "cooldown": 600,
-            "chargeTicks": 50,
+            "chargeTicks": 10,
             "effects": [],
-            "buffs": [],
+            "buffs": [
+                {
+                    "type": "cooldown",
+                    "cleansable": false,
+                    "maxTicks": 120,
+                    "minCooldown": 120
+                }
+            ],
             "loadout": {
                 "q": "bos1",
                 "w": "bos2",

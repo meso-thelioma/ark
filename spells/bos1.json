@@ -3,9 +3,16 @@
 	"name": "Life's Melisma",
 	"description": "The accumulation of light at the summit of creation.",
 	"cooldown": 360,
-	"chargeTicks": 50,
+	"chargeTicks": 10,
 	"effects": [],	
-	"buffs": [],
+	"buffs": [	
+		{
+			"type": "cooldown",
+			"cleansable": false,
+			"maxTicks": 120,
+			"minCooldown": 120
+		}
+	],
 	"loadout": {
 		"q": "bos1",
 		"w": "bos2",
