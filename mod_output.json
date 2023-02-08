@@ -401,7 +401,7 @@
             "id": "bos1",
             "name": "Life's Melisma",
             "description": "The accumulation of light at the summit of creation.",
-            "cooldown": 180,
+            "cooldown": 360,
             "chargeTicks": 50,
             "effects": [],
             "buffs": [],
@@ -935,11 +935,11 @@
                                                 "requireParent": true,
                                                 "projectile": {
                                                     "density": 0.01,
-                                                    "radius": 0.03,
+                                                    "radius": 0.09,
                                                     "speed": 0,
                                                     "maxTicks": 30,
-                                                    "collideWith": 8192,
-                                                    "sense": 57143,
+                                                    "collideWith": 0,
+                                                    "sense": 0,
                                                     "damage": 0,
                                                     "expireOn": 0,
                                                     "lifeSteal": 0,
@@ -950,14 +950,14 @@
                                                     "behaviours": [
                                                         {
                                                             "type": "spawn",
-                                                            "trigger": {
-                                                                "collideWith": 3,
-                                                                "against": 12
-                                                            },
-                                                            "expire": true,
+                                                            "triggers": [
+                                                                {
+                                                                    "type": "expire"
+                                                                }
+                                                            ],
                                                             "projectile": {
                                                                 "density": 30,
-                                                                "radius": 0.03,
+                                                                "radius": 0.09,
                                                                 "selfPassthrough": true,
                                                                 "speed": 0,
                                                                 "maxTicks": 10,
@@ -997,7 +997,7 @@
                                                             "type": "swirl",
                                                             "ticks": 20,
                                                             "color": "#dcbeff22",
-                                                            "radius": 0.03,
+                                                            "radius": 0.09,
                                                             "particleRadius": 0.001,
                                                             "loopTicks": 120,
                                                             "numParticles": 8
@@ -1537,11 +1537,11 @@
                                                 "requireParent": true,
                                                 "projectile": {
                                                     "density": 0.01,
-                                                    "radius": 0.03,
+                                                    "radius": 0.09,
                                                     "speed": 0,
                                                     "maxTicks": 30,
-                                                    "collideWith": 8192,
-                                                    "sense": 57143,
+                                                    "collideWith": 0,
+                                                    "sense": 0,
                                                     "damage": 0,
                                                     "expireOn": 0,
                                                     "lifeSteal": 0,
@@ -1552,14 +1552,14 @@
                                                     "behaviours": [
                                                         {
                                                             "type": "spawn",
-                                                            "trigger": {
-                                                                "collideWith": 3,
-                                                                "against": 12
-                                                            },
-                                                            "expire": true,
+                                                            "triggers": [
+                                                                {
+                                                                    "type": "expire"
+                                                                }
+                                                            ],
                                                             "projectile": {
                                                                 "density": 30,
-                                                                "radius": 0.03,
+                                                                "radius": 0.09,
                                                                 "selfPassthrough": true,
                                                                 "speed": 0,
                                                                 "maxTicks": 10,
@@ -1599,7 +1599,7 @@
                                                             "type": "swirl",
                                                             "ticks": 20,
                                                             "color": "#dcbeff22",
-                                                            "radius": 0.03,
+                                                            "radius": 0.09,
                                                             "particleRadius": 0.001,
                                                             "loopTicks": 120,
                                                             "numParticles": 8
@@ -2839,6 +2839,12 @@
                                                 "vanish": 1,
                                                 "light": 1
                                             }
+                                        },
+                                        {
+                                            "type": "cooldown",
+                                            "cleansable": false,
+                                            "maxTicks": 300,
+                                            "minCooldown": 90
                                         }
                                     ],
                                     "renderers": []
@@ -3106,6 +3112,12 @@
                                                 "vanish": 1,
                                                 "light": 1
                                             }
+                                        },
+                                        {
+                                            "type": "cooldown",
+                                            "cleansable": false,
+                                            "maxTicks": 300,
+                                            "minCooldown": 90
                                         }
                                     ],
                                     "renderers": []
@@ -3422,6 +3434,12 @@
                                                 "vanish": 1,
                                                 "light": 1
                                             }
+                                        },
+                                        {
+                                            "type": "cooldown",
+                                            "cleansable": false,
+                                            "maxTicks": 300,
+                                            "minCooldown": 90
                                         }
                                     ],
                                     "renderers": []
@@ -3792,6 +3810,12 @@
                                                 "vanish": 1,
                                                 "light": 1
                                             }
+                                        },
+                                        {
+                                            "type": "cooldown",
+                                            "cleansable": false,
+                                            "maxTicks": 300,
+                                            "minCooldown": 90
                                         }
                                     ],
                                     "renderers": []
@@ -4216,6 +4240,12 @@
                                                 "vanish": 1,
                                                 "light": 1
                                             }
+                                        },
+                                        {
+                                            "type": "cooldown",
+                                            "cleansable": false,
+                                            "maxTicks": 300,
+                                            "minCooldown": 90
                                         }
                                     ],
                                     "renderers": []
