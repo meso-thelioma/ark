@@ -1,0 +1,157 @@
+{
+	"density": 0.01,
+	"radius": 0.003,
+	"speed": 0,
+	"maxTicks": 60,
+	"attractable": false,
+	"damage": 0,
+	"lifeSteal": 0,
+	"categories": 2,
+	"sound": "fireball",
+	"expireOn": 0,
+	"soundHit": "standard",
+	"color": "#469990",
+	"projectileBuffs": [],
+	"behaviours": [
+		{
+			"type": "strafe"
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "interval",
+					"triggerInterval": 15
+				}
+			],
+			"requireParent": true,
+			"projectile": {
+				"density": 30,
+				"radius": 0.08,
+				"selfPassthrough": true,
+				"speed": 0,
+				"maxTicks": 15,
+				"sense": 1,
+				"hitInterval": 5,
+				"collideWith": 0,
+				"damage": 0,
+				"lifeSteal": 0,
+				"expireOn": 0,
+				"categories": 2,
+				"sound": null,
+				"soundHit": null,
+				"color": "#52f",
+				"buffs": [
+					{
+						"type": "burn",
+						"hitInterval": 1,
+						"maxTicks": 1,
+						"packet": {
+							"source": "arts",
+							"lifeSteal": 0,
+							"damage": 4
+						}
+					}
+				],
+				"behaviours": [],
+				"renderers": [
+					{
+						"type": "projectile",
+						"color": "#52f1",
+						"ticks": 40
+					}
+				]
+			}
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "and",
+					"triggers": [				
+						{
+							"type": "interval",
+							"triggerInterval": 15
+						},
+						{
+							"type": "health",
+							"health": 80,
+							"comparison": "<="
+						}
+					]
+				}
+			],
+			"requireParent": true,
+			"projectile": "bos2-mine-ph1"
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "and",
+					"triggers": [				
+						{
+							"type": "interval",
+							"triggerInterval": 15
+						},
+						{
+							"type": "health",
+							"health": 60,
+							"comparison": "<="
+						}
+					]
+				}
+			],
+			"requireParent": true,
+			"projectile": "bos2-mine-ph2"
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "health",
+					"health": 40,
+					"comparison": "<="
+				}
+			],
+			"requireParent": true,
+			"projectile": "sar2",
+			"buffs": [		
+				{
+					"type": "lifeSteal",
+					"cleansable": false,
+					"maxTicks": 120000,
+					"damageMultiplier": 1.1
+				}
+			]
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "health",
+					"health": 20,
+					"comparison": "<="
+				}
+			],
+			"requireParent": true,
+			"buffs": [
+				{
+					"type": "cooldown",
+					"maxTicks": 120000,
+					"render": {
+						"color": "#e6194Baa",
+						"particleRadius": 0.005,
+						"emissionRadiusFactor": 1,
+						"ticks": 10,
+						"light": 1,
+						"invisible": true
+					},
+					"cleansable": false,
+					"cooldownRateModifier": 0.1
+				}
+			]
+		}
+	],
+	"renderers": []
+}

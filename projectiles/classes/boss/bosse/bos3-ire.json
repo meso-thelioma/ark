@@ -1,25 +1,12 @@
 {
-	"density": 0.001,
-	"attractable": false,
-	"radius": 0.1,
-	"speed": 0,
-	"sound": "fireball",
-	"maxTicks": 120,
-	"damage": 0,
-	"sense": 65535,
-	"hitInterval": 30,
-	"collideWith": 0,
-	"sense": 1,
-	"expireOn": 0,
-	"lifeSteal": 0,
-	"categories": 2,
-	"buffs": [],
+	"basedOn": "ire3",
+	"radius": 0.05,
 	"projectileBuffs": [],
 	"behaviours": [
 		{
 			"type": "aura",
 			"against": 14,
-			"radius": 0.1,
+			"radius": 0.05,
 			"tickInterval": 30,
 			"packet": {
 				"damage": 0,
@@ -32,9 +19,8 @@
 					"hitInterval": 1,
 					"maxTicks": 1,
 					"packet": {
-						"source": "arts",
 						"lifeSteal": 0,
-						"damage": 7.5
+						"damage": 0.5
 					}
 				},			
 				{
@@ -73,7 +59,7 @@
 			"ticks": 30,
 			"loopTicks": 1,
 			"numParticles": 8,
-			"radius": 0.1,
+			"radius": 0.05,
 			"particleRadius": 0.002
 		},			
 		{
@@ -82,7 +68,7 @@
 			"ticks": 30,
 			"loopTicks": 30,
 			"numParticles": 8,
-			"radius": 0.09,
+			"radius": 0.05,
 			"particleRadius": 0.002
 		}
 	]

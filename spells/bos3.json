@@ -1,8 +1,8 @@
 {
-	"id": "bos1",
-	"name": "Life's Melisma",
+	"id": "bos3",
+	"name": "Wavering Spirit",
 	"description": "The accumulation of light at the summit of creation.",
-	"cooldown": 180,
+	"cooldown": 600,
 	"chargeTicks": 50,
 	"effects": [],	
 	"buffs": [],
@@ -14,5 +14,5 @@
 	"icon": "",
 	"color": "#0000",
 	"action": "projectile",
-	"projectile": "bos1"
+	"projectile": "bos3"
 }

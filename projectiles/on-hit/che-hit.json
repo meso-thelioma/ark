@@ -16,7 +16,7 @@
 		{
 			"type": "aura",
 			"against": 15,
-			"radius": 0.08,
+			"radius": 0.05,
 			"tickInterval": 10,
 			"packet": {
 				"damage": 0,
@@ -40,7 +40,7 @@
 			"shrinkTicks": 30,
 			"grow": true,
 			"fade": true,
-			"radius": 0.08
+			"radius": 0.05
 		},
 		{
 			"type": "reticule",
@@ -48,7 +48,7 @@
 			"shrinkTicks": 20,
 			"grow": true,
 			"fade": true,
-			"radius": 0.08
+			"radius": 0.05
 		},
 		{
 			"type": "reticule",
@@ -56,7 +56,7 @@
 			"shrinkTicks": 16,
 			"grow": true,
 			"fade": true,
-			"radius": 0.08
+			"radius": 0.05
 		}
 	]
 }

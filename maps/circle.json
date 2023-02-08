@@ -4,15 +4,6 @@
 	"background": "#222",
 	"obstacles": [
 		{
-			"type": "left",
-			"layoutRadius": 0.3,
-			"numObstacles": 4,
-			"layoutAngleOffsetInRevs": 0.125,
-			"numPoints": 4,
-			"extent": 0.003,
-			"angularWidthInRevs": 0.08
-		},
-		{
 			"type": "vanish2",
 			"layoutRadius": 0.235,
 			"numObstacles": 4,

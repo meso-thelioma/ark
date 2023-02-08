@@ -1,0 +1,48 @@
+{
+	"basedOn": "bos2-mine-ph1",
+	"radius": 0.1,
+	"color": "#911eb4",
+	"buffs": [						
+		{
+			"type": "burn",
+			"hitInterval": 1,
+			"maxTicks": 1,
+			"packet": {
+				"source": "phys",
+				"lifeSteal": 0,
+				"damage": 1.5
+			}
+		},
+		{
+			"type": "mass",
+			"maxTicks": 30,
+			"radius": 0.0125,
+			"sense": 128
+		},
+		{
+			"type": "movement",
+			"movementProportion": 0,
+			"maxTicks": 30,
+			"render": {
+				"color": "#911eb4",
+				"particleRadius": 0.0025,
+				"emissionRadiusFactor": 1,
+				"ticks": 10,
+				"light": 1,
+				"invisible": true
+			}
+		}
+	],
+	"behaviours": [],
+	"renderers": [
+		{
+			"type": "swirl",
+			"ticks": 20,
+			"color": "#911eb422",
+			"radius": 0.1,
+			"particleRadius": 0.0006,
+			"loopTicks": 15,
+			"numParticles": 8
+		}
+	]
+}

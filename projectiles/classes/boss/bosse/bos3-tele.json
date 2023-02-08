@@ -1,0 +1,38 @@
+{
+	"density": 0.0001,
+	"attractable": false,
+	"radius": 0.0015,
+	"speed": 1.8,
+	"attractable": false,
+	"collideWith": 0,
+	"speedDecayPerTick": 0,
+	"restitution": 0,
+	"maxTicks": 30,
+	"damage": 0,
+	"shieldTakesOwnership": false,
+	"categories": 2,
+	"sound": "fireball",
+	"color": "#88a",
+	"renderers": [],
+	"lifeSteal": 0,
+	"behaviours": [	
+		{
+			"type": "homing",
+			"targetType": "self",
+			"maxTurnProportion": 0.01
+		},	
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "interval",
+					"triggerInterval": 10
+				}
+			],
+			"requireParent": true,
+			"projectile": "bos3-subproj"
+		}
+	],
+	"soundHit": "standard",
+	"buffs": []
+}

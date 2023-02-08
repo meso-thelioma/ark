@@ -1,0 +1,211 @@
+{
+	"density": 0.0001,
+	"radius": 0.0015,
+	"speed": 0.001,
+	"maxTicks": 30,
+	"damage": 0,
+	"categories": 6,
+	"ccd": true,
+	"collideWith": 0,
+	"expireOn": 0,
+	"sound": null,
+	"color": "#52f",
+	"projectileBuffs": [
+		{
+			"type": "movement",
+			"movementProportion": 0.1,
+			"maxTicks": 30,
+			"render": {
+				"color": "#52f",
+				"particleRadius": 0.0025,
+				"emissionRadiusFactor": 1,
+				"ticks": 10,
+				"light": 1,
+				"invisible": true
+			}
+		}
+	],
+	"behaviours": [
+		{
+			"type": "homing",
+			"targetType": "follow"
+		},
+		{
+			"type": "strafe"
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "interval",
+					"triggerInterval": 1
+				}
+			],
+			"maxTriggers": 30,
+			"projectile": {
+				"density": 0.0001,
+				"radius": 0.0015,
+				"speed": 600,
+				"maxTicks": 1,
+				"damage": 0,
+				"categories": 6,
+				"collideWith": 0,
+				"ccd": true,
+				"sound": null,
+				"color": "#52f",
+				"behaviours": [
+					{
+						"type": "homing",
+						"targetType": "follow",
+						"redirect": true
+					}
+				],
+				"sensor": true,
+				"expireOn": 0,
+				"attractable": false,
+				"renderers": [
+					{
+						"type": "link",
+						"color": "#52f3",
+						"width": 0.0015,
+						"glow": 0.4,
+						"bloom": 0.005,
+						"shadow": 0.5,
+						"shine": 0,
+						"light": true
+					}
+				],
+				"lifeSteal": 0,
+				"soundHit": "standard",
+				"buffs": []
+			}
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "expire"
+				}
+			],
+			"projectile": {
+				"density": 0.001,
+				"radius": 0.003,
+				"selfPassthrough": true,
+				"speed": 0.01,
+				"maxTicks": 30,
+				"damage": 0,
+				"lifeSteal": 0,
+				"expireOn": 0,
+				"categories": 2,
+				"sound": "fireball",
+				"soundHit": "standard",
+				"color": "#8a8",
+				"projectileBuffs": [],
+				"collideWith": 0,
+				"behaviours": [
+					{
+						"type": "attract",
+						"collideLike": 65535,
+						"categories": 1,
+						"against": 1,
+						"radius": 2,
+						"accelerationPerTick": 0.045,
+						"attractToFacing": true
+					}
+				],
+				"renderers": []
+			},
+			"buffs": [
+				{
+					"type": "movement",
+					"movementProportion": 0,
+					"maxTicks": 120,
+					"render": {
+						"color": "#52f",
+						"particleRadius": 0.0025,
+						"emissionRadiusFactor": 1,
+						"ticks": 10,
+						"light": 1,
+						"invisible": true
+					}
+				},
+				{
+					"type": "mass",
+					"maxTicks": 60,
+					"cleansable": false,
+					"radius": 0.0125,
+					"restrictCollideWith": 0,
+					"sense": 0
+				}
+			]
+		},		
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "expire"
+				}
+			],
+			"projectile": "bos2-mine",
+			"buffs": [
+				{
+					"type": "movement",
+					"movementProportion": 0,
+					"maxTicks": 120,
+					"render": {
+						"color": "#52f",
+						"particleRadius": 0.0025,
+						"emissionRadiusFactor": 1,
+						"ticks": 10,
+						"light": 1,
+						"invisible": true
+					}
+				},
+				{
+					"type": "mass",
+					"maxTicks": 60,
+					"cleansable": false,
+					"radius": 0.0125,
+					"restrictCollideWith": 0,
+					"sense": 0
+				}
+			]
+		},
+		{
+			"type": "spawn",
+			"buffs": [		
+				{
+					"type": "lifeSteal",
+					"lifeSteal": 0,
+					"cleansable": false,
+					"damageMultiplier": 1.5,
+					"render": {
+						"color": "#52f",
+						"particleRadius": 0.01,
+						"emissionRadiusFactor": 0,
+						"ticks": 10,
+						"light": 1,
+						"invisible": true
+					},
+					"maxTicks": 120
+				}
+			]
+		}
+	],
+	"attractable": false,
+	"renderers": [
+		{
+			"type": "reticule",
+			"minRadius": 0.1495,
+			"radius": 0.15,
+			"color": "#52f2",
+			"arc": {
+				"type": "dynamic",
+				"ticks": 30
+			}
+		}
+	],
+	"lifeSteal": 0,
+	"soundHit": "standard",
+	"buffs": []
+}

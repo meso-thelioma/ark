@@ -90,37 +90,6 @@
 					"cleansable": false,
 					"maxTicks": 20,
 					"linearDampingMultiplier": 1000
-				},
-				{
-					"type": "vanish",
-					"channelling": true,
-					"cleansable": false,
-					"maxTicks": 20,
-					"sound": "phaseOut",
-					"renderStart": {
-						"numParticles": 10,
-						"color": "#881",
-						"colorize": 0.1,
-						"ticks": 15,
-						"particleRadius": 0.014,
-						"glow": 0.3,
-						"shine": 1,
-						"bloom": 0,
-						"vanish": 1,
-						"light": 1
-					},
-					"renderFinish": {
-						"numParticles": 10,
-						"color": "#881",
-						"colorize": 0.1,
-						"ticks": 15,
-						"particleRadius": 0.014,
-						"glow": 0.3,
-						"shine": 1,
-						"bloom": 0,
-						"vanish": 1,
-						"light": 1
-					}
 				}
 			]
 		}

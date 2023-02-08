@@ -1,0 +1,47 @@
+{
+	"density": 0.0001,
+	"attractable": false,
+	"radius": 0.2,
+	"speed": 0.9,
+	"sensor": true,
+	"collideWith": 0,
+	"expireOn": 0,
+	"maxTicks": 120,
+	"damage": 0,
+	"buffs": [],
+	"shieldTakesOwnership": false,
+	"categories": 6,
+	"sound": "fireball",
+	"color": "#88a",
+	"renderers": [],
+	"lifeSteal": 0,
+	"behaviours": [
+		{
+			"type": "homing",
+			"targetType": "self",
+			"maxTurnProportion": 0.3
+		},
+		{
+			"type": "partial",
+			"partialDamage": {
+				"initialMultiplier": 0,
+				"finalMultiplier": 1,
+				"ticks": 40
+			}
+		},
+		{
+			"type": "spawn",
+			"numProjectiles": 4,
+			"triggers": [
+				{
+					"type": "interval",
+					"triggerInterval": 30
+				}
+			],
+			"requireParent": true,
+			"spread": 0.25,
+			"projectile": "bos3-tele"
+		}
+	],
+	"soundHit": "standard"
+}

@@ -1,8 +1,8 @@
 {
-	"id": "bos1",
-	"name": "Life's Melisma",
+	"id": "bos2",
+	"name": "Catabolism",
 	"description": "The accumulation of light at the summit of creation.",
-	"cooldown": 180,
+	"cooldown": 450,
 	"chargeTicks": 50,
 	"effects": [],	
 	"buffs": [],
@@ -14,5 +14,5 @@
 	"icon": "",
 	"color": "#0000",
 	"action": "projectile",
-	"projectile": "bos1"
+	"projectile": "bos2"
 }

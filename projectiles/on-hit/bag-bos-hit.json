@@ -1,22 +1,11 @@
 {
-	"density": 0.01,
+	"basedOn": "bag-hit",
 	"radius": 0.05,
-	"sensor": true,
-	"speed": 0,
-	"expireOn": 0,
-	"maxTicks": 10,
-	"damage": 0,
-	"lifeSteal": 0,
-	"categories": 1024,
-	"sound": "fireball",
-	"soundHit": "standard",
-	"color": "#3cb44b22",
-	"buffs": [],
 	"behaviours": [
 		{
 			"type": "aura",
 			"against": 15,
-			"radius": 0.08,
+			"radius": 0.05,
 			"tickInterval": 10,
 			"packet": {
 				"damage": 0,
@@ -26,10 +15,10 @@
 			"buffs": [
 				{
 					"type": "armor",
-					"source": "phys",
+					"stack": "bossy",
 					"maxTicks": 120,
-					"stack": "bagpipe",
-					"flat": -1,
+					"proportion": 0.2,
+					"flat": -0.05,
 					"render": {
 						"color": "#3cb44b22",
 						"particleRadius": 0.0125,
@@ -47,18 +36,18 @@
 			"type": "swirl",
 			"ticks": 30,
 			"color": "#3cb44b22",
-			"radius": 0.08,
+			"radius": 0.05,
 			"particleRadius": 0.001,
 			"loopTicks": 10,
 			"numParticles": 8
 		},
 		{
 			"type": "reticule",
-			"color": "#3cb44b",
+			"color": "#3cb44b11",
 			"shrinkTicks": 30,
 			"grow": true,
 			"fade": true,
-			"radius": 0.08
+			"radius": 0.05
 		}
 	]
 }
