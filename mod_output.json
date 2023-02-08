@@ -21013,7 +21013,7 @@
                                 "buffs": [
                                     {
                                         "type": "armor",
-                                        "maxTicks": 15,
+                                        "maxTicks": 25,
                                         "renderers": [
                                             {
                                                 "type": "reticule",
@@ -21049,7 +21049,7 @@
                                     {
                                         "type": "armor",
                                         "proportion": 0.1,
-                                        "maxTicks": 15,
+                                        "maxTicks": 25,
                                         "renderers": [
                                             {
                                                 "type": "reticule",
@@ -21085,7 +21085,7 @@
                                     {
                                         "type": "armor",
                                         "proportion": 0.1,
-                                        "maxTicks": 15,
+                                        "maxTicks": 25,
                                         "renderers": [
                                             {
                                                 "type": "reticule",
@@ -21121,7 +21121,7 @@
                                     {
                                         "type": "armor",
                                         "proportion": 0.1,
-                                        "maxTicks": 15,
+                                        "maxTicks": 25,
                                         "renderers": [
                                             {
                                                 "type": "reticule",
