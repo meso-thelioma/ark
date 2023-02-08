@@ -12,7 +12,7 @@
 			"text": "Take less damage. Drain health. Targets take more damage."
 		}
 	],	
-	"buffs": [			
+	"buffs": [
 		{
 			"type": "movement",
 			"passive": true,
@@ -44,6 +44,7 @@
 			"type": "mass",
 			"passive": true,
 			"radius": 0.0125,
+			"density": 6,
 			"restrictCollideWith": 65343
 		},
 		{

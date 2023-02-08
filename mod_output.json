@@ -793,8 +793,8 @@
                                                         ]
                                                     }
                                                 ],
-                                                "numProjectiles": 4,
-                                                "spread": 0.75,
+                                                "numProjectiles": 2,
+                                                "spread": 0.5,
                                                 "expire": true,
                                                 "projectile": {
                                                     "density": 0.01,
@@ -1396,8 +1396,8 @@
                                                         ]
                                                     }
                                                 ],
-                                                "numProjectiles": 4,
-                                                "spread": 0.75,
+                                                "numProjectiles": 2,
+                                                "spread": 0.5,
                                                 "expire": true,
                                                 "projectile": {
                                                     "density": 0.01,
@@ -2726,6 +2726,7 @@
                     "type": "mass",
                     "passive": true,
                     "radius": 0.0125,
+                    "density": 6,
                     "restrictCollideWith": 65343
                 },
                 {
