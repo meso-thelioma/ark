@@ -10,7 +10,7 @@
 	"minTicks": 40,
 	"expireOn": 0,
 	"lifeSteal": 0,
-	"categories": 8224,
+	"categories": 32,
 	"sound": "fireball",
 	"soundHit": "standard",
 	"color": "#0f0",
@@ -57,7 +57,7 @@
 				"minTicks": 4,
 				"expireOn": 1,
 				"lifeSteal": 0,
-				"categories": 8240,
+				"categories": 48,
 				"sound": "fireball",
 				"projectileBuffs": [
 					{
@@ -137,7 +137,7 @@
 				"minTicks": 4,
 				"expireOn": 1,
 				"lifeSteal": 0,
-				"categories": 8192,
+				"categories": 2,
 				"sound": "fireball",
 				"soundHit": "standard",
 				"color": "#0ff",
