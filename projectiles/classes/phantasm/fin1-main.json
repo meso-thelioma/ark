@@ -25,6 +25,7 @@
 				"attractable": false,
 				"radius": 2,
 				"speed": 0,
+				"sensor": true,
 				"maxTicks": 2,
 				"damage": 0,
 				"expireOn": 0,

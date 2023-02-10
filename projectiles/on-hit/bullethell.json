@@ -5,6 +5,7 @@
 	"maxTicks": 300,
 	"damage": 5,
 	"expireAgainstObjects": 1,
+	"attractable": false,
 	"lifeSteal": 0,
 	"categories": 6,
 	"sound": null,

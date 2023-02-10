@@ -108,7 +108,7 @@
 					"maxTicks": 1,
 					"cleansable": false,
 					"spellId": "exu1",
-					"minCooldown": 120
+					"minCooldown": 240
 				}
 			]
 		}
