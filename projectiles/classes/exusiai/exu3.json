@@ -35,13 +35,6 @@
 			},	
 			"buffs": [
 				{
-					"type": "cooldown",
-					"maxTicks": 1,
-					"cleansable": false,
-					"spellId": "exu1",
-					"minCooldown": 90
-				},
-				{
 					"type": "lifeSteal",
 					"cleansable": false,
 					"damageMultiplier": 1.8,

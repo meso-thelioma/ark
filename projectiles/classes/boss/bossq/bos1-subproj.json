@@ -21,7 +21,7 @@
 					"triggers": [
 						{
 							"type": "collideWith",
-							"collideWith": 64,
+							"collideWith": 4,
 							"collideTypes": [
 								"bos1"
 							]
@@ -47,7 +47,7 @@
 					"triggers": [
 						{
 							"type": "collideWith",
-							"collideWith": 64,
+							"collideWith": 4,
 							"collideTypes": [
 								"bos1"
 							]
@@ -78,7 +78,7 @@
 					"triggers": [
 						{
 							"type": "collideWith",
-							"collideWith": 64,
+							"collideWith": 4,
 							"collideTypes": [
 								"bos1"
 							]

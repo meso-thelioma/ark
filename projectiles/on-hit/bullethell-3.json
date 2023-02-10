@@ -18,7 +18,7 @@
 	],
 	"projectileBuffs": [],
 	"sensor": true,
-	"expireOn": 96,
+	"expireOn": 0,
 	"destructible": {
 		"against": 15
 	},
@@ -51,30 +51,16 @@
 				"categories": 6,
 				"expireAgainstObjects": 1,
 				"sound": null,
-				"destructible": {
-					"against": 15
-				},
 				"soundHit": null,
 				"color": "#45322E",
-				"behaviours": [
-					{
-						"type": "expire",
-						"triggers": [
-							{
-								"type": "collideWith",
-								"collideWith": 96,
-								"against": 1
-							}
-						]
-					}
-				],
+				"behaviours": [],
 				"renderers": [
 					{
 						"type": "projectile",
 						"ticks": 1
 					}
 				],
-				"expireOn": 96
+				"expireOn": 0
 			}
 		},
 		{
@@ -100,30 +86,16 @@
 				"lifeSteal": 0,
 				"categories": 6,
 				"sound": null,
-				"destructible": {
-					"against": 15
-				},
 				"soundHit": null,
 				"color": "#45322E",
-				"behaviours": [
-					{
-						"type": "expire",
-						"triggers": [
-							{
-								"type": "collideWith",
-								"collideWith": 96,
-								"against": 1
-							}
-						]
-					}
-				],
+				"behaviours": [],
 				"renderers": [
 					{
 						"type": "projectile",
 						"ticks": 1
 					}
 				],
-				"expireOn": 96
+				"expireOn": 0
 			}
 		},
 		{
@@ -149,22 +121,9 @@
 				"lifeSteal": 0,
 				"categories": 6,
 				"sound": null,
-				"destructible": {
-					"against": 15
-				},
 				"soundHit": null,
 				"color": "#45322E",
 				"behaviours": [
-					{
-						"type": "expire",
-						"triggers": [
-							{
-								"type": "collideWith",
-								"collideWith": 96,
-								"against": 1
-							}
-						]
-					},
 					{
 						"type": "homing",
 						"targetType": "closestEnemy",
@@ -177,7 +136,7 @@
 						"ticks": 1
 					}
 				],
-				"expireOn": 96
+				"expireOn": 0
 			}
 		},
 		{
@@ -203,22 +162,9 @@
 				"lifeSteal": 0,
 				"categories": 6,
 				"sound": null,
-				"destructible": {
-					"against": 15
-				},
 				"soundHit": null,
 				"color": "#45322E",
 				"behaviours": [
-					{
-						"type": "expire",
-						"triggers": [
-							{
-								"type": "collideWith",
-								"collideWith": 96,
-								"against": 1
-							}
-						]
-					},
 					{
 						"type": "homing",
 						"targetType": "closestEnemy",
@@ -231,7 +177,7 @@
 						"ticks": 1
 					}
 				],
-				"expireOn": 96
+				"expireOn": 0
 			}
 		},
 		{
@@ -252,7 +198,6 @@
 				"damage": 0,
 				"expireOn": 0,
 				"expireAgainstObjects": 1,
-				"destroying": true,
 				"categories": 38,
 				"lifeSteal": 0,
 				"sensor": true,

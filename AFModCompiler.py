@@ -10,14 +10,19 @@ parser.add_argument('--output, -o', type=str, nargs='?',
 parser.add_argument('project_directory', metavar='Directory', type=str, nargs='?',
                     default='.', help='Directory that will be processed')
 parser.add_argument('--max-projectile-depth', type=int, nargs='?',
-                    default=40, dest='max_projectile_depth',
+                    default=20, dest='max_projectile_depth',
                     help='Sets the maximum depth projectiles will generate ' +
                     'in the case of recursion or sufficiently long projectile chains')
 parser.add_argument('--max-parent-depth', type=int, nargs='?',
                     default=50, dest='max_parent_depth',
                     help='Sets the maximum depth parents will be searched to ' +
                     'generate in the case of nested parent chains and infinite loops')
+parser.add_argument('--random', action='store_true',
+                    help='Randomizes projectiles used for projectile templates')
 args = parser.parse_args()
+
+if args.random:
+	from random import randint
 
 def get_jsons(directory):
 	if not directory.is_dir():
@@ -117,25 +122,38 @@ def parse_json_from_file(path):
 	return returned_value
 
 def template_projectile(projectile, projectiles):
-	projectile_template = projectile.replace("ProjectileTemplate:", "")
+	projectile_template = ""
+	if not args.random:
+		projectile_template = projectile.replace("ProjectileTemplate:", "")
+	else:
+		projectile_template = list(projectiles.keys())[randint(0, len(projectiles)-1)]
 	
 	return projectiles[projectile_template].copy()
 
 def template_projectile_spawners(projectile, projectiles, spawner_depth = 0):
 	returned_projectile = projectile.copy()
-	popped_items = []
+
 	if not returned_projectile.get("behaviours"):
 		return returned_projectile
+
+	popped_items = []
+
 	for behaviour_index, behaviour_data in reversed(list(enumerate(returned_projectile["behaviours"].copy()))):
 		if behaviour_data["type"] == "spawn" and type(behaviour_data.get("projectile")) is str:
-			projectile_template = behaviour_data["projectile"].replace("ProjectileTemplate:", "")
-			if spawner_depth >= args.max_projectile_depth:
+			if spawner_depth < args.max_projectile_depth:
+				projectile_template = ""
+				if not args.random:
+					projectile_template = behaviour_data["projectile"].replace("ProjectileTemplate:", "")
+				else:
+					projectile_template = list(projectiles.keys())[randint(0, len(projectiles)-1)]
+
+				returned_projectile["behaviours"][behaviour_index]["projectile"] = template_projectile_spawners(projectiles[projectile_template], projectiles, spawner_depth + 1).copy()
+			else:
 				popped_items.append(behaviour_index)
 				continue
-			else:
-				returned_projectile["behaviours"][behaviour_index]["projectile"] = template_projectile_spawners(projectiles[projectile_template], projectiles, spawner_depth + 1).copy()
 
 	returned_projectile["behaviours"] = [behaviour.copy() for index, behaviour in enumerate(returned_projectile["behaviours"]) if index not in popped_items]
+
 	return returned_projectile
 
 def process_projectiles(projectiles):
@@ -238,4 +256,5 @@ def main():
 	mod_json = json.dumps(mod_data, indent=4)
 	mod_file.write_text(str(mod_json))
 
-main()
+if __name__ == "__main__":
+	main()

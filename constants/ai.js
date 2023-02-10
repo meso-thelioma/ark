@@ -1,3 +1,6 @@
+// disable for regular bots  
+var bossEnabled = true;
+
 var center = { x: 0.5, y: 0.5 };
 
 var CloseEnoughDistance = 0.05;
@@ -109,10 +112,15 @@ function chooseSpells(settings, heroId) {
     "ska",
     "pal",
     "che",
-    "fin"
+    "fin",
+    "vio"
   ];
 
   var chosenClass = classList[Math.floor(Math.random() * classList.length)]
+  
+  if (bossEnabled) {
+    chosenClass = "bos"
+  }
 
   spells.a = chosenClass;
   spells.q = (chosenClass + "1");

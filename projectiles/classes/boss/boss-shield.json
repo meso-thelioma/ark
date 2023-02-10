@@ -79,12 +79,39 @@
 						"buffs": []
 					}
 				],
-				"renderers": [
+				"renderers": [					
+					{
+						"type": "swirl",
+						"ticks": 30,
+						"color": "#ffe11922",
+						"radius": 0.05,
+						"particleRadius": 0.001,
+						"loopTicks": 10,
+						"numParticles": 8
+					},
 					{
 						"type": "swirl",
 						"ticks": 30,
 						"color": "#ffe11922",
 						"radius": 0.1,
+						"particleRadius": 0.001,
+						"loopTicks": 10,
+						"numParticles": 8
+					},
+					{
+						"type": "swirl",
+						"ticks": 30,
+						"color": "#ffe11922",
+						"radius": 0.15,
+						"particleRadius": 0.001,
+						"loopTicks": 10,
+						"numParticles": 8
+					},					
+					{
+						"type": "swirl",
+						"ticks": 30,
+						"color": "#ffe11922",
+						"radius": 0.2,
 						"particleRadius": 0.001,
 						"loopTicks": 10,
 						"numParticles": 8

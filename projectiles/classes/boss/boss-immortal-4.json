@@ -43,10 +43,11 @@
 						"maxTicks": 300
 					},
 					{
-						"type": "cooldown",
-						"cleansable": false,
-						"maxTicks": 300,
-						"minCooldown": 20
+					    "type": "cooldown",
+					    "cleansable": false,
+					    "maxTicks": 300,
+					    "adjustCooldown": 300,
+					    "cooldownRateModifier": -1.5
 					},
 					{
 						"type": "mass",
@@ -98,12 +99,6 @@
 							"vanish": 1,
 							"light": 1
 						}
-					},
-					{
-						"type": "cooldown",
-						"cleansable": false,
-						"maxTicks": 300,
-						"minCooldown": 90
 					}
 				],
 				"renderers": []

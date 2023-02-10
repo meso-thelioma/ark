@@ -5,7 +5,8 @@
 	"sensor": true,
 	"speed": 0,
 	"expireOn": 0,
-	"maxTicks": 120,
+	"maxTicks": 140,
+	"expireOn": 0,
 	"damage": 0,
 	"lifeSteal": 0,
 	"collideWith": 0,
@@ -73,7 +74,7 @@
 							"radius": 2,
 							"shine": 1,
 							"light": 1,
-							"minRadius": 0.35
+							"minRadius": 0.4
 						}
 					]
 				}
@@ -109,7 +110,7 @@
 							"radius": 2,
 							"shine": 1,
 							"light": 1,
-							"minRadius": 0.25
+							"minRadius": 0.35
 						}
 					]
 				}
@@ -145,7 +146,7 @@
 							"radius": 2,
 							"shine": 1,
 							"light": 1,
-							"minRadius": 0.15
+							"minRadius": 0.3
 						}
 					]
 				}

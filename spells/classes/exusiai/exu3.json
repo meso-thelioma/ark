@@ -1,6 +1,6 @@
 {
 	"id": "exu3",
-	"description": "For five seconds, Repentance will be silenced and fire two bullets. Repentance will deal 80% more damage, and will deal less damage per 25% health lost.",
+	"description": "Gain 80% damage. For five seconds, Repentance will fire two bullets. Repentance will deal bonus damage per 25% health remaining.",
 	"action": "projectile",
 	"color": "#aaa",
 	"name": "Rapture",

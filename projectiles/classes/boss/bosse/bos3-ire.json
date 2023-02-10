@@ -1,5 +1,6 @@
 {
 	"basedOn": "ire3",
+	"maxTicks": 10,
 	"radius": 0.05,
 	"projectileBuffs": [],
 	"behaviours": [
@@ -7,7 +8,7 @@
 			"type": "aura",
 			"against": 14,
 			"radius": 0.05,
-			"tickInterval": 30,
+			"tickInterval": 10,
 			"packet": {
 				"damage": 0,
 				"noHit": true,

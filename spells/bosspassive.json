@@ -1,6 +1,6 @@
 {
 	"id": "bos",
-	"name": "GOOGLE DOC",
+	"name": "Chroma",
 	"description": "The accumulation of light at the summit of creation.",
 	"passive": true,
 	"untargeted": true,
@@ -56,6 +56,11 @@
 				"bos2",
 				"bos3"
 			]
+		},
+		{
+			"type": "lifeSteal",
+			"passive": true,
+			"damageMultiplier": 1.2
 		}
 	],
 	"loadout": {

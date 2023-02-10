@@ -1,7 +1,7 @@
 {
 	"MaxPlayers": 10,
-	"MinBots": 2,
-	"MaxBots": 2,
+	"MinBots": 1,
+	"MaxBots": 1,
 	"NumGamesToMaxBotDifficulty": 1,
 	"EnableSingles": false,
 	"EnableSplitting": false,

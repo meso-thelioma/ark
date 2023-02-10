@@ -1,6 +1,6 @@
 {
 	"id": "exu2",
-	"description": "Cause nearby allies to take 10% less physical damage. Fire Repentance once every 2.5s, independent of cooldown.",
+	"description": "Cause nearby allies to take 10% less physical damage. Fire Repentance thrice every 7.5s. After the burst of bullets, silence to reload.",
 	"action": "projectile",
 	"color": "#aaa",
 	"name": "Redemption",
