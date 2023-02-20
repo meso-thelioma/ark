@@ -5,7 +5,7 @@
 	"selfPassthrough": true,
 	"speed": 0,
 	"attractable": false,
-	"maxTicks": 4800,
+	"maxTicks": 600,
 	"expireOn": 0,
 	"damage": 0,
 	"lifeSteal": 0,
@@ -16,7 +16,7 @@
 	"projectileBuffs": [
 		{
 			"type": "armor",
-			"maxTicks": 4800,
+			"maxTicks": 600,
 			"cleansable": false,
 			"stack": "ceobe",
 			"source": "ceobe",
@@ -24,8 +24,29 @@
 		},
 		{
 			"type": "armor",
-			"maxTicks": 4800,
+			"maxTicks": 600,
 			"cleansable": false,
+			"renderers": [		
+				{
+					"type": "lifeSteal",
+					"maxTicks": 600,
+					"renderers": [
+						{
+							"type": "reticule",
+							"radius": 0.03,
+							"invisible": true,
+							"minRadius": 0.025,
+							"arc": {
+								"type": "dynamic",
+								"ticks": 600,
+								"reverse": true
+							},
+							"color": "#ffe119aa"
+						}
+					],
+					"cleansable": false
+				}
+			],
 			"source": "phys",
 			"flat": 25
 		},
@@ -33,7 +54,7 @@
 			"type": "lifeSteal",
 			"damageMultiplier": 1,
 			"stack": "mud",
-			"maxTicks": 4800,
+			"maxTicks": 600,
 			"cleansable": false,
 			"render": {
 				"color": "#ffe11911",
@@ -107,21 +128,17 @@
 									"lifeSteal": 0,
 									"damage": -2
 								}
+							},
+							{
+								"type": "cooldown",
+								"cleansable": false,
+								"maxTicks": 30,
+								"color": "ffe119"
 							}
 						]
 					}
 				],
-				"renderers": [
-					{
-						"type": "swirl",
-						"ticks": 30,
-						"color": "#ffe11922",
-						"radius": 0.1,
-						"particleRadius": 0.001,
-						"loopTicks": 10,
-						"numParticles": 8
-					}
-				]
+				"renderers": []
 			}
 		}
 	],

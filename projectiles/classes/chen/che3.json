@@ -22,24 +22,12 @@
 		}
 	],
 	"color": "#ceffff",
-	"renderers": [
+	"renderers": [					
 		{
-			"type": "swirl",
-			"color": "#ceffff22",
-			"ticks": 6,
-			"loopTicks": 120,
-			"numParticles": 5,
+			"type": "reticule",
 			"radius": 0.1,
-			"particleRadius": 0.002
-		},
-		{
-			"type": "swirl",
-			"color": "#ceffff22",
-			"ticks": 6,
-			"loopTicks": -120,
-			"numParticles": 5,
-			"radius": 0.09,
-			"particleRadius": 0.002
+			"minRadius": 0.095,
+			"color": "#CEFFFFAA"
 		}
 	]
 }

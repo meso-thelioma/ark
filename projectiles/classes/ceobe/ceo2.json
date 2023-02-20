@@ -20,14 +20,15 @@
 		{
 			"type": "cooldown",
 			"maxTicks": 12000,
-			"render": {
-				"color": "#e6194Baa",
-				"particleRadius": 0.005,
-				"emissionRadiusFactor": 4,
-				"ticks": 10,
-				"light": 1,
-				"invisible": true
-			},
+			"renderers": [					
+				{
+					"type": "reticule",
+					"radius": 0.05,
+					"minRadius": 0.045,
+					"color": "#e6194Baa",
+					"invisible": true
+				}
+			],
 			"cleansable": false,
 			"cooldownRateModifier": 0.2
 		}

@@ -18,6 +18,20 @@
 			"color": "#030",
 			"cleansable": false,
 			"spellId": "tho1",
+			"renderers": [
+				{
+					"type": "reticule",
+					"radius": 0.03,
+					"invisible": true,
+					"minRadius": 0.025,
+					"color": "#030",
+					"arc": {
+						"type": "dynamic",
+						"ticks": 300,
+						"reverse": true
+					}
+				}
+			],
 			"cooldownRateModifier": 0.45
 		}
 	],

@@ -104,14 +104,7 @@
 				"categories": 2,
 				"sound": "fireball",
 				"color": "#88a",
-				"renderers": [
-					{
-						"type": "projectile",
-						"light": 1,
-						"ticks": 35,
-						"shine": -1
-					}
-				],
+				"renderers": [],
 				"lifeSteal": 0,
 				"behaviours": [
 					{

@@ -11,7 +11,28 @@
 	"expireOn": 0,
 	"lifeSteal": 0,
 	"categories": 8192,
-	"projectileBuffs": [],
+	"projectileBuffs": [				
+		{
+			"type": "lifeSteal",
+			"maxTicks": 600,
+			"cleansable": false,
+			"renderers": [
+				{
+					"type": "reticule",
+					"radius": 0.025,
+					"invisible": true,
+					"minRadius": 0.02,
+					"arc": {
+						"type": "dynamic",
+						"ticks": 600,
+						"reverse": true
+					},
+					"color": "#42d4f4aa"
+				}
+			],
+			"against": 1
+		}
+	],
 	"behaviours": [
 		{
 			"type": "strafe"
@@ -41,13 +62,11 @@
 					"cleansable": false,
 					"renderers": [
 						{
-							"type": "buff",
-							"color": "#42d4f422",
-							"particleRadius": 0.005,
-							"emissionRadiusFactor": 20,
-							"ticks": 12,
-							"light": 1,
-							"invisible": true
+							"type": "reticule",
+							"radius": 0.25,
+							"invisible": true,
+							"minRadius": 0.245,
+							"color": "#42d4f4aa"
 						}
 					],
 					"against": 1

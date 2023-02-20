@@ -64,56 +64,9 @@
 				"behaviours": [],
 				"renderers": [
 					{
-						"type": "swirl",
-						"color": "#fffa",
-						"radius": 0.1,
-						"ticks": 20,
-						"loopTicks": 20,
-						"shine": 0,
-						"numParticles": 2,
-						"particleRadius": 0.1,
-						"smoke": {
-							"isotropicSpeed": 1
-						}
-					},
-					{
-						"type": "swirl",
-						"color": "#abaa",
-						"radius": 0.15,
-						"ticks": 20,
-						"loopTicks": 20,
-						"shine": 0,
-						"numParticles": 2,
-						"particleRadius": 0.1,
-						"smoke": {
-							"isotropicSpeed": 1
-						}
-					},
-					{
-						"type": "swirl",
-						"color": "#575a",
+						"type": "reticule",
 						"radius": 0.2,
-						"ticks": 20,
-						"loopTicks": 20,
-						"shine": 0,
-						"numParticles": 2,
-						"particleRadius": 0.1,
-						"smoke": {
-							"isotropicSpeed": 1
-						}
-					},
-					{
-						"type": "swirl",
-						"color": "#030a",
-						"radius": 0.25,
-						"ticks": 20,
-						"loopTicks": 20,
-						"shine": 0,
-						"numParticles": 2,
-						"particleRadius": 0.1,
-						"smoke": {
-							"isotropicSpeed": 1
-						}
+						"color": "#fff"
 					}
 				]
 			}

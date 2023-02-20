@@ -16,14 +16,15 @@
 			"damageMultiplier": 1,
 			"stack": "lumen",
 			"maxTicks": 20,
-			"render": {
-				"color": "#880",
-				"particleRadius": 0.001,
-				"emissionRadiusFactor": 6.4,
-				"ticks": 10,
-				"light": 1,
-				"invisible": true
-			},
+			"renderers": [					
+				{
+					"type": "reticule",
+					"radius": 0.08,
+					"minRadius": 0.075,
+					"color": "#880",
+					"invisible": true
+				}
+			],
 			"against": 1
 		}
 	],

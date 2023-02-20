@@ -49,7 +49,7 @@
 			"radius": 0.02,
 			"particleRadius": 0.001,
 			"loopTicks": 10,
-			"numParticles": 8
+			"numParticles": 2
 		},
 		{
 			"type": "reticule",

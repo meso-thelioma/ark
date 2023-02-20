@@ -1,14 +1,14 @@
 {
 	"id": "cosmic",
-	"health": 10,
+	"health": 300,
 	"collideWith": 1,
 	"static": true,
 	"strike": {
 		"ticks": 15,
 		"flash": true
 	},
-	"hitInterval": 10,
-	"selfDamage": 10,
+	"hitInterval": 3,
+	"selfDamage": 1,
 	"render": [
 		{
 			"type": "solid",
@@ -28,22 +28,10 @@
 	],
 	"buffs": [
 		{
-			"type": "movement",
-			"maxTicks": 900,
-			"cleansable": false,
-			"movementProportion": 0
-		},
-		{
 			"type": "cooldown",
 			"cleansable": false,
-			"maxTicks": 900,
-			"minCooldown": 90
-		},
-		{
-			"type": "mass",
-			"maxTicks": 900,
-			"cleansable": false,
-			"radius": 0.0125
+			"maxTicks": 900000000,
+			"cooldownRateModifier": 0.1
 		}
 	]
 }

@@ -9,7 +9,32 @@
 		{
 			"icon": "far fa-sad-tear",
 			"title": "Passive",
-			"text": "Take less damage. Drain health. Targets take more damage."
+			"text": "Take 20% less damage. Deal 20% more damage. Drain 0.5 health per second. Targets take 20% more damage."
+		},
+		{
+			"icon": "far fa-sad-tear",
+			"title": "Below 80% health",
+			"text": "Cooldowns recharge 50% faster. Every 10 seconds, create a shield that negates damage until broken."
+		},
+		{
+			"icon": "far fa-sad-tear",
+			"title": "Below 60% health",
+			"text": "10% chance to become intangible every second. Apply Breakdown in range."
+		},
+		{
+			"icon": "far fa-sad-tear",
+			"title": "Below 40% health",
+			"text": "Deal 5 true damage in range when hit. Every 5 seconds, cleanse debuffs."
+		},
+		{
+			"icon": "far fa-sad-tear",
+			"title": "Below 20% health",
+			"text": "Targets take 10% more damage and have a greater blind per 25% of health left."
+		},
+		{
+			"icon": "far fa-sad-tear",
+			"title": "Phase transitions",
+			"text": "Become intangible for 5 seconds and create projectiles that deal true damage."
 		}
 	],	
 	"buffs": [

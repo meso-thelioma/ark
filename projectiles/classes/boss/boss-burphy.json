@@ -16,7 +16,7 @@
 			"triggers": [
 				{
 					"type": "interval",
-					"triggerInterval": 60
+					"triggerInterval": 10
 				}
 			],
 			"projectile": "boss-dodge"

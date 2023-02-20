@@ -27,6 +27,25 @@
 				"invisible": true
 			},
 			"against": 1
+		},		
+		{
+			"type": "lifeSteal",
+			"maxTicks": 600,
+			"renderers": [
+				{
+					"type": "reticule",
+					"radius": 0.03,
+					"invisible": true,
+					"minRadius": 0.025,
+					"arc": {
+						"type": "dynamic",
+						"ticks": 600,
+						"reverse": true
+					},
+					"color": "#880a"
+				}
+			],
+			"cleansable": false
 		},
 		{
 			"type": "burn",
@@ -114,14 +133,15 @@
 					"maxTicks": 61,	
 					"stack": "sum",		
 					"maxStacks": 9,	
-					"render": {
-						"color": "#880",
-						"particleRadius": 0.001,
-						"emissionRadiusFactor": 1,
-						"ticks": 10,
-						"light": 1,
-						"invisible": true
-					},
+					"renderers": [					
+						{
+							"type": "reticule",
+							"radius": 0.0125,
+							"minRadius": 0.012,
+							"color": "#8802",
+							"invisible": true
+						}
+					],
 					"color": "#880",
 					"damageMultiplier": 0.95,
 					"source": "heal"

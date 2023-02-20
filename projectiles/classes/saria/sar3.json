@@ -111,9 +111,15 @@
 			"color": "#4363d8",
 			"ticks": 30,
 			"loopTicks": 60,
-			"numParticles": 5,
+			"numParticles": 3,
 			"radius": 0.2,
 			"particleRadius": 0.0014
+		},
+		{
+			"type": "reticule",
+			"radius": 0.19,
+			"minRadius": 0.185,
+			"color": "#4363d822"
 		}
 	]
 }

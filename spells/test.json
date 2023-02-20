@@ -27,6 +27,36 @@
 			"triggers": [
 				{
 					"type": "collideWith",
+					"triggerInterval": 300,
+					"maxHits": 1000000000000,
+					"collideWith": 8,
+					"collideTypes": [
+						"slow"
+					]
+				}
+			],
+			"projectile": "dash"
+		},		
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "collideWith",
+					"triggerInterval": 300,
+					"maxHits": 1000000000000,
+					"collideWith": 8,
+					"collideTypes": [
+						"fast"
+					]
+				}
+			],
+			"projectile": "dash-long"
+		},
+		{
+			"type": "spawn",
+			"triggers": [
+				{
+					"type": "collideWith",
 					"triggerInterval": 1,
 					"maxHits": 1000000000000,
 					"collideWith": 1024,

@@ -57,7 +57,7 @@
 								"packet": {
 									"source": "heal",
 									"lifeSteal": 0,
-									"damage": -10
+									"damage": -4
 								}
 							}
 						]

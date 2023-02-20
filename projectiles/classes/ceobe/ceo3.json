@@ -11,7 +11,27 @@
 	"expireOn": 0,
 	"lifeSteal": 0,
 	"categories": 8192,
-	"projectileBuffs": [],
+	"projectileBuffs": [
+		{
+			"type": "lifeSteal",
+			"maxTicks": 120,
+			"renderers": [
+				{
+					"type": "reticule",
+					"radius": 0.03,
+					"invisible": true,
+					"minRadius": 0.025,
+					"arc": {
+						"type": "dynamic",
+						"ticks": 120,
+						"reverse": true
+					},
+					"color": "#e6194ba"
+				}
+			],
+			"cleansable": false
+		}
+	],
 	"behaviours": [
 		{
 			"type": "strafe"

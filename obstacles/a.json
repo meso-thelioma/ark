@@ -2,7 +2,7 @@
 	"id": "a",
 	"health": 120,
 	"density": 500000,
-	"decayPerSecond": 4,
+	"decayPerSecond": 2,
 	"collideWith": 65527,
 	"static": true,
 	"undamageable": true,

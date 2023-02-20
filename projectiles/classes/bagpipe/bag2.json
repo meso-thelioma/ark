@@ -197,13 +197,21 @@
 	],
 	"renderers": [
 		{
-			"type": "swirl",
-			"ticks": 30,
-			"color": "#3cb44b22",
+			"type": "reticule",
 			"radius": 0.23,
-			"particleRadius": 0.001,
-			"loopTicks": 10,
-			"numParticles": 8
+			"minRadius": 0.225,
+			"arc": {
+				"type": "dynamic",
+				"ticks": 10,
+				"reverse": true
+			},
+			"color": "#3cb44b11"
+		},		
+		{
+			"type": "reticule",
+			"radius": 0.23,
+			"minRadius": 0.225,
+			"color": "#3cb44b11"
 		}
 	]
 }

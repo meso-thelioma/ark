@@ -262,7 +262,7 @@
 				"damage": 0,
 				"expireOn": 0,
 				"expireAgainstObjects": 1,
-				"categories": 38,
+				"categories": 32,
 				"lifeSteal": 0,
 				"sensor": true,
 				"buffs": [],

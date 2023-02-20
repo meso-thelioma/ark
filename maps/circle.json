@@ -29,6 +29,63 @@
 			"extent": 0.0025,
 			"orientationAngleOffsetInRevs": 0,
 			"angularWidthInRevs": 0.15
+		},		
+		{
+			"type": "a",
+			"numObstacles": 4,
+			"layoutRadius": 0.35,
+			"layoutAngleOffsetInRevs": 0,
+			"numPoints": 4,
+			"extent": 0.0025,
+			"orientationAngleOffsetInRevs": 0,
+			"angularWidthInRevs": 0.15
+		},		
+		{
+			"type": "a",
+			"numObstacles": 2,
+			"layoutRadius": 0.15,
+			"layoutAngleOffsetInRevs": 0,
+			"numPoints": 4,
+			"extent": 0.0025,
+			"orientationAngleOffsetInRevs": 0.125,
+			"angularWidthInRevs": 0.2
+		},
+		{
+			"type": "cosmic",
+			"numObstacles": 1,
+			"layoutRadius": 0,
+			"layoutAngleOffsetInRevs": 0.125,
+			"numPoints": 4,
+			"extent": 0.05,
+			"orientationAngleOffsetInRevs": 0
+		},
+		{
+			"type": "left",
+			"numObstacles": 4,
+			"layoutRadius": 0.3,
+			"layoutAngleOffsetInRevs": 0.125,
+			"numPoints": 4,
+			"extent": 0.005,
+			"orientationAngleOffsetInRevs": 0,
+			"angularWidthInRevs": 0.06
+		},
+		{
+			"type": "fast",
+			"numObstacles": 8,
+			"layoutRadius": 0.4,
+			"layoutAngleOffsetInRevs": 0,
+			"numPoints": 4,
+			"extent": 0.005,
+			"orientationAngleOffsetInRevs": 0
+		},
+		{
+			"type": "slow",
+			"numObstacles": 4,
+			"layoutRadius": 0.2,
+			"layoutAngleOffsetInRevs": 0.0625,
+			"numPoints": 4,
+			"extent": 0.005,
+			"orientationAngleOffsetInRevs": 0
 		}
 	],
 	"numPoints": 4

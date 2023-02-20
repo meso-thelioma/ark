@@ -3,6 +3,7 @@
 	"radius": 0.003,
 	"speed": 0.9,
 	"maxTicks": 50,
+	"attractable": false,
 	"expireAgainstObjects": 14,
 	"damage": 0,
 	"collideWith": 0,

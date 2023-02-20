@@ -1,6 +1,7 @@
 {
 	"basedOn": "mud2",
 	"categories": 9,
+	"maxTicks": 600,
 	"projectileBuffs": [
 		{
 			"type": "armor",

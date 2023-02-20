@@ -15,8 +15,8 @@
 		}
 	],
 	"conveyor": {
-		"lateralSpeed": 0,
-		"radialSpeed": -25
+		"lateralSpeed": 10,
+		"radialSpeed": 0
 	},
 	"selfDamage": 10,
 	"hitInterval": 20,

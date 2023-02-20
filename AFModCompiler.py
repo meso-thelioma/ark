@@ -10,7 +10,7 @@ parser.add_argument('--output, -o', type=str, nargs='?',
 parser.add_argument('project_directory', metavar='Directory', type=str, nargs='?',
                     default='.', help='Directory that will be processed')
 parser.add_argument('--max-projectile-depth', type=int, nargs='?',
-                    default=20, dest='max_projectile_depth',
+                    default=30, dest='max_projectile_depth',
                     help='Sets the maximum depth projectiles will generate ' +
                     'in the case of recursion or sufficiently long projectile chains')
 parser.add_argument('--max-parent-depth', type=int, nargs='?',

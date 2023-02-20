@@ -211,11 +211,17 @@
 								{
 									"type": "swirl",
 									"ticks": 20,
-									"color": "#dcbeff22",
+									"color": "#fff2",
 									"radius": 0.03,
-									"particleRadius": 0.003,
-									"loopTicks": -180,
-									"numParticles": 12
+									"particleRadius": 0.001,
+									"loopTicks": 120,
+									"numParticles": 1
+								},
+								{
+									"type": "reticule",
+									"radius": 0.03,
+									"minRadius": 0.025,
+									"color": "#fff2"
 								}
 							]
 						}
@@ -229,7 +235,13 @@
 						"radius": 0.03,
 						"particleRadius": 0.001,
 						"loopTicks": 120,
-						"numParticles": 8
+						"numParticles": 1
+					},
+					{
+						"type": "reticule",
+						"radius": 0.03,
+						"minRadius": 0.025,
+						"color": "#dcbeff22"
 					}
 				]
 			}
@@ -243,7 +255,13 @@
 			"radius": 0.03,
 			"particleRadius": 0.001,
 			"loopTicks": 120,
-			"numParticles": 8
+			"numParticles": 1
+		},
+		{
+			"type": "reticule",
+			"radius": 0.03,
+			"minRadius": 0.025,
+			"color": "#dcbeff22"
 		}
 	]
 }

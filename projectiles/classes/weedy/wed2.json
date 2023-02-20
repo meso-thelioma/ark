@@ -100,6 +100,17 @@
 			"radius": 0.05,
 			"minRadius": 0.049,
 			"color": "#f5823122"
+		},
+		{
+			"type": "reticule",
+			"radius": 0.05,
+			"minRadius": 0.049,
+			"arc": {
+				"type": "dynamic",
+				"ticks": 630,
+				"reverse": true
+			},
+			"color": "#f5823122"
 		}
 	]
 }

@@ -85,22 +85,21 @@
 				},
 				"renderers": [
 					{
-						"type": "swirl",
+						"type": "reticule",
+						"radius": 0.04,
+						"minRadius": 0.035,
 						"color": "#911eb422",
-						"ticks": 30,
-						"loopTicks": 60,
-						"numParticles": 5,
-						"radius": 0.004,
-						"particleRadius": 0.004
+						"arc": {
+							"type": "dynamic",
+							"ticks": 40,
+							"reverse": true
+						}
 					},
 					{
-						"type": "swirl",
-						"color": "#911eb422",
-						"ticks": 30,
-						"loopTicks": 60,
-						"numParticles": 5,
+						"type": "reticule",
 						"radius": 0.04,
-						"particleRadius": 0.002
+						"minRadius": 0.035,
+						"color": "#911eb422"
 					}
 				]
 			}

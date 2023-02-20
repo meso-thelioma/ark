@@ -65,7 +65,7 @@
 										"ticks": 10,
 										"invisible": true,
 										"emissionRadiusFactor": 1,
-										"particleRadius": 0.005,
+										"particleRadius": 0.015,
 										"shine": 0.2,
 										"glow": 1,
 										"vanish": 1

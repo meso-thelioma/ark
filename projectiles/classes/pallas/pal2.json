@@ -40,13 +40,12 @@
 	],
 	"renderers": [
 		{
-			"type": "swirl",
-			"ticks": 30,
-			"color": "#afc2",
+			"type": "reticule",
 			"radius": 0.08,
-			"particleRadius": 0.003,
-			"loopTicks": -120,
-			"numParticles": 8
+			"minRadius": 0.075,
+			"color": "#afc2",
+			"shrinkTicks": 10,
+			"fade": true
 		}
 	]
 }

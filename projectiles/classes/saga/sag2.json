@@ -19,15 +19,21 @@
 			"type": "lifeSteal",
 			"damageMultiplier": 1,
 			"stack": "exu1",
-			"maxTicks": 12000,
-			"render": {
-				"color": "#66002f",
-				"particleRadius": 0.001,
-				"emissionRadiusFactor": 1,
-				"ticks": 10,
-				"light": 1,
-				"invisible": true
-			},
+			"maxTicks": 300,
+			"renderers": [
+				{
+					"type": "reticule",
+					"radius": 0.03,
+					"invisible": true,
+					"minRadius": 0.025,
+					"arc": {
+						"type": "dynamic",
+						"ticks": 300,
+						"reverse": true
+					},
+					"color": "#66002faa"
+				}
+			],
 			"against": 3
 		}
 	],

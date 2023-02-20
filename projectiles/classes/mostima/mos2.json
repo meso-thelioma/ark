@@ -161,16 +161,13 @@
 		}
 	],
 	"buffs": [],
-	"renderers": [
+	"renderers": [			
 		{
-			"type": "swirl",
-			"color": "#4462",
-			"particleRadius": 0.001,
+			"type": "reticule",
 			"radius": 0.08,
-			"loopTicks": 240,
-			"numParticles": 4,
-			"ticks": 10,
-			"light": 1
-		}
+			"minRadius": 0.075,
+			"color": "#4462",
+			"invisible": true
+		}						
 	]
 }

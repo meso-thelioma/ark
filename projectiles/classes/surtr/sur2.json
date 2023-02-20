@@ -61,7 +61,21 @@
 						"type": "armor",
 						"cleansable": false,
 						"minHealth": 1,
-						"maxTicks": 300
+						"maxTicks": 300,
+						"renderers": [				
+							{
+								"type": "reticule",
+								"radius": 0.02,
+								"invisible": true,
+								"minRadius": 0.015,
+								"color": "#800",
+								"arc": {
+									"type": "dynamic",
+									"ticks": 300,
+									"reverse": true
+								}
+							}
+						]
 					}
 				],
 				"renderers": []

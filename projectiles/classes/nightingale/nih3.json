@@ -11,7 +11,27 @@
 	"lifeSteal": 0,
 	"sound": "fireball",
 	"categories": 8192,
-	"projectileBuffs": [],
+	"projectileBuffs": [
+		{
+			"type": "lifeSteal",
+			"maxTicks": 600,
+			"renderers": [
+				{
+					"type": "reticule",
+					"radius": 0.03,
+					"invisible": true,
+					"minRadius": 0.025,
+					"arc": {
+						"type": "dynamic",
+						"ticks": 600,
+						"reverse": true
+					},
+					"color": "#bfef45aa"
+				}
+			],
+			"cleansable": false
+		}
+	],
 	"behaviours": [		
 		{
 			"type": "spawn",
@@ -95,15 +115,14 @@
 						]
 					}
 				],
-				"renderers": [
+				"renderers": [			
 					{
-						"type": "swirl",
-						"ticks": 30,
-						"color": "#bfef4522",
+						"type": "reticule",
 						"radius": 0.1,
-						"particleRadius": 0.003,
-						"loopTicks": 10,
-						"numParticles": 8
+						"minRadius": 0.095,
+						"color": "#bfef4522",
+						"shrinkTicks": 30,
+						"fade": true
 					}
 				]
 			}

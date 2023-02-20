@@ -2,7 +2,7 @@
 	"id": "slow",
 	"health": 500,
 	"collideWith": 1,
-	"sensor": true,
+	"sensor": false,
 	"static": true,	
 	"selfDamage": 10,
 	"undamageable": true,
@@ -32,30 +32,5 @@
 		}
 	],
 	"hitInterval": 15,
-	"buffs": [
-		{
-			"type": "armor",
-			"maxTicks": 15,
-			"render": {
-				"color": "#0ff",
-				"alpha": 0.3,
-				"light": 1,
-				"ticks": 30,
-				"invisible": true,
-				"emissionRadiusFactor": 1,
-				"particleRadius": 0.005,
-				"shine": 0.2,
-				"glow": 1,
-				"vanish": 1
-			},
-			"source": "arts",
-			"proportion": -0.3
-		},
-		{
-			"type": "armor",
-			"maxTicks": 15,
-			"source": "ceobe",
-			"proportion": -0.3
-		}
-	]
+	"buffs": []
 }

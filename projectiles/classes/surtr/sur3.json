@@ -16,7 +16,21 @@
 			"maxTicks": 720,
 			"cleansable": false,
 			"source": "arts",
-			"proportion": -0.6
+			"proportion": -0.6,
+			"renderers": [
+				{
+					"type": "reticule",
+					"radius": 0.03,
+					"invisible": true,
+					"minRadius": 0.025,
+					"color": "#800a",
+					"arc": {
+						"type": "dynamic",
+						"ticks": 720,
+						"reverse": true
+					}
+				}
+			]
 		},
 		{
 			"type": "armor",
@@ -65,9 +79,9 @@
 					"cleansable": false,
 					"maxTicks": 1,
 					"render": {
-						"color": "#8002",
+						"color": "#8001",
 						"particleRadius": 0.0125,
-						"emissionRadiusFactor": 2,
+						"emissionRadiusFactor": 0,
 						"ticks": 10,
 						"light": 1,
 						"invisible": true
@@ -100,9 +114,9 @@
 					"cleansable": false,
 					"maxTicks": 1,
 					"render": {
-						"color": "#8002",
+						"color": "#8001",
 						"particleRadius": 0.0125,
-						"emissionRadiusFactor": 2,
+						"emissionRadiusFactor": 0,
 						"ticks": 10,
 						"light": 1,
 						"invisible": true
@@ -135,9 +149,9 @@
 					"cleansable": false,
 					"maxTicks": 1,
 					"render": {
-						"color": "#8002",
+						"color": "#8001",
 						"particleRadius": 0.0125,
-						"emissionRadiusFactor": 2,
+						"emissionRadiusFactor": 0,
 						"ticks": 10,
 						"light": 1,
 						"invisible": true
@@ -170,9 +184,9 @@
 					"cleansable": false,
 					"maxTicks": 1,
 					"render": {
-						"color": "#8002",
+						"color": "#8001",
 						"particleRadius": 0.0125,
-						"emissionRadiusFactor": 2,
+						"emissionRadiusFactor": 0,
 						"ticks": 10,
 						"light": 1,
 						"invisible": true
@@ -205,9 +219,9 @@
 					"cleansable": false,
 					"maxTicks": 1,
 					"render": {
-						"color": "#8002",
+						"color": "#8001",
 						"particleRadius": 0.0125,
-						"emissionRadiusFactor": 2,
+						"emissionRadiusFactor": 0,
 						"ticks": 10,
 						"light": 1,
 						"invisible": true

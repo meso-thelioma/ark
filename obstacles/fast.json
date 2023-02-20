@@ -2,7 +2,7 @@
 	"id": "fast",
 	"health": 500,
 	"collideWith": 1,
-	"sensor": true,	
+	"sensor": false,
 	"selfDamage": 20,
 	"static": true,
 	"undamageable": true,
@@ -32,24 +32,5 @@
 		}
 	],
 	"hitInterval": 15,
-	"buffs": [
-		{
-			"type": "armor",
-			"maxTicks": 15,
-			"source": "phys",
-			"render": {
-				"color": "#ff0",
-				"alpha": 0.3,
-				"light": 1,
-				"ticks": 30,
-				"invisible": true,
-				"emissionRadiusFactor": 1,
-				"particleRadius": 0.005,
-				"shine": 0.2,
-				"glow": 1,
-				"vanish": 1
-			},
-			"proportion": -0.3
-		}
-	]
+	"buffs": []
 }

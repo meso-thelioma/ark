@@ -3,6 +3,7 @@
 	"radius": 0.003,
 	"speed": 0,
 	"maxTicks": 190,
+	"attractable": false,
 	"damage": 0,
 	"sensor": true,
 	"expireOn": 0,
