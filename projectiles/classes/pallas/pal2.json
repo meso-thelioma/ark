@@ -39,13 +39,13 @@
 		}
 	],
 	"renderers": [
-		{
-			"type": "reticule",
-			"radius": 0.08,
-			"minRadius": 0.075,
-			"color": "#afc2",
-			"shrinkTicks": 10,
-			"fade": true
-		}
+			{
+				"type": "reticule",
+				"radius": 0.08,
+				"grow": true,
+				"shrinkTicks": 30,
+				"fade": true,
+				"color": "#afca"
+			}
 	]
 }

@@ -4633,6 +4633,14 @@
                                     "color": "#ffe119",
                                     "projectileBuffs": [
                                         {
+                                            "type": "mass",
+                                            "cleansable": false,
+                                            "maxTicks": 600,
+                                            "radius": 0.014,
+                                            "density": 0,
+                                            "restrictCollideWith": 0
+                                        },
+                                        {
                                             "type": "armor",
                                             "maxTicks": 600,
                                             "cleansable": false,
@@ -7187,7 +7195,7 @@
                                     "ticks": 120,
                                     "reverse": true
                                 },
-                                "color": "#e6194ba"
+                                "color": "#e6194baa"
                             }
                         ],
                         "cleansable": false
@@ -13673,7 +13681,7 @@
                                 {
                                     "type": "reticule",
                                     "radius": 0.1,
-                                    "minRadius": 0.095,
+                                    "grow": true,
                                     "color": "#bfef4522",
                                     "shrinkTicks": 30,
                                     "fade": true
@@ -13970,10 +13978,10 @@
                     {
                         "type": "reticule",
                         "radius": 0.08,
-                        "minRadius": 0.075,
-                        "color": "#afc2",
-                        "shrinkTicks": 10,
-                        "fade": true
+                        "grow": true,
+                        "shrinkTicks": 30,
+                        "fade": true,
+                        "color": "#afca"
                     }
                 ]
             }
@@ -18621,6 +18629,18 @@
                                             "maxTicks": 600000,
                                             "cleansable": false,
                                             "color": "#030",
+                                            "renderers": [
+                                                {
+                                                    "type": "reticule",
+                                                    "radius": 0.09,
+                                                    "shrinkTicks": 300,
+                                                    "repeat": true,
+                                                    "fade": true,
+                                                    "invisible": true,
+                                                    "minRadius": 0.085,
+                                                    "color": "#030a"
+                                                }
+                                            ],
                                             "spellId": "tho1",
                                             "cooldownRateModifier": 0.45
                                         }

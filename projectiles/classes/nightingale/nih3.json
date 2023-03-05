@@ -119,7 +119,7 @@
 					{
 						"type": "reticule",
 						"radius": 0.1,
-						"minRadius": 0.095,
+						"grow": true,
 						"color": "#bfef4522",
 						"shrinkTicks": 30,
 						"fade": true

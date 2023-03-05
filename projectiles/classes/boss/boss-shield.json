@@ -2,7 +2,15 @@
 	"basedOn": "mud2",
 	"categories": 9,
 	"maxTicks": 600,
-	"projectileBuffs": [
+	"projectileBuffs": [					
+		{
+			"type": "mass",
+			"cleansable": false,
+			"maxTicks": 600,
+			"radius": 0.014,
+			"density": 0,
+			"restrictCollideWith": 0
+		},
 		{
 			"type": "armor",
 			"maxTicks": 600,
