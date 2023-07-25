@@ -13046,6 +13046,9 @@
 					},
 					{
 						"type": "spawn",
+						"trigger": {
+							"expire": true
+						},
 						"buffs": [
 							{
 								"type": "burn",
